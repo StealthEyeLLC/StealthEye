@@ -1,0 +1,63 @@
+{
+  "schema_version": "2.0.0",
+  "events": [
+    {
+      "event": "dag-created",
+      "at": "2026-05-27T09:17:17.637Z",
+      "dag_id": "dag_b9b250a1a1a82be6dd22"
+    },
+    {
+      "event": "node-executing",
+      "at": "2026-05-27T09:17:17.637Z",
+      "dag_id": "dag_b9b250a1a1a82be6dd22",
+      "node_id": "node_dfdc23f138639e78"
+    },
+    {
+      "event": "checkpoint-created",
+      "at": "2026-05-27T09:17:17.639Z",
+      "checkpoint_id": "cp_d2ab83ac71d8de4da091"
+    },
+    {
+      "event": "dag-created",
+      "at": "2026-05-27T09:17:19.662Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab"
+    },
+    {
+      "event": "node-executing",
+      "at": "2026-05-27T09:17:19.662Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab",
+      "node_id": "node_a2203e9c72360e5b"
+    },
+    {
+      "event": "node-executing",
+      "at": "2026-05-27T09:17:19.663Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab",
+      "node_id": "node_6cc85242eb1afde7"
+    },
+    {
+      "event": "node-repaired",
+      "at": "2026-05-27T09:17:19.663Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab"
+    },
+    {
+      "event": "node-replayed",
+      "at": "2026-05-27T09:17:19.664Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab"
+    },
+    {
+      "event": "checkpoint-created",
+      "at": "2026-05-27T09:17:19.665Z",
+      "checkpoint_id": "cp_4cce5f04d683ccea9b60"
+    },
+    {
+      "event": "checkpoint-restored",
+      "at": "2026-05-27T09:17:19.666Z",
+      "checkpoint_id": "cp_4cce5f04d683ccea9b60"
+    },
+    {
+      "event": "mission-finalized",
+      "at": "2026-05-27T09:17:19.666Z",
+      "dag_id": "dag_7cac3be0593fad05d7ab"
+    }
+  ]
+}

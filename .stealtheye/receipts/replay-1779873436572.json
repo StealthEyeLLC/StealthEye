@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h2:packet",
+  "processName": "h2:inspect",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T09:17:18.663Z",
+  "timestamp": "2026-05-27T09:17:16.571Z",
   "ordered_commands": [
-    "npm run h2:packet"
+    "npm run h2:inspect"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -34,7 +34,17 @@
   ],
   "validation_outputs": {
     "status": "ok",
-    "complete": true
+    "dashboard": {
+      "dag_posture": "ACTIVE",
+      "checkpoint_posture": "ACTIVE",
+      "continuation_posture": "ACTIVE",
+      "approval_posture": "GOVERNED",
+      "budget_posture": "BOUNDED",
+      "worker_posture": "BOUNDED",
+      "orchestration_posture": "DETERMINISTIC",
+      "escalation_posture": "VISIBLE",
+      "mission_fabric_posture": "DURABLE"
+    }
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -64,10 +74,20 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h2:packet"
+    "npm run h2:inspect"
   ],
   "validation_results": {
     "status": "ok",
-    "complete": true
+    "dashboard": {
+      "dag_posture": "ACTIVE",
+      "checkpoint_posture": "ACTIVE",
+      "continuation_posture": "ACTIVE",
+      "approval_posture": "GOVERNED",
+      "budget_posture": "BOUNDED",
+      "worker_posture": "BOUNDED",
+      "orchestration_posture": "DETERMINISTIC",
+      "escalation_posture": "VISIBLE",
+      "mission_fabric_posture": "DURABLE"
+    }
   }
 }

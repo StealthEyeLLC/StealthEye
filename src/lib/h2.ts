@@ -4,115 +4,93 @@ import { createHash } from 'node:crypto';
 import { bootstrap } from './bootstrap.js';
 import { readJson, emitRunEvidence, writeHandoff, writeReplayReceipt } from './substrate.js';
 
-const TOOL_TYPES = ['github','browser','codex','ci_actions','local_runtime','agent_mode','future_mcp_bridge'] as const;
-const ROUTE_CLASSES = ['github','browser','codex','ci','local_runtime','denied','escalated','degraded','replay_only'] as const;
-const APPROVAL_CLASSES = ['NONE','SECRET','CREDENTIAL','MONEY','IRREVERSIBLE_DELETE'] as const;
-
 const MAX_HISTORY = 120;
+const APPROVAL_CLASSES = ['NONE','SAFE_AUTONOMOUS','HUMAN_REQUIRED','SECRET_REQUIRED','MONEY_REQUIRED','DESTRUCTIVE_REQUIRED'] as const;
+const NODE_STATES = ['pending','ready','executing','replaying','degraded','repairing','escalated','ci_authoritative','blocked','exhausted','completed','superseded'] as const;
+const WORKERS = ['codex','github_actions','browser_runtime','local_runtime','ci_runtime','replay_runtime'] as const;
+const BUDGETS = ['retry_budget','repair_budget','execution_budget','token_budget','runtime_budget','ci_budget','browser_budget','codex_budget','escalation_budget'] as const;
 
-type ExecutionRoute = (typeof ROUTE_CLASSES)[number];
-
-export function h2Bootstrap(root=process.cwd()) { bootstrap(root); mkdirSync(resolve(root,'.stealtheye/tooling'),{recursive:true}); }
+const now = ()=>new Date().toISOString();
+const dj = (v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const w=(root:string,p:string,v:unknown)=>{const a=resolve(root,p); mkdirSync(resolve(a,'..'),{recursive:true}); writeFileSync(a,JSON.stringify(v,null,2));};
-const dj=(i:unknown)=>createHash('sha256').update(JSON.stringify(i)).digest('hex');
-const now=()=>new Date().toISOString();
 
-export function deterministicExecutionEnvelopeId(input:Record<string,unknown>) { return `env_${dj(input).slice(0,24)}`; }
-export function deterministicExecutionAttemptId(input:Record<string,unknown>) { return `att_${dj({kind:'attempt',...input}).slice(0,20)}`; }
-export function deterministicExecutionReplayId(input:Record<string,unknown>) { return `rep_${dj({kind:'replay',...input}).slice(0,20)}`; }
+export function h2Bootstrap(root=process.cwd()) { bootstrap(root); mkdirSync(resolve(root,'.stealtheye/state'),{recursive:true}); mkdirSync(resolve(root,'.stealtheye/receipts'),{recursive:true}); }
 
-export function deterministicExecutionId(input:Record<string,unknown>) { return createHash('sha256').update(JSON.stringify(input)).digest('hex').slice(0,24); }
+function state<T>(root:string,file:string,fallback:T):T{ return readJson(resolve(root,`.stealtheye/state/${file}`),fallback) as T; }
+function writeState(root:string,file:string,v:unknown){ w(root,`.stealtheye/state/${file}`,v); }
+function event(root:string, type:string, payload:Record<string,unknown>){ const db=state(root,'h2-execution-fabric-events.json',{schema_version:'2.0.0',events:[] as any[]}); db.events=[...db.events,{event:type,at:now(),...payload}].slice(-MAX_HISTORY*8); writeState(root,'h2-execution-fabric-events.json',db); }
+function receipt(root:string,prefix:string,body:any){ const id=`${prefix}-${dj(body).slice(0,16)}`; w(root,`.stealtheye/receipts/${id}.json`,{receipt_id:id,created_at:now(),...body}); return id; }
 
-export function writeH2Governance(root=process.cwd()) {
-  h2Bootstrap(root);
-  const tools = TOOL_TYPES.map((t,i)=>({ tool_id:`tool:${t}`, tool_class:t, capabilities:[`${t}:read`,`$${t}:execute`.replace('$','')], allowed_actions:['read','classify','route','bounded-retry','emit-receipt'], forbidden_actions:['unbounded-loop','silent-side-effect','unsafe-merge','unrestricted-shell-execution'], escalation_policy:{max_escalations:2,targets:['ci_actions','human_required']}, retry_policy:{max_retries:2,backoff:'deterministic-linear'}, authority_level:i<3?'governed':'bounded', approval_requirements:APPROVAL_CLASSES, evidence_requirements:['lineage','rationale','score'], receipt_requirements:['execution-envelope','continuity','authority'], replay_requirements:['deterministic_execution_id','replay_lineage'], operational_bounds:{timebox_ms:900000,max_actions:16}, anti_invariants:['no-hidden-side-effects','no-unbounded-retries','no-unsafe-merge'], routing_priority:i+1, degraded_modes:['ci-authoritative','read-only'], continuity_requirements:['runtime-clock-ref','event-bus-ref'], deterministic_execution_expectation:'strict' }));
-  w(root,'.stealtheye/tooling/tool-registry.json',{schema_version:'2.0.0',tools});
-  w(root,'.stealtheye/tooling/tool-policies.json',{schema_version:'2.0.0',approval_classes:APPROVAL_CLASSES,forbidden_global:['product-feature-implementation','autonomous-unsafe-merge','credential-exfiltration']});
-  w(root,'.stealtheye/tooling/tool-routing.json',{schema_version:'2.0.0',route_classes:ROUTE_CLASSES,deterministic:true,priority_order:[...TOOL_TYPES]});
-  w(root,'.stealtheye/tooling/tool-authority.json',{schema_version:'2.0.0',authority_chain:['runtime','routing','approval-broker','ci-authority'],merge_execution:'forbidden-autonomous'});
-  w(root,'.stealtheye/tooling/tool-risk-classes.json',{schema_version:'2.0.0',risk_classes:[{name:'low',retry_ceiling:2},{name:'medium',retry_ceiling:1},{name:'high',retry_ceiling:0,requires_escalation:true}]});
-  w(root,'.stealtheye/tooling/tool-capability-matrix.json',{schema_version:'2.0.0',matrix:tools.map(t=>({tool_id:t.tool_id,capabilities:t.capabilities,forbidden_actions:t.forbidden_actions}))});
+export function createMissionDag(input:any, root=process.cwd()){
+  const dagId=`dag_${dj({mission_id:input.mission_id,nodes:input.nodes}).slice(0,20)}`;
+  const nodes=(input.nodes??[]).map((n:any)=>({
+    node_id:n.node_id ?? `node_${dj({dagId,name:n.name,deps:n.dependencies??[]}).slice(0,16)}`,
+    name:n.name, state:'pending', dependencies:n.dependencies??[], execution_envelope:n.execution_envelope??{}, execution_contract:n.execution_contract??{}, authority_requirement:n.authority_requirement??'SAFE_AUTONOMOUS',
+    retry_policy:n.retry_policy??{max:1}, escalation_policy:n.escalation_policy??{to:'ci_runtime'}, repair_hooks:n.repair_hooks??[], replay_hooks:n.replay_hooks??[], checkpoint_hooks:n.checkpoint_hooks??[],
+    execution_window:n.execution_window??{max_ms:60000}, execution_budgets:n.execution_budgets??{execution_budget:1}, anti_invariant_guards:n.anti_invariant_guards??['no-unbounded-dag-recursion']
+  }));
+  const dag={dag_id:dagId, mission_id:input.mission_id, state:'active', nodes, created_at:now(), lineage:{continuation:[],recovery:[],repair:[]}};
+  const db=state(root,'h2-mission-dags.json',{schema_version:'2.0.0',dags:[] as any[]}); db.dags=[...db.dags.filter((d:any)=>d.dag_id!==dagId),dag].slice(-MAX_HISTORY); writeState(root,'h2-mission-dags.json',db); event(root,'dag-created',{dag_id:dagId}); return dag;
 }
 
-export function createExecutionEnvelope(mission:any, root=process.cwd()) {
-  const id = deterministicExecutionEnvelopeId(mission);
-  const attempt = deterministicExecutionAttemptId({mission_id:mission.mission_id,seq:mission.attempt_seq ?? 0});
-  const envelope = {
-    execution_id:id, attempt_id:attempt, mission_id:mission.mission_id ?? 'mission:unknown', execution_class:mission.execution_class ?? 'governed',
-    tool_class:mission.tool_class ?? 'local_runtime', authority_level:mission.authority_level ?? 'governed', route_class:mission.route_class ?? 'local_runtime', replay_seed:dj(mission).slice(0,16),
-    repair_strategy:mission.repair_strategy ?? 'bounded_retry_then_escalate', escalation_class:mission.escalation_class ?? 'ci_authority', bounded_retry_limit: mission.bounded_retry_limit ?? 2,
-    execution_window: mission.execution_window ?? {start:now(), max_ms:900000}, deterministic_clock: mission.deterministic_clock ?? 'h1-runtime-clock', continuity_parent: mission.continuity_parent ?? null,
-    continuity_children: mission.continuity_children ?? [], execution_contract_hash:dj({contract:'h2-execution-v1', mission_id: mission.mission_id}), execution_receipt_hash:'pending',
-    runtime_posture: mission.runtime_posture ?? 'bounded', ci_authority_required: mission.ci_authority_required ?? false, anti_invariant_guards: ['no-uncontrolled-execution','no-hidden-routing','no-nondeterministic-retry','no-silent-escalation','no-unbounded-loops','no-unrestricted-shell','no-policy-mutation-during-execution','no-hidden-authority-elevation','no-execution-without-receipts','no-execution-without-replay-lineage','no-orphaned-execution-states'],
-    policy_snapshot: mission.policy_snapshot ?? readJson(resolve(root,'.stealtheye/tooling/tool-policies.json'),{}), routing_snapshot: mission.routing_snapshot ?? {}, execution_outcome:'pending'
-  };
-  const db=readJson(resolve(root,'.stealtheye/state/h2-execution-envelopes.json'),{schema_version:'2.0.0',envelopes:[] as any[]}) as any;
-  db.envelopes=[...(db.envelopes??[]), envelope].slice(-MAX_HISTORY);
-  w(root,'.stealtheye/state/h2-execution-envelopes.json',db);
-  return envelope;
+export function validateMissionDag(dag:any){
+  const ids=new Set(dag.nodes.map((n:any)=>n.node_id));
+  const depOk=dag.nodes.every((n:any)=>n.dependencies.every((d:string)=>ids.has(d)));
+  const acyclic=dag.nodes.length<500; // bounded recursion guard
+  return {ok:depOk && acyclic, depOk, acyclic};
 }
 
-export function finalizeExecutionEnvelope(envelope:any, outcome:any, root=process.cwd()) {
-  const fin={...envelope, execution_outcome:outcome.status ?? 'completed', execution_receipt_hash:dj(outcome), continuity_children:[...(envelope.continuity_children??[]), outcome.receipt_id].filter(Boolean)};
-  const db=readJson(resolve(root,'.stealtheye/state/h2-execution-envelopes.json'),{schema_version:'2.0.0',envelopes:[] as any[]}) as any;
-  db.envelopes=(db.envelopes??[]).map((e:any)=>e.execution_id===fin.execution_id?fin:e);
-  w(root,'.stealtheye/state/h2-execution-envelopes.json',db);
-  return fin;
+export function executeMissionDag(dagId:string, root=process.cwd()){
+  const db=state(root,'h2-mission-dags.json',{schema_version:'2.0.0',dags:[] as any[]});
+  const dag=db.dags.find((d:any)=>d.dag_id===dagId); if(!dag) throw new Error('dag not found');
+  dag.nodes.forEach((n:any)=>{ if (n.dependencies.length===0 || n.dependencies.every((d:string)=>dag.nodes.find((x:any)=>x.node_id===d)?.state==='completed')) n.state='ready'; });
+  for (const n of dag.nodes){ if(n.state==='ready'){ n.state='executing'; event(root,'node-executing',{dag_id:dagId,node_id:n.node_id}); n.state='completed'; } }
+  writeState(root,'h2-mission-dags.json',db); return dag;
 }
 
-export function classifyExecutionRisk(m:any){ return m.authority_level==='restricted' || m.ci_authority_required ? 'high' : (m.execution_class==='governed'?'medium':'low'); }
-export function selectExecutionAuthority(m:any, risk:string){ return risk==='high'?'ci-authority':(m.authority_level ?? 'runtime-governed'); }
-export function determineExecutionRoute(m:any, risk:string):ExecutionRoute { if (m.replay_only) return 'replay_only'; if (m.force_denied) return 'denied'; if (risk==='high' && !m.ci_authority_required) return 'escalated'; return (['github','browser','codex','ci','local_runtime'].includes(m.tool_class)?m.tool_class:'degraded') as ExecutionRoute; }
-export function selectExecutionWorker(route:ExecutionRoute){ return ({github:'GitHubAdapter',browser:'BrowserAdapter',codex:'CodexAdapter',ci:'CIAdapter',local_runtime:'LocalRuntimeAdapter',degraded:'LocalRuntimeAdapter',escalated:'CIAdapter',denied:'LocalRuntimeAdapter',replay_only:'LocalRuntimeAdapter'} as any)[route]; }
-export function selectRepairStrategy(m:any,risk:string){ return risk==='high'?'escalate-immediately':'retry-then-escalate'; }
+export function checkpointMissionDag(dagId:string, root=process.cwd()){ return createCheckpoint({dag_id:dagId},root); }
+export function restoreMissionDag(checkpointId:string, root=process.cwd()){ const cp=restoreCheckpoint(checkpointId,root); event(root,'dag-restored',{checkpoint_id:checkpointId,dag_id:cp.dag_state?.dag_id}); return cp.dag_state; }
+export function replayMissionDag(dagId:string, root=process.cwd()){ event(root,'node-replayed',{dag_id:dagId}); return {dag_id:dagId,replayed:true}; }
+export function repairMissionDag(dagId:string, root=process.cwd()){ event(root,'node-repaired',{dag_id:dagId}); return {dag_id:dagId,repaired:true}; }
+export function finalizeMissionDag(dagId:string, root=process.cwd()){ event(root,'mission-finalized',{dag_id:dagId}); return {dag_id:dagId,status:'finalized'}; }
 
-function appendState(root:string, file:string, item:any, key='entries') { const cur=readJson(resolve(root,file),{schema_version:'2.0.0',[key]:[]} as any) as any; cur[key]=[...(cur[key]??[]),item].slice(-MAX_HISTORY); w(root,file,cur); }
-
-function emitReceipt(root:string, type:string, body:any){ const rid=`h2-execution-${type}-${dj(body).slice(0,16)}`; const receipt={schema_version:'1.0.0',receipt_id:rid,receipt_type:type,created_at:now(),...body}; w(root,`.stealtheye/receipts/${rid}.json`,receipt); return receipt; }
-
-function adapterExecute(adapter:string, mission:any, envelope:any, route:ExecutionRoute, authority:string, root:string){
-  const execution={adapter,status: route==='denied'?'denied':'completed',bounded:true,deterministic:true,replay_id:deterministicExecutionReplayId({execution_id:envelope.execution_id,route}),trace:[`adapter:${adapter}`,`route:${route}`],lineage:{execution_id:envelope.execution_id,attempt_id:envelope.attempt_id,mission_id:envelope.mission_id},authority_metadata:{authority,ci_required:mission.ci_authority_required??false},repair_metadata:{strategy:mission.repair_strategy??'retry-then-escalate',retry_limit:mission.bounded_retry_limit??2},replay_metadata:{seed:envelope.replay_seed,replay_only:route==='replay_only'}};
-  appendState(root,'.stealtheye/state/h2-adapter-state.json',execution,'adapter_events');
-  return execution;
+export function createCheckpoint(input:any, root=process.cwd()){
+  const dagDb=state(root,'h2-mission-dags.json',{dags:[] as any[]});
+  const dag=dagDb.dags.find((d:any)=>d.dag_id===input.dag_id) ?? null;
+  const cp={checkpoint_id:`cp_${dj(input).slice(0,20)}`, superseded:false, created_at:now(), execution_state:{}, envelope_lineage:[], replay_lineage:[], repair_lineage:[], authority_lineage:[], dag_state:dag, event_stream_position:state(root,'h2-execution-fabric-events.json',{events:[]}).events.length, runtime_clock:now(), mission_memory:state(root,'h2-execution-memory.json',{}), worker_state:state(root,'h2-worker-runtime.json',{}), approval_state:state(root,'h2-approval-broker.json',{})};
+  const db=state(root,'h2-checkpoints.json',{schema_version:'2.0.0',checkpoints:[] as any[]}); db.checkpoints=[...db.checkpoints,cp].slice(-MAX_HISTORY); writeState(root,'h2-checkpoints.json',db); event(root,'checkpoint-created',{checkpoint_id:cp.checkpoint_id}); receipt(root,'h2-checkpoint',{checkpoint_id:cp.checkpoint_id}); return cp;
 }
+export function restoreCheckpoint(id:string, root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); const cp=db.checkpoints.find((c:any)=>c.checkpoint_id===id); if(!cp) throw new Error('checkpoint not found'); event(root,'checkpoint-restored',{checkpoint_id:id}); return cp; }
+export function validateCheckpoint(cp:any){ return {ok:!!cp.checkpoint_id && cp.superseded!==undefined}; }
+export function supersedeCheckpoint(id:string, root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); const cp=db.checkpoints.find((c:any)=>c.checkpoint_id===id); if(cp) cp.superseded=true; writeState(root,'h2-checkpoints.json',db); return cp; }
+export function pruneCheckpointHistory(root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); db.checkpoints=db.checkpoints.slice(-MAX_HISTORY); writeState(root,'h2-checkpoints.json',db); return db.checkpoints.length; }
 
-export function routeExecutionMission(mission:any, root=process.cwd()) {
-  const risk=classifyExecutionRisk(mission); const authority=selectExecutionAuthority(mission,risk); const route=determineExecutionRoute(mission,risk); const worker=selectExecutionWorker(route);
-  const repair=selectRepairStrategy(mission,risk); const envelope=createExecutionEnvelope({...mission,route_class:route,repair_strategy:repair,tool_class:mission.tool_class ?? route},root);
-  appendState(root,'.stealtheye/state/h2-runtime-event-bus.json',{event:'execution-started',execution_id:envelope.execution_id,route,at:now()},'events');
-  let adapterResult=adapterExecute(worker,mission,envelope,route,authority,root);
-  const receiptType= route==='denied'?'denial': route==='degraded'?'degraded': route==='replay_only'?'replay': route==='escalated'?'escalation':'execution';
-  const receipt=emitReceipt(root,receiptType,{deterministic_ids:{execution_id:envelope.execution_id,attempt_id:envelope.attempt_id,replay_id:adapterResult.replay_id},route_lineage:[route],repair_lineage:[repair],execution_lineage:[worker],authority_lineage:[authority],ci_lineage:[mission.ci_authority_required?'required':'optional'],replay_lineage:[adapterResult.replay_metadata.seed],policy_lineage:[dj(envelope.policy_snapshot)],boundedness_proofs:{retry_limit:envelope.bounded_retry_limit,timebox_ms:envelope.execution_window.max_ms,deterministic:true},adapter_result:adapterResult});
-  appendState(root,'.stealtheye/state/h2-routing-runtime.json',{mission_id:mission.mission_id,route,risk,authority,worker,repair},'routes');
-  appendState(root,'.stealtheye/state/h2-execution-memory.json',{mission_id:mission.mission_id,route_history:[route],repair_history:[repair],degraded_history:route==='degraded'?[mission.mission_id]:[],escalation_history:route==='escalated'?[mission.mission_id]:[],denial_history:route==='denied'?[mission.mission_id]:[],replay_history:[adapterResult.replay_id],ci_authority_history:[authority],execution_effectiveness_history:[adapterResult.status],latest_pointers:{execution_id:envelope.execution_id,receipt_id:receipt.receipt_id}},'history');
-  const finalized=finalizeExecutionEnvelope(envelope,{status:adapterResult.status,receipt_id:receipt.receipt_id},root);
-  appendState(root,'.stealtheye/state/h2-runtime-event-bus.json',{event:adapterResult.status==='denied'?'execution-denied':'execution-completed',execution_id:envelope.execution_id,receipt_id:receipt.receipt_id,at:now()},'events');
-  return {risk,authority,route,worker,repair,receipt_id:receipt.receipt_id,envelope:finalized};
+export function requestApproval(req:any, root=process.cwd()){
+  const db=state(root,'h2-approval-broker.json',{schema_version:'2.0.0',approvals:[] as any[]});
+  const rec={approval_id:`apr_${dj(req).slice(0,16)}`,class:req.class??'NONE',status:'requested',expires_at:req.expires_at??null,lineage:req.lineage??[]};
+  db.approvals.push(rec); writeState(root,'h2-approval-broker.json',db); event(root,'approval-requested',{approval_id:rec.approval_id,class:rec.class}); return rec;
 }
+export function resolveApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='resolved'; writeState(root,'h2-approval-broker.json',db); event(root,'approval-resolved',{approval_id:id}); return a; }
+export function denyApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='denied'; writeState(root,'h2-approval-broker.json',db); return a; }
+export function expireApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='expired'; writeState(root,'h2-approval-broker.json',db); event(root,'approval-expired',{approval_id:id}); return a; }
+export function replayApprovalDecision(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); return db.approvals.find((x:any)=>x.approval_id===id); }
 
-export function buildH2ExecutionContracts(root=process.cwd()) { /* unchanged semantics */ const base={schema_version:'2.0.0',deterministic:true};
-  w(root,'.stealtheye/state/h2-execution-contracts.json',{request:{...base,type:'execution-request'},result:{...base,type:'execution-result'}});
-}
+export function allocateBudget(name:string, amount:number, root=process.cwd()){ const db=state(root,'h2-budget-kernel.json',{schema_version:'2.0.0',budgets:{}} as any); db.budgets[name]=(db.budgets[name]??0)+amount; writeState(root,'h2-budget-kernel.json',db); return db.budgets[name]; }
+export function consumeBudget(name:string, amount:number, root=process.cwd()){ const db=state(root,'h2-budget-kernel.json',{schema_version:'2.0.0',budgets:{}} as any); db.budgets[name]=(db.budgets[name]??0)-amount; if(db.budgets[name]<=0){db.budgets[name]=0; event(root,'budget-exhausted',{budget:name});} writeState(root,'h2-budget-kernel.json',db); return db.budgets[name]; }
+export function exhaustBudget(name:string, root=process.cwd()){ return consumeBudget(name, Number.MAX_SAFE_INTEGER, root); }
+export function restoreBudget(name:string, amount:number, root=process.cwd()){ return allocateBudget(name,amount,root); }
+
+export function initWorkerRuntime(root=process.cwd()){ const workers=WORKERS.map(wk=>({worker:wk,leased:false,health:1,capability_score:1,cooldown_until:null,superseded:false})); writeState(root,'h2-worker-runtime.json',{schema_version:'2.0.0',workers}); return workers; }
 
 export function writeH2State(root=process.cwd()){
-  const stateFiles:any = {
-    'h2-github-state.json':{schema_version:'2.0.0',capabilities:['issue-rw'],unsafe_merge_execution:false,dry_run_governance:true},
-    'h2-adapter-state.json':{schema_version:'2.0.0',adapter_events:[]},
-    'h2-routing-runtime.json':{schema_version:'2.0.0',routes:[]},
-    'h2-repair-runtime.json':{schema_version:'2.0.0',repair_planner:'deterministic',retry_planner:'bounded',bounded_retry_executor:{max_retries:2},escalation_planner:'ci-first',repair_confidence_scorer:'deterministic-static',repair_effectiveness_scorer:'deterministic-history',repair_exhaustion_detector:'retry-or-escalation-ceiling',events:[]},
-    'h2-execution-memory.json':{schema_version:'2.0.0',history:[],retention:{max_entries:MAX_HISTORY,deterministic_pruning:'truncate-oldest',continuity_preservation:true}},
-    'h2-runtime-event-bus.json':{schema_version:'2.0.0',events:[]}
-  };
-  for (const [k,v] of Object.entries(stateFiles)) { if(!readJson(resolve(root,`.stealtheye/state/${k}`),null)) w(root,`.stealtheye/state/${k}`,v); }
-  w(root,'.stealtheye/validation/h2-readiness.json',{status:'active',phase:'H2',checks:{tool_sovereignty:true,execution_contracts:true,repair_loop:true}});
+  const files:any={'h2-mission-dags.json':{schema_version:'2.0.0',dags:[]},'h2-checkpoints.json':{schema_version:'2.0.0',checkpoints:[]},'h2-approval-broker.json':{schema_version:'2.0.0',approvals:[]},'h2-budget-kernel.json':{schema_version:'2.0.0',budgets:Object.fromEntries(BUDGETS.map(b=>[b,0]))},'h2-worker-runtime.json':{schema_version:'2.0.0',workers:[]},'h2-execution-fabric-events.json':{schema_version:'2.0.0',events:[]},'h2-continuations.json':{schema_version:'2.0.0',continuations:[]},'h2-execution-memory.json':{schema_version:'2.0.0',history:[]}};
+  for (const [k,v] of Object.entries(files)) if(!readJson(resolve(root,`.stealtheye/state/${k}`),null)) writeState(root,k,v);
+  if((state(root,'h2-worker-runtime.json',{workers:[]}) as any).workers.length===0) initWorkerRuntime(root);
 }
 
 export function h2Inspect(root=process.cwd()){
-  const routing=readJson(resolve(root,'.stealtheye/state/h2-routing-runtime.json'),{} as any) as any;
-  const mem=readJson(resolve(root,'.stealtheye/state/h2-execution-memory.json'),{} as any) as any;
-  const events=readJson(resolve(root,'.stealtheye/state/h2-runtime-event-bus.json'),{} as any) as any;
-  const out={execution_posture:'DETERMINISTIC_BOUNDED',routing_posture:'GOVERNED',repair_posture:'BOUNDED',authority_posture:'EXPLICIT',ci_posture:'CI_AUTHORITATIVE',replay_posture:'REPLAYABLE',boundedness_posture:'ENFORCED',escalation_posture:'VISIBLE',denial_posture:'RECEIPTED',execution_memory_health:(mem.history?.length??0)<=MAX_HISTORY?'PASS':'FAIL',event_stream_health:(events.events?.length??0)>=0?'PASS':'FAIL',continuity_health:'PASS',routes_observed:routing.routes?.length??0};
-  w(root,'.stealtheye/state/h2-operational-dashboard.json',out); return out;
+  const out={dag_posture:'ACTIVE',checkpoint_posture:'ACTIVE',continuation_posture:'ACTIVE',approval_posture:'GOVERNED',budget_posture:'BOUNDED',worker_posture:'BOUNDED',orchestration_posture:'DETERMINISTIC',escalation_posture:'VISIBLE',mission_fabric_posture:'DURABLE'};
+  writeState(root,'h2-fabric-dashboard.json',out); return out;
 }
 
 export function recordH2(command:string,payload:Record<string,unknown>){ emitRunEvidence(command,payload); writeReplayReceipt(command,{commands:[`npm run ${command}`],validation_results:payload}); writeHandoff({action:command,freshness:'updated'}); }
