@@ -2,10 +2,10 @@
   "retention_cap": 64,
   "samples": [
     {
-      "t": "2026-05-27T15:09:42.861Z",
-      "queue_depth": 2,
-      "digest": "f372ba75eea25964ca1c5f2801273a5f2c0fe6ae1ff17a505763b4587bdaf2a8"
+      "digest": "cf0cb3cc4889f70ba54f78a76c92ab7cb3a9d0384c05d7cfcedc1566f1836f4c",
+      "queue_depth": 3,
+      "t": "2026-05-27T15:41:26.895Z"
     }
   ],
-  "updated_at": "2026-05-27T15:09:42.861Z"
+  "updated_at": "2026-05-27T15:41:26.895Z"
 }

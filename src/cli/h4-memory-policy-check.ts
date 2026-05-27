@@ -1,0 +1,10 @@
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+const p=resolve(process.cwd(),'.stealtheye/state/chat-memory-rejection-policy.json');
+if(!existsSync(p)) throw new Error('policy-missing');
+const policy=JSON.parse(readFileSync(p,'utf8'));
+if(policy.chat_memory_precedence===true) throw new Error('memory-precedence-forbidden');
+if(policy.allow_prompt_storage_in_issue_1===true) throw new Error('issue-1-prompt-storage-forbidden');
+if(policy.repo_state_canonical!==true) throw new Error('repo-authority-weakened');
+writeFileSync(resolve(process.cwd(),'.stealtheye/validation/h4-memory-policy-check.json'),JSON.stringify({ok:true},null,2));
+console.log('h4:memory-policy-check ok');

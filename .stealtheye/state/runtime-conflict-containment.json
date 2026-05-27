@@ -2,7 +2,7 @@
   "conflicts": [],
   "quarantine": false,
   "replay_conflict_lineage": {
-    "expected": "c7e913fce574546538ffc1b79d738ff32b632c680ff3ab8dee075a71555e906d",
-    "actual": "2445ec0cf1f24fcd7e7126ea1a7c16bd4fbcf2560318aecc413e2f3676202a34"
+    "actual": "cb71c69bb15fb58f01da8cbedc2d30ac56e5f1f28d6a372f99a5aa4e48bfa549",
+    "expected": "9699a0bdb9c0f4c6e97bbce6cf0f18bbe7561db47cab35143614012f6aa6a0c9"
   }
 }

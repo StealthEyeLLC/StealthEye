@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","required_sections":["Done","Blocked","Next","Human action needed","H4 status","Active branch","Next command"],"h4_status_must_be":"ACTIVE","human_action_default":"No"}

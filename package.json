@@ -37,7 +37,16 @@
     "h4:governance-check": "tsx src/cli/h4-governance-check.ts",
     "h4:conflict-check": "tsx src/cli/h4-conflict-check.ts",
     "h4:determinism-check": "tsx src/cli/h4-determinism-check.ts",
-    "h4:observability-check": "tsx src/cli/h4-observability-check.ts"
+    "h4:observability-check": "tsx src/cli/h4-observability-check.ts",
+    "h4:fresh-tab": "tsx src/cli/h4-fresh-tab.ts",
+    "h4:load-order-check": "tsx src/cli/h4-load-order-check.ts",
+    "h4:memory-policy-check": "tsx src/cli/h4-memory-policy-check.ts",
+    "h4:pr-continuity-check": "tsx src/cli/h4-pr-continuity.ts",
+    "h4:interruption-check": "tsx src/cli/h4-interruption-check.ts",
+    "h4:next-action-check": "tsx src/cli/h4-next-action.ts",
+    "h4:mobile-handoff-check": "tsx src/cli/h4-mobile-handoff-check.ts",
+    "h4:fresh-tab-smoke": "tsx src/cli/h4-fresh-tab-smoke.ts",
+    "h4:fresh-tab-fixtures": "tsx src/cli/h4-fresh-tab-fixtures.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

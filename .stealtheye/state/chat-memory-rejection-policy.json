@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "repo_state_canonical": true,
+  "chat_memory_advisory_only": true,
+  "verify_stale_user_summaries_against_repo": true,
+  "branch_pr_state_must_be_checked": "repo-and-github",
+  "issue_comments_are_prompt_storage": false,
+  "allow_prompt_storage_in_issue_1": false,
+  "issue_1_role": "governance-spec-not-scratchpad",
+  "chat_memory_precedence": false
+}

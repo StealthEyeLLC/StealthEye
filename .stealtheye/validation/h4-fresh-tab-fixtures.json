@@ -1,0 +1,65 @@
+{
+  "deterministic": true,
+  "fixtures": [
+    {
+      "name": "missing latest handoff",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "missing latest replay",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "stale replay pointer",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "H4 accidentally marked complete",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "H3 reopened",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "wrong active branch",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "prompt dumped into Issue #1 policy violation",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "interrupted PR without next action",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "pending review defects",
+      "expected": "pass",
+      "result": "pass"
+    },
+    {
+      "name": "human action requested without approval boundary",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "product-feature next action",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    },
+    {
+      "name": "conflicting next-action sources",
+      "expected": "fail",
+      "result": "hard-fail-proven"
+    }
+  ]
+}

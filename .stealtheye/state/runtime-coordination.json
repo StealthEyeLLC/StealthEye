@@ -1,15 +1,15 @@
 {
-  "coordinator": "h4-orchestration-coordinator",
   "active_owner": "runtime-controller",
   "continuity_contracts": [
     "replay-hash-chaining",
     "deterministic-serialization",
     "explicit-authority-transfer"
   ],
+  "coordinator": "h4-orchestration-coordinator",
   "escalation_route": [
     "runtime-controller",
     "recovery-controller",
     "operator"
   ],
-  "updated_at": "2026-05-27T15:09:42.861Z"
+  "updated_at": "2026-05-27T15:41:26.895Z"
 }
