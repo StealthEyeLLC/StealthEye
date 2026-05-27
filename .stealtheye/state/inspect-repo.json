@@ -1,102 +1,68 @@
 {
   "current_phase": "phase0-autonomy-substrate",
-  "current_process": "phase0-build",
-  "process_version": "1.2.0",
-  "current_tier": "resilient",
-  "current_risk": {
-    "score": 0.299,
-    "factors": {
-      "drift": 0.3,
-      "lifecycle_instability": 0,
-      "replay_uncertainty": 0.5700000000000001,
-      "repeated_failures": 0,
-      "weak_memory_coverage": 0.3,
-      "weak_validation_coverage": 0.020000000000000018
-    }
+  "current_tier": "autonomous",
+  "readiness": "validated",
+  "autonomy_score": 0.7,
+  "replay_health": 0.596,
+  "repair_reliability": 0.6,
+  "continuity_health": 0.85,
+  "operational_entropy": 0.2,
+  "recovery_readiness": 0.77,
+  "confidence_trends": {
+    "replay": 0.596,
+    "recovery": 0.77,
+    "next_action": 0.86
   },
   "next_action": {
-    "action": "run validate/check chain",
-    "deterministic_priority": {
-      "urgency": 0.3,
-      "drift_severity": 0.3,
-      "readiness_impact": 0.8,
-      "recovery_impact": 0.7,
-      "autonomy_gain": 0.75,
-      "codex_avoidance_value": 0.9
-    },
-    "score": 0.825,
-    "confidence": 0.84,
-    "recommended_worker": "agent-mode"
+    "action": "run deterministic repair sequence",
+    "score": 0.68,
+    "confidence": 0.86,
+    "recommended_worker": "normal-chatgpt"
   },
-  "recommended_worker": "agent-mode",
+  "recommended_worker": "normal-chatgpt",
   "recovery_posture": {
     "strategy": "retry",
-    "confidence": 0.78,
-    "repair_attempt_history": []
-  },
-  "replay_confidence": 0.43,
-  "validation_health": {
-    "flaky_validations": [],
-    "unstable_checks": [],
-    "repeated_failures": 0,
-    "repair_success_rate": 1,
-    "score": 0.98
-  },
-  "confidence": {
-    "next_action": 0.84,
-    "replay_validity": 0.43,
-    "recovery_recommendation": 0.78,
-    "packet_completeness": 0.88,
-    "validation_reliability": 0.98
-  },
-  "autonomy_gain_opportunities": [
-    "repair memory compaction",
-    "prefer agent-mode before codex"
-  ],
-  "codex_necessity_assessment": "avoidable",
-  "capabilities": {
-    "scripts": [
-      "generate",
+    "confidence": 0.77,
+    "evidence_weighting": {
+      "historical_success_rate": 0.5,
+      "recurrence_frequency": 0,
+      "replay_similarity": 0.74,
+      "prior_recovery_outcomes": []
+    },
+    "repair_sequence": [
+      "diagnose",
+      "repair",
       "validate",
-      "check",
-      "check:readiness",
-      "graph",
-      "compile:packet",
-      "inspect:repo",
-      "diagnose"
-    ],
-    "validations": [
-      "bootstrap-diagnostics.json",
-      "consistency-report.json",
-      "readiness-report.json"
-    ],
-    "packet_types": [
-      "pr-packet",
-      "replay-receipt",
-      "diagnostic"
-    ],
-    "graph_outputs": [
-      "knowledge-graph.json",
-      "latest.json",
-      "repo-graph.json"
-    ],
-    "diagnostics": [
-      "bootstrap-diagnostics",
-      "consistency-report"
-    ],
-    "recovery_systems": [
-      "recovery-engine",
-      "loop-protection"
-    ],
-    "memory_systems": [
-      "memory-index",
-      "failure-pattern-memory"
-    ],
-    "routing_systems": [
-      "process-selector",
-      "worker-recommendation"
+      "replay-check",
+      "consistency-check",
+      "readiness-check"
     ]
   },
-  "readiness": "validated",
+  "explainability_packet": {
+    "why_next_action": {
+      "selected": "run deterministic repair sequence",
+      "reason": "maximizes deterministic stabilization and lowers interruption risk"
+    },
+    "why_worker": {
+      "recommended": "normal-chatgpt",
+      "reason": "based on routing memory and codex minimization goals"
+    },
+    "why_repair_path": {
+      "selected": "retry",
+      "reason": "evidence-weighted success/recurrence balance"
+    },
+    "why_drift_severity": {
+      "score": 0.231,
+      "factors": {
+        "drift": 0.3,
+        "repeated_failures": 0,
+        "replay_uncertainty": 0.404
+      }
+    },
+    "why_readiness_tier": {
+      "tier": "autonomous",
+      "reason": "derived from readiness report + operational risk bounds"
+    }
+  },
   "blockers": []
 }

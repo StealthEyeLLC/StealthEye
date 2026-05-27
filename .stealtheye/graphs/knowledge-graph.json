@@ -1,6 +1,7 @@
 {
   "memory_hooks": [
-    "memory-index.json"
+    "memory-index.json",
+    "success-pattern-memory.json"
   ],
   "invariants": [
     "invariants.json"
