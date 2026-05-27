@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "source_of_truth_order": [
+    "handoffs/latest.json",
+    "receipts/latest-replay.json",
+    "state/project-state.json",
+    "state/next-action.json"
+  ],
+  "checks": {
+    "latest_handoff_exists": true,
+    "latest_replay_exists": true,
+    "fresh_tab_bootstrap_exists": true,
+    "stale_handoff_detected": false,
+    "reconstruction_smoke": true
+  }
+}

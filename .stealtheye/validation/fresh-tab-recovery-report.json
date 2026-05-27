@@ -1,0 +1,9 @@
+{
+  "status": "ready",
+  "reconstruction_quality": "high",
+  "source_of_truth_order": [
+    "state/fresh-tab-bootstrap.json",
+    "handoffs/latest.json",
+    "state/project-state.json"
+  ]
+}

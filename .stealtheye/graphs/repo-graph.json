@@ -1,6 +1,10 @@
 {
   "nodes": [
     {
+      "id": "active-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "artifact-retention.json",
       "type": "state-file"
     },
@@ -41,6 +45,10 @@
       "type": "state-file"
     },
     {
+      "id": "continuity-surface-index.json",
+      "type": "state-file"
+    },
+    {
       "id": "drift-report.json",
       "type": "state-file"
     },
@@ -54,6 +62,10 @@
     },
     {
       "id": "failure-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-bootstrap.json",
       "type": "state-file"
     },
     {
@@ -265,7 +277,19 @@
       "type": "state-file"
     },
     {
+      "id": "h3-autonomous-convergence-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-anomaly-clusters.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-browser-anomaly-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-continuation-runtime.json",
       "type": "state-file"
     },
     {
@@ -285,6 +309,14 @@
       "type": "state-file"
     },
     {
+      "id": "h3-browser-navigation-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-recovery-lineage.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-browser-recovery-runtime.json",
       "type": "state-file"
     },
@@ -294,6 +326,18 @@
     },
     {
       "id": "h3-browser-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-selector-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-stability-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-browser-visual-lineage.json",
       "type": "state-file"
     },
     {
@@ -309,11 +353,31 @@
       "type": "state-file"
     },
     {
+      "id": "h3-ci-convergence-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-ci-deadlock-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-ci-instability-runtime.json",
       "type": "state-file"
     },
     {
+      "id": "h3-ci-recovery-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-ci-regression-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-ci-replay-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-ci-stability-runtime.json",
       "type": "state-file"
     },
     {
@@ -337,6 +401,10 @@
       "type": "state-file"
     },
     {
+      "id": "h3-divergence-suppression-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-github-analysis.json",
       "type": "state-file"
     },
@@ -346,6 +414,10 @@
     },
     {
       "id": "h3-instability-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-instability-suppression-runtime.json",
       "type": "state-file"
     },
     {
@@ -393,7 +465,19 @@
       "type": "state-file"
     },
     {
+      "id": "h3-memory-evolution-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-memory-replay-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-memory-resurfacing.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-memory-stability-runtime.json",
       "type": "state-file"
     },
     {
@@ -401,7 +485,19 @@
       "type": "state-file"
     },
     {
+      "id": "h3-mission-checkpoint-lineage.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-mission-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-continuations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-convergence-runtime.json",
       "type": "state-file"
     },
     {
@@ -429,11 +525,27 @@
       "type": "state-file"
     },
     {
+      "id": "h3-mission-replay-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-restoration.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-mission-runtime.json",
       "type": "state-file"
     },
     {
+      "id": "h3-mission-stability-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-operational-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-operational-stability-runtime.json",
       "type": "state-file"
     },
     {
@@ -453,6 +565,10 @@
       "type": "state-file"
     },
     {
+      "id": "h3-repair-checkpoint-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-repair-convergence-runtime.json",
       "type": "state-file"
     },
@@ -462,6 +578,14 @@
     },
     {
       "id": "h3-repair-dags.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-deadlock-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-execution-engine.json",
       "type": "state-file"
     },
     {
@@ -481,7 +605,15 @@
       "type": "state-file"
     },
     {
+      "id": "h3-repair-oscillation-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-repair-quarantine.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-recovery-runtime.json",
       "type": "state-file"
     },
     {
@@ -494,6 +626,14 @@
     },
     {
       "id": "h3-repair-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-stabilization-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-tournament-runtime.json",
       "type": "state-file"
     },
     {
@@ -517,7 +657,39 @@
       "type": "state-file"
     },
     {
+      "id": "h3-runtime-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-heartbeat.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-kernel.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-lifecycle.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-runtime-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-persistence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-restoration.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-resumption.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-runtime-supervisor.json",
       "type": "state-file"
     },
     {
@@ -537,6 +709,10 @@
       "type": "state-file"
     },
     {
+      "id": "h3-worker-convergence-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-worker-election-runtime.json",
       "type": "state-file"
     },
@@ -549,7 +725,23 @@
       "type": "state-file"
     },
     {
+      "id": "h3-worker-persistence-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-worker-reliability-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-worker-restoration-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h3-worker-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-worker-stability-runtime.json",
       "type": "state-file"
     },
     {
@@ -582,6 +774,10 @@
     },
     {
       "id": "memory-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "mission-lineage-index.json",
       "type": "state-file"
     },
     {

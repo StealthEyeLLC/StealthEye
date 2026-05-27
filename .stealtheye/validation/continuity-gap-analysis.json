@@ -1,0 +1,9 @@
+{
+  "status": "bounded",
+  "remaining_gaps": [
+    "h4-runtime-not-implemented"
+  ],
+  "supersedes": [
+    "validation/h3-final-gap-analysis.json"
+  ]
+}
