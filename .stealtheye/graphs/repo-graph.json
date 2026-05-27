@@ -77,11 +77,19 @@
       "type": "state-file"
     },
     {
+      "id": "h1-operational-scores.json",
+      "type": "state-file"
+    },
+    {
       "id": "h1-runtime-metadata.json",
       "type": "state-file"
     },
     {
       "id": "h1-runtime-posture.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-state.json",
       "type": "state-file"
     },
     {

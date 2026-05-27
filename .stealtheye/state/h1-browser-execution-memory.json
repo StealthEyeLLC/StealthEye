@@ -54,6 +54,46 @@
       "timestamp": "2026-05-27T07:33:26.628Z",
       "route": "ci-authoritative-repair",
       "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:44:40.635Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:45:14.037Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:47:24.365Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:47:53.694Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:48:39.171Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
     }
   ],
   "repair_outcomes": [
@@ -88,6 +128,36 @@
       "effectiveness": 0.33,
       "exhausted": true,
       "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:48:39.171Z"
     }
   ],
   "routing_decisions": [
@@ -114,6 +184,36 @@
       "decision": "ci-authoritative-repair",
       "rationale": "runtime unavailable requires CI authority",
       "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:48:39.171Z"
     }
   ],
   "ci_escalations": [
@@ -140,6 +240,36 @@
       "mission_count": 8,
       "status": "degraded",
       "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:48:39.171Z"
     }
   ]
 }
