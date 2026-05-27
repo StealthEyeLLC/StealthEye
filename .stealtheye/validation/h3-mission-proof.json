@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-27T11:00:55.421Z",
+  "status": "ACTIVE",
+  "contracts": [
+    "deterministic",
+    "bounded",
+    "replayable",
+    "governed"
+  ],
+  "queue": {
+    "schema_version": "3.0.0",
+    "missions": [],
+    "allowed_statuses": [
+      "QUEUED",
+      "READY",
+      "RUNNING",
+      "BLOCKED",
+      "WAITING_APPROVAL",
+      "REPAIRING",
+      "REPLAYING",
+      "VERIFIED",
+      "COMPLETE",
+      "FAILED",
+      "SUPERSEDED",
+      "CANCELLED"
+    ]
+  }
+}

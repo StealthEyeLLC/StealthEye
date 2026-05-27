@@ -1,0 +1,8 @@
+{
+  "schema_version": "3.0.0",
+  "mission_budgets": [],
+  "global_budget": {
+    "max_parallel": 2,
+    "max_retries": 3
+  }
+}

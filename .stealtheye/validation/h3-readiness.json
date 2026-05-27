@@ -1,0 +1,13 @@
+{
+  "status": "ACTIVE",
+  "allowed_statuses": [
+    "ACTIVE",
+    "NOT_READY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "missing": [],
+  "deterministic": true,
+  "bounded": true,
+  "replayable": true
+}
