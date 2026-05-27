@@ -4,7 +4,7 @@
     "schema_version": "4.0.0",
     "status": "degraded",
     "mode": "proof",
-    "proof_id": "h1-browser-1779868787842",
+    "proof_id": "h1-browser-1779869357971",
     "replay_seed": "proof-unknown-none",
     "replay_reference": "npm run h1:browser:proof",
     "confidence": 0.08,
@@ -14,88 +14,88 @@
     "mission_lineage": [
       {
         "mission": "inspect-page",
-        "mission_id": "h1-browser-1779868787842:inspect-page",
+        "mission_id": "h1-browser-1779869357971:inspect-page",
         "step": 1,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "capture-proof",
-        "mission_id": "h1-browser-1779868787842:capture-proof",
+        "mission_id": "h1-browser-1779869357971:capture-proof",
         "step": 2,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "validate-ui",
-        "mission_id": "h1-browser-1779868787842:validate-ui",
+        "mission_id": "h1-browser-1779869357971:validate-ui",
         "step": 3,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "extract-structured-data",
-        "mission_id": "h1-browser-1779868787842:extract-structured-data",
+        "mission_id": "h1-browser-1779869357971:extract-structured-data",
         "step": 4,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "verify-dom-state",
-        "mission_id": "h1-browser-1779868787842:verify-dom-state",
+        "mission_id": "h1-browser-1779869357971:verify-dom-state",
         "step": 5,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "replay-proof",
-        "mission_id": "h1-browser-1779868787842:replay-proof",
+        "mission_id": "h1-browser-1779869357971:replay-proof",
         "step": 6,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "validate-repair",
-        "mission_id": "h1-browser-1779868787842:validate-repair",
+        "mission_id": "h1-browser-1779869357971:validate-repair",
         "step": 7,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
       },
       {
         "mission": "collect-runtime-diagnostics",
-        "mission_id": "h1-browser-1779868787842:collect-runtime-diagnostics",
+        "mission_id": "h1-browser-1779869357971:collect-runtime-diagnostics",
         "step": 8,
         "bounded_step": true,
         "replay_linkage": "replay:proof",
-        "repair_linkage": "repair:h1-browser-1779868787842",
+        "repair_linkage": "repair:h1-browser-1779869357971",
         "routing_decision": "ci-authoritative-repair",
         "execution_contract": "deterministic-browser-contract-v2",
         "continuity_linkage": "continuity:browser"
@@ -107,47 +107,47 @@
         "from": null,
         "to": "queued",
         "reason": "mission enqueued",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "queued",
         "to": "planned",
         "reason": "planner route ci-authoritative-repair",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "planned",
         "to": "running",
         "reason": "runtime acquired but unhealthy",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "running",
         "to": "degraded",
         "reason": "runtime unavailable",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "degraded",
         "to": "ci-authoritative",
         "reason": "workflow authority escalation",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "ci-authoritative",
         "to": "repairing",
         "reason": "repair mission spawned",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       },
       {
         "from": "repairing",
         "to": "exhausted",
         "reason": "non-retryable runtime class",
-        "at": "2026-05-27T07:59:47.845Z"
+        "at": "2026-05-27T08:09:17.975Z"
       }
     ],
     "repair_lineage": {
-      "repair_id": "repair:h1-browser-1779868787842",
+      "repair_id": "repair:h1-browser-1779869357971",
       "retry_lineage": {
         "attempted": 0,
         "max": 1
@@ -191,19 +191,19 @@
       "deterministic": true,
       "runtime_clock": {
         "schema_version": "1.0.0",
-        "tick": 12,
+        "tick": 18,
         "epochs": {
           "runtime": 0,
-          "mission": 4,
-          "replay": 4,
+          "mission": 6,
+          "replay": 6,
           "recovery": 0,
-          "ci": 4,
+          "ci": 6,
           "repair": 0
         },
         "bounded_window": {
           "size": 128,
           "start": 0,
-          "end": 12
+          "end": 18
         }
       },
       "event_window": {
@@ -320,8 +320,8 @@
         "playwright-install",
         "repair-packet-escalation"
       ],
-      "duration_ms": 3,
-      "timestamp": "2026-05-27T07:59:47.848Z",
+      "duration_ms": 4,
+      "timestamp": "2026-05-27T08:09:17.977Z",
       "browser_version": "unknown"
     },
     "mobile_summary": "degraded|m=8|c=0.08|r=ci-authoritative-repair",
@@ -340,7 +340,7 @@
   },
   "ci_execution_receipt": {
     "schema_version": "1.0.0",
-    "proof_id": "h1-browser-1779868787842",
+    "proof_id": "h1-browser-1779869357971",
     "ci_replay_authority": {
       "deterministic": true,
       "replay_seed": "proof-unknown-none"
@@ -359,8 +359,8 @@
         "playwright-install",
         "repair-packet-escalation"
       ],
-      "duration_ms": 3,
-      "timestamp": "2026-05-27T07:59:47.848Z",
+      "duration_ms": 4,
+      "timestamp": "2026-05-27T08:09:17.977Z",
       "browser_version": "unknown"
     },
     "status": "degraded"
