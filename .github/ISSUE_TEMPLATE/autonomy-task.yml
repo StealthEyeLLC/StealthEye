@@ -1,0 +1,23 @@
+name: autonomy-task
+about: Canonical task spec for StealthEye autonomous execution
+title: "[task] "
+labels: ["agent-ready"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: objective
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: constraints
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: acceptance_criteria
+    validations:
+      required: true

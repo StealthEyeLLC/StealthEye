@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["status","bootstrap_enforced","mandatory_memory_hooks"],"properties":{"status":{"enum":["missing","partial","ready","validated"]},"bootstrap_enforced":{"type":"boolean"},"mandatory_memory_hooks":{"type":"boolean"}}}

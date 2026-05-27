@@ -1,0 +1,5 @@
+StealthEye full orientation (Phase 0):
+- Autonomy substrate is product.
+- Cloud-first/mobile-first supervision.
+- Mandatory: bootstrap -> process select -> memory hook -> invariant check -> execute -> receipts/handoff/freshness update.
+- Canonical commands: generate, validate, graph, check:readiness, check, compile:packet.
