@@ -1,13 +1,13 @@
 {
   "status": "ok",
   "evidence": {
-    "schema_version": "1.1.0",
+    "schema_version": "1.2.0",
     "status": "degraded",
     "mode": "proof",
     "confidence": 0,
     "runtime_class": "none",
     "browser_version": "unknown",
-    "proof_id": "h1-browser-1779865848210",
+    "proof_id": "h1-browser-1779866502583",
     "replay_seed": "proof-unknown-none",
     "replay_reference": "npm run h1:browser:proof",
     "artifact_index": {
@@ -29,8 +29,8 @@
         "cdn-blocked",
         "dependency-failure"
       ],
-      "duration_ms": 1,
-      "timestamp": "2026-05-27T07:10:48.212Z"
+      "duration_ms": 2,
+      "timestamp": "2026-05-27T07:21:42.586Z"
     },
     "validation": {
       "launch": false,
@@ -41,7 +41,9 @@
     },
     "routing": {
       "decision": "ci-authoritative-repair",
-      "local_blocked": true
+      "route_class": "blocked-browser-task",
+      "local_blocked": true,
+      "persisted": true
     },
     "flake_intelligence": {
       "suspected_flake": false,
@@ -50,6 +52,7 @@
     },
     "repair": {
       "failure_summary": "external-blocked",
+      "repair_intelligence_version": "v2",
       "repair_target": "runtime",
       "probable_root_cause": "external-blocked",
       "retry_recommendation": "no-local-retry",
@@ -63,6 +66,21 @@
         "dependency-failure"
       ]
     },
+    "stability_scores": {
+      "replay_determinism_score": 0,
+      "screenshot_stability_score": 0,
+      "dom_stability_score": 0,
+      "runtime_stability_score": 0,
+      "proof_reproducibility_score": 0
+    },
+    "execution_contracts": {
+      "navigate": "required",
+      "inspect_dom": "required",
+      "screenshot": "required",
+      "capture_console": "required",
+      "capture_network": "required",
+      "capture_trace": "required"
+    },
     "operational_scores": {
       "browser_operational_readiness": 0.62,
       "ci_proof_stability": 0.58,
@@ -73,6 +91,7 @@
   },
   "repair": {
     "failure_summary": "external-blocked",
+    "repair_intelligence_version": "v2",
     "repair_target": "runtime",
     "probable_root_cause": "external-blocked",
     "retry_recommendation": "no-local-retry",
@@ -91,6 +110,17 @@
     "latest_evidence": ".stealtheye/receipts/h1-browser-evidence-packet.json",
     "latest_repair": ".stealtheye/receipts/h1-browser-repair-packet.json"
   },
+  "artifact_integrity": {
+    "verified": true,
+    "entries": []
+  },
   "compact_artifacts_bounded": true,
-  "adapters_coherent": true
+  "adapters_coherent": true,
+  "acceptance_gate": {
+    "ci_browser_proof_success": false,
+    "replay_reproducible": true,
+    "repair_routing_available": true,
+    "execution_memory_bounded": true,
+    "operationally_usable": true
+  }
 }

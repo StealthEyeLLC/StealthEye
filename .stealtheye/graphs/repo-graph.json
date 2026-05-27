@@ -61,7 +61,19 @@
       "type": "state-file"
     },
     {
+      "id": "h1-browser-artifact-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-flake-memory.json",
+      "type": "state-file"
+    },
+    {
       "id": "h1-browser-latest.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-metadata.json",
       "type": "state-file"
     },
     {

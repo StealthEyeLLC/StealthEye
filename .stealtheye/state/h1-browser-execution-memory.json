@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "runs": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "validation": {
+        "launch": false,
+        "screenshot": false,
+        "trace": false,
+        "dom": false,
+        "artifact_complete": false
+      },
+      "routing": {
+        "decision": "ci-authoritative-repair",
+        "route_class": "blocked-browser-task",
+        "local_blocked": true,
+        "persisted": true
+      },
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "validation": {
+        "launch": false,
+        "screenshot": false,
+        "trace": false,
+        "dom": false,
+        "artifact_complete": false
+      },
+      "routing": {
+        "decision": "ci-authoritative-repair",
+        "route_class": "blocked-browser-task",
+        "local_blocked": true,
+        "persisted": true
+      },
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    }
+  ],
+  "repair_outcomes": [
+    {
+      "failure_summary": "external-blocked",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "retryable": false,
+      "probable_root_cause": "external-blocked",
+      "timestamp": "2026-05-27T07:21:25.255Z"
+    },
+    {
+      "failure_summary": "external-blocked",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "retryable": false,
+      "probable_root_cause": "external-blocked",
+      "timestamp": "2026-05-27T07:21:42.584Z"
+    }
+  ],
+  "routing_decisions": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "decision": "ci-authoritative-repair",
+      "route_class": "blocked-browser-task",
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "decision": "ci-authoritative-repair",
+      "route_class": "blocked-browser-task",
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    }
+  ],
+  "ci_escalations": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "reason": "external-blocked",
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "reason": "external-blocked",
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    }
+  ]
+}

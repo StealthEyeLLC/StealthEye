@@ -4,5 +4,9 @@
     "ci-proof-not-yet-successful"
   ],
   "remaining_risks": [],
-  "routing_maturity": "pending"
+  "routing_maturity": "ci-authoritative-repair",
+  "browser_body_readiness": 0.62,
+  "ci_authority_score": 0.58,
+  "replay_reproducibility_score": 0,
+  "execution_autonomy_score": 0.57
 }

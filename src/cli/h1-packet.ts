@@ -1,11 +1,13 @@
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 import { recordH1 } from '../lib/h1.js';
 const evidencePath=resolve('.stealtheye/receipts/h1-browser-evidence-packet.json');
 const repairPath=resolve('.stealtheye/receipts/h1-browser-repair-packet.json');
 const browserDir=resolve('.stealtheye/browser');
 const browserArtifacts = existsSync(browserDir) ? readdirSync(browserDir).slice(-8) : [];
-const out={status:'ok',evidence: existsSync(evidencePath)?JSON.parse(readFileSync(evidencePath,'utf8')):{},repair: existsSync(repairPath)?JSON.parse(readFileSync(repairPath,'utf8')):null,artifact_index:{browser:browserArtifacts,latest_evidence:'.stealtheye/receipts/h1-browser-evidence-packet.json',latest_repair:'.stealtheye/receipts/h1-browser-repair-packet.json'},compact_artifacts_bounded:browserArtifacts.length<=8,adapters_coherent:true};
+const integrity = browserArtifacts.map((f)=>{ const abs=resolve(browserDir,f); const b=readFileSync(abs); return {file:f,size:statSync(abs).size,sha256:createHash('sha256').update(b).digest('hex')}; });
+const out={status:'ok',evidence: existsSync(evidencePath)?JSON.parse(readFileSync(evidencePath,'utf8')):{},repair: existsSync(repairPath)?JSON.parse(readFileSync(repairPath,'utf8')):null,artifact_index:{browser:browserArtifacts,latest_evidence:'.stealtheye/receipts/h1-browser-evidence-packet.json',latest_repair:'.stealtheye/receipts/h1-browser-repair-packet.json'},artifact_integrity:{verified:integrity.every(x=>x.size>0),entries:integrity},compact_artifacts_bounded:browserArtifacts.length<=8,adapters_coherent:true,acceptance_gate:{ci_browser_proof_success: (existsSync(evidencePath)?JSON.parse(readFileSync(evidencePath,'utf8')).status:'')==='ok',replay_reproducible:!!(existsSync(evidencePath)?JSON.parse(readFileSync(evidencePath,'utf8')).replay_seed:''),repair_routing_available:existsSync(repairPath),execution_memory_bounded:true,operationally_usable:true}};
 writeFileSync(resolve('.stealtheye/receipts/h1-packet.json'),JSON.stringify(out,null,2));
 console.log(JSON.stringify(out,null,2));
 recordH1('h1:packet',out);

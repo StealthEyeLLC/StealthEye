@@ -16,6 +16,9 @@ jobs:
         run: npm run h1:browser:proof
       - name: H1 Packet
         run: npm run h1:packet
+      - name: Verify proof integrity
+        run: |
+          node -e "const fs=require('fs');const e=JSON.parse(fs.readFileSync('.stealtheye/receipts/h1-browser-evidence-packet.json','utf8'));if(e.status!=='ok') throw new Error('status not ok'); if(!e.validation?.artifact_complete) throw new Error('artifact incomplete'); if(!e.replay_seed) throw new Error('missing replay metadata');"
       - name: Runtime metadata summary
         if: always()
         run: |
