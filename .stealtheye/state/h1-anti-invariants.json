@@ -7,6 +7,9 @@
     "product-feature-work",
     "credential-payment-handling",
     "uncontrolled-browser-retries",
-    "silent-runtime-fallback-ambiguity"
+    "silent-runtime-fallback-ambiguity",
+    "infinite-proof-retries",
+    "uncontrolled-artifact-growth",
+    "duplicate-replay-identities"
   ]
 }

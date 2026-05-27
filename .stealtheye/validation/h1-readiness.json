@@ -1,5 +1,5 @@
 {
-  "status": "validated",
+  "status": "partial",
   "execution_body_readiness": true,
   "browser_readiness": false,
   "routing_readiness": true,
@@ -7,5 +7,9 @@
   "governance_readiness": true,
   "runtime_readiness": false,
   "environment_restrictions": [],
-  "ci_proof_readiness": true
+  "ci_proof_readiness": true,
+  "ci_proof_success": false,
+  "replay_integrity": false,
+  "proof_continuity": false,
+  "browser_operational_readiness": 0.6
 }

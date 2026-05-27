@@ -1,0 +1,12 @@
+{
+  "id": "h1-browser-1779865848210",
+  "replay_id": "browser-replay-proof-unknown-none",
+  "status": "degraded",
+  "mobile": "degraded|c=0|rv=unknown|rt=none",
+  "confidence": 0,
+  "artifact_index": {
+    "screenshot": ".stealtheye/browser/smoke.png",
+    "trace": ".stealtheye/browser/trace.zip",
+    "fixture": ".stealtheye/validation/fixtures/browser-proof.html"
+  }
+}

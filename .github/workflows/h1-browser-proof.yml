@@ -9,17 +9,22 @@ jobs:
         with: { node-version: 22 }
       - run: npm ci
       - name: Install browser runtime
-        run: npx playwright install --with-deps chromium || true
-      - run: npm run h1:validate
-      - run: npm run h1:browser:proof
-      - run: npm run h1:packet
+        run: npx playwright install --with-deps chromium
+      - name: H1 Validate
+        run: npm run h1:validate
+      - name: H1 Browser Proof
+        run: npm run h1:browser:proof
+      - name: H1 Packet
+        run: npm run h1:packet
       - name: Runtime metadata summary
         if: always()
         run: |
           echo "## H1 Browser Runtime" >> $GITHUB_STEP_SUMMARY
           cat .stealtheye/state/h1-runtime-posture.json >> $GITHUB_STEP_SUMMARY || true
-          echo "## H1 Browser Proof" >> $GITHUB_STEP_SUMMARY
+          echo "\n## H1 Browser Proof" >> $GITHUB_STEP_SUMMARY
           cat .stealtheye/receipts/h1-browser-evidence-packet.json >> $GITHUB_STEP_SUMMARY || true
+          echo "\n## H1 Browser Repair" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/receipts/h1-browser-repair-packet.json >> $GITHUB_STEP_SUMMARY || true
       - name: Upload browser artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -28,5 +33,7 @@ jobs:
           if-no-files-found: warn
           path: |
             .stealtheye/browser
-            .stealtheye/receipts/h1-*.json
+            .stealtheye/validation/fixtures/browser-proof.html
+            .stealtheye/receipts/h1-browser-*.json
             .stealtheye/state/h1-runtime-*.json
+            .stealtheye/state/h1-browser-*.json

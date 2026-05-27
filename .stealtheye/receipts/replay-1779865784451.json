@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h1:browser:smoke",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T07:09:44.450Z",
+  "ordered_commands": [
+    "npm run h1:browser:smoke"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "schema_version": "1.1.0",
+    "status": "degraded",
+    "mode": "smoke",
+    "confidence": 0.2,
+    "runtime_class": "none",
+    "browser_version": "unknown",
+    "proof_id": "h1-browser-1779865784444",
+    "replay_seed": "smoke-unknown-none",
+    "replay_reference": "npm run h1:browser:smoke",
+    "artifact_index": {
+      "screenshot": ".stealtheye/browser/smoke.png",
+      "trace": ".stealtheye/browser/trace.zip",
+      "fixture": ".stealtheye/validation/fixtures/browser-proof.html"
+    },
+    "evidence": {
+      "console_errors": [],
+      "failed_requests": [],
+      "dom_summary": ""
+    },
+    "runtime_metadata": {
+      "attempts": [
+        "playwright-install",
+        "repair-packet-escalation"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "duration_ms": 1,
+      "timestamp": "2026-05-27T07:09:44.446Z"
+    },
+    "validation": {
+      "launch": false,
+      "screenshot": false,
+      "trace": false,
+      "dom": false,
+      "artifact_complete": false
+    },
+    "routing": {
+      "decision": "ci-authoritative-repair",
+      "local_blocked": true
+    },
+    "flake_intelligence": {
+      "suspected_flake": false,
+      "retry_policy": "no-retry",
+      "environment_reliability": 0.9
+    },
+    "repair": {
+      "failure_summary": "external-blocked",
+      "repair_target": "runtime",
+      "probable_root_cause": "external-blocked",
+      "retry_recommendation": "no-local-retry",
+      "escalation_recommendation": "github-actions-authoritative-lane",
+      "deterministic_next_action": "run-ci-browser-proof",
+      "evidence_refs": [
+        ".stealtheye/receipts/h1-browser-evidence-packet.json"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ]
+    },
+    "operational_scores": {
+      "browser_operational_readiness": 0.62,
+      "ci_proof_stability": 0.58,
+      "browser_replay_stability": 0.55,
+      "browser_autonomy_readiness": 0.57
+    },
+    "mobile_summary": "degraded|c=0.2|rv=unknown|rt=none"
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "f797ff7f556d75bbf4c9593004e1303cbe7807c3818bbf41418dbbdfec66ba97",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h1:browser:smoke"
+  ],
+  "validation_results": {
+    "schema_version": "1.1.0",
+    "status": "degraded",
+    "mode": "smoke",
+    "confidence": 0.2,
+    "runtime_class": "none",
+    "browser_version": "unknown",
+    "proof_id": "h1-browser-1779865784444",
+    "replay_seed": "smoke-unknown-none",
+    "replay_reference": "npm run h1:browser:smoke",
+    "artifact_index": {
+      "screenshot": ".stealtheye/browser/smoke.png",
+      "trace": ".stealtheye/browser/trace.zip",
+      "fixture": ".stealtheye/validation/fixtures/browser-proof.html"
+    },
+    "evidence": {
+      "console_errors": [],
+      "failed_requests": [],
+      "dom_summary": ""
+    },
+    "runtime_metadata": {
+      "attempts": [
+        "playwright-install",
+        "repair-packet-escalation"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "duration_ms": 1,
+      "timestamp": "2026-05-27T07:09:44.446Z"
+    },
+    "validation": {
+      "launch": false,
+      "screenshot": false,
+      "trace": false,
+      "dom": false,
+      "artifact_complete": false
+    },
+    "routing": {
+      "decision": "ci-authoritative-repair",
+      "local_blocked": true
+    },
+    "flake_intelligence": {
+      "suspected_flake": false,
+      "retry_policy": "no-retry",
+      "environment_reliability": 0.9
+    },
+    "repair": {
+      "failure_summary": "external-blocked",
+      "repair_target": "runtime",
+      "probable_root_cause": "external-blocked",
+      "retry_recommendation": "no-local-retry",
+      "escalation_recommendation": "github-actions-authoritative-lane",
+      "deterministic_next_action": "run-ci-browser-proof",
+      "evidence_refs": [
+        ".stealtheye/receipts/h1-browser-evidence-packet.json"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ]
+    },
+    "operational_scores": {
+      "browser_operational_readiness": 0.62,
+      "ci_proof_stability": 0.58,
+      "browser_replay_stability": 0.55,
+      "browser_autonomy_readiness": 0.57
+    },
+    "mobile_summary": "degraded|c=0.2|rv=unknown|rt=none"
+  }
+}

@@ -9,6 +9,22 @@
       "type": "state-file"
     },
     {
+      "id": "browser-capability-registry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-retry-governance.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-routing-governance.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-security-boundaries.json",
+      "type": "state-file"
+    },
+    {
       "id": "capability-registry.json",
       "type": "state-file"
     },
@@ -29,7 +45,27 @@
       "type": "state-file"
     },
     {
+      "id": "execution-adapter-registry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "execution-result-normalizer.json",
+      "type": "state-file"
+    },
+    {
       "id": "failure-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-anti-invariants.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-latest.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-posture.json",
       "type": "state-file"
     },
     {

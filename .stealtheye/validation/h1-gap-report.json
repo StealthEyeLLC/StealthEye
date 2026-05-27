@@ -1,5 +1,8 @@
 {
   "status": "ok",
-  "remaining_blockers": [],
-  "remaining_risks": []
+  "remaining_blockers": [
+    "ci-proof-not-yet-successful"
+  ],
+  "remaining_risks": [],
+  "routing_maturity": "pending"
 }
