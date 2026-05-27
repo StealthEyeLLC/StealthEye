@@ -1,0 +1,9 @@
+{
+  "template": "fresh tab restoration checklist",
+  "steps": [
+    "read bootstrap",
+    "validate latest pointers",
+    "run h4 runtime check",
+    "resume next action"
+  ]
+}

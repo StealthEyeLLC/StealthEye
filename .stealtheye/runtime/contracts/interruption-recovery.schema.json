@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "stale_rejection",
+    "replay_mismatch_rejection",
+    "bounded_recovery_sequence"
+  ],
+  "properties": {
+    "stale_rejection": {
+      "const": true
+    },
+    "replay_mismatch_rejection": {
+      "const": true
+    },
+    "bounded_recovery_sequence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "template": "deterministic operator summary",
+  "fields": [
+    "status",
+    "h4_state",
+    "blockers",
+    "next"
+  ]
+}

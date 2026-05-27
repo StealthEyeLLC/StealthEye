@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": [
+    "checkpoint_id",
+    "session_id",
+    "timestamp",
+    "lineage_parent"
+  ],
+  "properties": {
+    "checkpoint_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lineage_parent": {
+      "type": "string"
+    },
+    "continuity_ok": {
+      "type": "boolean"
+    }
+  }
+}

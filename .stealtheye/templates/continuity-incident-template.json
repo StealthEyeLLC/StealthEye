@@ -1,0 +1,9 @@
+{
+  "template": "continuity incident",
+  "fields": [
+    "detected_at",
+    "surface",
+    "mismatch",
+    "resolution"
+  ]
+}

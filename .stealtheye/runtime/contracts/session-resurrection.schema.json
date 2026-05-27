@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "source_priority",
+    "latest_valid_runtime_selection"
+  ],
+  "properties": {
+    "source_priority": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "latest_valid_runtime_selection": {
+      "type": "string"
+    }
+  }
+}

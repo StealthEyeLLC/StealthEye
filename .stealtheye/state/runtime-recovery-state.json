@@ -1,0 +1,13 @@
+{
+  "status": "recovered",
+  "next_action": "run h4:validate then check",
+  "recovery_sequence": [
+    "resolve-canonical-bootstrap",
+    "select-latest-valid-runtime",
+    "derive-next-action",
+    "emit-receipts"
+  ],
+  "summary": "runtime recovered",
+  "stale_rejected": false,
+  "replay_mismatch_rejected": false
+}

@@ -1,0 +1,152 @@
+{
+  "runtime_continuity_graph": {
+    "nodes": [
+      "replay-1779892847030.json",
+      "replay-1779892848846.json",
+      "replay-1779892849759.json",
+      "replay-1779892850605.json",
+      "replay-1779892851487.json",
+      "replay-1779892853141.json",
+      "replay-1779892853950.json",
+      "replay-1779892854747.json",
+      "replay-1779892855586.json",
+      "replay-1779892856450.json",
+      "replay-1779892857254.json",
+      "replay-1779892858094.json"
+    ],
+    "terminal_states": [
+      "terminal",
+      "stale-rejected",
+      "replay-mismatch-rejected"
+    ],
+    "bounded_depth": 12
+  },
+  "replay_lineage_graph": [
+    {
+      "id": "replay-1779892847030.json",
+      "prev_id": "root",
+      "digest": "25-0"
+    },
+    {
+      "id": "replay-1779892848846.json",
+      "prev_id": "replay-1779892847030.json",
+      "digest": "25-1"
+    },
+    {
+      "id": "replay-1779892849759.json",
+      "prev_id": "replay-1779892848846.json",
+      "digest": "25-2"
+    },
+    {
+      "id": "replay-1779892850605.json",
+      "prev_id": "replay-1779892849759.json",
+      "digest": "25-3"
+    },
+    {
+      "id": "replay-1779892851487.json",
+      "prev_id": "replay-1779892850605.json",
+      "digest": "25-4"
+    },
+    {
+      "id": "replay-1779892853141.json",
+      "prev_id": "replay-1779892851487.json",
+      "digest": "25-5"
+    },
+    {
+      "id": "replay-1779892853950.json",
+      "prev_id": "replay-1779892853141.json",
+      "digest": "25-6"
+    },
+    {
+      "id": "replay-1779892854747.json",
+      "prev_id": "replay-1779892853950.json",
+      "digest": "25-7"
+    },
+    {
+      "id": "replay-1779892855586.json",
+      "prev_id": "replay-1779892854747.json",
+      "digest": "25-8"
+    },
+    {
+      "id": "replay-1779892856450.json",
+      "prev_id": "replay-1779892855586.json",
+      "digest": "25-9"
+    },
+    {
+      "id": "replay-1779892857254.json",
+      "prev_id": "replay-1779892856450.json",
+      "digest": "25-10"
+    },
+    {
+      "id": "replay-1779892858094.json",
+      "prev_id": "replay-1779892857254.json",
+      "digest": "25-11"
+    }
+  ],
+  "session_transition_graph": [
+    {
+      "from": "root",
+      "to": "replay-1779892847030.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892847030.json",
+      "to": "replay-1779892848846.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892848846.json",
+      "to": "replay-1779892849759.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892849759.json",
+      "to": "replay-1779892850605.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892850605.json",
+      "to": "replay-1779892851487.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892851487.json",
+      "to": "replay-1779892853141.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892853141.json",
+      "to": "replay-1779892853950.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892853950.json",
+      "to": "replay-1779892854747.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892854747.json",
+      "to": "replay-1779892855586.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892855586.json",
+      "to": "replay-1779892856450.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892856450.json",
+      "to": "replay-1779892857254.json",
+      "status": "active"
+    },
+    {
+      "from": "replay-1779892857254.json",
+      "to": "replay-1779892858094.json",
+      "status": "active"
+    }
+  ],
+  "blocker_propagation_graph": {
+    "blockers": [],
+    "propagated": false
+  }
+}

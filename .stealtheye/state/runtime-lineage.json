@@ -1,0 +1,71 @@
+{
+  "phase": "H4",
+  "lineage": [
+    {
+      "id": "replay-1779892847030.json",
+      "prev_id": "root",
+      "digest": "25-0"
+    },
+    {
+      "id": "replay-1779892848846.json",
+      "prev_id": "replay-1779892847030.json",
+      "digest": "25-1"
+    },
+    {
+      "id": "replay-1779892849759.json",
+      "prev_id": "replay-1779892848846.json",
+      "digest": "25-2"
+    },
+    {
+      "id": "replay-1779892850605.json",
+      "prev_id": "replay-1779892849759.json",
+      "digest": "25-3"
+    },
+    {
+      "id": "replay-1779892851487.json",
+      "prev_id": "replay-1779892850605.json",
+      "digest": "25-4"
+    },
+    {
+      "id": "replay-1779892853141.json",
+      "prev_id": "replay-1779892851487.json",
+      "digest": "25-5"
+    },
+    {
+      "id": "replay-1779892853950.json",
+      "prev_id": "replay-1779892853141.json",
+      "digest": "25-6"
+    },
+    {
+      "id": "replay-1779892854747.json",
+      "prev_id": "replay-1779892853950.json",
+      "digest": "25-7"
+    },
+    {
+      "id": "replay-1779892855586.json",
+      "prev_id": "replay-1779892854747.json",
+      "digest": "25-8"
+    },
+    {
+      "id": "replay-1779892856450.json",
+      "prev_id": "replay-1779892855586.json",
+      "digest": "25-9"
+    },
+    {
+      "id": "replay-1779892857254.json",
+      "prev_id": "replay-1779892856450.json",
+      "digest": "25-10"
+    },
+    {
+      "id": "replay-1779892858094.json",
+      "prev_id": "replay-1779892857254.json",
+      "digest": "25-11"
+    }
+  ],
+  "terminal_states": [
+    "terminal",
+    "stale-rejected",
+    "replay-mismatch-rejected"
+  ],
+  "stale_state_detected": false
+}

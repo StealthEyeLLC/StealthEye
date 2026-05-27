@@ -1,0 +1,8 @@
+{
+  "phase": "H4",
+  "status": "ACTIVE",
+  "runtime_status": "recovered",
+  "updated_at": "2026-05-27T14:41:05.629Z",
+  "deterministic": true,
+  "bounded": true
+}

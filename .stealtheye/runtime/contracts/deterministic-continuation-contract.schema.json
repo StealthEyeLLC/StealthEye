@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "required": [
+    "deterministic",
+    "append_safe",
+    "replay_safe",
+    "bounded_growth"
+  ],
+  "properties": {
+    "deterministic": {
+      "const": true
+    },
+    "append_safe": {
+      "const": true
+    },
+    "replay_safe": {
+      "const": true
+    },
+    "bounded_growth": {
+      "const": true
+    }
+  }
+}

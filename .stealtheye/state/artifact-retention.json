@@ -11,7 +11,7 @@
     }
   },
   "anti_sprawl": {
-    "transient_artifacts": 70,
+    "transient_artifacts": 65,
     "over_cap": false
   },
   "compact_index": {
