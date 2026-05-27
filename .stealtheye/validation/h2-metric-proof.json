@@ -1,0 +1,19 @@
+{
+  "proof_id": "h2-proof-1779875605283",
+  "replay_fingerprint": "[\"node_a8e2462386183edc\",\"node_82ee44a69d871fd5\",\"node_f5b5d2ee754964a6\",\"node_abcad3dd121907eb\",\"node_7abca4ef63de61d7\"]",
+  "authority_fingerprint": "authority-local",
+  "event_continuity_fingerprint": "event-stream-v1",
+  "ledger_continuity_fingerprint": "39c4a590ee055f6f3347d66de946f5f42d34e53731865691515ff14e71989e8a",
+  "schema_compatibility_fingerprint": "true:true:true",
+  "checkpoint_continuity_fingerprint": "cp_d2ab83ac71d8de4da091,cp_4cce5f04d683ccea9b60,cp_cd5a982b92e511c0977a,cp_9ff843fb23775aa53af4,cp_b7202fcb49f09a4e5338,cp_9ff843fb23775aa53af4,cp_b7202fcb49f09a4e5338",
+  "reconstruction_confidence": 1,
+  "replay_equivalence_score": 1,
+  "authority_convergence_score": 1,
+  "policy_integrity_score": 1,
+  "boundedness_score": 1,
+  "repair_stability_score": 1,
+  "scheduler_determinism_score": 1,
+  "concurrency_determinism_score": 1,
+  "checkpoint_continuity_score": 1,
+  "ledger_continuity_score": 1
+}

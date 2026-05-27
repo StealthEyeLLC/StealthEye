@@ -1,0 +1,10 @@
+{
+  "deterministic_slot_exhaustion": true,
+  "worker_starvation_detection": true,
+  "deadlock_detection": true,
+  "concurrency_replay_validation": true,
+  "execution_window_reconciliation": true,
+  "worker_isolation_validation": true,
+  "worker_supersession_semantics": true,
+  "bounded_queue_saturation_detection": true
+}

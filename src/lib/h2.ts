@@ -68,6 +68,22 @@ export function reconstructRepairTimeline(ledger: any[]) { return ledger.filter(
 export function computeH2Completion(dim: Record<string, boolean>) { const total = Object.keys(dim).length; const done = Object.values(dim).filter(Boolean).length; return { total, done, percent: Number(((done / total) * 100).toFixed(2)) }; }
 export function computeH2GapSeverity(dim: Record<string, boolean>) { return { critical: Object.entries(dim).filter(([, v]) => !v).map(([k]) => k) }; }
 export function computeH2SealReadiness(dim: Record<string, boolean>) { return { ready: Object.values(dim).every(Boolean) }; }
+export const score = (v: number) => Number(Math.max(0, Math.min(1, v)).toFixed(6));
+export function computeReplayEquivalenceScore(executionOrder: string[], replayOrder: string[]) { const same = executionOrder.filter((v, i) => replayOrder[i] === v).length; return score(executionOrder.length === 0 ? 1 : same / executionOrder.length); }
+export function computeAuthorityConvergenceScore(authorityEvents: any[]) { const conflicts = authorityEvents.filter((e) => e?.conflict === true).length; return score(authorityEvents.length === 0 ? 1 : 1 - conflicts / authorityEvents.length); }
+export function computePolicyIntegrityScore(policies: any[]) { const rejected = policies.filter((p) => p.policy_result === 'reject').length; const missing = policies.filter((p) => !p.policy_input).length; return score(policies.length === 0 ? 1 : 1 - (rejected + missing) / policies.length); }
+export function computeRuntimeDeterminismScore(parts: Record<string, boolean>) { const vals = Object.values(parts); return score(vals.length === 0 ? 1 : vals.filter(Boolean).length / vals.length); }
+export function computeRepairStabilityScore(repairs: any[]) { const unstable = repairs.filter((r) => r.unstable).length; return score(repairs.length === 0 ? 1 : 1 - unstable / repairs.length); }
+export function computeLedgerIntegrityScore(ledger: any[]) { const ordered = ledger.every((e, i) => i === 0 || e.at >= ledger[i - 1].at); const hash = dj(ledger.map((e) => [e.kind, e.at, e.dag_id, e.node_id])); return { score: score(ordered ? 1 : 0), continuity_fingerprint: hash }; }
+export function computeCheckpointContinuityScore(checkpoints: any[]) { const valid = checkpoints.filter((c) => c?.checkpoint_id && c?.created_at).length; return score(checkpoints.length === 0 ? 1 : valid / checkpoints.length); }
+export function computeH2SealIntegrity(metrics: Record<string, number>) { return score(Object.values(metrics).reduce((a, b) => a + b, 0) / Object.values(metrics).length); }
+export function computeH2SealBoundedness(runtimeAccounting: any) { const violations = (runtimeAccounting.ledger_continuity_violations ?? 0) + (runtimeAccounting.event_integrity_failures ?? 0); return score(violations === 0 ? 1 : 0); }
+export function computeH2SealDeterminism(runtime: Record<string, boolean>) { return computeRuntimeDeterminismScore(runtime); }
+export function reconstructMissionExecution(ledger: any[]) { return ledger.filter((e) => e.kind === 'execution'); }
+export function reconstructAuthorityHistory(ledger: any[]) { return ledger.filter((e) => e.kind === 'authority'); }
+export function reconstructWorkerHistory(ledger: any[]) { return ledger.filter((e) => e.worker); }
+export function reconstructCheckpointHistory(ledger: any[]) { return ledger.filter((e) => e.kind === 'checkpoint'); }
+export function reconstructFullRuntime(ledger: any[]) { return { mission_timeline: reconstructMissionExecution(ledger), authority_timeline: reconstructAuthorityHistory(ledger), worker_timeline: reconstructWorkerHistory(ledger), repair_timeline: reconstructRepairTimeline(ledger), replay_timeline: reconstructReplayTimeline(ledger), checkpoint_timeline: reconstructCheckpointHistory(ledger), policy_timeline: reconstructPolicyTimeline(ledger), migration_timeline: ledger.filter((e) => e.kind === 'migration') }; }
 
 export function buildExecutionPlan(dag: any) { const byId = new Map(dag.nodes.map((n: any) => [n.node_id, n])); return dag.nodes.map((n: any) => ({ node_id: n.node_id, dependencies: n.dependencies ?? [], ready: (n.dependencies ?? []).every((d: string) => byId.get(d)?.state === 'completed') })); }
 export function computeExecutionOrder(dag: any) { return topologicalOrder(dag); }

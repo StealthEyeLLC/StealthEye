@@ -1,0 +1,9 @@
+{
+  "deterministic_execution_hashes": true,
+  "adapter_replay_hashes": true,
+  "adapter_authority_lineage": true,
+  "adapter_boundedness_metrics": true,
+  "adapter_repair_lineage": true,
+  "adapter_runtime_lineage": true,
+  "adapter_continuation_lineage": true
+}

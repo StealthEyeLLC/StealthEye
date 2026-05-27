@@ -172,6 +172,47 @@
       }
     },
     {
+      "dag_id": "dag_db4d62b2bb55950e5b8e",
+      "mission_id": "h2:smoke",
+      "state": "active",
+      "nodes": [
+        {
+          "node_id": "node_6675bf3df440cc37",
+          "name": "start",
+          "state": "completed",
+          "dependencies": [],
+          "adapter": "local_runtime"
+        },
+        {
+          "node_id": "node_126b12c82c1f289d",
+          "name": "branchA",
+          "state": "completed",
+          "dependencies": [],
+          "adapter": "local_runtime"
+        },
+        {
+          "node_id": "node_e995255bd67973a3",
+          "name": "branchB",
+          "state": "completed",
+          "dependencies": [],
+          "adapter": "local_runtime"
+        },
+        {
+          "node_id": "node_738f90a91546d822",
+          "name": "finish",
+          "state": "completed",
+          "dependencies": [],
+          "adapter": "local_runtime"
+        }
+      ],
+      "created_at": "2026-05-27T09:39:30.470Z",
+      "lineage": {
+        "continuation": [],
+        "recovery": [],
+        "repair": []
+      }
+    },
+    {
       "dag_id": "dag_861fe25fc5bba9f8f537",
       "mission_id": "h2:validate",
       "state": "active",
@@ -212,48 +253,7 @@
           "adapter": "local_runtime"
         }
       ],
-      "created_at": "2026-05-27T09:39:28.501Z",
-      "lineage": {
-        "continuation": [],
-        "recovery": [],
-        "repair": []
-      }
-    },
-    {
-      "dag_id": "dag_db4d62b2bb55950e5b8e",
-      "mission_id": "h2:smoke",
-      "state": "active",
-      "nodes": [
-        {
-          "node_id": "node_6675bf3df440cc37",
-          "name": "start",
-          "state": "completed",
-          "dependencies": [],
-          "adapter": "local_runtime"
-        },
-        {
-          "node_id": "node_126b12c82c1f289d",
-          "name": "branchA",
-          "state": "completed",
-          "dependencies": [],
-          "adapter": "local_runtime"
-        },
-        {
-          "node_id": "node_e995255bd67973a3",
-          "name": "branchB",
-          "state": "completed",
-          "dependencies": [],
-          "adapter": "local_runtime"
-        },
-        {
-          "node_id": "node_738f90a91546d822",
-          "name": "finish",
-          "state": "completed",
-          "dependencies": [],
-          "adapter": "local_runtime"
-        }
-      ],
-      "created_at": "2026-05-27T09:39:30.470Z",
+      "created_at": "2026-05-27T09:53:25.277Z",
       "lineage": {
         "continuation": [],
         "recovery": [],

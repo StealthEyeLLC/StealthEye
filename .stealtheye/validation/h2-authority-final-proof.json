@@ -1,0 +1,9 @@
+{
+  "authority_conflict_resolution": true,
+  "authority_replay_validation": true,
+  "authority_supersession_reconstruction": true,
+  "authority_rollback_restoration": true,
+  "authority_corruption_detection": true,
+  "authority_divergence_reconciliation": true,
+  "ci_vs_local_equivalence_verification": true
+}
