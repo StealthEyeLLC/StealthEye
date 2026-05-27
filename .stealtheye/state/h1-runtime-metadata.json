@@ -1,19 +1,12 @@
 {
   "runtime": {
-    "attempts": [
-      "playwright-install",
-      "repair-packet-escalation"
-    ],
+    "source": "none",
     "diagnostics": [
       "cdn-blocked",
       "dependency-failure"
-    ],
-    "duration_ms": 2,
-    "timestamp": "2026-05-27T07:21:42.586Z"
+    ]
   },
   "mode": "proof",
-  "confidence": 0,
   "last_success_at": null,
-  "browser_version": "unknown",
   "replay_id": "browser-replay-proof-unknown-none"
 }

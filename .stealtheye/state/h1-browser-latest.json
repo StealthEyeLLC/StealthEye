@@ -1,17 +1,191 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "2.0.0",
   "status": "degraded",
   "mode": "proof",
-  "confidence": 0,
-  "runtime_class": "none",
-  "browser_version": "unknown",
-  "proof_id": "h1-browser-1779866502583",
+  "proof_id": "h1-browser-1779867206625",
   "replay_seed": "proof-unknown-none",
   "replay_reference": "npm run h1:browser:proof",
+  "confidence": 0.08,
+  "execution_confidence": 0.08,
+  "execution_stability": 0.58,
+  "repair_confidence": 0.71,
+  "mission_lineage": [
+    {
+      "mission": "inspect-page",
+      "mission_id": "h1-browser-1779867206625:inspect-page",
+      "step": 1,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "capture-proof",
+      "mission_id": "h1-browser-1779867206625:capture-proof",
+      "step": 2,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "validate-ui",
+      "mission_id": "h1-browser-1779867206625:validate-ui",
+      "step": 3,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "extract-structured-data",
+      "mission_id": "h1-browser-1779867206625:extract-structured-data",
+      "step": 4,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "verify-dom-state",
+      "mission_id": "h1-browser-1779867206625:verify-dom-state",
+      "step": 5,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "replay-proof",
+      "mission_id": "h1-browser-1779867206625:replay-proof",
+      "step": 6,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "validate-repair",
+      "mission_id": "h1-browser-1779867206625:validate-repair",
+      "step": 7,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    },
+    {
+      "mission": "collect-runtime-diagnostics",
+      "mission_id": "h1-browser-1779867206625:collect-runtime-diagnostics",
+      "step": 8,
+      "bounded_step": true,
+      "replay_linkage": "replay:proof",
+      "repair_linkage": "repair:h1-browser-1779867206625",
+      "routing_decision": "ci-authoritative-repair",
+      "execution_contract": "deterministic-browser-contract-v2",
+      "continuity_linkage": "continuity:browser"
+    }
+  ],
+  "repair_lineage": {
+    "repair_id": "repair:h1-browser-1779867206625",
+    "retry_lineage": {
+      "attempted": 0,
+      "max": 1
+    },
+    "exhausted": true,
+    "effectiveness": 0.33
+  },
+  "execution_graph": {
+    "mission_flow": [
+      "inspect-page",
+      "capture-proof",
+      "validate-ui",
+      "extract-structured-data",
+      "verify-dom-state",
+      "replay-proof",
+      "validate-repair",
+      "collect-runtime-diagnostics"
+    ],
+    "replay_flow": [
+      "mission->replay-seed",
+      "replay-seed->latest-replay"
+    ],
+    "repair_flow": [
+      "failure->repair",
+      "repair->retry"
+    ],
+    "routing_flow": [
+      "planner->route",
+      "route->authority"
+    ],
+    "ci_authority_flow": [
+      "workflow->artifacts->integrity"
+    ],
+    "continuity_flow": [
+      "evidence->inspect->next-action"
+    ]
+  },
+  "runtime_authority": {
+    "source": "none",
+    "diagnostics": [
+      "cdn-blocked",
+      "dependency-failure"
+    ]
+  },
+  "replay_authority": {
+    "deterministic": true,
+    "replay_seed": "proof-unknown-none"
+  },
+  "proof_authority": {
+    "screenshot": false,
+    "trace": false,
+    "dom": false
+  },
+  "ci_authority": {
+    "route": "ci-authoritative-repair",
+    "authoritative": true
+  },
+  "route_rationale": "runtime unavailable requires CI authority",
+  "routing": {
+    "decision": "ci-authoritative-repair",
+    "retry_posture": "bounded-retry-0",
+    "replay_required": true,
+    "repair_strategy": "escalate-ci-authority"
+  },
+  "orchestration_bounds": {
+    "max_missions": 8,
+    "max_retries": 1,
+    "max_repair_loops": 2,
+    "max_artifacts": 8,
+    "max_replay_history": 40,
+    "max_screenshots": 2,
+    "max_traces": 2
+  },
+  "anti_invariants": {
+    "infinite_repair_loop_protected": true,
+    "replay_divergence_protected": true,
+    "ci_authority_ambiguity_protected": true,
+    "duplicate_proof_protected": true,
+    "mission_spawning_bounded": true,
+    "artifacts_bounded": true,
+    "repair_lineage_conflict_protected": true
+  },
   "artifact_index": {
     "screenshot": ".stealtheye/browser/smoke.png",
-    "trace": ".stealtheye/browser/trace.zip",
-    "fixture": ".stealtheye/validation/fixtures/browser-proof.html"
+    "trace": ".stealtheye/browser/trace.zip"
   },
   "evidence": {
     "console_errors": [],
@@ -23,67 +197,9 @@
       "playwright-install",
       "repair-packet-escalation"
     ],
-    "diagnostics": [
-      "cdn-blocked",
-      "dependency-failure"
-    ],
-    "duration_ms": 2,
-    "timestamp": "2026-05-27T07:21:42.586Z"
+    "duration_ms": 1,
+    "timestamp": "2026-05-27T07:33:26.628Z",
+    "browser_version": "unknown"
   },
-  "validation": {
-    "launch": false,
-    "screenshot": false,
-    "trace": false,
-    "dom": false,
-    "artifact_complete": false
-  },
-  "routing": {
-    "decision": "ci-authoritative-repair",
-    "route_class": "blocked-browser-task",
-    "local_blocked": true,
-    "persisted": true
-  },
-  "flake_intelligence": {
-    "suspected_flake": false,
-    "retry_policy": "no-retry",
-    "environment_reliability": 0.9
-  },
-  "repair": {
-    "failure_summary": "external-blocked",
-    "repair_intelligence_version": "v2",
-    "repair_target": "runtime",
-    "probable_root_cause": "external-blocked",
-    "retry_recommendation": "no-local-retry",
-    "escalation_recommendation": "github-actions-authoritative-lane",
-    "deterministic_next_action": "run-ci-browser-proof",
-    "evidence_refs": [
-      ".stealtheye/receipts/h1-browser-evidence-packet.json"
-    ],
-    "diagnostics": [
-      "cdn-blocked",
-      "dependency-failure"
-    ]
-  },
-  "stability_scores": {
-    "replay_determinism_score": 0,
-    "screenshot_stability_score": 0,
-    "dom_stability_score": 0,
-    "runtime_stability_score": 0,
-    "proof_reproducibility_score": 0
-  },
-  "execution_contracts": {
-    "navigate": "required",
-    "inspect_dom": "required",
-    "screenshot": "required",
-    "capture_console": "required",
-    "capture_network": "required",
-    "capture_trace": "required"
-  },
-  "operational_scores": {
-    "browser_operational_readiness": 0.62,
-    "ci_proof_stability": 0.58,
-    "browser_replay_stability": 0.55,
-    "browser_autonomy_readiness": 0.57
-  },
-  "mobile_summary": "degraded|c=0|rv=unknown|rt=none"
+  "mobile_summary": "degraded|m=8|c=0.08|r=ci-authoritative-repair"
 }
