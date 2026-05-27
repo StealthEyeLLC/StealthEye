@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h1:browser:smoke",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T07:59:29.011Z",
+  "ordered_commands": [
+    "npm run h1:browser:smoke"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "schema_version": "4.0.0",
+    "status": "degraded",
+    "mode": "smoke",
+    "proof_id": "h1-browser-1779868769000",
+    "replay_seed": "smoke-unknown-none",
+    "replay_reference": "npm run h1:browser:smoke",
+    "confidence": 0.08,
+    "execution_confidence": 0.08,
+    "execution_stability": 0.58,
+    "repair_confidence": 0.71,
+    "mission_lineage": [
+      {
+        "mission": "inspect-page",
+        "mission_id": "h1-browser-1779868769000:inspect-page",
+        "step": 1,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "capture-proof",
+        "mission_id": "h1-browser-1779868769000:capture-proof",
+        "step": 2,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "validate-ui",
+        "mission_id": "h1-browser-1779868769000:validate-ui",
+        "step": 3,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "extract-structured-data",
+        "mission_id": "h1-browser-1779868769000:extract-structured-data",
+        "step": 4,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "verify-dom-state",
+        "mission_id": "h1-browser-1779868769000:verify-dom-state",
+        "step": 5,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "replay-proof",
+        "mission_id": "h1-browser-1779868769000:replay-proof",
+        "step": 6,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "validate-repair",
+        "mission_id": "h1-browser-1779868769000:validate-repair",
+        "step": 7,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "collect-runtime-diagnostics",
+        "mission_id": "h1-browser-1779868769000:collect-runtime-diagnostics",
+        "step": 8,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      }
+    ],
+    "lifecycle_state": "exhausted",
+    "lifecycle_lineage": [
+      {
+        "from": null,
+        "to": "queued",
+        "reason": "mission enqueued",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "queued",
+        "to": "planned",
+        "reason": "planner route ci-authoritative-repair",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "planned",
+        "to": "running",
+        "reason": "runtime acquired but unhealthy",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "running",
+        "to": "degraded",
+        "reason": "runtime unavailable",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "degraded",
+        "to": "ci-authoritative",
+        "reason": "workflow authority escalation",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "ci-authoritative",
+        "to": "repairing",
+        "reason": "repair mission spawned",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "repairing",
+        "to": "exhausted",
+        "reason": "non-retryable runtime class",
+        "at": "2026-05-27T07:59:29.003Z"
+      }
+    ],
+    "repair_lineage": {
+      "repair_id": "repair:h1-browser-1779868769000",
+      "retry_lineage": {
+        "attempted": 0,
+        "max": 1
+      },
+      "exhausted": true,
+      "effectiveness": 0.33
+    },
+    "execution_graph": {
+      "mission_flow": [
+        "inspect-page",
+        "capture-proof",
+        "validate-ui",
+        "extract-structured-data",
+        "verify-dom-state",
+        "replay-proof",
+        "validate-repair",
+        "collect-runtime-diagnostics"
+      ],
+      "replay_flow": [
+        "mission->replay-seed",
+        "replay-seed->latest-replay"
+      ],
+      "repair_flow": [
+        "failure->repair",
+        "repair->retry"
+      ],
+      "routing_flow": [
+        "planner->route",
+        "route->authority"
+      ],
+      "ci_authority_flow": [
+        "workflow->artifacts->integrity"
+      ],
+      "continuity_flow": [
+        "evidence->inspect->next-action"
+      ]
+    },
+    "runtime_kernel": {
+      "kernel_version": "1.0.0",
+      "mode": "smoke",
+      "deterministic": true,
+      "runtime_clock": {
+        "schema_version": "1.0.0",
+        "tick": 9,
+        "epochs": {
+          "runtime": 0,
+          "mission": 3,
+          "replay": 3,
+          "recovery": 0,
+          "ci": 3,
+          "repair": 0
+        },
+        "bounded_window": {
+          "size": 128,
+          "start": 0,
+          "end": 9
+        }
+      },
+      "event_window": {
+        "bounded": true,
+        "max": 96,
+        "events": [
+          "mission-created",
+          "replay-started",
+          "CI-authority-promoted"
+        ]
+      },
+      "fusion": {
+        "lifecycle": true,
+        "planner": true,
+        "replay": true,
+        "repair": true,
+        "convergence": true,
+        "orchestration": true,
+        "authority": true,
+        "continuation": true,
+        "persistence": true,
+        "operational_scoring": true
+      },
+      "split_brain_prevention": {
+        "enabled": true,
+        "duplicate_authority": false,
+        "replay_fork": false
+      },
+      "continuity_engine": {
+        "restoration_ready": true,
+        "replay_stable": true,
+        "bounded": true
+      },
+      "convergence": {
+        "status": "repair-converging",
+        "confidence": 0.67,
+        "rationale": "runtime unavailable requires CI authority"
+      },
+      "arbitration": {
+        "decision": "ci-authoritative-repair",
+        "explainable": true,
+        "bounded": true
+      },
+      "operational_ledger": {
+        "compact": true,
+        "mobile_readable": true,
+        "lineage": {
+          "mission": 8,
+          "authority": 1,
+          "replay": 1,
+          "repair": 1,
+          "convergence": 1,
+          "restoration": 1,
+          "orchestration": 1
+        }
+      }
+    },
+    "runtime_authority": {
+      "source": "none",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ]
+    },
+    "replay_authority": {
+      "deterministic": true,
+      "replay_seed": "smoke-unknown-none"
+    },
+    "proof_authority": {
+      "screenshot": false,
+      "trace": false,
+      "dom": false
+    },
+    "ci_authority": {
+      "route": "ci-authoritative-repair",
+      "authoritative": true
+    },
+    "route_rationale": "runtime unavailable requires CI authority",
+    "routing": {
+      "decision": "ci-authoritative-repair",
+      "retry_posture": "bounded-retry-0",
+      "replay_required": true,
+      "repair_strategy": "escalate-ci-authority"
+    },
+    "orchestration_bounds": {
+      "max_missions": 8,
+      "max_retries": 1,
+      "max_repair_loops": 2,
+      "max_artifacts": 8,
+      "max_replay_history": 40,
+      "max_screenshots": 2,
+      "max_traces": 2
+    },
+    "anti_invariants": {
+      "infinite_repair_loop_protected": true,
+      "replay_divergence_protected": true,
+      "ci_authority_ambiguity_protected": true,
+      "duplicate_proof_protected": true,
+      "mission_spawning_bounded": true,
+      "artifacts_bounded": true,
+      "repair_lineage_conflict_protected": true
+    },
+    "artifact_index": {
+      "screenshot": ".stealtheye/browser/smoke.png",
+      "trace": ".stealtheye/browser/trace.zip"
+    },
+    "evidence": {
+      "console_errors": [],
+      "failed_requests": [],
+      "dom_summary": ""
+    },
+    "runtime_metadata": {
+      "attempts": [
+        "playwright-install",
+        "repair-packet-escalation"
+      ],
+      "duration_ms": 4,
+      "timestamp": "2026-05-27T07:59:29.005Z",
+      "browser_version": "unknown"
+    },
+    "mobile_summary": "degraded|m=8|c=0.08|r=ci-authoritative-repair",
+    "runtime_intelligence_scores": {
+      "continuity_health": 0.61,
+      "replay_integrity": 0.92,
+      "convergence_stability": 0.64,
+      "authority_coherence": 0.91,
+      "orchestration_maturity": 0.88,
+      "repair_convergence": 0.45,
+      "runtime_integrity": 0.9,
+      "restoration_confidence": 0.84,
+      "drift_pressure": 0.41,
+      "operational_entropy": 0.49
+    }
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "5ca4ad3d0d736e615e487a4e11396368cb751466dc6f27bc50c63ef55930184e",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h1:browser:smoke"
+  ],
+  "validation_results": {
+    "schema_version": "4.0.0",
+    "status": "degraded",
+    "mode": "smoke",
+    "proof_id": "h1-browser-1779868769000",
+    "replay_seed": "smoke-unknown-none",
+    "replay_reference": "npm run h1:browser:smoke",
+    "confidence": 0.08,
+    "execution_confidence": 0.08,
+    "execution_stability": 0.58,
+    "repair_confidence": 0.71,
+    "mission_lineage": [
+      {
+        "mission": "inspect-page",
+        "mission_id": "h1-browser-1779868769000:inspect-page",
+        "step": 1,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "capture-proof",
+        "mission_id": "h1-browser-1779868769000:capture-proof",
+        "step": 2,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "validate-ui",
+        "mission_id": "h1-browser-1779868769000:validate-ui",
+        "step": 3,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "extract-structured-data",
+        "mission_id": "h1-browser-1779868769000:extract-structured-data",
+        "step": 4,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "verify-dom-state",
+        "mission_id": "h1-browser-1779868769000:verify-dom-state",
+        "step": 5,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "replay-proof",
+        "mission_id": "h1-browser-1779868769000:replay-proof",
+        "step": 6,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "validate-repair",
+        "mission_id": "h1-browser-1779868769000:validate-repair",
+        "step": 7,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      },
+      {
+        "mission": "collect-runtime-diagnostics",
+        "mission_id": "h1-browser-1779868769000:collect-runtime-diagnostics",
+        "step": 8,
+        "bounded_step": true,
+        "replay_linkage": "replay:smoke",
+        "repair_linkage": "repair:h1-browser-1779868769000",
+        "routing_decision": "ci-authoritative-repair",
+        "execution_contract": "deterministic-browser-contract-v2",
+        "continuity_linkage": "continuity:browser"
+      }
+    ],
+    "lifecycle_state": "exhausted",
+    "lifecycle_lineage": [
+      {
+        "from": null,
+        "to": "queued",
+        "reason": "mission enqueued",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "queued",
+        "to": "planned",
+        "reason": "planner route ci-authoritative-repair",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "planned",
+        "to": "running",
+        "reason": "runtime acquired but unhealthy",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "running",
+        "to": "degraded",
+        "reason": "runtime unavailable",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "degraded",
+        "to": "ci-authoritative",
+        "reason": "workflow authority escalation",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "ci-authoritative",
+        "to": "repairing",
+        "reason": "repair mission spawned",
+        "at": "2026-05-27T07:59:29.003Z"
+      },
+      {
+        "from": "repairing",
+        "to": "exhausted",
+        "reason": "non-retryable runtime class",
+        "at": "2026-05-27T07:59:29.003Z"
+      }
+    ],
+    "repair_lineage": {
+      "repair_id": "repair:h1-browser-1779868769000",
+      "retry_lineage": {
+        "attempted": 0,
+        "max": 1
+      },
+      "exhausted": true,
+      "effectiveness": 0.33
+    },
+    "execution_graph": {
+      "mission_flow": [
+        "inspect-page",
+        "capture-proof",
+        "validate-ui",
+        "extract-structured-data",
+        "verify-dom-state",
+        "replay-proof",
+        "validate-repair",
+        "collect-runtime-diagnostics"
+      ],
+      "replay_flow": [
+        "mission->replay-seed",
+        "replay-seed->latest-replay"
+      ],
+      "repair_flow": [
+        "failure->repair",
+        "repair->retry"
+      ],
+      "routing_flow": [
+        "planner->route",
+        "route->authority"
+      ],
+      "ci_authority_flow": [
+        "workflow->artifacts->integrity"
+      ],
+      "continuity_flow": [
+        "evidence->inspect->next-action"
+      ]
+    },
+    "runtime_kernel": {
+      "kernel_version": "1.0.0",
+      "mode": "smoke",
+      "deterministic": true,
+      "runtime_clock": {
+        "schema_version": "1.0.0",
+        "tick": 9,
+        "epochs": {
+          "runtime": 0,
+          "mission": 3,
+          "replay": 3,
+          "recovery": 0,
+          "ci": 3,
+          "repair": 0
+        },
+        "bounded_window": {
+          "size": 128,
+          "start": 0,
+          "end": 9
+        }
+      },
+      "event_window": {
+        "bounded": true,
+        "max": 96,
+        "events": [
+          "mission-created",
+          "replay-started",
+          "CI-authority-promoted"
+        ]
+      },
+      "fusion": {
+        "lifecycle": true,
+        "planner": true,
+        "replay": true,
+        "repair": true,
+        "convergence": true,
+        "orchestration": true,
+        "authority": true,
+        "continuation": true,
+        "persistence": true,
+        "operational_scoring": true
+      },
+      "split_brain_prevention": {
+        "enabled": true,
+        "duplicate_authority": false,
+        "replay_fork": false
+      },
+      "continuity_engine": {
+        "restoration_ready": true,
+        "replay_stable": true,
+        "bounded": true
+      },
+      "convergence": {
+        "status": "repair-converging",
+        "confidence": 0.67,
+        "rationale": "runtime unavailable requires CI authority"
+      },
+      "arbitration": {
+        "decision": "ci-authoritative-repair",
+        "explainable": true,
+        "bounded": true
+      },
+      "operational_ledger": {
+        "compact": true,
+        "mobile_readable": true,
+        "lineage": {
+          "mission": 8,
+          "authority": 1,
+          "replay": 1,
+          "repair": 1,
+          "convergence": 1,
+          "restoration": 1,
+          "orchestration": 1
+        }
+      }
+    },
+    "runtime_authority": {
+      "source": "none",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ]
+    },
+    "replay_authority": {
+      "deterministic": true,
+      "replay_seed": "smoke-unknown-none"
+    },
+    "proof_authority": {
+      "screenshot": false,
+      "trace": false,
+      "dom": false
+    },
+    "ci_authority": {
+      "route": "ci-authoritative-repair",
+      "authoritative": true
+    },
+    "route_rationale": "runtime unavailable requires CI authority",
+    "routing": {
+      "decision": "ci-authoritative-repair",
+      "retry_posture": "bounded-retry-0",
+      "replay_required": true,
+      "repair_strategy": "escalate-ci-authority"
+    },
+    "orchestration_bounds": {
+      "max_missions": 8,
+      "max_retries": 1,
+      "max_repair_loops": 2,
+      "max_artifacts": 8,
+      "max_replay_history": 40,
+      "max_screenshots": 2,
+      "max_traces": 2
+    },
+    "anti_invariants": {
+      "infinite_repair_loop_protected": true,
+      "replay_divergence_protected": true,
+      "ci_authority_ambiguity_protected": true,
+      "duplicate_proof_protected": true,
+      "mission_spawning_bounded": true,
+      "artifacts_bounded": true,
+      "repair_lineage_conflict_protected": true
+    },
+    "artifact_index": {
+      "screenshot": ".stealtheye/browser/smoke.png",
+      "trace": ".stealtheye/browser/trace.zip"
+    },
+    "evidence": {
+      "console_errors": [],
+      "failed_requests": [],
+      "dom_summary": ""
+    },
+    "runtime_metadata": {
+      "attempts": [
+        "playwright-install",
+        "repair-packet-escalation"
+      ],
+      "duration_ms": 4,
+      "timestamp": "2026-05-27T07:59:29.005Z",
+      "browser_version": "unknown"
+    },
+    "mobile_summary": "degraded|m=8|c=0.08|r=ci-authoritative-repair",
+    "runtime_intelligence_scores": {
+      "continuity_health": 0.61,
+      "replay_integrity": 0.92,
+      "convergence_stability": 0.64,
+      "authority_coherence": 0.91,
+      "orchestration_maturity": 0.88,
+      "repair_convergence": 0.45,
+      "runtime_integrity": 0.9,
+      "restoration_confidence": 0.84,
+      "drift_pressure": 0.41,
+      "operational_entropy": 0.49
+    }
+  }
+}

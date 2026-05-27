@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "latest": {
-    "proof_id": "h1-browser-1779868119166",
+    "proof_id": "h1-browser-1779868787842",
     "receipt": ".stealtheye/receipts/h1-packet.json",
     "state": "exhausted"
   },
@@ -52,6 +52,84 @@
           "ci-authority"
         ],
         "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868568629",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:56:08.632Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868587785",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:56:27.788Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868715924",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:58:35.928Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868735105",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:58:55.110Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868769000",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:59:29.005Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868787842",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:59:47.848Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
       }
     ]
   },
@@ -88,6 +166,84 @@
       "status": "degraded",
       "route": "ci-authoritative-repair",
       "timestamp": "2026-05-27T07:48:39.171Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868568629",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:56:08.632Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868587785",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:56:27.788Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868715924",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:58:35.928Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868735105",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:58:55.110Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868769000",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:59:29.005Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868787842",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:59:47.848Z",
       "authority_chain": [
         "local-runtime",
         "replay-authority",

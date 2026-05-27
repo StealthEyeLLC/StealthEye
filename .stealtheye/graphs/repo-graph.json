@@ -81,6 +81,14 @@
       "type": "state-file"
     },
     {
+      "id": "h1-runtime-clock.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-event-bus.json",
+      "type": "state-file"
+    },
+    {
       "id": "h1-runtime-metadata.json",
       "type": "state-file"
     },

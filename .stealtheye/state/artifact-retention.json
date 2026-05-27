@@ -11,8 +11,8 @@
     }
   },
   "anti_sprawl": {
-    "transient_artifacts": 92,
-    "over_cap": true
+    "transient_artifacts": 70,
+    "over_cap": false
   },
   "compact_index": {
     "latest_handoff": "handoffs/latest.json",
