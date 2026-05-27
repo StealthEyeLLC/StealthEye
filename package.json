@@ -27,7 +27,9 @@
     "h3:packet": "tsx src/cli/h3-packet.ts",
     "h3:mission:smoke": "tsx src/cli/h3-mission-smoke.ts",
     "h3:repair:smoke": "tsx src/cli/h3-repair-smoke.ts",
-    "h3:browser:smoke": "tsx src/cli/h3-browser-smoke.ts"
+    "h3:browser:smoke": "tsx src/cli/h3-browser-smoke.ts",
+    "h4:runtime-check": "tsx src/cli/h4-runtime-check.ts",
+    "h4:validate": "tsx src/cli/h4-validate.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

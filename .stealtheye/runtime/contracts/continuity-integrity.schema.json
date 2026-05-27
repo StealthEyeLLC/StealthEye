@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "timestamp_coherent",
+    "latest_pointer_correct",
+    "lineage_unbroken"
+  ],
+  "properties": {
+    "timestamp_coherent": {
+      "type": "boolean"
+    },
+    "latest_pointer_correct": {
+      "type": "boolean"
+    },
+    "lineage_unbroken": {
+      "type": "boolean"
+    },
+    "orphan_count": {
+      "type": "integer"
+    }
+  }
+}

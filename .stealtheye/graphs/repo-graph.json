@@ -749,6 +749,10 @@
       "type": "state-file"
     },
     {
+      "id": "h4-runtime-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "handoff-compact-index.json",
       "type": "state-file"
     },
@@ -834,6 +838,22 @@
     },
     {
       "id": "routing-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-checkpoint-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-integrity-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-recovery-state.json",
       "type": "state-file"
     },
     {

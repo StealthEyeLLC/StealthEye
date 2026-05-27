@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "status",
+    "started_at",
+    "surface_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "recovered",
+        "terminal"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "resumed_from": {
+      "type": "string"
+    },
+    "surface_hash": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

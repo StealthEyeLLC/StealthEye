@@ -1,0 +1,9 @@
+{
+  "template": "runtime recovery pr",
+  "fields": [
+    "problem",
+    "recovery_sequence",
+    "receipts",
+    "risk"
+  ]
+}

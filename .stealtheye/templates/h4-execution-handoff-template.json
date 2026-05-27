@@ -1,0 +1,9 @@
+{
+  "template": "h4 execution handoff",
+  "fields": [
+    "summary",
+    "continuity_state",
+    "next_action",
+    "runtime_integrity"
+  ]
+}
