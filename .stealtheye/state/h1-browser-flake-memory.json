@@ -23,6 +23,30 @@
       "status": "degraded",
       "flake": false,
       "timestamp": "2026-05-27T07:10:48.212Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866351588",
+      "status": "degraded",
+      "flake": false,
+      "timestamp": "2026-05-27T07:19:11.590Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866369518",
+      "status": "degraded",
+      "flake": false,
+      "timestamp": "2026-05-27T07:19:29.520Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "status": "degraded",
+      "flake": false,
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "status": "degraded",
+      "flake": false,
+      "timestamp": "2026-05-27T07:21:42.586Z"
     }
   ]
 }

@@ -9,7 +9,9 @@
   "environment_restrictions": [],
   "ci_proof_readiness": true,
   "ci_proof_success": false,
-  "replay_integrity": false,
-  "proof_continuity": false,
-  "browser_operational_readiness": 0.6
+  "replay_integrity": true,
+  "proof_continuity": true,
+  "browser_operational_readiness": 0.62,
+  "replay_reproducibility_score": 0,
+  "repair_reliability": 1
 }

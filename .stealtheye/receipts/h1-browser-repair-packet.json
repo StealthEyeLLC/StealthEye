@@ -1,5 +1,6 @@
 {
   "failure_summary": "external-blocked",
+  "repair_intelligence_version": "v2",
   "repair_target": "runtime",
   "probable_root_cause": "external-blocked",
   "retry_recommendation": "no-local-retry",
