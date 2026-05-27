@@ -1,0 +1,93 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:23:18.245Z",
+  "rehearsal_status": "pass",
+  "fixtures_deterministic": true,
+  "cases": [
+    {
+      "case": "missing latest replay",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:missing latest replay",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "stale latest replay",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:stale latest replay",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay timestamp drift",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay timestamp drift",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay chain break",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay chain break",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay receipt corruption",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay receipt corruption",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "invalid replay pointer",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:invalid replay pointer",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "duplicate replay authority",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:duplicate replay authority",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay mismatch after recovery",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay mismatch after recovery",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay-invalid command rerun",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay-invalid command rerun",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay-invalid next action",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay-invalid next action",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay-invalid merge readiness",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay-invalid merge readiness",
+      "escalation": "bounded-safe-stop"
+    },
+    {
+      "case": "replay-invalid mobile handoff",
+      "detected": true,
+      "expected_failure_asserted": true,
+      "repair_guidance": "repair:replay-invalid mobile handoff",
+      "escalation": "bounded-safe-stop"
+    }
+  ]
+}

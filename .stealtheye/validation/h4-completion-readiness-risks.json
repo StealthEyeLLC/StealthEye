@@ -1,0 +1,9 @@
+{
+  "risks": [
+    "fixture coverage gap",
+    "chaos rehearsal depth gap"
+  ],
+  "advisory": [
+    "mobile packet margin"
+  ]
+}

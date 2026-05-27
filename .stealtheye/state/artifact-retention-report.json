@@ -1,0 +1,38 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:23:18.259Z",
+  "churn_status": "pass",
+  "churn": [
+    {
+      "dir": ".stealtheye/handoffs",
+      "count": 34
+    },
+    {
+      "dir": ".stealtheye/receipts",
+      "count": 135
+    },
+    {
+      "dir": ".stealtheye/runtime/checkpoints",
+      "count": 24
+    },
+    {
+      "dir": ".stealtheye/validation",
+      "count": 185
+    }
+  ],
+  "retention_recommendations": [
+    "keep latest pointers unique",
+    "cap generated artifacts deterministically"
+  ],
+  "canonical_ordering_recommendations": [
+    "stable key ordering",
+    "stable command ordering"
+  ],
+  "cleanup_recommendations": [
+    "prune stale generated artifacts"
+  ],
+  "serialization_recommendations": [
+    "use JSON.stringify(...,null,2)"
+  ]
+}

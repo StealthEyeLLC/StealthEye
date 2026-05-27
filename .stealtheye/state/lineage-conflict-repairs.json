@@ -1,0 +1,74 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:23:18.247Z",
+  "lineage_status": "conflict-detected-and-repairable",
+  "conflict_count": 10,
+  "conflicts": [
+    {
+      "type": "branch",
+      "resolved": true
+    },
+    {
+      "type": "replay",
+      "resolved": true
+    },
+    {
+      "type": "runtime",
+      "resolved": true
+    },
+    {
+      "type": "command",
+      "resolved": true
+    },
+    {
+      "type": "pr",
+      "resolved": true
+    },
+    {
+      "type": "merge",
+      "resolved": true
+    },
+    {
+      "type": "handoff",
+      "resolved": true
+    },
+    {
+      "type": "mobile-handoff",
+      "resolved": true
+    },
+    {
+      "type": "checkpoint",
+      "resolved": true
+    },
+    {
+      "type": "decision-core",
+      "resolved": true
+    }
+  ],
+  "proof_chain": [
+    "canonical-load",
+    "conflict-detect",
+    "reject-non-canonical",
+    "repair-recommended"
+  ],
+  "canonical_lineage": "repo-state",
+  "rejected_lineage": [
+    "chat-memory",
+    "duplicate-authority"
+  ],
+  "repair_actions": [
+    "repair-branch-lineage",
+    "repair-replay-lineage",
+    "repair-runtime-lineage",
+    "repair-command-lineage",
+    "repair-pr-lineage",
+    "repair-merge-lineage",
+    "repair-handoff-lineage",
+    "repair-mobile-handoff-lineage",
+    "repair-checkpoint-lineage",
+    "repair-decision-core-lineage"
+  ],
+  "escalation_required": false,
+  "human_action_needed": false
+}
