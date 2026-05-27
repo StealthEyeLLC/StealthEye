@@ -1,0 +1,9 @@
+{
+  "phase": "H4",
+  "status": "NOT_STARTED",
+  "preconditions": [
+    "docs-synced",
+    "continuity-surfaces-compacted",
+    "fresh-tab-recovery-validated"
+  ]
+}

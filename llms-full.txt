@@ -1,8 +1,27 @@
-StealthEye full orientation (Phase 0):
-- Autonomy substrate is product.
-- Cloud-first/mobile-first supervision.
-- Mandatory: bootstrap -> process select -> memory hook -> invariant check -> execute -> receipts/handoff/freshness update.
-- Canonical commands: generate, validate, graph, check:readiness, check, compile:packet.
-
-
-Status: Phase 0 COMPLETE. H1 COMPLETE. H2 COMPLETE after `npm run h2:validate`; H3 next phase is ACTIVATION-ONLY (NOT_STARTED).
+StealthEye full orientation (synced post-H3, pre-H4):
+- Repo posture:
+  - H0 COMPLETE
+  - H1 COMPLETE
+  - H2 COMPLETE
+  - H3 COMPLETE
+  - H4 NOT STARTED
+- Runtime guarantees:
+  - deterministic bootstrap-first command behavior
+  - bounded retention and compaction of handoffs/replay artifacts
+  - explicit latest pointers for continuity recovery
+- Canonical continuity surfaces:
+  - `.stealtheye/state/fresh-tab-bootstrap.json` (fresh-tab bootstrap)
+  - `.stealtheye/handoffs/latest.json` (active handoff)
+  - `.stealtheye/receipts/latest-replay.json` (replay integrity surface)
+  - `.stealtheye/state/next-action.json` (next action)
+  - `.stealtheye/state/working-set.json` (working set)
+- Autonomy boundaries:
+  - approvals required for secrets/credentials, billing/purchases, irreversible production data deletion
+  - no unrestricted shell authority
+  - no unrestricted destructive git authority
+  - no H4 runtime logic in this pre-H4 pass
+- Recovery direction for fresh tabs:
+  1) read fresh-tab-bootstrap
+  2) verify handoff/replay latest timestamps and coherence
+  3) resolve next action and blockers
+  4) continue bounded deterministic flow
