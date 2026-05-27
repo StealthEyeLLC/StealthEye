@@ -194,6 +194,13 @@
       "at": "2026-05-27T15:09:20.422Z",
       "lineage": null,
       "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_166c86666337c24110",
+      "event": "dag-created",
+      "at": "2026-05-27T15:41:14.393Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
     }
   ]
 }

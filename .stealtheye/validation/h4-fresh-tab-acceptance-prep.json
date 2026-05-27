@@ -1,0 +1,15 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "acceptance_criteria": ["fresh-tab deterministic recovery", "chat-memory rejection enforced", "next-action determinism", "mobile handoff contract valid"],
+  "current_status": "in_progress",
+  "remaining_blockers": [],
+  "remaining_hardening_passes": ["fixture expansion", "continuous replay audits"],
+  "evidence_surfaces": [
+    ".stealtheye/state/fresh-tab-runtime-state.json",
+    ".stealtheye/state/fresh-tab-recovery-packet.json",
+    ".stealtheye/state/h4-next-action-resolution.json",
+    ".stealtheye/validation/h4-fresh-tab-smoke.json"
+  ],
+  "required_commands": ["npm run h4:fresh-tab", "npm run h4:fresh-tab-smoke", "npm run h4:fresh-tab-fixtures"]
+}

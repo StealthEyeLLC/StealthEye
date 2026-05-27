@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "expected_h4_branch": "work",
+  "expected_pr_base": "main",
+  "expected_pr_head_pattern": "h4/*",
+  "open_pr_handling_policy": "must pass deterministic checks before merge",
+  "merged_pr_handling_policy": "post-merge set next action to follow-up hardening pass",
+  "review_defect_handling_policy": "must repair and rerun required chain",
+  "merge_readiness_criteria": [
+    "tests-pass",
+    "h4-active",
+    "review-defects-resolved"
+  ],
+  "post_merge_next_action": "continue H4 ACTIVE hardening",
+  "branch_drift_policy": "hard-fail on branch mismatch",
+  "stale_pr_policy": "revalidate and refresh handoff before merge",
+  "h4_status": "ACTIVE"
+}

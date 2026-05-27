@@ -1,14 +1,14 @@
 {
-  "phase": "H4",
-  "status": "ACTIVE",
-  "deterministic": true,
-  "replay_safe": true,
   "bounded_queue_growth": true,
   "canonical_ordering": true,
+  "deterministic": true,
   "explicit_terminal_states": [
     "complete",
     "blocked",
     "quarantined"
   ],
-  "updated_at": "2026-05-27T15:09:42.861Z"
+  "phase": "H4",
+  "replay_safe": true,
+  "status": "ACTIVE",
+  "updated_at": "2026-05-27T15:41:26.895Z"
 }

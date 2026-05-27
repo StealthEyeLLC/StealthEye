@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "steps": [
+    "repo-only-state-loading",
+    "canonical-order",
+    "pr-continuity",
+    "next-action"
+  ],
+  "h4_status": "ACTIVE",
+  "safe_to_continue": true
+}

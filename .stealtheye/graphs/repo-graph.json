@@ -33,6 +33,10 @@
       "type": "state-file"
     },
     {
+      "id": "chat-memory-rejection-policy.json",
+      "type": "state-file"
+    },
+    {
       "id": "codex-minimization.json",
       "type": "state-file"
     },
@@ -761,6 +765,10 @@
       "type": "state-file"
     },
     {
+      "id": "interrupted-work-recovery.json",
+      "type": "state-file"
+    },
+    {
       "id": "invariants.json",
       "type": "state-file"
     },
@@ -782,6 +790,10 @@
     },
     {
       "id": "mission-lineage-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "mobile-handoff-contract.json",
       "type": "state-file"
     },
     {
@@ -841,7 +853,39 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-authority.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-checkpoint-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-conflict-containment.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-coordination.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-deadlock-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-escalation-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-execution-queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-freeze-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-health.json",
       "type": "state-file"
     },
     {
@@ -853,7 +897,31 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-observability.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-orchestration.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-override-log.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-recovery-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-repair-recommendations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-scheduling.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-telemetry.json",
       "type": "state-file"
     },
     {

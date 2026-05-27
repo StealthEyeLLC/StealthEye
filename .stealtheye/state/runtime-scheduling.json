@@ -1,21 +1,26 @@
 {
   "algorithm": "canonical-fifo",
-  "max_queue": 16,
-  "window_contract": {
-    "max_runtime_ms": 120000,
-    "max_retries": 2
-  },
-  "ownership_transfer": "explicit-only",
   "items": [
     {
-      "order": 1,
       "id": "cont-1779894573382",
+      "order": 1,
       "status": "active"
     },
     {
-      "order": 2,
       "id": "cont-1779894582861",
+      "order": 2,
+      "status": "queued"
+    },
+    {
+      "id": "cont-6c09f48dd2c64cfd",
+      "order": 3,
       "status": "queued"
     }
-  ]
+  ],
+  "max_queue": 16,
+  "ownership_transfer": "explicit-only",
+  "window_contract": {
+    "max_retries": 2,
+    "max_runtime_ms": 120000
+  }
 }

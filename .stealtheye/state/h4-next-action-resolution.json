@@ -1,0 +1,10 @@
+{
+  "next_action": "run npm run h4:fresh-tab-smoke",
+  "reason": "Derived from interrupted-work recovery + continuity state with H4 ACTIVE constraints.",
+  "confidence": 0.9,
+  "blocked": false,
+  "blocker_type": "none",
+  "human_action_needed": false,
+  "recommended_codex_prompt_scope": "H4 continuity/runtime governance only",
+  "safe_to_continue": true
+}

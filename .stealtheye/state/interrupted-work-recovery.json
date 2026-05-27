@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "interrupted": false,
+  "interrupted_command_chain": ["npm run h4:fresh-tab", "npm run h4:next-action-check"],
+  "interrupted_pr_handling": "resume-from-pr-continuity-policy",
+  "interrupted_codex_pass": "none",
+  "pending_review_defects": false,
+  "review_defect_repair_policy": "repair-then-rerun-required-chain",
+  "pending_validation_reruns": false,
+  "pending_merge": false,
+  "pending_pr": false,
+  "pending_next_prompt": true,
+  "safe_continuation_action": "run npm run h4:fresh-tab-smoke"
+}
