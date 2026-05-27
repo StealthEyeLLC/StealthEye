@@ -103,6 +103,34 @@
       "event": "reconciliation-completed",
       "at": "2026-05-27T09:25:39.412Z",
       "dag_id": "dag_db4d62b2bb55950e5b8e"
+    },
+    {
+      "event_id": "evt_6516b1cc6b791a0263",
+      "event": "dag-created",
+      "at": "2026-05-27T09:39:28.502Z",
+      "lineage": null,
+      "dag_id": "dag_861fe25fc5bba9f8f537"
+    },
+    {
+      "event_id": "evt_65ef1eb09a903cca4f",
+      "event": "dag-created",
+      "at": "2026-05-27T09:39:30.471Z",
+      "lineage": null,
+      "dag_id": "dag_db4d62b2bb55950e5b8e"
+    },
+    {
+      "event_id": "evt_bb07d7550c96069554",
+      "event": "checkpoint-restored",
+      "at": "2026-05-27T09:39:30.479Z",
+      "lineage": null,
+      "checkpoint_id": "cp_9ff843fb23775aa53af4"
+    },
+    {
+      "event_id": "evt_c914ece7d1f76fd14f",
+      "event": "reconciliation-completed",
+      "at": "2026-05-27T09:39:30.480Z",
+      "lineage": null,
+      "dag_id": "dag_db4d62b2bb55950e5b8e"
     }
   ]
 }

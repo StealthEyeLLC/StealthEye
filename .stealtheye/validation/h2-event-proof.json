@@ -1,0 +1,17 @@
+{
+  "ordering": {
+    "ok": true
+  },
+  "lineage": {
+    "ok": false
+  },
+  "continuity": {
+    "ok": true
+  },
+  "supersession": {
+    "ok": true
+  },
+  "boundedness": {
+    "ok": true
+  }
+}

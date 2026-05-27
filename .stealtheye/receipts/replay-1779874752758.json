@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "validate",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T09:39:12.757Z",
+  "ordered_commands": [
+    "npm run validate"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.915,
+  "replay_uncertainty": {
+    "score": 0.085,
+    "reasons": []
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "f04e78edffeea2f4bc7eeb6ace5c64be2506f9ddad25f0df6b0d037e82edefc3",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run validate"
+  ],
+  "validation_results": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  }
+}

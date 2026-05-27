@@ -125,11 +125,23 @@
       "type": "state-file"
     },
     {
+      "id": "h2-ci-reconciliation.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-codex-routing.json",
       "type": "state-file"
     },
     {
+      "id": "h2-concurrency-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-continuations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-event-stream-hardened.json",
       "type": "state-file"
     },
     {
@@ -173,6 +185,14 @@
       "type": "state-file"
     },
     {
+      "id": "h2-policy-kernel.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-reconciliation-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-repair-memory.json",
       "type": "state-file"
     },
@@ -181,11 +201,19 @@
       "type": "state-file"
     },
     {
+      "id": "h2-replay-equivalence.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-routing-runtime.json",
       "type": "state-file"
     },
     {
       "id": "h2-runtime-event-bus.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-scheduler-runtime.json",
       "type": "state-file"
     },
     {

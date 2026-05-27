@@ -1,18 +1,15 @@
 {
   "status": "in_progress",
   "checks": {
-    "scheduler_correctness": true,
-    "dependency_correctness": true,
-    "replay_equivalence": true,
-    "concurrency_correctness": true,
-    "checkpoint_lineage": true,
-    "ci_reconciliation": true,
-    "schema_integrity": true,
-    "event_integrity": true,
-    "worker_integrity": true,
-    "repair_integrity": true,
-    "authority_integrity": true,
-    "policy_integrity": true,
-    "dag_restoration_integrity": true
+    "scheduler": true,
+    "concurrency": true,
+    "replay": true,
+    "reconciliation": true,
+    "schemas": true,
+    "adapters": true,
+    "ledgers": true,
+    "recovery": true,
+    "policy": true,
+    "authority_convergence": true
   }
 }
