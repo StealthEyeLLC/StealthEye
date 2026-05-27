@@ -5,6 +5,8 @@
     "hidden-side-effects",
     "unrestricted-external-browsing",
     "product-feature-work",
-    "credential-payment-handling"
+    "credential-payment-handling",
+    "uncontrolled-browser-retries",
+    "silent-runtime-fallback-ambiguity"
   ]
 }

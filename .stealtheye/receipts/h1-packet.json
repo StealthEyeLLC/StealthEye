@@ -2,32 +2,74 @@
   "status": "ok",
   "evidence": {
     "status": "failed",
+    "mode": "proof",
+    "confidence": 0,
+    "runtime_source": "none",
     "evidence": {
-      "screenshots": [],
+      "screenshots": [
+        ".stealtheye/browser/smoke.png"
+      ],
+      "traces": [
+        ".stealtheye/browser/trace.zip"
+      ],
       "console_errors": [],
       "failed_requests": [],
-      "trace_refs": [],
-      "dom_summary": "compact"
+      "dom_summary": ""
     },
-    "blockers": [],
-    "failures": [],
-    "next_action": "npm run h1:validate",
-    "escalation_reason": "none"
+    "runtime_metadata": {
+      "attempts": [
+        "playwright-install",
+        "repair-packet-escalation"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "duration_ms": 1
+    },
+    "validation": {
+      "launch": false,
+      "screenshot": false,
+      "trace": false,
+      "console_network": true,
+      "dom": false
+    },
+    "repair": {
+      "failure_summary": "external-blocked",
+      "repair_target": "runtime",
+      "probable_root_cause": "external-blocked",
+      "retry_recommendation": "no-local-retry",
+      "escalation_recommendation": "github-actions-authoritative-lane",
+      "deterministic_next_action": "run-ci-browser-proof",
+      "evidence_refs": [
+        ".stealtheye/receipts/h1-browser-evidence-packet.json"
+      ],
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ]
+    },
+    "mobile_summary": "failed|c=0|rt=none|ce=0|nf=0"
   },
   "repair": {
-    "failure_summary": "browser-launch-failed",
-    "suspected_files": [
-      "src/lib/h1.ts"
-    ],
+    "failure_summary": "external-blocked",
+    "repair_target": "runtime",
+    "probable_root_cause": "external-blocked",
+    "retry_recommendation": "no-local-retry",
+    "escalation_recommendation": "github-actions-authoritative-lane",
+    "deterministic_next_action": "run-ci-browser-proof",
     "evidence_refs": [
       ".stealtheye/receipts/h1-browser-evidence-packet.json"
     ],
-    "replay_refs": [
-      ".stealtheye/receipts/latest-replay.json"
-    ],
-    "likely_cause": "deterministic classification",
-    "next_command": "npm run h1:browser:proof",
-    "escalation_recommendation": "codex-if-repeated"
+    "diagnostics": [
+      "cdn-blocked",
+      "dependency-failure"
+    ]
+  },
+  "artifact_index": {
+    "browser": [],
+    "latest_evidence": ".stealtheye/receipts/h1-browser-evidence-packet.json",
+    "latest_repair": ".stealtheye/receipts/h1-browser-repair-packet.json"
   },
   "compact_artifacts_bounded": true,
   "adapters_coherent": true

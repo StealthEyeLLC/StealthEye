@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "validate",
+  "processName": "h1:validate",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T06:18:34.004Z",
+  "timestamp": "2026-05-27T06:59:22.352Z",
   "ordered_commands": [
-    "npm run validate"
+    "npm run h1:validate"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -33,14 +33,15 @@
     ".stealtheye/validation/consistency-report.json"
   ],
   "validation_outputs": {
-    "ok": true,
-    "reliability": {
-      "flaky_validations": [],
-      "unstable_checks": [],
-      "repeated_failures": 0,
-      "repair_success_rate": 1,
-      "score": 0.98
-    }
+    "status": "validated",
+    "execution_body_readiness": true,
+    "browser_readiness": false,
+    "routing_readiness": true,
+    "repair_loop_readiness": true,
+    "governance_readiness": true,
+    "runtime_readiness": false,
+    "environment_restrictions": [],
+    "ci_proof_readiness": true
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -52,7 +53,9 @@
   "replay_confidence": 0.915,
   "replay_uncertainty": {
     "score": 0.085,
-    "reasons": []
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
   },
   "replay_integrity": {
     "status": "verified",
@@ -60,7 +63,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "fe30ae6213af8f3150f2eae35eaef10441736e8f29a539fe3ad194b4782387c9",
+      "digest": "0e71a35aab14934b36b9477135e840bb084a598d88f093c3df549bd2d62e8eec",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -68,16 +71,17 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run validate"
+    "npm run h1:validate"
   ],
   "validation_results": {
-    "ok": true,
-    "reliability": {
-      "flaky_validations": [],
-      "unstable_checks": [],
-      "repeated_failures": 0,
-      "repair_success_rate": 1,
-      "score": 0.98
-    }
+    "status": "validated",
+    "execution_body_readiness": true,
+    "browser_readiness": false,
+    "routing_readiness": true,
+    "repair_loop_readiness": true,
+    "governance_readiness": true,
+    "runtime_readiness": false,
+    "environment_restrictions": [],
+    "ci_proof_readiness": true
   }
 }

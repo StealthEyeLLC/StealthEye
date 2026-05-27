@@ -1,15 +1,15 @@
 {
-  "failure_summary": "browser-launch-failed",
-  "suspected_files": [
-    "src/lib/h1.ts"
-  ],
+  "failure_summary": "external-blocked",
+  "repair_target": "runtime",
+  "probable_root_cause": "external-blocked",
+  "retry_recommendation": "no-local-retry",
+  "escalation_recommendation": "github-actions-authoritative-lane",
+  "deterministic_next_action": "run-ci-browser-proof",
   "evidence_refs": [
     ".stealtheye/receipts/h1-browser-evidence-packet.json"
   ],
-  "replay_refs": [
-    ".stealtheye/receipts/latest-replay.json"
-  ],
-  "likely_cause": "deterministic classification",
-  "next_command": "npm run h1:browser:proof",
-  "escalation_recommendation": "codex-if-repeated"
+  "diagnostics": [
+    "cdn-blocked",
+    "dependency-failure"
+  ]
 }

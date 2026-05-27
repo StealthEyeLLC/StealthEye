@@ -2,7 +2,7 @@
   "schema_version": "1.4.0",
   "processName": "h1:packet",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T07:00:26.732Z",
+  "timestamp": "2026-05-27T06:59:57.634Z",
   "ordered_commands": [
     "npm run h1:packet"
   ],
@@ -36,54 +36,17 @@
     "status": "ok",
     "evidence": {
       "status": "failed",
-      "mode": "proof",
-      "confidence": 0,
-      "runtime_source": "none",
       "evidence": {
-        "screenshots": [
-          ".stealtheye/browser/smoke.png"
-        ],
-        "traces": [
-          ".stealtheye/browser/trace.zip"
-        ],
+        "screenshots": [],
         "console_errors": [],
         "failed_requests": [],
-        "dom_summary": ""
+        "trace_refs": [],
+        "dom_summary": "compact"
       },
-      "runtime_metadata": {
-        "attempts": [
-          "playwright-install",
-          "repair-packet-escalation"
-        ],
-        "diagnostics": [
-          "cdn-blocked",
-          "dependency-failure"
-        ],
-        "duration_ms": 1
-      },
-      "validation": {
-        "launch": false,
-        "screenshot": false,
-        "trace": false,
-        "console_network": true,
-        "dom": false
-      },
-      "repair": {
-        "failure_summary": "external-blocked",
-        "repair_target": "runtime",
-        "probable_root_cause": "external-blocked",
-        "retry_recommendation": "no-local-retry",
-        "escalation_recommendation": "github-actions-authoritative-lane",
-        "deterministic_next_action": "run-ci-browser-proof",
-        "evidence_refs": [
-          ".stealtheye/receipts/h1-browser-evidence-packet.json"
-        ],
-        "diagnostics": [
-          "cdn-blocked",
-          "dependency-failure"
-        ]
-      },
-      "mobile_summary": "failed|c=0|rt=none|ce=0|nf=0"
+      "blockers": [],
+      "failures": [],
+      "next_action": "npm run h1:validate",
+      "escalation_reason": "none"
     },
     "repair": {
       "failure_summary": "external-blocked",
@@ -142,54 +105,17 @@
     "status": "ok",
     "evidence": {
       "status": "failed",
-      "mode": "proof",
-      "confidence": 0,
-      "runtime_source": "none",
       "evidence": {
-        "screenshots": [
-          ".stealtheye/browser/smoke.png"
-        ],
-        "traces": [
-          ".stealtheye/browser/trace.zip"
-        ],
+        "screenshots": [],
         "console_errors": [],
         "failed_requests": [],
-        "dom_summary": ""
+        "trace_refs": [],
+        "dom_summary": "compact"
       },
-      "runtime_metadata": {
-        "attempts": [
-          "playwright-install",
-          "repair-packet-escalation"
-        ],
-        "diagnostics": [
-          "cdn-blocked",
-          "dependency-failure"
-        ],
-        "duration_ms": 1
-      },
-      "validation": {
-        "launch": false,
-        "screenshot": false,
-        "trace": false,
-        "console_network": true,
-        "dom": false
-      },
-      "repair": {
-        "failure_summary": "external-blocked",
-        "repair_target": "runtime",
-        "probable_root_cause": "external-blocked",
-        "retry_recommendation": "no-local-retry",
-        "escalation_recommendation": "github-actions-authoritative-lane",
-        "deterministic_next_action": "run-ci-browser-proof",
-        "evidence_refs": [
-          ".stealtheye/receipts/h1-browser-evidence-packet.json"
-        ],
-        "diagnostics": [
-          "cdn-blocked",
-          "dependency-failure"
-        ]
-      },
-      "mobile_summary": "failed|c=0|rt=none|ce=0|nf=0"
+      "blockers": [],
+      "failures": [],
+      "next_action": "npm run h1:validate",
+      "escalation_reason": "none"
     },
     "repair": {
       "failure_summary": "external-blocked",
