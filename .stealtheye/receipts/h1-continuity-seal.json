@@ -1,0 +1,9 @@
+{
+  "status": "sealed",
+  "fresh_tab_continuity": true,
+  "interrupted_run_continuity": true,
+  "replay_restoration": true,
+  "repair_continuation": true,
+  "ci_fallback_continuation": true,
+  "runtime_state_restoration": true
+}

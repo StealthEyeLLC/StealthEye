@@ -146,6 +146,42 @@
       "order": 24,
       "stamp": "t24:e8",
       "mission_id": "h1-browser-1779869849701"
+    },
+    {
+      "type": "mission-created",
+      "order": 25,
+      "stamp": "t25:e9",
+      "mission_id": "h1-browser-1779870647521"
+    },
+    {
+      "type": "replay-started",
+      "order": 26,
+      "stamp": "t26:e9",
+      "mission_id": "h1-browser-1779870647521"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 27,
+      "stamp": "t27:e9",
+      "mission_id": "h1-browser-1779870647521"
+    },
+    {
+      "type": "mission-created",
+      "order": 28,
+      "stamp": "t28:e10",
+      "mission_id": "h1-browser-1779870671321"
+    },
+    {
+      "type": "replay-started",
+      "order": 29,
+      "stamp": "t29:e10",
+      "mission_id": "h1-browser-1779870671321"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 30,
+      "stamp": "t30:e10",
+      "mission_id": "h1-browser-1779870671321"
     }
   ]
 }

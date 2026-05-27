@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0.0",
-  "tick": 24,
+  "tick": 30,
   "epochs": {
     "runtime": 0,
-    "mission": 8,
-    "replay": 8,
+    "mission": 10,
+    "replay": 10,
     "recovery": 0,
-    "ci": 8,
+    "ci": 10,
     "repair": 0
   },
   "bounded_window": {
     "size": 128,
     "start": 0,
-    "end": 24
+    "end": 30
   }
 }
