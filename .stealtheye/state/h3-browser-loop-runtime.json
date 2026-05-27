@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "playwright_execution_loops": true,
+  "allowlist": [
+    "github.com",
+    "api.github.com"
+  ],
+  "replay_safe": true,
+  "missions": [
+    "inspect failing GitHub Actions page",
+    "inspect PR diff page",
+    "inspect release page"
+  ],
+  "continuation_persistence": true,
+  "dead_session_recovery": true,
+  "mission_escalation": [
+    {
+      "mission": "inspect PR diff page",
+      "escalated": false
+    }
+  ]
+}

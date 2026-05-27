@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "repair": 0.72,
+  "mission": 0.76,
+  "browser": 0.71,
+  "ci": 0.67,
+  "worker": 0.75,
+  "replay": 0.73,
+  "deadlock_detected": false,
+  "oscillation_detected": true,
+  "divergence_amplification": 0.28,
+  "instability_propagation": 0.31,
+  "bounded_retry_exhaustion_risk": 0.22
+}

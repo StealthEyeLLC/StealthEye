@@ -1,69 +1,64 @@
 {
   "status": "ACTIVE",
-  "active_missions": [
+  "active_repair_chains": [
+    "R-1"
+  ],
+  "active_browser_missions": [
+    "inspect failing GitHub Actions page"
+  ],
+  "active_ci_stabilization": true,
+  "active_mission_chains": [
     {
-      "id": "M-1",
-      "type": "ci_stabilization",
-      "status": "ACTIVE",
-      "lease_sec": 900
+      "chain_id": "MC-1",
+      "missions": [
+        "M-REPAIR",
+        "M-VALIDATE",
+        "M-BROWSER"
+      ],
+      "deterministic_recovery": true
     }
   ],
-  "blocked_missions": [],
-  "ci_instability": 0.05,
-  "browser_anomalies": [
-    {
-      "level": "error",
-      "message": "selector drift simulated"
-    }
-  ],
+  "worker_swarm_status": {
+    "parallel_limit": 4,
+    "deadlock": false
+  },
   "replay_divergence": [
     {
-      "mission": "inspect_github_pr",
-      "steps": [
-        "goto",
-        "wait",
-        "assert-selector",
-        "snapshot"
-      ],
-      "replay_safe": true
+      "mission_id": "M-REPAIR",
+      "divergence_kind": "replay-drift",
+      "recovered": true
     }
   ],
-  "repair_convergence": [
+  "convergence_score": 0.723,
+  "instability_propagation": 0.31,
+  "deadlock_alerts": [],
+  "blocked_operational_chains": [],
+  "highest_value_repair_target": "src/lib/h3.ts",
+  "highest_risk_workflow": "ci",
+  "highest_risk_subsystem": "browser_runtime",
+  "browser_anomaly_clusters": [
     {
-      "id": "RC-1",
-      "scope": [
-        "src/lib/h3.ts"
-      ],
-      "score": 0.73,
-      "validation": [
-        "npm run h3:validate"
-      ],
-      "quarantined": false
-    }
-  ],
-  "worker_exhaustion": [
+      "id": "AN-1",
+      "kind": "selector-drift",
+      "count": 2
+    },
     {
-      "worker": "repair_runtime",
-      "queued": 1
+      "id": "AN-2",
+      "kind": "navigation-interruption",
+      "count": 1
     }
   ],
-  "worker_reliability": [
+  "worker_exhaustion": "managed",
+  "continuation_backlog": 1,
+  "escalation_queue": [
     {
-      "worker": "browser_runtime",
-      "reliability": 0.74
+      "from": "repair_runtime",
+      "to": "critic_runtime"
     }
   ],
-  "top_unstable_subsystems": [
-    "ci_runtime",
-    "browser_runtime"
-  ],
-  "top_failing_workflows": [],
-  "highest_value_repair_targets": [
-    "src/lib/h3.ts"
-  ],
-  "operational_confidence": 0.95,
-  "autonomy_readiness": 0.78,
-  "next_best_action": "Run h3 repair smoke and route top candidate for targeted validation",
+  "operational_confidence": 0.33,
+  "autonomy_progression": 0.74,
+  "next_best_autonomous_action": "Run targeted validation on RC-1 then execute browser verify mission",
   "human_attention_priority": "medium",
-  "compact_mobile_summary": "H3 fallback-deterministic | missions=1 | instability=0.05"
+  "compact_mobile_summary": "H3 ACTIVE | convergence=0.72 | backlog=1"
 }

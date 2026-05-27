@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "divergence_detection": [
+    {
+      "mission_id": "M-REPAIR",
+      "divergence_kind": "replay-drift",
+      "recovered": true
+    }
+  ],
+  "orphan_detection": [],
+  "deadlock_detection": [],
+  "chain_convergence_detection": {
+    "converging": true,
+    "score": 0.76
+  }
+}

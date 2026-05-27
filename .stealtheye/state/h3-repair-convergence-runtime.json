@@ -1,0 +1,7 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "convergence_score": 0.72,
+  "oscillation_detected": true,
+  "low_value_retry_suppression": true,
+  "highest_confidence_repair": "RC-1"
+}

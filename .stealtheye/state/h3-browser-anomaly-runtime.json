@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "anomaly_clusters": [
+    {
+      "id": "AN-1",
+      "kind": "selector-drift",
+      "count": 2
+    },
+    {
+      "id": "AN-2",
+      "kind": "navigation-interruption",
+      "count": 1
+    }
+  ],
+  "unstable_browser_flow_detection": {
+    "unstable": false
+  }
+}

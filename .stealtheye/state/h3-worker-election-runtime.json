@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "deterministic_worker_elections": [
+    {
+      "election_id": "E-1",
+      "contenders": [
+        "codex_high",
+        "repair_runtime"
+      ],
+      "elected": "repair_runtime"
+    }
+  ]
+}

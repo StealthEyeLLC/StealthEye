@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "selector_healing": [
+    {
+      "selector": "[data-test=check-run]",
+      "healed_to": ".check-run-row"
+    }
+  ],
+  "navigation_recovery": [
+    {
+      "mission": "inspect failing GitHub Actions page",
+      "recovered": true
+    }
+  ],
+  "dom_divergence": [
+    {
+      "page": "actions",
+      "divergence_score": 0.19
+    }
+  ],
+  "replay_safe_interaction_chains": [
+    {
+      "id": "BCHAIN-1",
+      "steps": [
+        "goto",
+        "waitForSelector",
+        "click",
+        "screenshot"
+      ]
+    }
+  ],
+  "timeline_reconstruction": [
+    {
+      "mission": "inspect failing GitHub Actions page",
+      "events": 4
+    }
+  ]
+}

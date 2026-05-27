@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "repeated_failure_clustering": [
+    {
+      "workflow": "ci",
+      "failures": 3
+    }
+  ],
+  "flaky_workflow_suppression": [
+    {
+      "workflow": "ci",
+      "suppressed": true
+    }
+  ],
+  "repair_recommendation_routing": [
+    {
+      "workflow": "ci",
+      "route": "repair_runtime"
+    }
+  ],
+  "convergence_score": 0.67,
+  "workflow_replay_analysis": [
+    {
+      "workflow": "ci",
+      "replay_verified": true
+    }
+  ],
+  "ci_replay_verification": true,
+  "slow_test_hotspots": [
+    {
+      "test": "h3 smoke",
+      "p95_sec": 42
+    }
+  ]
+}

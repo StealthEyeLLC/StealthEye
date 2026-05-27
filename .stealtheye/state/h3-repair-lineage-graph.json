@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "branches": [
+    {
+      "attempt_id": "RA-1",
+      "branch": "repair/R-1-a1",
+      "parent": null
+    },
+    {
+      "attempt_id": "RA-2",
+      "branch": "repair/R-1-a2",
+      "parent": "RA-1"
+    },
+    {
+      "attempt_id": "RA-3",
+      "branch": "repair/R-1-a3",
+      "parent": "RA-2"
+    }
+  ],
+  "replay_lineage": [
+    {
+      "from": null,
+      "to": "RA-1"
+    },
+    {
+      "from": "RA-1",
+      "to": "RA-2"
+    },
+    {
+      "from": "RA-2",
+      "to": "RA-3"
+    }
+  ],
+  "tournament": {
+    "candidates": [
+      {
+        "id": "RC-1",
+        "score": 0.82
+      },
+      {
+        "id": "RC-2",
+        "score": 0.34
+      },
+      {
+        "id": "RC-3",
+        "score": 0.77
+      }
+    ],
+    "winner": "RC-1"
+  }
+}
