@@ -1,4 +1,17 @@
 {
-  "schema_version": "2.1.0",
-  "type": "object"
+  "schema_version": "2.2.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "receipt_id": {
+      "type": "string"
+    }
+  }
 }

@@ -1,0 +1,52 @@
+{
+  "runtime": {
+    "migrated": {
+      "schema_version": "2.2.0",
+      "x": 1
+    },
+    "deterministic": true,
+    "lineage": [
+      "runtime"
+    ]
+  },
+  "receipt": {
+    "migrated": {
+      "y": 1,
+      "schema_version": "2.2.0"
+    },
+    "deterministic": true,
+    "lineage": [
+      "receipt"
+    ]
+  },
+  "checkpoint": {
+    "migrated": {
+      "z": 1,
+      "schema_version": "2.2.0"
+    },
+    "deterministic": true,
+    "lineage": [
+      "checkpoint"
+    ]
+  },
+  "dag": {
+    "migrated": {
+      "nodes": [],
+      "schema_version": "2.2.0"
+    },
+    "deterministic": true,
+    "lineage": [
+      "dag"
+    ]
+  },
+  "event": {
+    "migrated": {
+      "events": [],
+      "schema_version": "2.2.0"
+    },
+    "deterministic": true,
+    "lineage": [
+      "event-stream"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "completion": {
+    "total": 10,
+    "done": 10,
+    "percent": 100
+  },
+  "gaps": {
+    "critical": []
+  },
+  "seal_readiness": {
+    "ready": true
+  }
+}

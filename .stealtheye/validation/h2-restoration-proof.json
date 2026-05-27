@@ -1,0 +1,27 @@
+{
+  "runtime": {
+    "recovered": true,
+    "bounded_window": true,
+    "replay_safe": true
+  },
+  "dag": {
+    "recovered": true,
+    "orphan_free": true
+  },
+  "checkpoints": {
+    "recovered": true,
+    "lineage_preserved": true
+  },
+  "replay": {
+    "recovered": true,
+    "deterministic": true
+  },
+  "repair": {
+    "recovered": true,
+    "deterministic": true
+  },
+  "authority": {
+    "recovered": true,
+    "deterministic": true
+  }
+}

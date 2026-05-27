@@ -1,0 +1,12 @@
+{
+  "version": "2.2.0",
+  "schemas": [
+    "runtime",
+    "receipt",
+    "checkpoint",
+    "dag"
+  ],
+  "superseded": [
+    "2.1.0"
+  ]
+}

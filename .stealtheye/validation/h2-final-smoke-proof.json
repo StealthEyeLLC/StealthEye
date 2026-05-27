@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "crash_recovery": true,
+  "continuation_restoration": true,
+  "replay_reconstruction": true,
+  "schema_migration": true,
+  "authority_supersession": true,
+  "event_corruption_detection": true,
+  "policy_replay_validation": true,
+  "checkpoint_rollback": true,
+  "bounded_replay_windows": true,
+  "dependency_invalidation": true,
+  "replay_drift_detection": true
+}
