@@ -1,0 +1,1 @@
+H4 ACTIVE | branch=h4/autonomy-continuity-fresh-tab-runtime | pr=OPEN | next=run h4:end-to-end-proof then h4:gap-reducer | blockers=end-to-end-burnin,serialization-stability | approval=NO secrets/billing/prod-delete | completion=not-ready

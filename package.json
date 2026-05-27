@@ -83,7 +83,15 @@
     "h4:completion-gate-check": "tsx src/cli/h4-completion-gate-check.ts",
     "h4:artifact-churn-check": "tsx src/cli/h4-artifact-churn-check.ts",
     "h4:blocker-reducer": "tsx src/cli/h4-blocker-reducer.ts",
-    "h4:completion-readiness-simulator": "tsx src/cli/h4-completion-readiness-simulator.ts"
+    "h4:completion-readiness-simulator": "tsx src/cli/h4-completion-readiness-simulator.ts",
+    "h4:chaos-burnin": "tsx src/cli/h4-chaos-burnin.ts",
+    "h4:freeze-readiness": "tsx src/cli/h4-freeze-readiness.ts",
+    "h4:serialization-stabilizer": "tsx src/cli/h4-serialization-stabilizer.ts",
+    "h4:repair-orchestrator": "tsx src/cli/h4-repair-orchestrator.ts",
+    "h4:mobile-finalization": "tsx src/cli/h4-mobile-finalization.ts",
+    "h4:end-to-end-proof": "tsx src/cli/h4-end-to-end-proof.ts",
+    "h4:precompletion-law": "tsx src/cli/h4-precompletion-law.ts",
+    "h4:gap-reducer": "tsx src/cli/h4-gap-reducer.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

@@ -1,0 +1,79 @@
+{
+  "proof_systems": [
+    "h4-end-to-end-proof",
+    "h4-lineage-conflict-proof",
+    "h4-replay-corruption-rehearsal"
+  ],
+  "simulators": [
+    "h4-completion-readiness-simulator",
+    "h4-zero-context-simulator"
+  ],
+  "governance": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:37:13.294Z",
+    "audit_status": "pass",
+    "evidence_files": [
+      ".stealtheye/state/project-state.json",
+      ".stealtheye/handoffs/latest.json",
+      ".stealtheye/receipts/latest-replay.json"
+    ],
+    "governance_findings": [
+      "approval boundaries preserved",
+      "repo state canonical",
+      "chat memory advisory only"
+    ],
+    "boundary_findings": [
+      "no unrestricted shell authority",
+      "no unrestricted destructive git"
+    ],
+    "autonomy_findings": [
+      "bounded deterministic autonomy only"
+    ],
+    "human_action_needed": false,
+    "approval_boundary_hit": false,
+    "unresolved_audit_risks": [],
+    "recommended_repair_actions": []
+  },
+  "continuity": {
+    "schema_version": "1.0.0",
+    "can_fresh_runtime_continue_safely": true,
+    "can_derive_next_action": true,
+    "can_detect_stale_continuity": true,
+    "can_detect_invalid_branch_state": true,
+    "can_preserve_governance": true,
+    "can_avoid_human_interruption": true,
+    "gaps_before_h4_freeze_readiness": [
+      "expand adversarial fixture assertions",
+      "increase replay anomaly scenarios"
+    ]
+  },
+  "replay": {},
+  "quarantine": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:37:13.296Z",
+    "quarantine_status": "pass",
+    "proofs": [
+      "stale runtime quarantined",
+      "replay-invalid runtime quarantined",
+      "branch-conflicted runtime quarantined",
+      "authoritative restoration requires proof"
+    ],
+    "restoration_requirements": [
+      "replay-valid",
+      "branch-valid",
+      "governance-valid"
+    ],
+    "boundaries_preserved": true
+  },
+  "mobile": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:37:13.298Z",
+    "mobile_acceptance_status": "pass",
+    "compact": true,
+    "required_order": true,
+    "no_prompt_dump": true
+  }
+}

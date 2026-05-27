@@ -1,0 +1,6 @@
+{
+  "blockers": [
+    "freeze-readiness-has-blockers",
+    "end-to-end-proof-not-finalized"
+  ]
+}

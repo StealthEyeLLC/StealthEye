@@ -1,0 +1,4 @@
+{
+  "approval_boundary": "no secrets/billing/destructive prod delete",
+  "unsafe_autonomy_rejected": true
+}

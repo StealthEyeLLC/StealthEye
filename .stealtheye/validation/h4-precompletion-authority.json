@@ -1,0 +1,12 @@
+{
+  "premature_completion_forbidden": true,
+  "h4_complete_allowed": false,
+  "required_conditions": [
+    "freeze-readiness-pass",
+    "governance-pass",
+    "replay-pass",
+    "continuity-pass",
+    "mobile-supervision-pass",
+    "artifact-stability-pass"
+  ]
+}

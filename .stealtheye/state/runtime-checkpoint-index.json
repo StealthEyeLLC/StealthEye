@@ -1,7 +1,6 @@
 {
-  "latest": "runtime-checkpoint-1779909708825",
+  "latest": "runtime-checkpoint-1779910593991",
   "checkpoints": [
-    "runtime-checkpoint-1779892865629.json",
     "runtime-checkpoint-1779894568509.json",
     "runtime-checkpoint-1779894570383.json",
     "runtime-checkpoint-1779894571401.json",
@@ -25,7 +24,8 @@
     "runtime-checkpoint-1779909700344.json",
     "runtime-checkpoint-1779909704701.json",
     "runtime-checkpoint-1779909706793.json",
-    "runtime-checkpoint-1779909708825.json"
+    "runtime-checkpoint-1779909708825.json",
+    "runtime-checkpoint-1779910593991.json"
   ],
   "orphan_checkpoints": []
 }

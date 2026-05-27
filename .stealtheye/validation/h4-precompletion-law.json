@@ -1,0 +1,48 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:39:14.701Z",
+  "law": "strict-precompletion",
+  "authority": {
+    "premature_completion_forbidden": true,
+    "h4_complete_allowed": false,
+    "required_conditions": [
+      "freeze-readiness-pass",
+      "governance-pass",
+      "replay-pass",
+      "continuity-pass",
+      "mobile-supervision-pass",
+      "artifact-stability-pass"
+    ]
+  },
+  "completion_conditions": [
+    "freeze-readiness-pass",
+    "governance-pass",
+    "replay-pass",
+    "continuity-pass",
+    "mobile-supervision-pass",
+    "artifact-stability-pass"
+  ],
+  "freeze_readiness_conditions": [
+    "no true blockers"
+  ],
+  "governance_conditions": [
+    "no unsafe escalation"
+  ],
+  "replay_conditions": [
+    "replay recovery verified"
+  ],
+  "continuity_conditions": [
+    "fresh-tab proof verified"
+  ],
+  "mobile_conditions": [
+    "compact + explicit approvals"
+  ],
+  "artifact_stability_conditions": [
+    "deterministic ordering + bounded retention"
+  ],
+  "remaining_blocker_classes": [
+    "hard-blocker",
+    "advisory-risk"
+  ]
+}
