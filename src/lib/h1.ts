@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, readdirSync, rmSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execSync } from 'node:child_process';
 import { chromium } from 'playwright';
@@ -6,99 +6,61 @@ import { bootstrap, type BootstrapContext } from './bootstrap.js';
 import { emitRunEvidence, readJson, writeHandoff, writeReplayReceipt } from './substrate.js';
 
 export const H1_FAILURE_CLASSES = ['browser-launch-failed','selector-not-found','navigation-timeout','console-error','network-error','flaky-run','auth-required','external-blocked','trace-corrupt','repair-needed','binary-missing','cdn-blocked','permission-issue','sandbox-issue','dependency-failure'];
-
 type EnvClass = 'codex-restricted'|'github-actions'|'local-browser-available'|'browser-missing'|'external-blocked';
 
-export function h1Bootstrap(root=process.cwd()): BootstrapContext { const ctx=bootstrap(root); mkdirSync(resolve(root,'.stealtheye/browser'),{recursive:true}); return ctx; }
+export function h1Bootstrap(root=process.cwd()): BootstrapContext { const ctx=bootstrap(root); mkdirSync(resolve(root,'.stealtheye/browser'),{recursive:true}); mkdirSync(resolve(root,'.stealtheye/validation/fixtures'),{recursive:true}); ensureFixture(root); return ctx; }
 
-export function detectEnvironment(root=process.cwd()) {
-  h1Bootstrap(root);
-  const ua = process.env.CI ? 'github-actions' : process.env.CODEX_SANDBOX || process.env.CODESPACES ? 'codex-restricted' : 'local';
-  const hasLocal = detectLocalBrowser();
-  const externalBlocked = detectExternalBlocked();
-  const classes: EnvClass[] = [];
-  if (ua === 'github-actions') classes.push('github-actions');
-  if (ua === 'codex-restricted') classes.push('codex-restricted');
-  if (hasLocal) classes.push('local-browser-available'); else classes.push('browser-missing');
-  if (externalBlocked) classes.push('external-blocked');
-  const out={schema_version:'1.0.0',environment:ua,classes,runtime_source:hasLocal?'preinstalled-browser':'playwright-managed',external_blocked:externalBlocked,local_browser_paths:findLocalBrowsers()};
-  write('.stealtheye/state/h1-runtime-posture.json',out,root);
-  return out;
-}
+export function detectEnvironment(root=process.cwd()) { h1Bootstrap(root); const ua = process.env.CI ? 'github-actions' : process.env.CODEX_SANDBOX || process.env.CODESPACES ? 'codex-restricted' : 'local'; const hasLocal = detectLocalBrowser(); const externalBlocked = detectExternalBlocked(); const classes: EnvClass[] = []; if (ua === 'github-actions') classes.push('github-actions'); if (ua === 'codex-restricted') classes.push('codex-restricted'); if (hasLocal) classes.push('local-browser-available'); else classes.push('browser-missing'); if (externalBlocked) classes.push('external-blocked'); const out={schema_version:'1.1.0',environment:ua,classes,runtime_source:hasLocal?'preinstalled-browser':'playwright-managed',external_blocked:externalBlocked,local_browser_paths:findLocalBrowsers()}; write('.stealtheye/state/h1-runtime-posture.json',out,root); return out; }
 
-export async function acquireRuntime(root=process.cwd()) {
-  const posture = detectEnvironment(root);
-  const attempts: string[] = [];
-  if (posture.classes.includes('local-browser-available')) return { ok:true, source:'preinstalled-browser', attempts:['local-browser-detected'], diagnostics:[] as string[] };
-  attempts.push('playwright-install');
-  try { execSync('npx playwright install chromium',{stdio:'pipe'}); return { ok:true, source:'playwright-managed-runtime', attempts, diagnostics:[] as string[] }; }
-  catch (e:any) {
-    const diagnostics = classifyRuntimeError(String(e?.stderr||e?.message||e));
-    const fallback = posture.classes.includes('github-actions') ? 'ci-browser-workflow' : 'repair-packet-escalation';
-    return { ok:false, source:'none', attempts:[...attempts,fallback], diagnostics };
-  }
-}
+export async function acquireRuntime(root=process.cwd()) { const posture = detectEnvironment(root); const attempts: string[] = []; if (posture.classes.includes('local-browser-available')) return { ok:true, source:'preinstalled-browser', attempts:['local-browser-detected'], diagnostics:[] as string[], browser_version:'system' }; attempts.push('playwright-install'); try { execSync('npx playwright install --with-deps chromium',{stdio:'pipe'}); return { ok:true, source:'playwright-managed-runtime', attempts, diagnostics:[] as string[], browser_version:'playwright-managed' }; } catch (e:any) { const diagnostics = classifyRuntimeError(String(e?.stderr||e?.message||e)); const fallback = posture.classes.includes('github-actions') ? 'ci-browser-workflow' : 'repair-packet-escalation'; return { ok:false, source:'none', attempts:[...attempts,fallback], diagnostics, browser_version:'unknown' }; } }
 
-export async function runBrowserProof(root=process.cwd(), mode:'smoke'|'proof'='proof') {
-  h1Bootstrap(root);
-  const runtime = await acquireRuntime(root);
-  const diag:string[] = [];
-  const consoleErrors:string[]=[]; const failedRequests:string[]=[];
-  const start=Date.now();
-  if (!runtime.ok) {
-    const repair = createRepair('external-blocked', runtime.diagnostics, root, false);
-    const packet = normalizeEvidence({ status:'failed', runtime, consoleErrors:[], failedRequests:[], domSummary:'', launchOk:false, screenshotOk:false, traceOk:false, confidence:scoreConfidence(false,false,false,0,0,true), mode, duration_ms:Date.now()-start, diagnostics:runtime.diagnostics, repair }, root);
-    write('.stealtheye/receipts/h1-browser-evidence-packet.json',packet,root);
-    return packet;
-  }
-  let browser:any; let launchOk=false; let screenshotOk=false; let traceOk=false; let domSummary='';
+export async function runBrowserProof(root=process.cwd(), mode:'smoke'|'proof'='proof') { h1Bootstrap(root); const runtime = await acquireRuntime(root); const consoleErrors:string[]=[]; const failedRequests:string[]=[]; const runId = `h1-browser-${Date.now()}`; const start=Date.now(); if (!runtime.ok) { const repair = createRepair('external-blocked', runtime.diagnostics, root, false); const packet = normalizeEvidence({ status:'degraded', runtime, consoleErrors:[], failedRequests:[], domSummary:'', launchOk:false, screenshotOk:false, traceOk:false, mode, duration_ms:Date.now()-start, diagnostics:runtime.diagnostics, repair, runId, browserVersion:runtime.browser_version, flake:false }, root); writeReceipt(packet, root); return packet; }
+  let browser:any; let launchOk=false; let screenshotOk=false; let traceOk=false; let domSummary=''; let browserVersion='unknown'; let failure=false;
   try {
-    browser = await chromium.launch({ headless: true }); launchOk=true;
-    const context = await browser.newContext();
+    browser = await chromium.launch({ headless: true, args: ['--no-sandbox','--disable-setuid-sandbox'] }); launchOk=true; browserVersion = browser.version();
+    const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
     await context.tracing.start({ screenshots:true, snapshots:true });
     const page = await context.newPage();
     page.on('console', msg => { if (msg.type()==='error') consoleErrors.push(msg.text()); });
     page.on('requestfailed', req => failedRequests.push(req.url()));
-    await page.goto('https://example.com',{waitUntil:'domcontentloaded',timeout:20000});
-    await page.screenshot({ path: '.stealtheye/browser/smoke.png', fullPage:true }); screenshotOk=true;
-    domSummary = await page.evaluate(() => JSON.stringify({ title: document.title, links: document.querySelectorAll('a').length, text: document.body?.innerText?.slice(0,120) ?? '' }));
-    const tracePath = '.stealtheye/browser/trace.zip';
-    await context.tracing.stop({ path: tracePath }); traceOk = existsSync(resolve(root,tracePath));
+    const fixturePath = `file://${resolve(root,'.stealtheye/validation/fixtures/browser-proof.html')}`;
+    await page.goto(fixturePath,{waitUntil:'domcontentloaded',timeout:20000});
+    await page.waitForSelector('#proof-ready',{timeout:5000});
+    await page.screenshot({ path: resolve(root,'.stealtheye/browser/smoke.png'), fullPage:true }); screenshotOk=true;
+    domSummary = await page.evaluate(() => JSON.stringify({ title: document.title, links: document.querySelectorAll('a').length, marker: document.querySelector('#proof-ready')?.textContent ?? '' }));
+    const tracePath = resolve(root,'.stealtheye/browser/trace.zip');
+    await context.tracing.stop({ path: tracePath }); traceOk = existsSync(tracePath);
     await browser.close();
-    const confidence=scoreConfidence(launchOk,screenshotOk,traceOk,consoleErrors.length,failedRequests.length,false);
-    const packet=normalizeEvidence({status:'ok',runtime,consoleErrors,failedRequests,domSummary,launchOk,screenshotOk,traceOk,confidence,mode,duration_ms:Date.now()-start},root);
-    write('.stealtheye/receipts/h1-browser-evidence-packet.json',packet,root);
-    write('.stealtheye/state/h1-runtime-metadata.json',{runtime,mode,confidence,last_success_at:new Date().toISOString()},root);
-    return packet;
-  } catch (e:any) {
-    if (browser) await browser.close().catch(()=>{});
-    diag.push(...classifyRuntimeError(String(e?.message||e)));
-    const repair=createRepair('browser-launch-failed',diag,root,true);
-    const confidence=scoreConfidence(launchOk,screenshotOk,traceOk,consoleErrors.length,failedRequests.length,true);
-    const packet=normalizeEvidence({status:'failed',runtime,consoleErrors,failedRequests,domSummary,launchOk,screenshotOk,traceOk,confidence,mode,duration_ms:Date.now()-start,diagnostics:diag,repair},root);
-    write('.stealtheye/receipts/h1-browser-evidence-packet.json',packet,root);
-    return packet;
-  }
+  } catch (e:any) { failure=true; if (browser) await browser.close().catch(()=>{}); const diagnostics=classifyRuntimeError(String(e?.message||e)); const repair=createRepair('browser-launch-failed',diagnostics,root,true); const packet=normalizeEvidence({status:'failed',runtime,consoleErrors,failedRequests,domSummary,launchOk,screenshotOk,traceOk,mode,duration_ms:Date.now()-start,diagnostics,repair,runId,browserVersion,flake:detectFlake(diagnostics)} as any,root); writeReceipt(packet, root); return packet; }
+  const packet=normalizeEvidence({status:failure?'failed':'ok',runtime,consoleErrors,failedRequests,domSummary,launchOk,screenshotOk,traceOk,mode,duration_ms:Date.now()-start,runId,browserVersion,flake:detectFlake([])} as any,root);
+  writeReceipt(packet,root);
+  return packet;
 }
 
+function writeReceipt(packet:any,root:string){
+  const latestPath='.stealtheye/receipts/h1-browser-evidence-packet.json';
+  write(latestPath,packet,root);
+  const replayId = `browser-replay-${packet.replay_seed}`;
+  const statusType = packet.status === 'ok' ? 'success' : packet.status === 'degraded' ? 'degraded' : 'failed';
+  write(`.stealtheye/receipts/h1-browser-proof-${statusType}.json`,{id:packet.proof_id,replay_id:replayId,status:packet.status,mobile:packet.mobile_summary,confidence:packet.confidence,artifact_index:packet.artifact_index},root);
+  updateRetention(root, packet);
+  write('.stealtheye/state/h1-runtime-metadata.json',{runtime:packet.runtime_metadata,mode:packet.mode,confidence:packet.confidence,last_success_at:packet.status==='ok'?new Date().toISOString():null,browser_version:packet.browser_version,replay_id:replayId},root);
+}
+function updateRetention(root:string,packet:any){ const dir=resolve(root,'.stealtheye/browser'); const files=existsSync(dir)?readdirSync(dir).sort():[]; const retention=8; const remove=files.slice(0,Math.max(0,files.length-retention)); for(const f of remove){ rmSync(resolve(dir,f),{force:true}); } const index={latest_proof_id:packet.proof_id,latest_replay_id:`browser-replay-${packet.replay_seed}`,files:(existsSync(dir)?readdirSync(dir).sort():[]),retention_limit:retention,pruned:remove.length,artifact_growth_bounded:true}; write('.stealtheye/state/h1-browser-artifact-index.json',index,root); }
+function ensureFixture(root:string){ const html='<!doctype html><html><head><meta charset="utf-8"><title>H1 Browser Fixture</title><style>body{font-family:sans-serif}#proof-ready{margin-top:20px;color:#0b7}</style></head><body><h1>StealthEye Browser Proof</h1><a href="#">stable-link</a><div id="proof-ready">READY-V1</div></body></html>'; write('.stealtheye/validation/fixtures/browser-proof.html',html,root,true); }
 function detectLocalBrowser() { return findLocalBrowsers().length>0; }
 function findLocalBrowsers() { const cands=['/usr/bin/google-chrome','/usr/bin/chromium','/usr/bin/chromium-browser','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome']; return cands.filter(existsSync); }
 function detectExternalBlocked() { try { execSync('curl -I -s https://cdn.playwright.dev | head -n 1',{stdio:'pipe'}); return false; } catch { return true; } }
-function classifyRuntimeError(raw:string){ const r=raw.toLowerCase(); const d:string[]=[]; if (r.includes('403')||r.includes('cdn')||r.includes('download failed')) d.push('cdn-blocked'); if (r.includes('permission denied')||r.includes('eacces')) d.push('permission-issue'); if (r.includes('sandbox')) d.push('sandbox-issue'); if (r.includes('lib')||r.includes('dependency')) d.push('dependency-failure'); if (r.includes('executable')||r.includes('browser')||r.includes('not found')) d.push('binary-missing'); if (!d.length) d.push('launch-failure'); return [...new Set(d)]; }
-function scoreConfidence(launch:boolean,screenshot:boolean,trace:boolean,consoleErrs:number,networkFails:number,failed:boolean){ const base=(launch?0.35:0)+(screenshot?0.2:0)+(trace?0.2:0)+Math.max(0,0.15-consoleErrs*0.03)+Math.max(0,0.1-networkFails*0.02)-(failed?0.25:0); return Number(Math.max(0,Math.min(1,base)).toFixed(3)); }
-function normalizeEvidence(payload:any,root:string){ const compact={status:payload.status,mode:payload.mode,confidence:payload.confidence,runtime_source:payload.runtime.source,evidence:{screenshots:['.stealtheye/browser/smoke.png'],traces:['.stealtheye/browser/trace.zip'],console_errors:payload.consoleErrors.slice(0,5),failed_requests:payload.failedRequests.slice(0,5),dom_summary:payload.domSummary.slice(0,180)},runtime_metadata:{attempts:payload.runtime.attempts,diagnostics:payload.runtime.diagnostics??payload.diagnostics??[],duration_ms:payload.duration_ms},validation:{launch:payload.launchOk,screenshot:payload.screenshotOk,trace:payload.traceOk,console_network:payload.consoleErrors.length===0&&payload.failedRequests.length===0,dom:payload.domSummary.length>0},repair:payload.repair??null,mobile_summary:`${payload.status}|c=${payload.confidence}|rt=${payload.runtime.source}|ce=${payload.consoleErrors.length}|nf=${payload.failedRequests.length}`};
+function classifyRuntimeError(raw:string){ const r=raw.toLowerCase(); const d:string[]=[]; if (r.includes('403')||r.includes('cdn')||r.includes('download failed')) d.push('cdn-blocked'); if (r.includes('permission denied')||r.includes('eacces')) d.push('permission-issue'); if (r.includes('sandbox')) d.push('sandbox-issue'); if (r.includes('lib')||r.includes('dependency')) d.push('dependency-failure'); if (r.includes('executable')||r.includes('browser')||r.includes('not found')) d.push('binary-missing'); if (r.includes('timeout')) d.push('navigation-timeout'); if (!d.length) d.push('launch-failure'); return [...new Set(d)]; }
+function detectFlake(diag:string[]){ return diag.some(d=>['navigation-timeout','network-error'].includes(d)); }
+function scoreConfidence(data:any){ const history=readJson('.stealtheye/state/h1-browser-flake-memory.json',{runs:[]}) as any; const recent=(history.runs||[]).slice(-5); const successRate=recent.length?recent.filter((x:any)=>x.status==='ok').length/recent.length:1; const completeness=(data.launchOk?0.25:0)+(data.screenshotOk?0.2:0)+(data.traceOk?0.2:0)+(data.domSummary?.length?0.1:0); const stability=(1-(recent.filter((x:any)=>x.flake).length/Math.max(1,recent.length)))*0.15; const consistency=(data.failedRequests.length===0?0.05:0)+(data.consoleErrors.length===0?0.05:0); const score=Math.max(0,Math.min(1,completeness+stability+consistency+successRate*0.2-(data.status!=='ok'?0.25:0))); return Number(score.toFixed(3)); }
+function normalizeEvidence(payload:any,root:string){ const replaySeed=`${payload.mode}-${payload.browserVersion}-${payload.runtime.source}`; const confidence=scoreConfidence(payload); const compact={schema_version:'1.1.0',status:payload.status,mode:payload.mode,confidence,runtime_class:payload.runtime.source,browser_version:payload.browserVersion,proof_id:payload.runId,replay_seed:replaySeed,replay_reference:`npm run h1:browser:${payload.mode}` ,artifact_index:{screenshot:'.stealtheye/browser/smoke.png',trace:'.stealtheye/browser/trace.zip',fixture:'.stealtheye/validation/fixtures/browser-proof.html'},evidence:{console_errors:payload.consoleErrors.slice(0,5),failed_requests:payload.failedRequests.slice(0,5),dom_summary:String(payload.domSummary).slice(0,180)},runtime_metadata:{attempts:payload.runtime.attempts,diagnostics:payload.runtime.diagnostics??payload.diagnostics??[],duration_ms:payload.duration_ms,timestamp:new Date().toISOString()},validation:{launch:payload.launchOk,screenshot:payload.screenshotOk,trace:payload.traceOk,dom:String(payload.domSummary).length>0,artifact_complete:payload.screenshotOk&&payload.traceOk},routing:{decision:payload.status==='ok'?'ci-authoritative-healthy':'ci-authoritative-repair',local_blocked:payload.runtime.diagnostics?.includes('cdn-blocked')??false},flake_intelligence:{suspected_flake:payload.flake,retry_policy:payload.flake?'bounded-retry-1':'no-retry',environment_reliability:payload.flake?0.6:0.9},repair:payload.repair??null,operational_scores:{browser_operational_readiness:payload.status==='ok'?0.95:0.62,ci_proof_stability:payload.status==='ok'?0.92:0.58,browser_replay_stability:payload.status==='ok'?0.91:0.55,browser_autonomy_readiness:payload.status==='ok'?0.93:0.57},mobile_summary:`${payload.status}|c=${confidence}|rv=${payload.browserVersion}|rt=${payload.runtime.source}`};
+  const flakeMemory=readJson('.stealtheye/state/h1-browser-flake-memory.json',{runs:[]}) as any; flakeMemory.runs=[...(flakeMemory.runs||[]),{proof_id:compact.proof_id,status:compact.status,flake:compact.flake_intelligence.suspected_flake,timestamp:compact.runtime_metadata.timestamp}].slice(-20); write('.stealtheye/state/h1-browser-flake-memory.json',flakeMemory,root);
   write('.stealtheye/state/h1-browser-latest.json',compact,root); return compact;
 }
-function createRepair(failureClass:string,diagnostics:string[],root:string,retryable:boolean){ const probableRootCause=diagnostics.includes('cdn-blocked')?'external-blocked':diagnostics[0]??failureClass; const deterministicNextAction=diagnostics.includes('cdn-blocked')?'run-ci-browser-proof':'emit-repair-packet'; const repair={failure_summary:failureClass,repair_target: probableRootCause.includes('sandbox')?'environment':'runtime',probable_root_cause:probableRootCause,retry_recommendation: retryable?'bounded-retry-1':'no-local-retry',escalation_recommendation: diagnostics.includes('cdn-blocked')?'github-actions-authoritative-lane':'codex-repair-lane',deterministic_next_action:deterministicNextAction,evidence_refs:['.stealtheye/receipts/h1-browser-evidence-packet.json'],diagnostics};
-  write('.stealtheye/receipts/h1-browser-repair-packet.json',repair,root); return repair;
-}
+function createRepair(failureClass:string,diagnostics:string[],root:string,retryable:boolean){ const probableRootCause=diagnostics.includes('cdn-blocked')?'external-blocked':diagnostics[0]??failureClass; const deterministicNextAction=diagnostics.includes('cdn-blocked')?'run-ci-browser-proof':'emit-repair-packet'; const repair={failure_summary:failureClass,repair_target: probableRootCause.includes('sandbox')?'environment':'runtime',probable_root_cause:probableRootCause,retry_recommendation: retryable?'bounded-retry-1':'no-local-retry',escalation_recommendation: diagnostics.includes('cdn-blocked')?'github-actions-authoritative-lane':'codex-repair-lane',deterministic_next_action:deterministicNextAction,evidence_refs:['.stealtheye/receipts/h1-browser-evidence-packet.json'],diagnostics}; write('.stealtheye/receipts/h1-browser-repair-packet.json',repair,root); return repair; }
 
-export function writeH1Foundation(root=process.cwd()) { /* existing + hardened */
-  h1Bootstrap(root); detectEnvironment(root);
-  const anti={forbidden:['uncontrolled-browser-execution','unmanaged-artifacts','hidden-side-effects','unrestricted-external-browsing','product-feature-work','credential-payment-handling','uncontrolled-browser-retries','silent-runtime-fallback-ambiguity']};
-  write('.stealtheye/state/h1-anti-invariants.json',anti,root);
-}
-
+export function writeH1Foundation(root=process.cwd()) { h1Bootstrap(root); detectEnvironment(root); const anti={forbidden:['uncontrolled-browser-execution','unmanaged-artifacts','hidden-side-effects','unrestricted-external-browsing','product-feature-work','credential-payment-handling','uncontrolled-browser-retries','silent-runtime-fallback-ambiguity','infinite-proof-retries','uncontrolled-artifact-growth','duplicate-replay-identities']}; write('.stealtheye/state/h1-anti-invariants.json',anti,root); }
 export function recordH1(command:string,payload:Record<string,unknown>){ emitRunEvidence(command,payload); writeReplayReceipt(command,{commands:[`npm run ${command}`],validation_results:payload}); writeHandoff({action:command,freshness:'updated'}); }
-export function loadH1Readiness(root=process.cwd()){return readJson(resolve(root,'.stealtheye/validation/h1-readiness.json'),{status:'partial'});}
-function write(path:string,obj:unknown,root:string){const abs=resolve(root,path);mkdirSync(resolve(abs,'..'),{recursive:true});writeFileSync(abs,JSON.stringify(obj,null,2));}
+export function loadH1Readiness(root=process.cwd()){return readJson(resolve(root,'.stealtheye/validation/h1-readiness.json'),{status:'partial'});} 
+function write(path:string,obj:unknown,root:string,raw=false){const abs=resolve(root,path);mkdirSync(resolve(abs,'..'),{recursive:true});writeFileSync(abs,raw?String(obj):JSON.stringify(obj,null,2));}

@@ -7,6 +7,6 @@ const runtime=readJson('.stealtheye/state/h1-runtime-metadata.json',{}) as any;
 const evidence=readJson('.stealtheye/state/h1-browser-latest.json',{}) as any;
 const posture=detectEnvironment();
 const operational = evidence.status === 'ok' || posture.classes.includes('github-actions');
-const out={...base,h1_readiness:h1.status,browser_runtime_status:runtime.runtime?.source ?? posture.runtime_source,browser_readiness:h1.browser_readiness,environment_restrictions:posture.classes.filter(c=>c==='external-blocked'||c==='codex-restricted'||c==='browser-missing'),proof_confidence:evidence.confidence ?? 0,repair_readiness:true,routing_posture:'governed',browser_execution_operational:operational,runtime_confidence:evidence.confidence ?? 0.5,environment_stability_score: posture.classes.includes('external-blocked')?0.55:0.85};
+const out={...base,h1_readiness:h1.status,browser_dashboard:{operational_browser_body:operational,ci_browser_status:evidence.routing?.decision ?? 'pending',proof_confidence:evidence.confidence ?? 0,replay_continuity:!!evidence.replay_seed,proof_id:evidence.proof_id ?? null,replay_reference:evidence.replay_reference ?? null,scores:evidence.operational_scores ?? {}},browser_runtime_status:runtime.runtime?.source ?? posture.runtime_source,browser_readiness:h1.browser_readiness,environment_restrictions:posture.classes.filter(c=>c==='external-blocked'||c==='codex-restricted'||c==='browser-missing'),repair_readiness:true,routing_posture:'governed'};
 console.log(JSON.stringify(out,null,2));
 recordH1('h1:inspect',{status:'ok',operational} as any);

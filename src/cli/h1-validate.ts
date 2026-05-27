@@ -1,10 +1,12 @@
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { detectEnvironment, recordH1, writeH1Foundation } from '../lib/h1.js';
+import { readJson } from '../lib/substrate.js';
 writeH1Foundation();
 const posture = detectEnvironment();
-const readiness={status:'validated',execution_body_readiness:true,browser_readiness:posture.classes.includes('local-browser-available')||posture.classes.includes('github-actions'),routing_readiness:true,repair_loop_readiness:true,governance_readiness:true,runtime_readiness:!posture.classes.includes('browser-missing') || posture.classes.includes('github-actions'),environment_restrictions:posture.classes.filter(x=>x==='external-blocked'||x==='codex-restricted'),ci_proof_readiness:true};
-const gaps={status:'ok',remaining_blockers:[],remaining_risks:readiness.environment_restrictions};
+const latest = readJson('.stealtheye/state/h1-browser-latest.json', {}) as any;
+const readiness={status:latest.status==='ok'?'validated':'partial',execution_body_readiness:true,browser_readiness:posture.classes.includes('local-browser-available')||posture.classes.includes('github-actions'),routing_readiness:true,repair_loop_readiness:true,governance_readiness:true,runtime_readiness:!posture.classes.includes('browser-missing') || posture.classes.includes('github-actions'),environment_restrictions:posture.classes.filter(x=>x==='external-blocked'||x==='codex-restricted'),ci_proof_readiness:true,ci_proof_success:latest.status==='ok',replay_integrity:!!latest.replay_seed,proof_continuity:!!latest.proof_id,browser_operational_readiness:latest.operational_scores?.browser_operational_readiness ?? 0.6};
+const gaps={status:'ok',remaining_blockers:readiness.ci_proof_success?[]:['ci-proof-not-yet-successful'],remaining_risks:readiness.environment_restrictions,routing_maturity:latest.routing?.decision ?? 'pending'};
 writeFileSync(resolve('.stealtheye/validation/h1-readiness.json'),JSON.stringify(readiness,null,2));
 writeFileSync(resolve('.stealtheye/validation/h1-gap-report.json'),JSON.stringify(gaps,null,2));
 recordH1('h1:validate',readiness as any);
