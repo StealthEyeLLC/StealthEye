@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "compile:packet",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T11:00:42.008Z",
+  "ordered_commands": [
+    "npm run compile:packet"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {},
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "da28cf688f8e2db9448a0093f988e392ecfe661307596cbb230a6572815253f6",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run compile:packet"
+  ]
+}

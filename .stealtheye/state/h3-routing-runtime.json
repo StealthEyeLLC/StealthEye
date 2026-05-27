@@ -1,0 +1,12 @@
+{
+  "schema_version": "3.0.0",
+  "workers": [
+    "codex_high",
+    "codex_medium",
+    "local_runtime",
+    "github_actions",
+    "browser_runtime",
+    "replay_runtime"
+  ],
+  "scoring": {}
+}

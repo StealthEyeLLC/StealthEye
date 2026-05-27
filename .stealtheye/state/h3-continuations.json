@@ -1,0 +1,9 @@
+{
+  "schema_version": "3.0.0",
+  "interrupted_missions": [],
+  "stale_detection": {
+    "threshold_minutes": 30
+  },
+  "continuation_packets": [],
+  "recovery_packets": []
+}

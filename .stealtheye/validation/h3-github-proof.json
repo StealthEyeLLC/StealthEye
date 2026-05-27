@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-27T11:00:55.421Z",
+  "status": "ACTIVE",
+  "contracts": [
+    "deterministic",
+    "bounded",
+    "replayable",
+    "governed"
+  ],
+  "github": {
+    "schema_version": "3.0.0",
+    "issue_inspection": {
+      "posture": "READY"
+    },
+    "pr_inspection": {
+      "posture": "READY"
+    },
+    "ci_status": {
+      "posture": "READY"
+    },
+    "workflow_failure_classification": [],
+    "branch_posture": "GUARDED",
+    "merge_readiness": "PLAN_ONLY",
+    "repair_recommendations": []
+  }
+}

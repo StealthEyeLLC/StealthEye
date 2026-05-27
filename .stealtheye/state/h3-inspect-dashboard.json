@@ -1,0 +1,13 @@
+{
+  "status": "ACTIVE",
+  "active_missions": [],
+  "blockers": 0,
+  "next_action": "Run h3 validation packet and smoke flows",
+  "worker_route": "codex_high",
+  "ci_pr_posture": {
+    "ci": "READY",
+    "pr": "READY"
+  },
+  "human_action_needed": "No",
+  "compact_mobile_summary": "H3 ACTIVE | active=0 | blocked=0"
+}

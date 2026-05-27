@@ -1,0 +1,13 @@
+{
+  "schema_version": "3.0.0",
+  "failure_intake": [],
+  "deterministic_failure_classes": [],
+  "worker_assignments": [],
+  "repair_attempt_lineage": [],
+  "retry_ceiling": 3,
+  "validation_rerun_plan": [
+    "npm run validate",
+    "npm run h3:validate"
+  ],
+  "convergence_score": 0.99
+}

@@ -1475,6 +1475,60 @@
       "from": "validating",
       "to": "validating",
       "reason": "check:readiness"
+    },
+    {
+      "now": "2026-05-27T11:00:38.598Z",
+      "run_id": "1779879638598",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "queued",
+      "to": "active",
+      "reason": "generate"
+    },
+    {
+      "now": "2026-05-27T11:00:39.256Z",
+      "run_id": "1779879639256",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "active",
+      "to": "validating",
+      "reason": "validate"
+    },
+    {
+      "now": "2026-05-27T11:00:40.634Z",
+      "run_id": "1779879640634",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "validating",
+      "to": "validating",
+      "reason": "check:readiness"
+    },
+    {
+      "now": "2026-05-27T11:00:41.342Z",
+      "run_id": "1779879641342",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "queued",
+      "to": "active",
+      "reason": "generate"
+    },
+    {
+      "now": "2026-05-27T11:00:41.352Z",
+      "run_id": "1779879641352",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "active",
+      "to": "validating",
+      "reason": "validate"
+    },
+    {
+      "now": "2026-05-27T11:00:41.356Z",
+      "run_id": "1779879641356",
+      "process": "queue-transition",
+      "task_id": "phase0-main",
+      "from": "validating",
+      "to": "validating",
+      "reason": "check:readiness"
     }
   ]
 }

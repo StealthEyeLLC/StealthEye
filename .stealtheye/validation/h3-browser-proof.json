@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-05-27T11:00:55.421Z",
+  "status": "ACTIVE",
+  "contracts": [
+    "deterministic",
+    "bounded",
+    "replayable",
+    "governed"
+  ],
+  "browser": {
+    "schema_version": "3.0.0",
+    "model": "playwright-first",
+    "bounded": true,
+    "fixture_safe": true,
+    "missions": [
+      "inspect_page",
+      "validate_ui",
+      "collect_console",
+      "collect_network",
+      "verify_selector",
+      "capture_evidence",
+      "validate_render",
+      "compare_dom_state"
+    ],
+    "runs": []
+  }
+}

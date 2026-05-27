@@ -1,0 +1,16 @@
+{
+  "schema_version": "3.0.0",
+  "issue_inspection": {
+    "posture": "READY"
+  },
+  "pr_inspection": {
+    "posture": "READY"
+  },
+  "ci_status": {
+    "posture": "READY"
+  },
+  "workflow_failure_classification": [],
+  "branch_posture": "GUARDED",
+  "merge_readiness": "PLAN_ONLY",
+  "repair_recommendations": []
+}
