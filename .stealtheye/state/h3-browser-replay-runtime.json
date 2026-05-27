@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "replay_chains": [
+    {
+      "mission": "inspect_github_pr",
+      "steps": [
+        "goto",
+        "wait",
+        "assert-selector",
+        "snapshot"
+      ],
+      "replay_safe": true
+    }
+  ]
+}

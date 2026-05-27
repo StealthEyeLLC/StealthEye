@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "candidates": [
+    {
+      "id": "RC-1",
+      "scope": [
+        "src/lib/h3.ts"
+      ],
+      "score": 0.73,
+      "validation": [
+        "npm run h3:validate"
+      ],
+      "quarantined": false
+    }
+  ]
+}

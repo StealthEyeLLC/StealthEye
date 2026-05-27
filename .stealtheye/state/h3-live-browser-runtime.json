@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "runtime": "playwright-bounded",
+  "mission_types": [
+    "inspect_github_pr",
+    "inspect_github_actions",
+    "inspect_release_surface",
+    "inspect_docs_surface",
+    "inspect_failure_dashboard",
+    "inspect_browser_console",
+    "inspect_visual_regression"
+  ],
+  "domain_allowlist": [
+    "github.com",
+    "api.github.com"
+  ],
+  "bounded": true
+}

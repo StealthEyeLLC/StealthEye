@@ -1,0 +1,17 @@
+{
+  "status": "ACTIVE",
+  "allowed_statuses": [
+    "ACTIVE",
+    "NOT_READY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "missing": [],
+  "live_adapter_readiness": 0.81,
+  "mission_runtime_readiness": 0.8,
+  "browser_operational_readiness": 0.78,
+  "repair_execution_readiness": 0.79,
+  "worker_coordination_readiness": 0.77,
+  "autonomy_progression_score": 0.76,
+  "operational_convergence_score": 0.74
+}

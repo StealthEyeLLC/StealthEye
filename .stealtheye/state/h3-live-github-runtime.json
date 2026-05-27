@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "mode": "read-only",
+  "source": "fallback-deterministic",
+  "error": "fetch failed",
+  "owner": "StealthEyeLLC",
+  "repo": "stealtheye",
+  "repo_health": {
+    "open_pr_count": 1,
+    "failing_ci_count": 1,
+    "stale_branch_count": 1,
+    "merge_risk_score": 0.4,
+    "review_bottleneck_score": 0.3,
+    "release_posture": "unknown",
+    "flaky_workflow_candidates": [
+      {
+        "workflow": "ci",
+        "failures": 1
+      }
+    ]
+  },
+  "pull_requests": [
+    {
+      "number": 101,
+      "title": "h3 activation",
+      "mergeable_state": "unknown",
+      "requested_reviewers": 1
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "title": "Canonical spec"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "id": 1,
+      "name": "ci",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_attempt": 1,
+      "duration_sec": 311
+    }
+  ],
+  "branches": [
+    {
+      "name": "h3/controlled-operational-body",
+      "protected": false
+    }
+  ],
+  "releases": [],
+  "labels": [
+    {
+      "name": "h3",
+      "color": "5319e7"
+    }
+  ]
+}

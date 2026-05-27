@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "validation_routes": [
+    {
+      "candidate_id": "RC-1",
+      "tests": [
+        "npm run h3:validate",
+        "npm run h3:repair:smoke"
+      ],
+      "regression_aware": true
+    }
+  ]
+}

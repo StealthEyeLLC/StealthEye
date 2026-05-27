@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "bounded": true,
+  "no_auto_merge": true,
+  "no_destructive_rebase": true,
+  "queue": [
+    {
+      "repair_id": "R-LIVE-1",
+      "target": "src/lib/h3.ts",
+      "plan": [
+        "cluster-failure",
+        "generate-patch",
+        "validate-targeted",
+        "score-candidate",
+        "route-or-quarantine"
+      ]
+    }
+  ]
+}

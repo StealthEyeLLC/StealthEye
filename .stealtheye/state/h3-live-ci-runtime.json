@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "workflow_runs": [
+    {
+      "id": 1,
+      "name": "ci",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_attempt": 1,
+      "duration_sec": 311
+    }
+  ],
+  "failed_runs": [
+    {
+      "id": 1,
+      "name": "ci",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_attempt": 1,
+      "duration_sec": 311
+    }
+  ]
+}

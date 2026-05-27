@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "priorities": [
+    {
+      "kind": "historically-successful-repairs",
+      "weight": 0.8
+    },
+    {
+      "kind": "stable-workers",
+      "weight": 0.75
+    }
+  ],
+  "suppressions": [
+    {
+      "pattern": "repeated-failed-repair",
+      "suppressed": true
+    }
+  ]
+}
