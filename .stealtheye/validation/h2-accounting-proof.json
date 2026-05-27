@@ -1,0 +1,16 @@
+{
+  "mission_executions": 14,
+  "replay_executions": 1,
+  "repair_executions": 1,
+  "checkpoint_restores": 1,
+  "authority_promotions": 0,
+  "policy_rejections": 0,
+  "concurrency_windows": 1,
+  "worker_leases": 1,
+  "recovery_events": 1,
+  "migration_events": 1,
+  "replay_divergences": 0,
+  "replay_supersessions": 0,
+  "event_integrity_failures": 0,
+  "ledger_continuity_violations": 0
+}

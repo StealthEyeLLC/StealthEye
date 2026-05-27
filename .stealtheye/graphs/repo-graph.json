@@ -113,6 +113,10 @@
       "type": "state-file"
     },
     {
+      "id": "h2-authority-convergence.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-budget-kernel.json",
       "type": "state-file"
     },
@@ -141,6 +145,10 @@
       "type": "state-file"
     },
     {
+      "id": "h2-event-integrity.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-event-stream-hardened.json",
       "type": "state-file"
     },
@@ -154,6 +162,10 @@
     },
     {
       "id": "h2-execution-fabric-events.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-ledger.jsonl",
       "type": "state-file"
     },
     {
@@ -177,6 +189,10 @@
       "type": "state-file"
     },
     {
+      "id": "h2-migration-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-mission-dags.json",
       "type": "state-file"
     },
@@ -189,7 +205,15 @@
       "type": "state-file"
     },
     {
+      "id": "h2-policy-ledger.jsonl",
+      "type": "state-file"
+    },
+    {
       "id": "h2-reconciliation-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-recovery-runtime.json",
       "type": "state-file"
     },
     {

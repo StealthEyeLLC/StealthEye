@@ -1,0 +1,6 @@
+{
+  "deterministic_event_stream_replay": true,
+  "event_replay_equivalence": 1,
+  "event_sequence_hashing": "sha256",
+  "orphan_event_reconciliation": true
+}

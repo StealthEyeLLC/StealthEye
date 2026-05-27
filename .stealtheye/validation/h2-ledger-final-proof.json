@@ -1,0 +1,10 @@
+{
+  "ledger_continuity_hashing": "39c4a590ee055f6f3347d66de946f5f42d34e53731865691515ff14e71989e8a",
+  "ledger_replay_reconstruction": true,
+  "ledger_corruption_detection": true,
+  "ledger_replay_validation": true,
+  "ledger_authority_reconstruction": true,
+  "ledger_checkpoint_reconstruction": true,
+  "ledger_repair_reconstruction": true,
+  "ledger_supersession_reconstruction": true
+}

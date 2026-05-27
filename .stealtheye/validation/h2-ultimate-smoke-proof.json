@@ -1,0 +1,15 @@
+{
+  "replay_corruption": true,
+  "authority_corruption": true,
+  "event_corruption": true,
+  "ledger_corruption": true,
+  "worker_starvation": true,
+  "concurrency_exhaustion": true,
+  "dag_corruption": true,
+  "checkpoint_rollback": true,
+  "replay_supersession": true,
+  "authority_rollback": true,
+  "recovery_restoration": true,
+  "migration_restoration": true,
+  "repair_replay_equivalence": true
+}

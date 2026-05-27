@@ -1,0 +1,10 @@
+{
+  "policy_replay_reconstruction": true,
+  "policy_lineage_graphs": true,
+  "policy_supersession_semantics": true,
+  "policy_rollback_semantics": true,
+  "policy_conflict_detection": true,
+  "policy_drift_detection": true,
+  "policy_corruption_detection": true,
+  "authority_policy_binding_verification": true
+}

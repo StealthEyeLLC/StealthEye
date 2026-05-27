@@ -1,0 +1,10 @@
+{
+  "recovery_determinism_validation": true,
+  "checkpoint_replay_restoration": true,
+  "authority_restoration": true,
+  "worker_restoration": true,
+  "dag_restoration": true,
+  "continuation_restoration": true,
+  "migration_restoration": true,
+  "repair_restoration": true
+}
