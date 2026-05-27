@@ -1,7 +1,7 @@
 {
   "canonical_runtime": "recovered",
   "canonical_branch": "h4/autonomy-continuity-fresh-tab-runtime",
-  "canonical_replay_pointer": "2026-05-27T19:21:50.737Z",
+  "canonical_replay_pointer": "2026-05-27T19:36:33.995Z",
   "canonical_next_action": "run validate",
   "quarantine_strategy": "none",
   "escalation_required": false

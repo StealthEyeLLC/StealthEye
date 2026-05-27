@@ -1,0 +1,480 @@
+{
+  "simulated": [
+    "fresh-tab-zero-memory",
+    "interrupted-runtime",
+    "replay-corruption",
+    "lineage-conflict",
+    "stale-branch",
+    "interrupted-merge",
+    "interrupted-validation-chain",
+    "quarantine-event",
+    "replay-recovery",
+    "autonomous-repair",
+    "next-action-derivation",
+    "mobile-handoff-generation",
+    "bounded-continuation"
+  ],
+  "proved": [
+    "repo-native-continuity-authoritative",
+    "replay-recovery-works",
+    "governance-survives",
+    "quarantine-survives",
+    "mobile-supervision-works",
+    "autonomous-repair-bounded",
+    "unsafe-autonomy-rejected",
+    "approval-boundaries-intact",
+    "h4-remains-active"
+  ],
+  "chaos": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:39:13.973Z",
+    "deterministic": true,
+    "replay_safe": true,
+    "bounded": true,
+    "mutation_total": 28,
+    "hard_failure_surface": [
+      "replay-corruption",
+      "replay-poisoning",
+      "stale-replay-pointers",
+      "replay-ancestry-drift",
+      "invalid-runtime-lineage",
+      "stale-runtime-authority",
+      "conflicting-runtime-authority",
+      "merge-lineage-corruption",
+      "invalid-next-action-derivation",
+      "missing-continuity-surfaces",
+      "missing-replay-receipts",
+      "interrupted-replay-generation",
+      "interrupted-continuity-generation",
+      "invalid-quarantine-restoration",
+      "invalid-governance-escalation",
+      "nondeterministic-artifact-ordering",
+      "duplicate-latest-pointers",
+      "h4-complete-mutation",
+      "reopened-h3-mutation"
+    ],
+    "assertions": [
+      {
+        "mutation": "replay-corruption",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:replay-corruption",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "replay-poisoning",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:replay-poisoning",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "stale-replay-pointers",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:stale-replay-pointers",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "replay-ancestry-drift",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:replay-ancestry-drift",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "invalid-runtime-lineage",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-runtime-lineage",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "stale-runtime-authority",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:stale-runtime-authority",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "conflicting-runtime-authority",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:conflicting-runtime-authority",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "stale-branch-after-merge",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:stale-branch-after-merge",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "merge-lineage-corruption",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:merge-lineage-corruption",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "invalid-next-action-derivation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-next-action-derivation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "duplicate-next-actions",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:duplicate-next-actions",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "missing-continuity-surfaces",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:missing-continuity-surfaces",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "missing-replay-receipts",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:missing-replay-receipts",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "interrupted-validation-chains",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:interrupted-validation-chains",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "interrupted-merge-flows",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:interrupted-merge-flows",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "interrupted-pr-flows",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:interrupted-pr-flows",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "interrupted-replay-generation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:interrupted-replay-generation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "interrupted-continuity-generation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:interrupted-continuity-generation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "invalid-quarantine-restoration",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-quarantine-restoration",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "invalid-governance-escalation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-governance-escalation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "runtime-quarantine"
+      },
+      {
+        "mutation": "invalid-mobile-handoff",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-mobile-handoff",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "invalid-mobile-compact-packet",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:invalid-mobile-compact-packet",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "stale-completion-gate-evidence",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:stale-completion-gate-evidence",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "stale-simulator-outputs",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:stale-simulator-outputs",
+        "escalation": "none",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "nondeterministic-artifact-ordering",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:nondeterministic-artifact-ordering",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "duplicate-latest-pointers",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:duplicate-latest-pointers",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "h4-complete-mutation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:h4-complete-mutation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      },
+      {
+        "mutation": "reopened-h3-mutation",
+        "deterministic": true,
+        "replay_safe": true,
+        "bounded": true,
+        "pass": true,
+        "repair": "repair:reopened-h3-mutation",
+        "escalation": "governance-escalation-required",
+        "quarantine": "optional"
+      }
+    ],
+    "repair_guidance": [
+      "repair:replay-corruption",
+      "repair:replay-poisoning",
+      "repair:stale-replay-pointers",
+      "repair:replay-ancestry-drift",
+      "repair:invalid-runtime-lineage",
+      "repair:stale-runtime-authority",
+      "repair:conflicting-runtime-authority",
+      "repair:stale-branch-after-merge",
+      "repair:merge-lineage-corruption",
+      "repair:invalid-next-action-derivation",
+      "repair:duplicate-next-actions",
+      "repair:missing-continuity-surfaces",
+      "repair:missing-replay-receipts",
+      "repair:interrupted-validation-chains",
+      "repair:interrupted-merge-flows",
+      "repair:interrupted-pr-flows",
+      "repair:interrupted-replay-generation",
+      "repair:interrupted-continuity-generation",
+      "repair:invalid-quarantine-restoration",
+      "repair:invalid-governance-escalation",
+      "repair:invalid-mobile-handoff",
+      "repair:invalid-mobile-compact-packet",
+      "repair:stale-completion-gate-evidence",
+      "repair:stale-simulator-outputs",
+      "repair:nondeterministic-artifact-ordering",
+      "repair:duplicate-latest-pointers",
+      "repair:h4-complete-mutation",
+      "repair:reopened-h3-mutation"
+    ],
+    "escalation_guidance": [
+      "replay-corruption",
+      "replay-poisoning",
+      "stale-replay-pointers",
+      "replay-ancestry-drift",
+      "invalid-runtime-lineage",
+      "stale-runtime-authority",
+      "conflicting-runtime-authority",
+      "merge-lineage-corruption",
+      "invalid-next-action-derivation",
+      "missing-continuity-surfaces",
+      "missing-replay-receipts",
+      "interrupted-replay-generation",
+      "interrupted-continuity-generation",
+      "invalid-quarantine-restoration",
+      "invalid-governance-escalation",
+      "nondeterministic-artifact-ordering",
+      "duplicate-latest-pointers",
+      "h4-complete-mutation",
+      "reopened-h3-mutation"
+    ],
+    "quarantine_guidance": [
+      "replay-corruption",
+      "replay-poisoning",
+      "stale-replay-pointers",
+      "stale-runtime-authority",
+      "conflicting-runtime-authority",
+      "missing-replay-receipts",
+      "interrupted-replay-generation",
+      "invalid-governance-escalation"
+    ]
+  },
+  "repair": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:39:13.974Z",
+    "bounded": true,
+    "deterministic": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "escalation_aware": true,
+    "approval_boundary_aware": true,
+    "hard_fail_conditions": [
+      "repair-without-lineage-proof",
+      "repair-without-replay-proof",
+      "unsafe-repair-escalation",
+      "unauthorized-autonomous-repair",
+      "undefined-repair-path"
+    ],
+    "mapped_actions": [
+      {
+        "blocker": "replay-corruption",
+        "repair": "run h4:replay-recovery -> h4:chaos-burnin",
+        "requires": [
+          "lineage-proof",
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "lineage-conflict",
+        "repair": "run h4:lineage-conflict-proof -> h4:merge-readiness-proof",
+        "requires": [
+          "lineage-proof"
+        ]
+      },
+      {
+        "blocker": "quarantine-failure",
+        "repair": "run h4:runtime-quarantine -> h4:quarantine-restoration-proof",
+        "requires": [
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "stale-continuity",
+        "repair": "run h4:fresh-tab-acceptance -> h4:end-to-end-proof",
+        "requires": [
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "serialization-drift",
+        "repair": "run h4:serialization-stabilizer",
+        "requires": [
+          "lineage-proof"
+        ]
+      },
+      {
+        "blocker": "merge-readiness-failure",
+        "repair": "run h4:merge-readiness-proof -> h4:precompletion-law",
+        "requires": [
+          "lineage-proof",
+          "replay-proof"
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:39:13.977Z",
+    "ultra_compact": true,
+    "next_action": "run h4:end-to-end-proof then h4:gap-reducer",
+    "branch": "h4/autonomy-continuity-fresh-tab-runtime",
+    "pr_posture": "open",
+    "approval_boundary": "explicit",
+    "blockers": [
+      "end-to-end-burnin",
+      "serialization-stability"
+    ],
+    "completion_readiness_posture": "not-ready"
+  }
+}

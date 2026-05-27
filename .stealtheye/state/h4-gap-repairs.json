@@ -1,0 +1,6 @@
+{
+  "repairs": [
+    "repair:end-to-end-proof-hardening",
+    "repair:serialization-stability-verification"
+  ]
+}

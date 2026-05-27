@@ -1,0 +1,4 @@
+{
+  "max_state_files": 500,
+  "bounded_growth": true
+}

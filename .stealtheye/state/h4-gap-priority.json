@@ -1,0 +1,6 @@
+{
+  "priority": [
+    "end-to-end-proof-hardening",
+    "serialization-stability-verification"
+  ]
+}

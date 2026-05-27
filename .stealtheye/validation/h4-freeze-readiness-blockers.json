@@ -1,0 +1,6 @@
+{
+  "blockers": [
+    "end-to-end-proof-burnin-pending",
+    "serialization-stability-hardening-pending"
+  ]
+}

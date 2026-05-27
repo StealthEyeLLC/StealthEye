@@ -19,20 +19,20 @@
     ".stealtheye/state/working-set.json"
   ],
   "latest_valid_handoff": {
-    "now": "2026-05-27T19:21:50.738Z",
-    "run_id": "1779909710738",
-    "action": "h4-orchestrate",
+    "now": "2026-05-27T19:36:33.996Z",
+    "run_id": "1779910593996",
+    "action": "h4-runtime-check",
     "phase": "h4",
     "status": "ACTIVE",
     "freshness": "updated"
   },
   "latest_valid_replay": {
     "schema_version": "1.4.0",
-    "processName": "h4:orchestrate",
+    "processName": "h4:runtime-check",
     "process_version": "1.4.0",
-    "timestamp": "2026-05-27T19:21:50.737Z",
+    "timestamp": "2026-05-27T19:36:33.995Z",
     "ordered_commands": [
-      "npm run h4:orchestrate"
+      "npm run h4:runtime-check"
     ],
     "active_task": "phase0-main",
     "lifecycle_state": "phase0-autonomy-substrate",
@@ -61,7 +61,8 @@
       ".stealtheye/validation/consistency-report.json"
     ],
     "validation_outputs": {
-      "ok": true
+      "ok": true,
+      "status": "validated"
     },
     "replay_dependencies": [
       ".stealtheye/state/project-state.json",
@@ -81,7 +82,7 @@
       "dependency_validation": true,
       "supersession_correctness": true,
       "drift_proof": {
-        "digest": "8f0d046ea2ff0c957e04eb721671807e7df2b5328d185c449e758ed538c66cc6",
+        "digest": "bce29e71ad3f7ec6991c35e575f604fb63d1c5b0fe45c87906bc2be17688e5b8",
         "compared_to_latest_schema": "1.4.0"
       },
       "reproducibility_confidence": 0.88
@@ -89,12 +90,12 @@
     "blockers": [],
     "next_action": "run generate then validate",
     "commands": [
-      "npm run h4:orchestrate"
+      "npm run h4:runtime-check"
     ],
     "validation_results": {
-      "ok": true
-    },
-    "orchestration_digest": "b9e01803951cceae17b3dbc2d6ae788588c4a0e0432d4af6296034d3ac11be6a"
+      "ok": true,
+      "status": "validated"
+    }
   },
   "next_action": "run validate",
   "blockers": [],
