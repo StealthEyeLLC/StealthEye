@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "continuity_health": 0.91,
+  "replay_integrity": 0.92,
+  "branch_consistency": 0.95,
+  "interruption_frequency": 0.1,
+  "recovery_success": 0.9,
+  "stale_runtime_incidents": 0,
+  "unresolved_review_incidents": 0,
+  "validation_recovery_loops": 0,
+  "mobile_handoff_health": 0.94,
+  "fresh_tab_readiness_confidence": 0.9
+}

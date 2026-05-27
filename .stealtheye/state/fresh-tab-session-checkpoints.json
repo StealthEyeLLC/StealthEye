@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoints": [
+    {
+      "id": "s1",
+      "session_id": "h4-session-1",
+      "at": "2026-05-27T15:54:28.969Z",
+      "status": "ok"
+    }
+  ],
+  "stale_session_quarantine": []
+}

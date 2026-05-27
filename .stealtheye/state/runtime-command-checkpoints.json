@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoint_order": [
+    {
+      "id": "cc-1",
+      "command": "npm run generate",
+      "status": "ok"
+    },
+    {
+      "id": "cc-2",
+      "command": "npm run validate",
+      "status": "ok"
+    },
+    {
+      "id": "cc-3",
+      "command": "npm run h4:validate",
+      "status": "ok"
+    }
+  ],
+  "safe_continuation_point": "cc-3"
+}

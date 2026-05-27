@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "can_fresh_runtime_continue_safely": true,
+  "can_derive_next_action": true,
+  "can_detect_stale_continuity": true,
+  "can_detect_invalid_branch_state": true,
+  "can_preserve_governance": true,
+  "can_avoid_human_interruption": true,
+  "gaps_before_h4_freeze_readiness": [
+    "expand adversarial fixture assertions",
+    "increase replay anomaly scenarios"
+  ]
+}

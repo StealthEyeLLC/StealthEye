@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "mandatory_escalation_when": [
+    "review-ambiguity",
+    "branch-drift-ambiguity",
+    "replay-mismatch"
+  ],
+  "human_action_required": [
+    "manual-review-resolution"
+  ]
+}

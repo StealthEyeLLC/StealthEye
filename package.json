@@ -46,7 +46,15 @@
     "h4:next-action-check": "tsx src/cli/h4-next-action.ts",
     "h4:mobile-handoff-check": "tsx src/cli/h4-mobile-handoff-check.ts",
     "h4:fresh-tab-smoke": "tsx src/cli/h4-fresh-tab-smoke.ts",
-    "h4:fresh-tab-fixtures": "tsx src/cli/h4-fresh-tab-fixtures.ts"
+    "h4:fresh-tab-fixtures": "tsx src/cli/h4-fresh-tab-fixtures.ts",
+    "h4:autonomous-resume": "tsx src/cli/h4-autonomous-resume.ts",
+    "h4:command-chain-check": "tsx src/cli/h4-command-chain-check.ts",
+    "h4:runtime-reconstruction": "tsx src/cli/h4-runtime-reconstruction.ts",
+    "h4:session-check": "tsx src/cli/h4-session-check.ts",
+    "h4:recovery-playbooks": "tsx src/cli/h4-recovery-playbooks.ts",
+    "h4:recovery-fixtures": "tsx src/cli/h4-recovery-fixtures.ts",
+    "h4:runtime-safety-check": "tsx src/cli/h4-runtime-safety-check.ts",
+    "h4:fresh-tab-acceptance": "tsx src/cli/h4-fresh-tab-acceptance.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",
