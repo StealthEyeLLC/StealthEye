@@ -6,3 +6,6 @@
 - Every meaningful script must bootstrap and load `.stealtheye/state/project-state.json` before work.
 - Mandatory operational primitives: memory retrieval, process selection, invariants, tool routing, graph usage, handoff emission, state snapshotting.
 - Keep docs minimal; prefer machine-readable JSON/JSON Schema.
+
+
+Status: Phase 0 COMPLETE. H1 COMPLETE when `npm run h1:validate` passes; H2 not yet implemented.

@@ -11,3 +11,6 @@ Phase 0 autonomy substrate.
 - `npm run compile:packet`
 
 All commands enforce bootstrap-first behavior through `.stealtheye` state.
+
+
+Status: Phase 0 COMPLETE. H1 COMPLETE when `npm run h1:validate` passes; H2 not yet implemented.

@@ -1,0 +1,10 @@
+{
+  "status": "sealed",
+  "bounded_mission_lifecycle": true,
+  "bounded_retries": true,
+  "bounded_repair": true,
+  "bounded_replay": true,
+  "bounded_event_bus": true,
+  "bounded_artifacts": true,
+  "uncontrolled_autonomy": false
+}

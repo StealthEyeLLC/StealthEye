@@ -2,3 +2,6 @@ StealthEye Phase 0 quick orientation:
 - run `npm run check` to regenerate/validate substrate artifacts
 - run `npm run compile:packet` for handoff packet
 - read `.stealtheye/state/project-state.json` first
+
+
+Status: Phase 0 COMPLETE. H1 COMPLETE when `npm run h1:validate` passes; H2 not yet implemented.

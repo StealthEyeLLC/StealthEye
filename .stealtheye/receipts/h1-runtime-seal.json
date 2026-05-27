@@ -1,0 +1,15 @@
+{
+  "status": "sealed",
+  "lifecycle_kernel": true,
+  "runtime_clock": true,
+  "event_bus": true,
+  "replay": true,
+  "repair": true,
+  "recovery": true,
+  "authority": true,
+  "orchestration": true,
+  "convergence": true,
+  "continuity": true,
+  "compaction": true,
+  "anti_invariants": true
+}
