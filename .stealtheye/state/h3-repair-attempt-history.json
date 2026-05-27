@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "attempts": [
+    {
+      "attempt_id": "RA-1",
+      "repair_id": "R-1",
+      "state": "COMPLETE",
+      "candidate_id": "RC-1",
+      "validation": "pass",
+      "convergence_delta": 0.27,
+      "replay_parent": null,
+      "branch": "repair/R-1-a1"
+    },
+    {
+      "attempt_id": "RA-2",
+      "repair_id": "R-1",
+      "state": "REJECTED",
+      "candidate_id": "RC-2",
+      "validation": "regression",
+      "convergence_delta": -0.11,
+      "replay_parent": "RA-1",
+      "branch": "repair/R-1-a2"
+    },
+    {
+      "attempt_id": "RA-3",
+      "repair_id": "R-1",
+      "state": "VALIDATING",
+      "candidate_id": "RC-3",
+      "validation": "targeted",
+      "convergence_delta": 0.14,
+      "replay_parent": "RA-2",
+      "branch": "repair/R-1-a3"
+    }
+  ],
+  "regression_aware_rejections": [
+    "RA-2"
+  ],
+  "replay_attempts": [
+    "RA-2",
+    "RA-3"
+  ]
+}

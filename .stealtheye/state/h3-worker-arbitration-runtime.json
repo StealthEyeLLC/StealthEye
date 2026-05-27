@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "critic_worker_tournaments": [
+    {
+      "tournament_id": "T-1",
+      "winner": "RC-1"
+    }
+  ],
+  "reviewer_worker_arbitration": [
+    {
+      "case": "regression-check",
+      "result": "reject RC-2"
+    }
+  ],
+  "browser_worker_validation_routing": [
+    {
+      "case": "UI regression",
+      "worker": "browser_runtime"
+    }
+  ],
+  "repair_worker_tournaments": [
+    {
+      "repair_id": "R-1",
+      "candidates": [
+        "RC-1",
+        "RC-3"
+      ],
+      "selected": "RC-1"
+    }
+  ],
+  "escalation_routing": [
+    {
+      "from": "repair_runtime",
+      "to": "critic_runtime"
+    }
+  ]
+}

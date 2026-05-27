@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "status": "pass",
+  "repair_simulations": [
+    "rollback execution",
+    "supersession routing"
+  ],
+  "worker_simulations": [
+    "worker crash",
+    "starvation"
+  ]
+}

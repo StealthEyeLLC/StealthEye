@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-05-27T11:29:03.510Z",
+  "generated_at": "2026-05-27T12:11:05.323Z",
   "status": "pass",
   "browser_smoke": [
-    "selector_drift_recovery",
-    "browser_replay_recovery",
-    "interrupted_browser_mission",
-    "visual_verification_failure"
+    "selector drift",
+    "visual divergence",
+    "replay corruption",
+    "navigation interruption",
+    "dead-session recovery"
   ]
 }

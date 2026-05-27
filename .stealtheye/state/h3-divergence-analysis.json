@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "divergence_amplification_detection": 0.28,
+  "mission_deadlock_detection": false,
+  "oscillating_repair_detection": true
+}

@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "mission_dependency_graph": {
+    "nodes": [
+      {
+        "id": "M-REPAIR",
+        "type": "repair",
+        "state": "ACTIVE",
+        "priority": 1,
+        "lease_expires_at": "2026-05-27T12:11:05.315Z"
+      },
+      {
+        "id": "M-VALIDATE",
+        "type": "validate",
+        "state": "QUEUED",
+        "priority": 2,
+        "lease_expires_at": "2026-05-27T12:11:05.315Z"
+      },
+      {
+        "id": "M-BROWSER",
+        "type": "browser_verify",
+        "state": "QUEUED",
+        "priority": 3,
+        "lease_expires_at": "2026-05-27T12:11:05.315Z"
+      }
+    ],
+    "edges": [
+      {
+        "from": "M-REPAIR",
+        "to": "M-VALIDATE"
+      },
+      {
+        "from": "M-VALIDATE",
+        "to": "M-BROWSER"
+      }
+    ],
+    "deadlocks": [],
+    "orphans": [],
+    "divergence_events": [
+      {
+        "mission_id": "M-REPAIR",
+        "divergence_kind": "replay-drift",
+        "recovered": true
+      }
+    ]
+  },
+  "continuation_chains": [
+    {
+      "chain_id": "MC-1",
+      "missions": [
+        "M-REPAIR",
+        "M-VALIDATE",
+        "M-BROWSER"
+      ],
+      "deterministic_recovery": true
+    }
+  ],
+  "wake_resume": [
+    {
+      "mission_id": "M-REPAIR",
+      "resumed": true
+    }
+  ],
+  "checkpoint_restoration": [
+    {
+      "mission_id": "M-REPAIR",
+      "restored_checkpoint": "post-cluster"
+    }
+  ],
+  "supersession": [
+    {
+      "mission_id": "M-OLD",
+      "superseded_by": "M-REPAIR"
+    }
+  ],
+  "prioritization": [
+    {
+      "mission_id": "M-REPAIR",
+      "weight": 1
+    }
+  ],
+  "lease_expiration_handling": {
+    "expired": [],
+    "reclaimed": []
+  }
+}

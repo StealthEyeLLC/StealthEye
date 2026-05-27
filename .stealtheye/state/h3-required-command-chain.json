@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "required_chain": [
+    "npm install",
+    "npm run generate",
+    "npm run validate",
+    "npm run graph",
+    "npm run check:readiness",
+    "npm run check",
+    "npm run compile:packet",
+    "npm run inspect:repo",
+    "npm run diagnose",
+    "npm run h1:inspect",
+    "npm run h1:validate",
+    "npm run h1:packet",
+    "npm run h2:inspect",
+    "npm run h2:validate",
+    "npm run h2:packet",
+    "npm run h2:execution:smoke",
+    "npm run h3:inspect",
+    "npm run h3:validate",
+    "npm run h3:packet",
+    "npm run h3:mission:smoke",
+    "npm run h3:repair:smoke",
+    "npm run h3:browser:smoke"
+  ]
+}
