@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h2:validate",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T09:07:29.474Z",
+  "ordered_commands": [
+    "npm run h2:validate"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "status": "validated",
+    "checks": {
+      "governance_integrity": true,
+      "execution_integrity": true,
+      "route_integrity": true,
+      "repair_boundedness": true,
+      "replay_continuity": true,
+      "authority_consistency": true,
+      "ci_coherence": true,
+      "execution_envelope_integrity": true,
+      "execution_receipt_integrity": true,
+      "anti_invariant_preservation": true
+    },
+    "routed": {
+      "risk": "high",
+      "authority": "ci-authority",
+      "route": "ci",
+      "worker": "CIAdapter",
+      "repair": "escalate-immediately",
+      "receipt_id": "h2-execution-execution-e055265dc7807236",
+      "envelope": {
+        "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+        "attempt_id": "att_7dd58b0796e9fab362df",
+        "mission_id": "h2:validation:mission",
+        "execution_class": "governed",
+        "tool_class": "ci",
+        "authority_level": "governed",
+        "route_class": "ci",
+        "replay_seed": "bfd417c3f7a32dc8",
+        "repair_strategy": "escalate-immediately",
+        "escalation_class": "ci_authority",
+        "bounded_retry_limit": 2,
+        "execution_window": {
+          "start": "2026-05-27T09:07:29.467Z",
+          "max_ms": 900000
+        },
+        "deterministic_clock": "h1-runtime-clock",
+        "continuity_parent": null,
+        "continuity_children": [
+          "h2-execution-execution-e055265dc7807236"
+        ],
+        "execution_contract_hash": "20c43f0bd6cfb6ee391359c0dd2f6e02cf26cc3fc82d6963724bf9c7bec21f9f",
+        "execution_receipt_hash": "f0b3d01bad75eb94ae3fe6aecc50a0eaae9698c1ea0abe6bf2792685d8e9deed",
+        "runtime_posture": "bounded",
+        "ci_authority_required": true,
+        "anti_invariant_guards": [
+          "no-uncontrolled-execution",
+          "no-hidden-routing",
+          "no-nondeterministic-retry",
+          "no-silent-escalation",
+          "no-unbounded-loops",
+          "no-unrestricted-shell",
+          "no-policy-mutation-during-execution",
+          "no-hidden-authority-elevation",
+          "no-execution-without-receipts",
+          "no-execution-without-replay-lineage",
+          "no-orphaned-execution-states"
+        ],
+        "policy_snapshot": {
+          "schema_version": "2.0.0",
+          "approval_classes": [
+            "NONE",
+            "SECRET",
+            "CREDENTIAL",
+            "MONEY",
+            "IRREVERSIBLE_DELETE"
+          ],
+          "forbidden_global": [
+            "product-feature-implementation",
+            "autonomous-unsafe-merge",
+            "credential-exfiltration"
+          ]
+        },
+        "routing_snapshot": {},
+        "execution_outcome": "completed"
+      }
+    }
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.915,
+  "replay_uncertainty": {
+    "score": 0.085,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "4d751383253e91a6e198f5a800670ce9db7e2b3483c9c4ca5e5e006825961f79",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h2:validate"
+  ],
+  "validation_results": {
+    "status": "validated",
+    "checks": {
+      "governance_integrity": true,
+      "execution_integrity": true,
+      "route_integrity": true,
+      "repair_boundedness": true,
+      "replay_continuity": true,
+      "authority_consistency": true,
+      "ci_coherence": true,
+      "execution_envelope_integrity": true,
+      "execution_receipt_integrity": true,
+      "anti_invariant_preservation": true
+    },
+    "routed": {
+      "risk": "high",
+      "authority": "ci-authority",
+      "route": "ci",
+      "worker": "CIAdapter",
+      "repair": "escalate-immediately",
+      "receipt_id": "h2-execution-execution-e055265dc7807236",
+      "envelope": {
+        "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+        "attempt_id": "att_7dd58b0796e9fab362df",
+        "mission_id": "h2:validation:mission",
+        "execution_class": "governed",
+        "tool_class": "ci",
+        "authority_level": "governed",
+        "route_class": "ci",
+        "replay_seed": "bfd417c3f7a32dc8",
+        "repair_strategy": "escalate-immediately",
+        "escalation_class": "ci_authority",
+        "bounded_retry_limit": 2,
+        "execution_window": {
+          "start": "2026-05-27T09:07:29.467Z",
+          "max_ms": 900000
+        },
+        "deterministic_clock": "h1-runtime-clock",
+        "continuity_parent": null,
+        "continuity_children": [
+          "h2-execution-execution-e055265dc7807236"
+        ],
+        "execution_contract_hash": "20c43f0bd6cfb6ee391359c0dd2f6e02cf26cc3fc82d6963724bf9c7bec21f9f",
+        "execution_receipt_hash": "f0b3d01bad75eb94ae3fe6aecc50a0eaae9698c1ea0abe6bf2792685d8e9deed",
+        "runtime_posture": "bounded",
+        "ci_authority_required": true,
+        "anti_invariant_guards": [
+          "no-uncontrolled-execution",
+          "no-hidden-routing",
+          "no-nondeterministic-retry",
+          "no-silent-escalation",
+          "no-unbounded-loops",
+          "no-unrestricted-shell",
+          "no-policy-mutation-during-execution",
+          "no-hidden-authority-elevation",
+          "no-execution-without-receipts",
+          "no-execution-without-replay-lineage",
+          "no-orphaned-execution-states"
+        ],
+        "policy_snapshot": {
+          "schema_version": "2.0.0",
+          "approval_classes": [
+            "NONE",
+            "SECRET",
+            "CREDENTIAL",
+            "MONEY",
+            "IRREVERSIBLE_DELETE"
+          ],
+          "forbidden_global": [
+            "product-feature-implementation",
+            "autonomous-unsafe-merge",
+            "credential-exfiltration"
+          ]
+        },
+        "routing_snapshot": {},
+        "execution_outcome": "completed"
+      }
+    }
+  }
+}

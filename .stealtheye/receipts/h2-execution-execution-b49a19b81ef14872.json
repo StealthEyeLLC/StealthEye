@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "h2-execution-execution-b49a19b81ef14872",
+  "receipt_type": "execution",
+  "created_at": "2026-05-27T09:07:28.330Z",
+  "deterministic_ids": {
+    "execution_id": "env_c5b19aa45d776aead3889a74",
+    "attempt_id": "att_064f504d17265becc9ab",
+    "replay_id": "rep_19d42cf299e4ebcdae75"
+  },
+  "route_lineage": [
+    "browser"
+  ],
+  "repair_lineage": [
+    "retry-then-escalate"
+  ],
+  "execution_lineage": [
+    "BrowserAdapter"
+  ],
+  "authority_lineage": [
+    "governed"
+  ],
+  "ci_lineage": [
+    "optional"
+  ],
+  "replay_lineage": [
+    "c5b19aa45d776aea"
+  ],
+  "policy_lineage": [
+    "d3a2ee901c7e708c6e20f599e6d6a1585f0c4dfcf7be043966546df88c33e39d"
+  ],
+  "boundedness_proofs": {
+    "retry_limit": 2,
+    "timebox_ms": 900000,
+    "deterministic": true
+  },
+  "adapter_result": {
+    "adapter": "BrowserAdapter",
+    "status": "completed",
+    "bounded": true,
+    "deterministic": true,
+    "replay_id": "rep_19d42cf299e4ebcdae75",
+    "trace": [
+      "adapter:BrowserAdapter",
+      "route:browser"
+    ],
+    "lineage": {
+      "execution_id": "env_c5b19aa45d776aead3889a74",
+      "attempt_id": "att_064f504d17265becc9ab",
+      "mission_id": "h2:inspect:mission"
+    },
+    "authority_metadata": {
+      "authority": "governed",
+      "ci_required": false
+    },
+    "repair_metadata": {
+      "strategy": "retry-then-escalate",
+      "retry_limit": 2
+    },
+    "replay_metadata": {
+      "seed": "c5b19aa45d776aea",
+      "replay_only": false
+    }
+  }
+}

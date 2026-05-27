@@ -1,0 +1,15 @@
+{
+  "execution_posture": "DETERMINISTIC_BOUNDED",
+  "routing_posture": "GOVERNED",
+  "repair_posture": "BOUNDED",
+  "authority_posture": "EXPLICIT",
+  "ci_posture": "CI_AUTHORITATIVE",
+  "replay_posture": "REPLAYABLE",
+  "boundedness_posture": "ENFORCED",
+  "escalation_posture": "VISIBLE",
+  "denial_posture": "RECEIPTED",
+  "execution_memory_health": "PASS",
+  "event_stream_health": "PASS",
+  "continuity_health": "PASS",
+  "routes_observed": 1
+}

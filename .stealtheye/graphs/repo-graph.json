@@ -101,6 +101,42 @@
       "type": "state-file"
     },
     {
+      "id": "h2-approval-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-ci-authority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-codex-routing.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-contracts.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-github-actions.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-github-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-inspect-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-repair-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-worker-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "handoff-compact-index.json",
       "type": "state-file"
     },

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h2:packet",
+  "processName": "h1:inspect",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T09:07:30.488Z",
+  "timestamp": "2026-05-27T09:07:22.160Z",
   "ordered_commands": [
-    "npm run h2:packet"
+    "npm run h1:inspect"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -34,7 +34,7 @@
   ],
   "validation_outputs": {
     "status": "ok",
-    "complete": true
+    "h1_final_status": "COMPLETE"
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -64,10 +64,10 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h2:packet"
+    "npm run h1:inspect"
   ],
   "validation_results": {
     "status": "ok",
-    "complete": true
+    "h1_final_status": "COMPLETE"
   }
 }
