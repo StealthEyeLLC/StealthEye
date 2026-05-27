@@ -74,6 +74,42 @@
       "order": 12,
       "stamp": "t12:e4",
       "mission_id": "h1-browser-1779868787842"
+    },
+    {
+      "type": "mission-created",
+      "order": 13,
+      "stamp": "t13:e5",
+      "mission_id": "h1-browser-1779869336427"
+    },
+    {
+      "type": "replay-started",
+      "order": 14,
+      "stamp": "t14:e5",
+      "mission_id": "h1-browser-1779869336427"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 15,
+      "stamp": "t15:e5",
+      "mission_id": "h1-browser-1779869336427"
+    },
+    {
+      "type": "mission-created",
+      "order": 16,
+      "stamp": "t16:e6",
+      "mission_id": "h1-browser-1779869357971"
+    },
+    {
+      "type": "replay-started",
+      "order": 17,
+      "stamp": "t17:e6",
+      "mission_id": "h1-browser-1779869357971"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 18,
+      "stamp": "t18:e6",
+      "mission_id": "h1-browser-1779869357971"
     }
   ]
 }
