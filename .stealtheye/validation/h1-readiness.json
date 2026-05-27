@@ -1,11 +1,11 @@
 {
   "status": "partial",
-  "browser_execution_body_operational": false,
-  "repair_loops_bounded": false,
-  "replay_authority_deterministic": false,
-  "ci_authority_coherent": false,
+  "browser_execution_body_operational": true,
+  "repair_loops_bounded": true,
+  "replay_authority_deterministic": true,
+  "ci_authority_coherent": true,
   "execution_continuity_stable": true,
-  "operational_orchestration_governed": false,
+  "operational_orchestration_governed": true,
   "execution_memory_bounded": true,
   "assistant_operable_execution_surface_exists": true,
   "runtime_readiness": false

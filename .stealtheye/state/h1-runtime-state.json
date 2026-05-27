@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "latest": {
+    "proof_id": "h1-browser-1779868119166",
+    "receipt": ".stealtheye/receipts/h1-packet.json",
+    "state": "exhausted"
+  },
+  "missions": {
+    "active": [],
+    "pending": [
+      {
+        "proof_id": "h1-browser-1779868044360",
+        "state": "queued",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:47:24.365Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779868073690",
+        "state": "queued",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:47:53.694Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      }
+    ],
+    "blocked": [],
+    "repair": [],
+    "ci_authoritative": [],
+    "replay": [],
+    "exhausted": [
+      {
+        "proof_id": "h1-browser-1779868119166",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T07:48:39.171Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      }
+    ]
+  },
+  "history": [
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "state": "queued",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:47:24.365Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "state": "queued",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:47:53.694Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T07:48:39.171Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    }
+  ]
+}
