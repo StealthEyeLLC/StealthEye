@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "active_mission": "pre-h4 synchronization and continuity-hardening",
+  "current_phase": "H3_COMPLETE__H4_NOT_STARTED",
+  "runtime_status": "stable",
+  "next_action": "run h4 readiness review packet and begin scoped H4 planning",
+  "blockers": [],
+  "autonomy_boundaries": [
+    "no-unrestricted-shell",
+    "no-unrestricted-destructive-git",
+    "no-secrets-or-purchases-or-prod-delete-without-approval"
+  ],
+  "source_of_truth_order": [
+    "handoffs/latest.json",
+    "state/project-state.json",
+    "state/next-action.json",
+    "receipts/latest-replay.json"
+  ]
+}

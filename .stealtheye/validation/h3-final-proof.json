@@ -1,0 +1,11 @@
+{
+  "status": "ACTIVE",
+  "proofs": [
+    "h3-mission-proof.json",
+    "h3-github-proof.json",
+    "h3-repair-proof.json",
+    "h3-browser-proof.json",
+    "h3-routing-proof.json",
+    "h3-continuation-proof.json"
+  ]
+}

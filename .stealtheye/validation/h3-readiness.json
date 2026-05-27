@@ -1,0 +1,19 @@
+{
+  "status": "ACTIVE",
+  "allowed_statuses": [
+    "ACTIVE",
+    "NOT_READY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "missing": [],
+  "operational_depth_score": 0.81,
+  "autonomy_readiness_score": 0.78,
+  "repair_stability_score": 0.73,
+  "browser_operational_score": 0.77,
+  "continuation_stability_score": 0.82,
+  "worker_coordination_score": 0.79,
+  "deterministic": true,
+  "bounded": true,
+  "replayable": true
+}

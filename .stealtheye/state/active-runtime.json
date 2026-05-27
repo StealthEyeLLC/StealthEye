@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "status": "idle-ready",
+  "canonical_surface": "state/project-state.json",
+  "handoff_surface": "handoffs/latest.json",
+  "replay_surface": "receipts/latest-replay.json",
+  "bounded_runtime_guarantees": [
+    "deterministic-bootstrap",
+    "bounded-artifact-retention",
+    "explicit-human-action-flags"
+  ]
+}

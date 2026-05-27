@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-27T12:11:05.323Z",
+  "status": "pass",
+  "browser_smoke": [
+    "selector drift",
+    "visual divergence",
+    "replay corruption",
+    "navigation interruption",
+    "dead-session recovery"
+  ]
+}

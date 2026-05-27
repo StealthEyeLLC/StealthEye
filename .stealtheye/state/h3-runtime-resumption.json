@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-05-27T13:16:54.493Z",
+  "resume_supported": true,
+  "replay_safe": true,
+  "deterministic_resume_path": [
+    "recover",
+    "checkpoint-verify",
+    "continue"
+  ]
+}

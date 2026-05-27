@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-27T13:16:54.493Z",
+  "governance_lock": "H2_INVARIANTS_ENFORCED",
+  "uncontrolled_autonomy": false,
+  "forbidden_actions": [
+    "auto-merge",
+    "auto-deploy",
+    "force-push",
+    "destructive-git",
+    "unrestricted-shell",
+    "unrestricted-domains"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "deterministic": true,
+  "bounded": true,
+  "replay_safe": true,
+  "unstable_repair_resurfacing": [
+    "RC-2"
+  ],
+  "successful_repair_resurfacing": [
+    "RC-1"
+  ],
+  "flaky_workflow_resurfacing": [
+    "ci"
+  ],
+  "browser_anomaly_resurfacing": [
+    "AN-1"
+  ],
+  "replay_instability_resurfacing": [
+    "replay-drift"
+  ],
+  "worker_instability_resurfacing": [
+    "repair_runtime"
+  ],
+  "deadlock_resurfacing": [],
+  "divergence_resurfacing": [
+    "replay-drift"
+  ],
+  "convergence_resurfacing": [
+    "repair-converging"
+  ]
+}

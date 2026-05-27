@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "recovery": [
+    {
+      "mission": "inspect_visual_regression",
+      "interrupted": true,
+      "resumed": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "failure_lineage_graph": [
+    {
+      "from": "run-1",
+      "to": "run-2"
+    },
+    {
+      "from": "run-2",
+      "to": "run-3"
+    }
+  ],
+  "recurring_regression_resurfacing": [
+    {
+      "workflow": "ci",
+      "resurfaced": true
+    }
+  ],
+  "dependency_failure_correlation": [
+    {
+      "dependency": "playwright",
+      "confidence": 0.51
+    }
+  ]
+}

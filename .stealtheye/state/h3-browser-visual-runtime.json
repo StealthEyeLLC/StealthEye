@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "visual_regression_detection": [
+    {
+      "page": "pull request diff",
+      "baseline": "img-a",
+      "current": "img-b",
+      "delta": 0.08
+    }
+  ],
+  "screenshot_comparison_lineage": [
+    {
+      "baseline": "img-a",
+      "candidate": "img-b",
+      "parent": "img-root"
+    }
+  ],
+  "mission_convergence_score": 0.71,
+  "evidence_normalization": true
+}

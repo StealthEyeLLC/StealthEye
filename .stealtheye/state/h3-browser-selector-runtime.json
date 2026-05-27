@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-05-27T13:16:54.493Z",
+  "healed_selectors": [
+    {
+      "from": "[data-test=run]",
+      "to": ".run-row"
+    }
+  ]
+}

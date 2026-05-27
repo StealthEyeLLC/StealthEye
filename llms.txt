@@ -1,7 +1,7 @@
-StealthEye Phase 0 quick orientation:
-- run `npm run check` to regenerate/validate substrate artifacts
-- run `npm run compile:packet` for handoff packet
-- read `.stealtheye/state/project-state.json` first
-
-
-Status: Phase 0 COMPLETE. H1 COMPLETE. H2 COMPLETE after `npm run h2:validate`; H3 next phase is ACTIVATION-ONLY (NOT_STARTED).
+StealthEye substrate quick orientation (synced post-H3):
+- H0/H1/H2/H3 are COMPLETE; H4 is NOT STARTED.
+- Bootstrap-first invariant: load `.stealtheye/state/project-state.json` before meaningful execution.
+- Continuity recovery entrypoint: `.stealtheye/state/fresh-tab-bootstrap.json`.
+- Source-of-truth precedence: handoff latest -> replay latest -> project-state -> next-action.
+- Forbidden autonomous actions remain enforced: secrets handling, purchases/billing, irreversible prod-data deletion, unrestricted shell/destructive git.
+- Run `npm run check` for deterministic generation+validation+graph+readiness.

@@ -1,0 +1,28 @@
+{
+  "schema_version": "3.1.0",
+  "worker_exhaustion_tracking": [
+    {
+      "worker": "codex_medium",
+      "exhaustion": 0.21
+    }
+  ],
+  "worker_utilization_scoring": [
+    {
+      "worker": "repair_runtime",
+      "utilization": 0.64
+    }
+  ],
+  "worker_reliability_scoring": [
+    {
+      "worker": "browser_runtime",
+      "reliability": 0.74
+    }
+  ],
+  "worker_escalation_routing": [
+    {
+      "worker": "ci_runtime",
+      "escalate_to": "codex_high",
+      "trigger": "repeated_flake"
+    }
+  ]
+}

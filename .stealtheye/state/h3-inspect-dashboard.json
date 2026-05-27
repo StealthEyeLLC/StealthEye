@@ -1,0 +1,89 @@
+{
+  "status": "ACTIVE",
+  "runtime_lifecycle": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "current": "ACTIVE",
+    "allowed": [
+      "BOOTING",
+      "ACTIVE",
+      "DEGRADED",
+      "RECOVERING",
+      "PAUSED",
+      "BLOCKED",
+      "HALTED"
+    ],
+    "blocked_reasoning": [],
+    "degraded_reasoning": []
+  },
+  "mission_convergence": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "convergence_score": 0.85,
+    "confidence": 0.86
+  },
+  "repair_convergence": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "convergence_loops": true,
+    "stabilization_runtime": true
+  },
+  "browser_anomalies": [],
+  "ci_instability": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "instability_suppression": true,
+    "regression_clusters": []
+  },
+  "worker_exhaustion": "suppressed",
+  "escalation_queues": [
+    "repair_runtime",
+    "critic_runtime"
+  ],
+  "replay_divergence": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "divergence_suppression": true,
+    "recovery_routing": true
+  },
+  "checkpoint_lineage": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "checkpoints": [
+      {
+        "id": "MCP-1",
+        "parent": null
+      },
+      {
+        "id": "MCP-2",
+        "parent": "MCP-1"
+      }
+    ]
+  },
+  "operational_confidence": 0.84,
+  "operational_readiness": 0.83,
+  "convergence_score": 0.84,
+  "autonomy_score": 0.81,
+  "next_best_autonomous_action": "Continue bounded mission queue using deterministic replay path",
+  "blocked_state_reasoning": [],
+  "runtime_persistence_posture": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "persistent_operational_continuity": true,
+    "external_daemon_required": false,
+    "hidden_mutable_state": false
+  },
+  "restoration_posture": {
+    "generated_at": "2026-05-27T13:16:47.340Z",
+    "recovery_topology": [
+      "mission",
+      "repair",
+      "browser",
+      "ci",
+      "worker",
+      "memory"
+    ],
+    "restoration_integrity": true,
+    "replay_reconstruction": true,
+    "mission_state_restored": true,
+    "worker_assignments_restored": true,
+    "repair_chains_restored": true,
+    "browser_state_restored": true,
+    "ci_state_restored": true,
+    "convergence_state_restored": true
+  },
+  "compact_mobile_summary": "H3 ACTIVE | persistence=READY | convergence=0.84 | readiness=0.83"
+}

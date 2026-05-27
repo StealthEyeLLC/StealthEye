@@ -1,0 +1,18 @@
+{
+  "schema_version": "3.1.0",
+  "missions": [],
+  "allowed_statuses": [
+    "QUEUED",
+    "READY",
+    "RUNNING",
+    "BLOCKED",
+    "WAITING_APPROVAL",
+    "REPAIRING",
+    "REPLAYING",
+    "VERIFIED",
+    "COMPLETE",
+    "FAILED",
+    "SUPERSEDED",
+    "CANCELLED"
+  ]
+}

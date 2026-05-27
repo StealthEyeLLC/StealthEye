@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "instability_score": 0.67,
+  "runtime_degradation_tracking": [
+    {
+      "subsystem": "ci",
+      "degradation": 0.14
+    }
+  ],
+  "ci_convergence_failure_detected": false
+}

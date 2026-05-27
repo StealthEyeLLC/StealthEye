@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-27T12:11:02.897Z",
+  "status": "pass",
+  "mission_smoke": [
+    "interrupted repair chain",
+    "replay recovery chain",
+    "multi-worker repair chain",
+    "CI stabilization chain",
+    "browser recovery chain",
+    "escalation chain",
+    "convergence-failure chain"
+  ]
+}

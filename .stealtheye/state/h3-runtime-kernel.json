@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-27T13:16:54.493Z",
+  "lifecycle_states": [
+    "BOOTING",
+    "ACTIVE",
+    "DEGRADED",
+    "RECOVERING",
+    "PAUSED",
+    "BLOCKED",
+    "HALTED"
+  ],
+  "deterministic": true,
+  "bounded": true,
+  "replay_safe": true,
+  "inspectable": true,
+  "restart_safe": true,
+  "resumable": true
+}

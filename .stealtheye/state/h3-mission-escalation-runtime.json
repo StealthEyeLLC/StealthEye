@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "escalation_chains": [
+    {
+      "from": "M-REPAIR",
+      "to": "review_runtime",
+      "reason": "repeated-regression"
+    }
+  ],
+  "autonomous_next_step_routing": "repair -> validate -> browser verify"
+}

@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "checkpoints": [
+    {
+      "worker": "ci_runtime",
+      "mission": "ci-stabilization",
+      "checkpoint": "clustered-failures"
+    }
+  ]
+}

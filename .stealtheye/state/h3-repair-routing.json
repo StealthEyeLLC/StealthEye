@@ -1,0 +1,13 @@
+{
+  "schema_version": "3.0.0",
+  "routes": [
+    {
+      "failure_class": "test-failure",
+      "route": "local_runtime->codex_medium->github_actions"
+    },
+    {
+      "failure_class": "workflow-failure",
+      "route": "github_actions->codex_high"
+    }
+  ]
+}

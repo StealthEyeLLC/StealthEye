@@ -1,0 +1,16 @@
+{
+  "canonical_entrypoints": [
+    "state/project-state.json",
+    "handoffs/latest.json",
+    "receipts/latest-replay.json",
+    "state/next-action.json",
+    "state/working-set.json"
+  ],
+  "precedence_order": [
+    "handoffs/latest.json",
+    "receipts/latest-replay.json",
+    "state/project-state.json",
+    "state/next-action.json"
+  ],
+  "stale_state_policy": "latest-pointer-wins-with-timestamp-check"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "3.1.0",
+  "mission_registry": {},
+  "mission_lifecycle": [],
+  "continuation_index": {},
+  "checkpoints": [],
+  "replay_lineage": [],
+  "repair_lineage": [],
+  "supersessions": [],
+  "cancellations": [],
+  "finalizations": []
+}

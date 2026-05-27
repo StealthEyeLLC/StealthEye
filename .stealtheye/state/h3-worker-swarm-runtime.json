@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "worker_classes": [
+    "codex_high",
+    "codex_medium",
+    "repair_runtime",
+    "browser_runtime",
+    "replay_runtime",
+    "ci_runtime",
+    "review_runtime",
+    "critic_runtime"
+  ],
+  "bounded_parallel_execution": 4,
+  "worker_starvation_prevention": true,
+  "worker_deadlock_detection": false,
+  "worker_crash_recovery": true,
+  "exhaustion_balancing": true,
+  "reliability_weighting": [
+    {
+      "worker": "repair_runtime",
+      "weight": 0.86
+    }
+  ],
+  "affinity_scheduling": [
+    {
+      "worker": "browser_runtime",
+      "affinity": "browser-verify"
+    }
+  ],
+  "continuation_restoration": true
+}

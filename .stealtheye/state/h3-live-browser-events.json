@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "dom_capture": [
+    {
+      "mission": "inspect_github_actions",
+      "dom_hash": "sha256:runtime"
+    }
+  ],
+  "console_events": [
+    {
+      "level": "error",
+      "message": "selector drift simulated"
+    }
+  ],
+  "network_events": [
+    {
+      "url": "https://api.github.com/repos",
+      "status": 200
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "status": "ACTIVE",
+  "gaps": [
+    {
+      "area": "browser visual replay depth",
+      "severity": "medium"
+    }
+  ],
+  "next_focus": [
+    "expand selector healing corpus",
+    "increase CI replay sample breadth"
+  ]
+}

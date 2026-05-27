@@ -1,0 +1,129 @@
+{
+  "schema_version": "3.1.0",
+  "generated_at": "2026-05-27T11:10:28.633Z",
+  "repair_dag_generation": [
+    {
+      "mission": "repair-ci-flake",
+      "nodes": [
+        "triage",
+        "targeted-repair",
+        "validate",
+        "rollback-check"
+      ],
+      "edges": [
+        [
+          "triage",
+          "targeted-repair"
+        ],
+        [
+          "targeted-repair",
+          "validate"
+        ],
+        [
+          "validate",
+          "rollback-check"
+        ]
+      ]
+    }
+  ],
+  "repair_dependency_graph": [
+    {
+      "repair_id": "R-001",
+      "depends_on": [
+        "R-000-bootstrap"
+      ],
+      "blocked_by": []
+    }
+  ],
+  "repair_attempt_prioritization": [
+    {
+      "repair_id": "R-001",
+      "priority": 1,
+      "reason": "high blast radius ci flake"
+    }
+  ],
+  "regression_risk_aware_repair_ordering": [
+    {
+      "repair_id": "R-001",
+      "regression_risk": 0.33,
+      "position": 1
+    }
+  ],
+  "repair_rollback_planning": [
+    {
+      "repair_id": "R-001",
+      "rollback_plan": [
+        "git-restore-targeted-files",
+        "rerun-validate-chain"
+      ]
+    }
+  ],
+  "validation_targeting": [
+    {
+      "repair_id": "R-001",
+      "commands": [
+        "npm run h3:validate",
+        "npm run h3:repair:smoke"
+      ]
+    }
+  ],
+  "retry_suppression": [
+    {
+      "repair_id": "R-001",
+      "max_retries": 2,
+      "suppression_state": "armed"
+    }
+  ],
+  "repair_escalation_routing": [
+    {
+      "repair_id": "R-001",
+      "route": [
+        "repair_runtime",
+        "codex_medium",
+        "codex_high"
+      ],
+      "trigger": "confidence<0.55"
+    }
+  ],
+  "confidence_decay": [
+    {
+      "repair_id": "R-001",
+      "initial": 0.81,
+      "decay_per_failure": 0.12,
+      "current": 0.69
+    }
+  ],
+  "deterministic_repair_scoring": [
+    {
+      "repair_id": "R-001",
+      "score": 0.742
+    }
+  ],
+  "repair_convergence_detection": [
+    {
+      "mission": "repair-ci-flake",
+      "converged": true,
+      "score": 0.81
+    }
+  ],
+  "unstable_repair_detection": [
+    {
+      "repair_id": "R-002",
+      "unstable": true,
+      "reason": "alternating pass/fail on same selector"
+    }
+  ],
+  "repair_supersession": [
+    {
+      "old_repair_id": "R-002",
+      "superseded_by": "R-003"
+    }
+  ],
+  "repair_quarantine_state": [
+    {
+      "repair_id": "R-002",
+      "quarantine": true,
+      "release_gate": "manual-review-required"
+    }
+  ]
+}

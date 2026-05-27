@@ -1,0 +1,30 @@
+{
+  "receipt_id": "h2-github-execution-712031596686f12c",
+  "created_at": "2026-05-27T11:28:54.795Z",
+  "node_id": "node_8f47b095a2cacf42",
+  "adapter": "github",
+  "lineage": {
+    "dag_id": "dag_12955b6877329dbb3a66"
+  },
+  "replay_metadata": {
+    "deterministic": true
+  },
+  "authority_metadata": {
+    "source": "local"
+  },
+  "repair_metadata": {
+    "deterministic": true
+  },
+  "boundedness_metadata": {
+    "bounded": true
+  },
+  "policy_metadata": {
+    "result": "allow"
+  },
+  "runtime_metadata": {
+    "started_at": "2026-05-27T11:28:54.795Z"
+  },
+  "continuation_metadata": {
+    "continuation_id": null
+  }
+}

@@ -145,6 +145,41 @@
       "at": "2026-05-27T10:10:09.129Z",
       "lineage": null,
       "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_04f6bf20f6535e78c3",
+      "event": "dag-created",
+      "at": "2026-05-27T11:00:50.185Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_6bcf76106dcfedbd0b",
+      "event": "dag-created",
+      "at": "2026-05-27T11:10:16.311Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_fbeef4f6392a743db6",
+      "event": "dag-created",
+      "at": "2026-05-27T11:28:54.793Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_a058fd93f92229b711",
+      "event": "dag-created",
+      "at": "2026-05-27T12:31:31.185Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
+    },
+    {
+      "event_id": "evt_50272971d7c0bfd174",
+      "event": "dag-created",
+      "at": "2026-05-27T13:16:42.988Z",
+      "lineage": null,
+      "dag_id": "dag_12955b6877329dbb3a66"
     }
   ]
 }

@@ -1,0 +1,97 @@
+{
+  "dependency_analysis": [
+    {
+      "pr": "PR-101",
+      "depends_on": [
+        "PR-099"
+      ],
+      "blocks": [
+        "PR-105"
+      ],
+      "critical_path": true
+    }
+  ],
+  "changed_file_impact_analysis": [
+    {
+      "file": "src/lib/h3.ts",
+      "subsystems": [
+        "h3_runtime",
+        "repair_engine",
+        "worker_router"
+      ],
+      "risk": "medium"
+    }
+  ],
+  "stale_branch_detection": [
+    {
+      "branch": "feature/old-repair-flow",
+      "stale_days": 37,
+      "action": "archive_or_rebase"
+    }
+  ],
+  "merge_conflict_risk_estimation": [
+    {
+      "pr": "PR-101",
+      "risk_score": 0.42,
+      "causes": [
+        "overlapping-h3-runtime-files"
+      ]
+    }
+  ],
+  "hotfix_detection": [
+    {
+      "pr": "PR-110",
+      "is_hotfix": true,
+      "rationale": "targets production ci failure class"
+    }
+  ],
+  "regression_risk_estimation": [
+    {
+      "pr": "PR-101",
+      "risk_score": 0.38,
+      "vectors": [
+        "h3-validation",
+        "routing-runtime"
+      ]
+    }
+  ],
+  "repair_confidence_estimation": [
+    {
+      "pr": "PR-101",
+      "confidence": 0.72
+    }
+  ],
+  "branch_health_scoring": [
+    {
+      "branch": "h3/controlled-operational-body",
+      "health_score": 0.84
+    }
+  ],
+  "pr_convergence_scoring": [
+    {
+      "pr": "PR-101",
+      "convergence_score": 0.79
+    }
+  ],
+  "reviewer_routing_recommendations": [
+    {
+      "pr": "PR-101",
+      "reviewers": [
+        "runtime-owner",
+        "ci-owner"
+      ],
+      "reason": "cross-cutting h3 runtime + ci heuristics"
+    }
+  ],
+  "affected_subsystem_inference": [
+    {
+      "pr": "PR-101",
+      "subsystems": [
+        "github_runtime",
+        "repair_orchestrator",
+        "browser_runtime",
+        "continuation_runtime"
+      ]
+    }
+  ]
+}

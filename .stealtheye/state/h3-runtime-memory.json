@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "deterministic": true,
+  "replay_safe": true,
+  "bounded": true,
+  "resurfacing": [
+    "failure",
+    "repair_pattern",
+    "flaky_workflow",
+    "reviewer_bottleneck",
+    "ci_instability",
+    "browser_anomaly",
+    "replay_divergence",
+    "worker_instability"
+  ]
+}

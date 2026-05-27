@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-27T12:11:05.315Z",
+  "interruption_persistence": [
+    {
+      "mission_id": "M-REPAIR",
+      "persisted": true
+    }
+  ],
+  "recovery_continuation": [
+    {
+      "mission_id": "M-REPAIR",
+      "resumed_at": "validate-step"
+    }
+  ],
+  "replay_restoration": [
+    {
+      "mission_id": "M-REPAIR",
+      "replay_safe": true
+    }
+  ]
+}
