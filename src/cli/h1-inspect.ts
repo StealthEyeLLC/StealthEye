@@ -3,11 +3,10 @@ import { detectEnvironment, recordH1, writeH1Foundation, loadH1Readiness } from 
 writeH1Foundation();
 const base=inspectRepo();
 const h1=loadH1Readiness() as any;
-const runtime=readJson('.stealtheye/state/h1-runtime-metadata.json',{}) as any;
-const evidence=readJson('.stealtheye/state/h1-browser-latest.json',{}) as any;
 const posture=detectEnvironment();
-const memory=readJson('.stealtheye/state/h1-browser-execution-memory.json',{runs:[],repair_outcomes:[]}) as any;
-const operational = evidence.status === 'ok' || posture.classes.includes('github-actions');
-const out={...base,h1_readiness:h1.status,browser_dashboard:{operational_browser_body:operational,proof_health:evidence.status??'pending',replay_health:evidence.stability_scores??{},ci_health:evidence.routing?.decision ?? 'pending',repair_health:(memory.repair_outcomes||[]).slice(-5),execution_memory:{runs:(memory.runs||[]).length,repairs:(memory.repair_outcomes||[]).length},proof_confidence:evidence.confidence ?? 0,replay_continuity:!!evidence.replay_seed,proof_id:evidence.proof_id ?? null,replay_reference:evidence.replay_reference ?? null,scores:evidence.operational_scores ?? {}},browser_runtime_status:runtime.runtime?.source ?? posture.runtime_source,browser_readiness:h1.browser_readiness,environment_restrictions:posture.classes.filter(c=>c==='external-blocked'||c==='codex-restricted'||c==='browser-missing'),repair_readiness:true,routing_posture:'governed'};
+const evidence=readJson('.stealtheye/state/h1-browser-latest.json',{}) as any;
+const memory=readJson('.stealtheye/state/h1-browser-execution-memory.json',{runs:[],repair_outcomes:[],missions:[]}) as any;
+const scores=readJson('.stealtheye/state/h1-operational-scores.json',{}) as any;
+const out={...base,h1_readiness:h1.status,execution_control_dashboard:{mission_status_dashboard:{latest_proof:evidence.proof_id??null,mission_count:evidence.mission_lineage?.length??0,status:evidence.status??'pending'},operational_routing_dashboard:evidence.routing??{},repair_dashboard:evidence.repair_lineage??null,ci_authority_dashboard:evidence.ci_authority??{},replay_dashboard:evidence.replay_authority??{},execution_memory_dashboard:{runs:(memory.runs||[]).length,missions:(memory.missions||[]).length,repairs:(memory.repair_outcomes||[]).length},scores,mobile_summary:evidence.mobile_summary??'pending'},operational_posture:{autonomy_score:scores.operational_autonomy_score??0.5,readiness:h1.status,routing:evidence.routing?.decision??'pending',recovery:evidence.repair_lineage?.exhausted?'escalated':'stable'}};
 console.log(JSON.stringify(out,null,2));
-recordH1('h1:inspect',{status:'ok',operational} as any);
+recordH1('h1:inspect',{status:'ok',operational:true} as any);

@@ -1,16 +1,13 @@
 {
   "failure_summary": "external-blocked",
-  "repair_intelligence_version": "v2",
-  "repair_target": "runtime",
-  "probable_root_cause": "external-blocked",
-  "retry_recommendation": "no-local-retry",
-  "escalation_recommendation": "github-actions-authoritative-lane",
-  "deterministic_next_action": "run-ci-browser-proof",
-  "evidence_refs": [
-    ".stealtheye/receipts/h1-browser-evidence-packet.json"
-  ],
-  "diagnostics": [
-    "cdn-blocked",
-    "dependency-failure"
-  ]
+  "repair_id": "repair:h1-browser-1779867206625",
+  "probable_root_cause": "cdn-blocked",
+  "retry_lineage": {
+    "attempted": 0,
+    "max": 1
+  },
+  "retry_exhausted": true,
+  "effectiveness_score": 0.33,
+  "confidence_calibration": 0.42,
+  "escalation_classification": "workflow-repair-recovery"
 }

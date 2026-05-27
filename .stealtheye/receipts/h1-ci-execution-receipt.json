@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "proof_id": "h1-browser-1779867206625",
+  "ci_replay_authority": {
+    "deterministic": true,
+    "replay_seed": "proof-unknown-none"
+  },
+  "ci_artifact_authority": {
+    "screenshot": ".stealtheye/browser/smoke.png",
+    "trace": ".stealtheye/browser/trace.zip"
+  },
+  "ci_proof_integrity_authority": {
+    "screenshot": false,
+    "trace": false,
+    "dom": false
+  },
+  "ci_runtime_lineage": {
+    "attempts": [
+      "playwright-install",
+      "repair-packet-escalation"
+    ],
+    "duration_ms": 1,
+    "timestamp": "2026-05-27T07:33:26.628Z",
+    "browser_version": "unknown"
+  },
+  "status": "degraded"
+}

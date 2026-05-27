@@ -65,6 +65,10 @@
       "type": "state-file"
     },
     {
+      "id": "h1-browser-execution-memory.json",
+      "type": "state-file"
+    },
+    {
       "id": "h1-browser-flake-memory.json",
       "type": "state-file"
     },

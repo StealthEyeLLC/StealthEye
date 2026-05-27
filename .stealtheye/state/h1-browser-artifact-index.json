@@ -1,8 +1,6 @@
 {
-  "latest_proof_id": "h1-browser-1779866502583",
-  "latest_replay_id": "browser-replay-proof-unknown-none",
+  "latest_proof_id": "h1-browser-1779867206625",
   "files": [],
   "retention_limit": 8,
-  "pruned": 0,
   "artifact_growth_bounded": true
 }
