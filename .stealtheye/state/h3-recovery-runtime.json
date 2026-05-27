@@ -1,0 +1,40 @@
+{
+  "schema_version": "3.1.0",
+  "suspended_mission_restore": [
+    {
+      "mission": "inspect_actions_page",
+      "restored": true
+    }
+  ],
+  "worker_crash_recovery": [
+    {
+      "worker": "browser_runtime",
+      "recovered": true
+    }
+  ],
+  "browser_session_recovery": [
+    {
+      "session": "S-22",
+      "recovered": true
+    }
+  ],
+  "orphaned_mission_recovery": [
+    {
+      "mission": "M-404",
+      "recovered": false,
+      "disposition": "cleaned"
+    }
+  ],
+  "stale_execution_cleanup": [
+    {
+      "execution": "X-18",
+      "cleaned": true
+    }
+  ],
+  "continuation_integrity_scoring": [
+    {
+      "mission": "inspect_actions_page",
+      "score": 0.82
+    }
+  ]
+}

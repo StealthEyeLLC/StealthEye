@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "bounded": true,
+  "fixture_safe": true,
+  "timestamp": "2026-05-27T11:10:21.486Z",
+  "repair_smoke": [
+    "flaky_ci_repair",
+    "replay_divergence_repair",
+    "failed_validation_repair",
+    "rollback_planning"
+  ]
+}

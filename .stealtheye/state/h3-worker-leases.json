@@ -1,0 +1,10 @@
+{
+  "schema_version": "3.1.0",
+  "leases": [
+    {
+      "worker": "repair_runtime",
+      "mission": "repair-ci-flake",
+      "ttl_seconds": 900
+    }
+  ]
+}

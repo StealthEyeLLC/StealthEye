@@ -1,0 +1,95 @@
+{
+  "schema_version": "3.1.0",
+  "generated_at": "2026-05-27T11:10:28.633Z",
+  "mission_types": [
+    "inspect_runtime",
+    "inspect_ci_dashboard",
+    "inspect_pr_page",
+    "inspect_actions_page",
+    "inspect_release_page",
+    "inspect_docs_surface",
+    "verify_ui_state",
+    "verify_visual_stability"
+  ],
+  "dom_state_snapshots": [
+    {
+      "mission": "inspect_runtime",
+      "dom_hash": "dom_sha256_001",
+      "key_nodes": 14
+    }
+  ],
+  "console_event_classification": [
+    {
+      "level": "error",
+      "class": "runtime-exception",
+      "count": 1
+    }
+  ],
+  "network_anomaly_classification": [
+    {
+      "class": "5xx-spike",
+      "count": 2,
+      "severity": "medium"
+    }
+  ],
+  "selector_drift_detection": [
+    {
+      "selector": "[data-testid=\"run-status\"]",
+      "drift": true,
+      "fallback": "text=Run status"
+    }
+  ],
+  "visual_state_verification": [
+    {
+      "checkpoint": "ci-dashboard",
+      "stable": true,
+      "perceptual_diff": 0.03
+    }
+  ],
+  "replay_safe_browser_steps": [
+    {
+      "step": "open-actions-page",
+      "idempotent": true
+    }
+  ],
+  "browser_mission_continuation": [
+    {
+      "mission": "inspect_actions_page",
+      "resumed_from": "checkpoint-2"
+    }
+  ],
+  "browser_mission_repair": [
+    {
+      "mission": "verify_ui_state",
+      "repair": "apply-selector-fallback"
+    }
+  ],
+  "browser_evidence_normalization": [
+    {
+      "evidence_id": "E-001",
+      "normalized": true
+    }
+  ],
+  "screenshot_lineage": [
+    {
+      "screenshot": "shot-003.png",
+      "parent": "shot-002.png",
+      "reason": "post-repair-verification"
+    }
+  ],
+  "browser_failure_clustering": [
+    {
+      "cluster": "selector-drift",
+      "failures": [
+        "missing-node",
+        "strict-mode-violation"
+      ]
+    }
+  ],
+  "deterministic_browser_mission_scoring": [
+    {
+      "mission": "inspect_ci_dashboard",
+      "score": 0.77
+    }
+  ]
+}

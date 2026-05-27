@@ -265,6 +265,42 @@
       "type": "state-file"
     },
     {
+      "id": "h3-budget-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-continuations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-inspect-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-mission-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-routing.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-repair-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h3-routing-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "handoff-compact-index.json",
       "type": "state-file"
     },

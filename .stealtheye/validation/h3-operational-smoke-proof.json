@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "bounded": true,
+  "fixture_safe": true,
+  "timestamp": "2026-05-27T11:10:20.747Z",
+  "mission_smoke": [
+    "repo_repair_mission",
+    "replay_recovery_mission",
+    "multi_worker_mission",
+    "browser_inspection_mission"
+  ]
+}

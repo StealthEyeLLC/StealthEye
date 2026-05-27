@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h3:inspect",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T11:10:18.489Z",
+  "ordered_commands": [
+    "npm run h3:inspect"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "status": "ACTIVE",
+    "repo_operational_posture": {
+      "deterministic_repo_health_score": 0.812,
+      "deterministic_ci_health_score": 0.744,
+      "deterministic_pr_convergence_score": 0.79,
+      "deterministic_repo_instability_score": 0.266,
+      "release_readiness_score": 0.76,
+      "branch_health_score": 0.84,
+      "generated_at": "2026-05-27T11:10:18.485Z"
+    },
+    "active_repairs": [
+      {
+        "mission": "repair-ci-flake",
+        "score": 0.81,
+        "converged": true
+      }
+    ],
+    "worker_utilization": [
+      {
+        "worker": "repair_runtime",
+        "utilization": 0.64
+      }
+    ],
+    "browser_mission_state": [
+      {
+        "mission": "inspect_ci_dashboard",
+        "score": 0.77
+      }
+    ],
+    "ci_instability": [
+      {
+        "workflow": "h3-browser-smoke",
+        "flake_probability": 0.31
+      }
+    ],
+    "replay_divergence": [
+      {
+        "mission": "repair-ci-flake",
+        "diverged": false
+      }
+    ],
+    "recovery_posture": [
+      {
+        "mission": "inspect_actions_page",
+        "score": 0.82
+      }
+    ],
+    "repair_convergence": [
+      {
+        "mission": "repair-ci-flake",
+        "score": 0.81,
+        "converged": true
+      }
+    ],
+    "operational_confidence": 0.406,
+    "top_blockers": [
+      "no critical blockers"
+    ],
+    "next_best_action": "Run h3 smoke suites and apply targeted repair for unstable flows",
+    "human_attention_priority": "medium",
+    "compact_mobile_summary": "H3 ACTIVE | conf=0.406 | blockers=0 | repairs=1",
+    "human_action_needed": "No"
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "c96ed2f1cd500ca27125438358c9629e7041b4a351158ceb8e4a919a37bbb519",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h3:inspect"
+  ],
+  "validation_results": {
+    "status": "ACTIVE",
+    "repo_operational_posture": {
+      "deterministic_repo_health_score": 0.812,
+      "deterministic_ci_health_score": 0.744,
+      "deterministic_pr_convergence_score": 0.79,
+      "deterministic_repo_instability_score": 0.266,
+      "release_readiness_score": 0.76,
+      "branch_health_score": 0.84,
+      "generated_at": "2026-05-27T11:10:18.485Z"
+    },
+    "active_repairs": [
+      {
+        "mission": "repair-ci-flake",
+        "score": 0.81,
+        "converged": true
+      }
+    ],
+    "worker_utilization": [
+      {
+        "worker": "repair_runtime",
+        "utilization": 0.64
+      }
+    ],
+    "browser_mission_state": [
+      {
+        "mission": "inspect_ci_dashboard",
+        "score": 0.77
+      }
+    ],
+    "ci_instability": [
+      {
+        "workflow": "h3-browser-smoke",
+        "flake_probability": 0.31
+      }
+    ],
+    "replay_divergence": [
+      {
+        "mission": "repair-ci-flake",
+        "diverged": false
+      }
+    ],
+    "recovery_posture": [
+      {
+        "mission": "inspect_actions_page",
+        "score": 0.82
+      }
+    ],
+    "repair_convergence": [
+      {
+        "mission": "repair-ci-flake",
+        "score": 0.81,
+        "converged": true
+      }
+    ],
+    "operational_confidence": 0.406,
+    "top_blockers": [
+      "no critical blockers"
+    ],
+    "next_best_action": "Run h3 smoke suites and apply targeted repair for unstable flows",
+    "human_attention_priority": "medium",
+    "compact_mobile_summary": "H3 ACTIVE | conf=0.406 | blockers=0 | repairs=1",
+    "human_action_needed": "No"
+  }
+}
