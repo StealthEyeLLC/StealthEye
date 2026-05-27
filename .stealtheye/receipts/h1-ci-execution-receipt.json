@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "proof_id": "h1-browser-1779869357971",
+  "proof_id": "h1-browser-1779869849701",
   "ci_replay_authority": {
     "deterministic": true,
     "replay_seed": "proof-unknown-none"
@@ -20,7 +20,7 @@
       "repair-packet-escalation"
     ],
     "duration_ms": 4,
-    "timestamp": "2026-05-27T08:09:17.977Z",
+    "timestamp": "2026-05-27T08:17:29.706Z",
     "browser_version": "unknown"
   },
   "status": "degraded"

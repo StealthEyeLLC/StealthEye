@@ -158,6 +158,22 @@
       "timestamp": "2026-05-27T08:09:17.977Z",
       "route": "ci-authoritative-repair",
       "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T08:17:10.547Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T08:17:29.706Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
     }
   ],
   "repair_outcomes": [
@@ -270,6 +286,18 @@
       "effectiveness": 0.33,
       "exhausted": true,
       "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:17:29.706Z"
     }
   ],
   "routing_decisions": [
@@ -374,6 +402,18 @@
       "decision": "ci-authoritative-repair",
       "rationale": "runtime unavailable requires CI authority",
       "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:17:29.706Z"
     }
   ],
   "ci_escalations": [
@@ -478,6 +518,18 @@
       "mission_count": 8,
       "status": "degraded",
       "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:17:29.706Z"
     }
   ]
 }

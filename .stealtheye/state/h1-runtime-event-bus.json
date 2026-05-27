@@ -110,6 +110,42 @@
       "order": 18,
       "stamp": "t18:e6",
       "mission_id": "h1-browser-1779869357971"
+    },
+    {
+      "type": "mission-created",
+      "order": 19,
+      "stamp": "t19:e7",
+      "mission_id": "h1-browser-1779869830540"
+    },
+    {
+      "type": "replay-started",
+      "order": 20,
+      "stamp": "t20:e7",
+      "mission_id": "h1-browser-1779869830540"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 21,
+      "stamp": "t21:e7",
+      "mission_id": "h1-browser-1779869830540"
+    },
+    {
+      "type": "mission-created",
+      "order": 22,
+      "stamp": "t22:e8",
+      "mission_id": "h1-browser-1779869849701"
+    },
+    {
+      "type": "replay-started",
+      "order": 23,
+      "stamp": "t23:e8",
+      "mission_id": "h1-browser-1779869849701"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 24,
+      "stamp": "t24:e8",
+      "mission_id": "h1-browser-1779869849701"
     }
   ]
 }
