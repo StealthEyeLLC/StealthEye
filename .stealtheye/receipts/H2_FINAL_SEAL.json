@@ -1,0 +1,38 @@
+{
+  "seal_version": "1.0.0",
+  "repo_sha": "PENDING_GIT_SHA",
+  "h2_status": "COMPLETE",
+  "convergence_metrics": {
+    "convergence_score": 1
+  },
+  "integrity_metrics": {
+    "replay_equivalence_score": 1,
+    "authority_convergence_score": 1,
+    "policy_integrity_score": 1,
+    "boundedness_score": 1,
+    "repair_stability_score": 1,
+    "scheduler_determinism_score": 1,
+    "concurrency_determinism_score": 1,
+    "checkpoint_continuity_score": 1,
+    "ledger_continuity_score": 1
+  },
+  "replay_metrics": {
+    "replay_equivalence_score": 1
+  },
+  "boundedness_metrics": {
+    "boundedness_score": 1
+  },
+  "authority_metrics": {
+    "authority_convergence_score": 1
+  },
+  "policy_metrics": {
+    "policy_integrity_score": 1
+  },
+  "retention_metrics": {
+    "bounded": true
+  },
+  "acceptance_timestamp": "2026-05-27T10:10:09.135Z",
+  "canonical_invariant_hashes": {
+    "h2_invariants": "1ad0aa3475742b8c7116f5aedd205da9a0be463afca435f2193dd4aeb3159b5d"
+  }
+}

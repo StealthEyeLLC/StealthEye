@@ -8,4 +8,4 @@
 - Keep docs minimal; prefer machine-readable JSON/JSON Schema.
 
 
-Status: Phase 0 COMPLETE. H1 COMPLETE when `npm run h1:validate` passes; H2 not yet implemented.
+Status: Phase 0 COMPLETE. H1 COMPLETE. H2 COMPLETE after `npm run h2:validate`; H3 next phase is ACTIVATION-ONLY (NOT_STARTED).
