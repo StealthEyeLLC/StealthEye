@@ -1,0 +1,20 @@
+{
+  "name": "stealtheye",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx src/cli/generate.ts",
+    "validate": "tsx src/cli/validate.ts",
+    "check": "tsx src/cli/check.ts",
+    "check:readiness": "tsx src/cli/check-readiness.ts",
+    "graph": "tsx src/cli/graph.ts",
+    "compile:packet": "tsx src/cli/compile-packet.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.31",
+    "ajv": "^8.17.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}

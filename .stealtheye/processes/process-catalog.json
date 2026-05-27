@@ -1,0 +1,1 @@
+{"processes":[{"id":"phase0-build","steps":["bootstrap","memory-retrieval","invariant-check","generate","validate","graph","readiness","handoff"]},{"id":"recovery","steps":["bootstrap","snapshot-restore","retry","handoff"]}]}

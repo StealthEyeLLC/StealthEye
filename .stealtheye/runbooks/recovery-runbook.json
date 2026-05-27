@@ -1,0 +1,1 @@
+{"name":"recovery","retry_policy":"exponential-backoff","fallback":"known-good-state","max_retries":3}
