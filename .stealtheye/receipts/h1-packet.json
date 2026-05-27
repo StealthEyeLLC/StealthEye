@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "evidence": {
+    "status": "failed",
+    "evidence": {
+      "screenshots": [],
+      "console_errors": [],
+      "failed_requests": [],
+      "trace_refs": [],
+      "dom_summary": "compact"
+    },
+    "blockers": [],
+    "failures": [],
+    "next_action": "npm run h1:validate",
+    "escalation_reason": "none"
+  },
+  "repair": {
+    "failure_summary": "browser-launch-failed",
+    "suspected_files": [
+      "src/lib/h1.ts"
+    ],
+    "evidence_refs": [
+      ".stealtheye/receipts/h1-browser-evidence-packet.json"
+    ],
+    "replay_refs": [
+      ".stealtheye/receipts/latest-replay.json"
+    ],
+    "likely_cause": "deterministic classification",
+    "next_command": "npm run h1:browser:proof",
+    "escalation_recommendation": "codex-if-repeated"
+  },
+  "compact_artifacts_bounded": true,
+  "adapters_coherent": true
+}

@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0.0",
+  "adapters": [
+    {
+      "name": "normal-chatgpt",
+      "capabilities": [
+        "planning",
+        "classification"
+      ],
+      "routingCost": 1,
+      "escalationLevel": "low",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "codex",
+      "capabilities": [
+        "code-execution",
+        "repair"
+      ],
+      "routingCost": 3,
+      "escalationLevel": "medium",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "github-actions",
+      "capabilities": [
+        "ci-proof",
+        "artifact-upload"
+      ],
+      "routingCost": 2,
+      "escalationLevel": "medium",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "browser-playwright",
+      "capabilities": [
+        "smoke",
+        "proof",
+        "screenshot",
+        "trace",
+        "console-log",
+        "network-log",
+        "dom-summary",
+        "repair-packet-generation"
+      ],
+      "routingCost": 2,
+      "escalationLevel": "medium",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "browser-stagehand",
+      "capabilities": [
+        "multi-step-browser"
+      ],
+      "routingCost": 4,
+      "escalationLevel": "high",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "agent-mode",
+      "capabilities": [
+        "multi-app-orchestration"
+      ],
+      "routingCost": 5,
+      "escalationLevel": "high",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    },
+    {
+      "name": "future-mcp-placeholder",
+      "capabilities": [
+        "reserved"
+      ],
+      "routingCost": 6,
+      "escalationLevel": "high",
+      "approvalGates": [
+        "secrets",
+        "billing",
+        "destructive-delete"
+      ],
+      "reliabilityScore": 0.8,
+      "evidenceOutputs": [
+        "summary",
+        "packet"
+      ],
+      "allowedOperations": [
+        "bounded-execution"
+      ],
+      "failureClasses": [
+        "browser-launch-failed",
+        "selector-not-found",
+        "navigation-timeout",
+        "console-error",
+        "network-error",
+        "flaky-run",
+        "auth-required",
+        "external-blocked",
+        "trace-corrupt",
+        "repair-needed"
+      ]
+    }
+  ]
+}

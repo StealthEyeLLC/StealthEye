@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "normalized_fields": [
+    "status",
+    "evidence",
+    "blockers",
+    "failures",
+    "next_action",
+    "escalation_reason"
+  ],
+  "sources": [
+    "playwright",
+    "github-actions",
+    "codex",
+    "agent-mode"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "failure_summary": "browser-launch-failed",
+  "suspected_files": [
+    "src/lib/h1.ts"
+  ],
+  "evidence_refs": [
+    ".stealtheye/receipts/h1-browser-evidence-packet.json"
+  ],
+  "replay_refs": [
+    ".stealtheye/receipts/latest-replay.json"
+  ],
+  "likely_cause": "deterministic classification",
+  "next_command": "npm run h1:browser:proof",
+  "escalation_recommendation": "codex-if-repeated"
+}

@@ -1,0 +1,21 @@
+name: h1-browser-proof
+on: [push, workflow_dispatch]
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run h1:browser:proof
+      - run: npm run h1:packet
+      - name: Upload browser artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h1-browser-artifacts
+          path: |
+            .stealtheye/browser
+            .stealtheye/receipts/h1-*.json
