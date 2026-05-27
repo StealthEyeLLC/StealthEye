@@ -2,37 +2,22 @@
   "retention": {
     "hot": 8,
     "warm": 16,
-    "cold": 32,
-    "transient_artifact_cap": 96,
+    "cold": 24,
+    "transient_artifact_cap": 80,
     "category_caps": {
-      "handoffs": 32,
-      "replay_receipts": 48,
+      "handoffs": 24,
+      "replay_receipts": 36,
       "working_set_items": 18
     }
   },
-  "remaining": 26,
-  "supersession": {
-    "replay_supersession": "receipts/latest-replay.json",
-    "latest_only_pointers": [
-      "handoffs/latest.json",
-      "graphs/latest.json"
-    ]
-  },
   "anti_sprawl": {
-    "transient_artifacts": 55,
-    "over_cap": false,
-    "compaction_summary": {
-      "retained": {
-        "handoffs": 26,
-        "replay_receipts": 27
-      },
-      "stale_cleanup": {
-        "replay_supersession": "receipts/latest-replay.json",
-        "latest_only_pointers": [
-          "handoffs/latest.json",
-          "graphs/latest.json"
-        ]
-      }
-    }
+    "transient_artifacts": 68,
+    "over_cap": false
+  },
+  "compact_index": {
+    "latest_handoff": "handoffs/latest.json",
+    "latest_replay": "receipts/latest-replay.json",
+    "compact_replay_index": "state/replay-compact-index.json",
+    "compact_handoff_index": "state/handoff-compact-index.json"
   }
 }
