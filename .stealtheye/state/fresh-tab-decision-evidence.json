@@ -1,0 +1,10 @@
+{
+  "sources": [
+    ".stealtheye/handoffs/latest.json",
+    ".stealtheye/receipts/latest-replay.json",
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/next-action.json"
+  ],
+  "repo_native_only": true,
+  "updated_at": "2026-05-27T16:09:06.706Z"
+}

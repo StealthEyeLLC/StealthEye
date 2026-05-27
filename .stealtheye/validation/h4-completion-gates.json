@@ -1,0 +1,10 @@
+{
+  "h4_status": "ACTIVE",
+  "gates": [
+    "continuity-fabric",
+    "runtime-matrix",
+    "decision-core",
+    "cold-start-simulator"
+  ],
+  "updated_at": "2026-05-27T16:09:14.047Z"
+}

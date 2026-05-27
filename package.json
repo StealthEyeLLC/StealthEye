@@ -54,7 +54,16 @@
     "h4:recovery-playbooks": "tsx src/cli/h4-recovery-playbooks.ts",
     "h4:recovery-fixtures": "tsx src/cli/h4-recovery-fixtures.ts",
     "h4:runtime-safety-check": "tsx src/cli/h4-runtime-safety-check.ts",
-    "h4:fresh-tab-acceptance": "tsx src/cli/h4-fresh-tab-acceptance.ts"
+    "h4:fresh-tab-acceptance": "tsx src/cli/h4-fresh-tab-acceptance.ts",
+    "h4:continuity-fabric": "tsx src/cli/h4-continuity-fabric.ts",
+    "h4:runtime-matrix": "tsx src/cli/h4-runtime-matrix.ts",
+    "h4:command-runtime": "tsx src/cli/h4-command-runtime.ts",
+    "h4:decision-core": "tsx src/cli/h4-decision-core.ts",
+    "h4:review-fabric": "tsx src/cli/h4-review-fabric.ts",
+    "h4:runtime-chaos": "tsx src/cli/h4-runtime-chaos.ts",
+    "h4:mobile-compaction": "tsx src/cli/h4-mobile-compaction.ts",
+    "h4:health-grid": "tsx src/cli/h4-health-grid.ts",
+    "h4:cold-start-simulator": "tsx src/cli/h4-cold-start-simulator.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

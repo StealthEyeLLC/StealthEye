@@ -1,0 +1,16 @@
+{
+  "zero_chat_memory": true,
+  "interrupted_codex_pass": true,
+  "interrupted_pr_review": true,
+  "interrupted_merge_flow": true,
+  "stale_replay": true,
+  "stale_branch": true,
+  "replay_recovery": true,
+  "runtime_reconstruction": true,
+  "command_rerun_reconstruction": true,
+  "next_action_derivation": true,
+  "mobile_handoff_generation": true,
+  "escalation_determination": true,
+  "safe_autonomous_continuation": true,
+  "updated_at": "2026-05-27T16:09:14.047Z"
+}

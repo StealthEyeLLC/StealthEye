@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h3:validate",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T16:08:14.335Z",
+  "ordered_commands": [
+    "npm run h3:validate"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "status": "COMPLETE",
+    "allowed_statuses": [
+      "ACTIVE",
+      "NOT_READY",
+      "BLOCKED",
+      "FAILED",
+      "COMPLETE"
+    ],
+    "missing": [],
+    "runtime_persistence": true,
+    "checkpoint_integrity": true,
+    "restoration_integrity": true,
+    "replay_integrity": true,
+    "convergence_integrity": true,
+    "boundedness_integrity": true,
+    "governance_integrity": true,
+    "operational_continuity": true,
+    "recovery_topology": true,
+    "escalation_correctness": true
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "8a59b7c9e81a7b58f94acb888146e7b5355d82f2eb148e3ef1627e5203405a88",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h3:validate"
+  ],
+  "validation_results": {
+    "status": "COMPLETE",
+    "allowed_statuses": [
+      "ACTIVE",
+      "NOT_READY",
+      "BLOCKED",
+      "FAILED",
+      "COMPLETE"
+    ],
+    "missing": [],
+    "runtime_persistence": true,
+    "checkpoint_integrity": true,
+    "restoration_integrity": true,
+    "replay_integrity": true,
+    "convergence_integrity": true,
+    "boundedness_integrity": true,
+    "governance_integrity": true,
+    "operational_continuity": true,
+    "recovery_topology": true,
+    "escalation_correctness": true
+  }
+}

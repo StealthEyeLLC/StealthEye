@@ -1,0 +1,32 @@
+{
+  "risks": [
+    {
+      "id": "stale-continuity",
+      "severity": "medium",
+      "status": "open",
+      "detail": "continuity surfaces may lag latest replay",
+      "repair": "run h4:runtime-reconstruction then h4:continuity-fabric"
+    },
+    {
+      "id": "replay-instability",
+      "severity": "medium",
+      "status": "open",
+      "detail": "replay chain drift can invalidate autonomous resume",
+      "repair": "run h4:replay-check and resolve pointer mismatch"
+    },
+    {
+      "id": "branch-inconsistency",
+      "severity": "low",
+      "status": "open",
+      "detail": "branch lineage ambiguity could block merge continuity",
+      "repair": "run h4:conflict-check and quarantine stale runtime"
+    }
+  ],
+  "escalation_paths": [
+    {
+      "id": "ops-review",
+      "valid": true
+    }
+  ],
+  "updated_at": "2026-05-27T16:09:02.263Z"
+}

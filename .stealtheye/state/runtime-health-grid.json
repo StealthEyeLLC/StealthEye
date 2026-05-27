@@ -1,0 +1,15 @@
+{
+  "replay_integrity": "ok",
+  "continuity_confidence": "medium",
+  "stale_runtime_frequency": 0,
+  "escalation_frequency": 0,
+  "recovery_success": 1,
+  "branch_consistency": "ok",
+  "merge_consistency": "ok",
+  "fixture_pass_rate": 1,
+  "acceptance_confidence": "medium",
+  "mobile_handoff_health": "ok",
+  "runtime_decision_confidence": "medium",
+  "deterministic_serialization_confidence": "high",
+  "updated_at": "2026-05-27T16:09:12.597Z"
+}
