@@ -1,0 +1,9 @@
+{
+  "status": "partial",
+  "phase": "H2",
+  "checks": {
+    "tool_sovereignty": true,
+    "execution_contracts": true,
+    "repair_loop": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "2.0.0",
+  "retry_ceilings": {
+    "default": 2
+  },
+  "escalation_ceilings": {
+    "default": 2
+  },
+  "exhaustion_classification": [
+    "retry-exhausted",
+    "escalation-exhausted"
+  ],
+  "ci_authoritative_recovery": true,
+  "rollback_metadata": [
+    "continuity-safe"
+  ]
+}
