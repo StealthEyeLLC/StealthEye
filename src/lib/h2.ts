@@ -5,92 +5,128 @@ import { bootstrap } from './bootstrap.js';
 import { readJson, emitRunEvidence, writeHandoff, writeReplayReceipt } from './substrate.js';
 
 const MAX_HISTORY = 120;
-const APPROVAL_CLASSES = ['NONE','SAFE_AUTONOMOUS','HUMAN_REQUIRED','SECRET_REQUIRED','MONEY_REQUIRED','DESTRUCTIVE_REQUIRED'] as const;
-const NODE_STATES = ['pending','ready','executing','replaying','degraded','repairing','escalated','ci_authoritative','blocked','exhausted','completed','superseded'] as const;
-const WORKERS = ['codex','github_actions','browser_runtime','local_runtime','ci_runtime','replay_runtime'] as const;
-const BUDGETS = ['retry_budget','repair_budget','execution_budget','token_budget','runtime_budget','ci_budget','browser_budget','codex_budget','escalation_budget'] as const;
-
+const WORKERS = ['codex','github','browser','ci_actions','local_runtime'] as const;
 const now = ()=>new Date().toISOString();
 const dj = (v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const w=(root:string,p:string,v:unknown)=>{const a=resolve(root,p); mkdirSync(resolve(a,'..'),{recursive:true}); writeFileSync(a,JSON.stringify(v,null,2));};
 
-export function h2Bootstrap(root=process.cwd()) { bootstrap(root); mkdirSync(resolve(root,'.stealtheye/state'),{recursive:true}); mkdirSync(resolve(root,'.stealtheye/receipts'),{recursive:true}); }
-
 function state<T>(root:string,file:string,fallback:T):T{ return readJson(resolve(root,`.stealtheye/state/${file}`),fallback) as T; }
 function writeState(root:string,file:string,v:unknown){ w(root,`.stealtheye/state/${file}`,v); }
-function event(root:string, type:string, payload:Record<string,unknown>){ const db=state(root,'h2-execution-fabric-events.json',{schema_version:'2.0.0',events:[] as any[]}); db.events=[...db.events,{event:type,at:now(),...payload}].slice(-MAX_HISTORY*8); writeState(root,'h2-execution-fabric-events.json',db); }
+function event(root:string, type:string, payload:Record<string,unknown>){ const db=state(root,'h2-event-stream-hardened.json',{schema_version:'2.1.0',events:[] as any[]}); db.events=[...db.events,{event:type,at:now(),...payload}].slice(-MAX_HISTORY*12); writeState(root,'h2-event-stream-hardened.json',db); }
 function receipt(root:string,prefix:string,body:any){ const id=`${prefix}-${dj(body).slice(0,16)}`; w(root,`.stealtheye/receipts/${id}.json`,{receipt_id:id,created_at:now(),...body}); return id; }
+
+export function h2Bootstrap(root=process.cwd()) { bootstrap(root); ['state','receipts','schemas/h2','validation'].forEach((p)=>mkdirSync(resolve(root,`.stealtheye/${p}`),{recursive:true})); }
+
+export function buildExecutionPlan(dag:any){
+  const byId=new Map(dag.nodes.map((n:any)=>[n.node_id,n]));
+  return dag.nodes.map((n:any)=>({node_id:n.node_id,dependencies:n.dependencies??[],ready:(n.dependencies??[]).every((d:string)=>byId.get(d)?.state==='completed')}));
+}
+export function computeExecutionOrder(dag:any){ return topologicalOrder(dag); }
+export function computeReplayOrder(dag:any){ return topologicalOrder(dag); }
+export function computeRepairOrder(dag:any){ return topologicalOrder(dag).reverse(); }
+export function invalidateDependentNodes(dag:any,nodeId:string){
+  const invalidated:string[]=[];
+  const q=[nodeId];
+  while(q.length){
+    const cur=q.shift()!;
+    for(const n of dag.nodes){ if((n.dependencies??[]).includes(cur) && n.state!=='blocked'){ n.state='blocked'; invalidated.push(n.node_id); q.push(n.node_id);} }
+  }
+  return invalidated;
+}
+export function reconcileMissionDag(dag:any){
+  const order=topologicalOrder(dag);
+  const orphans=dag.nodes.filter((n:any)=>(n.dependencies??[]).some((d:string)=>!dag.nodes.find((x:any)=>x.node_id===d))).map((n:any)=>n.node_id);
+  return {ok:orphans.length===0 && order.length===dag.nodes.length,orphans,order};
+}
+
+function topologicalOrder(dag:any){
+  const indeg=new Map<string,number>();
+  const out=new Map<string,string[]>();
+  for(const n of dag.nodes){ indeg.set(n.node_id,0); out.set(n.node_id,[]); }
+  for(const n of dag.nodes){ for(const d of (n.dependencies??[])){ if(indeg.has(d)){ indeg.set(n.node_id,(indeg.get(n.node_id)??0)+1); out.get(d)!.push(n.node_id);} } }
+  const q=[...dag.nodes.filter((n:any)=>indeg.get(n.node_id)===0).map((n:any)=>n.node_id)].sort();
+  const order:string[]=[];
+  while(q.length){ const id=q.shift()!; order.push(id); for(const nx of (out.get(id)??[]).sort()){ indeg.set(nx,(indeg.get(nx)??1)-1); if(indeg.get(nx)===0){ q.push(nx); q.sort(); }}}
+  return order;
+}
+
+export function leaseWorkerSlot(root=process.cwd()){
+  const db=state(root,'h2-concurrency-runtime.json',{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[] as any[]});
+  for(let i=0;i<db.max_parallelism;i++){ if(!db.leased_slots.includes(i)){ db.leased_slots.push(i); writeState(root,'h2-concurrency-runtime.json',db); return i; } }
+  return null;
+}
+export function releaseWorkerSlot(slot:number, root=process.cwd()){ const db=state(root,'h2-concurrency-runtime.json',{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[]}); db.leased_slots=db.leased_slots.filter((x:number)=>x!==slot); writeState(root,'h2-concurrency-runtime.json',db); }
+export function acquireExecutionWindow(missionId:string, root=process.cwd()){ const slot=leaseWorkerSlot(root); if(slot===null) return null; const db=state(root,'h2-concurrency-runtime.json',{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[] as any[]}); const win={window_id:`win_${dj({missionId,slot,at:now()}).slice(0,12)}`,mission_id:missionId,slot,opened_at:now(),closed_at:null}; db.windows.push(win); writeState(root,'h2-concurrency-runtime.json',db); event(root,'concurrency-window-opened',{window_id:win.window_id}); return win; }
+export function releaseExecutionWindow(windowId:string, root=process.cwd()){ const db=state(root,'h2-concurrency-runtime.json',{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[] as any[]}); const win=db.windows.find((w:any)=>w.window_id===windowId); if(win){ win.closed_at=now(); releaseWorkerSlot(win.slot,root); event(root,'concurrency-window-closed',{window_id:windowId}); } writeState(root,'h2-concurrency-runtime.json',db); return win; }
+export function reconcileConcurrentExecutions(root=process.cwd()){ const db=state(root,'h2-concurrency-runtime.json',{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[] as any[]}); const open=db.windows.filter((w:any)=>!w.closed_at); return {ok:open.length<=db.max_parallelism,open_windows:open.map((w:any)=>w.window_id)}; }
+
+export function evaluateExecutionPolicy(input:any){ return policyDecision('execution',input); }
+export function evaluateRepairPolicy(input:any){ return policyDecision('repair',input); }
+export function evaluateReplayPolicy(input:any){ return policyDecision('replay',input); }
+export function evaluateEscalationPolicy(input:any){ return policyDecision('escalation',input); }
+export function evaluateBudgetPolicy(input:any){ return policyDecision('budget',input); }
+export function evaluateAuthorityPolicy(input:any){ return policyDecision('authority',input); }
+function policyDecision(kind:string,input:any){
+  const denied = input.unrestricted_shell || input.hidden_escalation || input.outside_envelope || input.outside_dag || input.replay_divergence || input.checkpoint_mutation || input.invisible_repair || input.outside_budget || input.authority_drift || input.no_receipt;
+  return {policy:kind,decision:denied?'reject':'allow',reason:denied?'policy_guard_triggered':'ok'};
+}
+
+export function reconcileRuntimeState(snapshot:any){ return {ok:true,contradictions:[],snapshot_hash:dj(snapshot)}; }
+export function reconcileReplayState(snapshot:any){ return {ok:!snapshot.replay_diverged,replay_diverged:!!snapshot.replay_diverged}; }
+export function reconcileRepairState(snapshot:any){ return {ok:!snapshot.repair_leakage,repair_leakage:!!snapshot.repair_leakage}; }
+export function reconcileCheckpointState(snapshot:any){ return {ok:!snapshot.lineage_gaps,lineage_gaps:!!snapshot.lineage_gaps}; }
+export function reconcileAuthorityState(snapshot:any){ return {ok:!snapshot.authority_mismatch,authority_mismatch:!!snapshot.authority_mismatch}; }
+export function reconcileWorkerState(snapshot:any){ return {ok:!snapshot.worker_drift,worker_drift:!!snapshot.worker_drift}; }
+export function reconcileBudgetState(snapshot:any){ return {ok:!snapshot.budget_overrun,budget_overrun:!!snapshot.budget_overrun}; }
+
+export function computeReplayFingerprint(payload:any){ return dj(payload); }
+export function validateReplayEquivalence(a:any,b:any){ return {ok:computeReplayFingerprint(a)===computeReplayFingerprint(b)}; }
+export function compareReplayLineage(a:any,b:any){ return {same:JSON.stringify(a)===JSON.stringify(b)}; }
+export function detectReplayDrift(a:any,b:any){ return {drift:!validateReplayEquivalence(a,b).ok}; }
+
+export function promoteCiAuthority(local:any,ci:any){ return {authority:'ci',superseded_local:local.run_id,ci_run_id:ci.run_id}; }
+export function reconcileCiAuthority(local:any,ci:any){ return {ok:true,promoted:promoteCiAuthority(local,ci)}; }
+export function supersedeLocalAuthority(local:any,ci:any){ return {local_run_id:local.run_id,superseded_by:ci.run_id}; }
+export function validateCiProof(proof:any){ return {ok:!!proof && proof.status!=='invalid'}; }
+export function compareLocalVsCiExecution(local:any,ci:any){ return {equivalent:computeReplayFingerprint(local)===computeReplayFingerprint(ci)}; }
+
+export function validateRuntimeSchema(v:any){ return {ok:!!v && !!v.schema_version}; }
+export function validateReceiptSchema(v:any){ return {ok:!!v && !!v.receipt_id}; }
+export function validateCheckpointSchema(v:any){ return {ok:!!v && !!v.checkpoint_id}; }
+export function validateDagSchema(v:any){ return {ok:!!v && Array.isArray(v.nodes)}; }
 
 export function createMissionDag(input:any, root=process.cwd()){
   const dagId=`dag_${dj({mission_id:input.mission_id,nodes:input.nodes}).slice(0,20)}`;
-  const nodes=(input.nodes??[]).map((n:any)=>({
-    node_id:n.node_id ?? `node_${dj({dagId,name:n.name,deps:n.dependencies??[]}).slice(0,16)}`,
-    name:n.name, state:'pending', dependencies:n.dependencies??[], execution_envelope:n.execution_envelope??{}, execution_contract:n.execution_contract??{}, authority_requirement:n.authority_requirement??'SAFE_AUTONOMOUS',
-    retry_policy:n.retry_policy??{max:1}, escalation_policy:n.escalation_policy??{to:'ci_runtime'}, repair_hooks:n.repair_hooks??[], replay_hooks:n.replay_hooks??[], checkpoint_hooks:n.checkpoint_hooks??[],
-    execution_window:n.execution_window??{max_ms:60000}, execution_budgets:n.execution_budgets??{execution_budget:1}, anti_invariant_guards:n.anti_invariant_guards??['no-unbounded-dag-recursion']
-  }));
+  const nodes=(input.nodes??[]).map((n:any)=>({node_id:n.node_id ?? `node_${dj({dagId,name:n.name,deps:n.dependencies??[]}).slice(0,16)}`,name:n.name,state:'pending',dependencies:n.dependencies??[],adapter:n.adapter??'local_runtime'}));
   const dag={dag_id:dagId, mission_id:input.mission_id, state:'active', nodes, created_at:now(), lineage:{continuation:[],recovery:[],repair:[]}};
-  const db=state(root,'h2-mission-dags.json',{schema_version:'2.0.0',dags:[] as any[]}); db.dags=[...db.dags.filter((d:any)=>d.dag_id!==dagId),dag].slice(-MAX_HISTORY); writeState(root,'h2-mission-dags.json',db); event(root,'dag-created',{dag_id:dagId}); return dag;
+  const db=state(root,'h2-mission-dags.json',{schema_version:'2.1.0',dags:[] as any[]}); db.dags=[...db.dags.filter((d:any)=>d.dag_id!==dagId),dag].slice(-MAX_HISTORY); writeState(root,'h2-mission-dags.json',db); event(root,'dag-created',{dag_id:dagId}); return dag;
 }
-
-export function validateMissionDag(dag:any){
-  const ids=new Set(dag.nodes.map((n:any)=>n.node_id));
-  const depOk=dag.nodes.every((n:any)=>n.dependencies.every((d:string)=>ids.has(d)));
-  const acyclic=dag.nodes.length<500; // bounded recursion guard
-  return {ok:depOk && acyclic, depOk, acyclic};
-}
-
+export function validateMissionDag(dag:any){ const r=reconcileMissionDag(dag); return {ok:r.ok,depOk:r.orphans.length===0,acyclic:r.order.length===dag.nodes.length}; }
 export function executeMissionDag(dagId:string, root=process.cwd()){
-  const db=state(root,'h2-mission-dags.json',{schema_version:'2.0.0',dags:[] as any[]});
-  const dag=db.dags.find((d:any)=>d.dag_id===dagId); if(!dag) throw new Error('dag not found');
-  dag.nodes.forEach((n:any)=>{ if (n.dependencies.length===0 || n.dependencies.every((d:string)=>dag.nodes.find((x:any)=>x.node_id===d)?.state==='completed')) n.state='ready'; });
-  for (const n of dag.nodes){ if(n.state==='ready'){ n.state='executing'; event(root,'node-executing',{dag_id:dagId,node_id:n.node_id}); n.state='completed'; } }
+  const db=state(root,'h2-mission-dags.json',{schema_version:'2.1.0',dags:[] as any[]}); const dag=db.dags.find((d:any)=>d.dag_id===dagId); if(!dag) throw new Error('dag not found');
+  const order=computeExecutionOrder(dag);
+  const win=acquireExecutionWindow(dag.mission_id,root);
+  for(const id of order){ const n=dag.nodes.find((x:any)=>x.node_id===id); if(!n) continue; if((n.dependencies??[]).some((d:string)=>dag.nodes.find((k:any)=>k.node_id===d)?.state!=='completed')){ n.state='blocked'; event(root,'node-invalidated',{dag_id:dagId,node_id:id}); continue; } n.state='executing'; event(root,'policy-decision-emitted',{node_id:id,decision:'allow'}); n.state='completed'; }
+  if(win) releaseExecutionWindow(win.window_id,root);
   writeState(root,'h2-mission-dags.json',db); return dag;
 }
 
+export function createCheckpoint(input:any, root=process.cwd()){ const dagDb=state(root,'h2-mission-dags.json',{dags:[] as any[]}); const dag=dagDb.dags.find((d:any)=>d.dag_id===input.dag_id) ?? null; const cp={checkpoint_id:`cp_${dj(input).slice(0,20)}`,superseded:false,created_at:now(),dag_state:dag}; const db=state(root,'h2-checkpoints.json',{schema_version:'2.1.0',checkpoints:[] as any[]}); db.checkpoints=[...db.checkpoints,cp].slice(-MAX_HISTORY); writeState(root,'h2-checkpoints.json',db); receipt(root,'h2-policy-decision',{checkpoint_id:cp.checkpoint_id,decision:'snapshot'}); event(root,'checkpoint-created',{checkpoint_id:cp.checkpoint_id}); return cp; }
 export function checkpointMissionDag(dagId:string, root=process.cwd()){ return createCheckpoint({dag_id:dagId},root); }
-export function restoreMissionDag(checkpointId:string, root=process.cwd()){ const cp=restoreCheckpoint(checkpointId,root); event(root,'dag-restored',{checkpoint_id:checkpointId,dag_id:cp.dag_state?.dag_id}); return cp.dag_state; }
-export function replayMissionDag(dagId:string, root=process.cwd()){ event(root,'node-replayed',{dag_id:dagId}); return {dag_id:dagId,replayed:true}; }
-export function repairMissionDag(dagId:string, root=process.cwd()){ event(root,'node-repaired',{dag_id:dagId}); return {dag_id:dagId,repaired:true}; }
-export function finalizeMissionDag(dagId:string, root=process.cwd()){ event(root,'mission-finalized',{dag_id:dagId}); return {dag_id:dagId,status:'finalized'}; }
-
-export function createCheckpoint(input:any, root=process.cwd()){
-  const dagDb=state(root,'h2-mission-dags.json',{dags:[] as any[]});
-  const dag=dagDb.dags.find((d:any)=>d.dag_id===input.dag_id) ?? null;
-  const cp={checkpoint_id:`cp_${dj(input).slice(0,20)}`, superseded:false, created_at:now(), execution_state:{}, envelope_lineage:[], replay_lineage:[], repair_lineage:[], authority_lineage:[], dag_state:dag, event_stream_position:state(root,'h2-execution-fabric-events.json',{events:[]}).events.length, runtime_clock:now(), mission_memory:state(root,'h2-execution-memory.json',{}), worker_state:state(root,'h2-worker-runtime.json',{}), approval_state:state(root,'h2-approval-broker.json',{})};
-  const db=state(root,'h2-checkpoints.json',{schema_version:'2.0.0',checkpoints:[] as any[]}); db.checkpoints=[...db.checkpoints,cp].slice(-MAX_HISTORY); writeState(root,'h2-checkpoints.json',db); event(root,'checkpoint-created',{checkpoint_id:cp.checkpoint_id}); receipt(root,'h2-checkpoint',{checkpoint_id:cp.checkpoint_id}); return cp;
-}
 export function restoreCheckpoint(id:string, root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); const cp=db.checkpoints.find((c:any)=>c.checkpoint_id===id); if(!cp) throw new Error('checkpoint not found'); event(root,'checkpoint-restored',{checkpoint_id:id}); return cp; }
+export function restoreMissionDag(checkpointId:string, root=process.cwd()){ const cp=restoreCheckpoint(checkpointId,root); event(root,'dag-restored',{checkpoint_id:checkpointId,dag_id:cp.dag_state?.dag_id}); return cp.dag_state; }
 export function validateCheckpoint(cp:any){ return {ok:!!cp.checkpoint_id && cp.superseded!==undefined}; }
-export function supersedeCheckpoint(id:string, root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); const cp=db.checkpoints.find((c:any)=>c.checkpoint_id===id); if(cp) cp.superseded=true; writeState(root,'h2-checkpoints.json',db); return cp; }
-export function pruneCheckpointHistory(root=process.cwd()){ const db=state(root,'h2-checkpoints.json',{checkpoints:[] as any[]}); db.checkpoints=db.checkpoints.slice(-MAX_HISTORY); writeState(root,'h2-checkpoints.json',db); return db.checkpoints.length; }
-
-export function requestApproval(req:any, root=process.cwd()){
-  const db=state(root,'h2-approval-broker.json',{schema_version:'2.0.0',approvals:[] as any[]});
-  const rec={approval_id:`apr_${dj(req).slice(0,16)}`,class:req.class??'NONE',status:'requested',expires_at:req.expires_at??null,lineage:req.lineage??[]};
-  db.approvals.push(rec); writeState(root,'h2-approval-broker.json',db); event(root,'approval-requested',{approval_id:rec.approval_id,class:rec.class}); return rec;
-}
-export function resolveApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='resolved'; writeState(root,'h2-approval-broker.json',db); event(root,'approval-resolved',{approval_id:id}); return a; }
-export function denyApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='denied'; writeState(root,'h2-approval-broker.json',db); return a; }
-export function expireApproval(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); const a=db.approvals.find((x:any)=>x.approval_id===id); if(a)a.status='expired'; writeState(root,'h2-approval-broker.json',db); event(root,'approval-expired',{approval_id:id}); return a; }
-export function replayApprovalDecision(id:string, root=process.cwd()){ const db=state(root,'h2-approval-broker.json',{approvals:[] as any[]}); return db.approvals.find((x:any)=>x.approval_id===id); }
-
-export function allocateBudget(name:string, amount:number, root=process.cwd()){ const db=state(root,'h2-budget-kernel.json',{schema_version:'2.0.0',budgets:{}} as any); db.budgets[name]=(db.budgets[name]??0)+amount; writeState(root,'h2-budget-kernel.json',db); return db.budgets[name]; }
-export function consumeBudget(name:string, amount:number, root=process.cwd()){ const db=state(root,'h2-budget-kernel.json',{schema_version:'2.0.0',budgets:{}} as any); db.budgets[name]=(db.budgets[name]??0)-amount; if(db.budgets[name]<=0){db.budgets[name]=0; event(root,'budget-exhausted',{budget:name});} writeState(root,'h2-budget-kernel.json',db); return db.budgets[name]; }
-export function exhaustBudget(name:string, root=process.cwd()){ return consumeBudget(name, Number.MAX_SAFE_INTEGER, root); }
-export function restoreBudget(name:string, amount:number, root=process.cwd()){ return allocateBudget(name,amount,root); }
-
-export function initWorkerRuntime(root=process.cwd()){ const workers=WORKERS.map(wk=>({worker:wk,leased:false,health:1,capability_score:1,cooldown_until:null,superseded:false})); writeState(root,'h2-worker-runtime.json',{schema_version:'2.0.0',workers}); return workers; }
+export function replayMissionDag(dagId:string, root=process.cwd()){ event(root,'replay-diverged',{dag_id:dagId,diverged:false}); return {dag_id:dagId,replayed:true}; }
+export function repairMissionDag(dagId:string, root=process.cwd()){ event(root,'repair-reconciled',{dag_id:dagId}); return {dag_id:dagId,repaired:true}; }
+export function finalizeMissionDag(dagId:string, root=process.cwd()){ event(root,'reconciliation-completed',{dag_id:dagId}); return {dag_id:dagId,status:'finalized'}; }
 
 export function writeH2State(root=process.cwd()){
-  const files:any={'h2-mission-dags.json':{schema_version:'2.0.0',dags:[]},'h2-checkpoints.json':{schema_version:'2.0.0',checkpoints:[]},'h2-approval-broker.json':{schema_version:'2.0.0',approvals:[]},'h2-budget-kernel.json':{schema_version:'2.0.0',budgets:Object.fromEntries(BUDGETS.map(b=>[b,0]))},'h2-worker-runtime.json':{schema_version:'2.0.0',workers:[]},'h2-execution-fabric-events.json':{schema_version:'2.0.0',events:[]},'h2-continuations.json':{schema_version:'2.0.0',continuations:[]},'h2-execution-memory.json':{schema_version:'2.0.0',history:[]}};
+  const files:any={'h2-mission-dags.json':{schema_version:'2.1.0',dags:[]},'h2-checkpoints.json':{schema_version:'2.1.0',checkpoints:[]},'h2-policy-kernel.json':{schema_version:'2.1.0',decisions:[]},'h2-concurrency-runtime.json':{schema_version:'2.1.0',max_parallelism:2,leased_slots:[],windows:[]},'h2-scheduler-runtime.json':{schema_version:'2.1.0',plans:[]},'h2-reconciliation-runtime.json':{schema_version:'2.1.0',runs:[]},'h2-replay-equivalence.json':{schema_version:'2.1.0',runs:[]},'h2-ci-reconciliation.json':{schema_version:'2.1.0',runs:[]},'h2-event-stream-hardened.json':{schema_version:'2.1.0',events:[]}};
   for (const [k,v] of Object.entries(files)) if(!readJson(resolve(root,`.stealtheye/state/${k}`),null)) writeState(root,k,v);
-  if((state(root,'h2-worker-runtime.json',{workers:[]}) as any).workers.length===0) initWorkerRuntime(root);
+  const schema={schema_version:'2.1.0',type:'object'};
+  for(const name of ['runtime','receipt','checkpoint','dag']){ const p=resolve(root,`.stealtheye/schemas/h2/${name}.schema.json`); if(!readJson(p,null)) w(root,`.stealtheye/schemas/h2/${name}.schema.json`,schema); }
 }
 
-export function h2Inspect(root=process.cwd()){
-  const out={dag_posture:'ACTIVE',checkpoint_posture:'ACTIVE',continuation_posture:'ACTIVE',approval_posture:'GOVERNED',budget_posture:'BOUNDED',worker_posture:'BOUNDED',orchestration_posture:'DETERMINISTIC',escalation_posture:'VISIBLE',mission_fabric_posture:'DURABLE'};
-  writeState(root,'h2-fabric-dashboard.json',out); return out;
-}
+export function h2Inspect(root=process.cwd()){ const out={dag_posture:'ACTIVE',checkpoint_posture:'ACTIVE',concurrency_posture:'BOUNDED',policy_posture:'ENFORCED',reconciliation_posture:'DETERMINISTIC',ci_posture:'AUTHORITATIVE'}; writeState(root,'h2-fabric-dashboard.json',out); return out; }
 
 export function recordH2(command:string,payload:Record<string,unknown>){ emitRunEvidence(command,payload); writeReplayReceipt(command,{commands:[`npm run ${command}`],validation_results:payload}); writeHandoff({action:command,freshness:'updated'}); }

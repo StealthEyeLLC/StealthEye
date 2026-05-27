@@ -49,7 +49,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "148e18cac914f6b7bd162a6642970c29f0b522d17a8fa4d33040a0066d0bb4d7",
+      "digest": "4fda28d777a6b6d6dab69873d80c2928fcc2901ea13c1c0065dc304c071245e4",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88

@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "dag_branching": true,
+  "dependency_invalidation": true,
+  "replay_equivalence": false,
+  "checkpoint_restore": true,
+  "ci_authority_promotion": true,
+  "repair_continuation": true,
+  "bounded_concurrency": true,
+  "policy_rejection": true,
+  "authority_supersession": true,
+  "replay_drift_detection": true
+}

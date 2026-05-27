@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.1.0",
+  "plan": [
+    {
+      "node_id": "node_510b365871d4d8c0",
+      "dependencies": [],
+      "ready": true
+    },
+    {
+      "node_id": "node_b924172df553f76f",
+      "dependencies": [
+        "node_510b365871d4d8c0"
+      ],
+      "ready": false
+    },
+    {
+      "node_id": "node_23cc6c2255b4e0b9",
+      "dependencies": [
+        "node_b924172df553f76f"
+      ],
+      "ready": false
+    }
+  ],
+  "executionOrder": [
+    "node_510b365871d4d8c0",
+    "node_b924172df553f76f",
+    "node_23cc6c2255b4e0b9"
+  ],
+  "replayOrder": [
+    "node_510b365871d4d8c0",
+    "node_b924172df553f76f",
+    "node_23cc6c2255b4e0b9"
+  ],
+  "repairOrder": [
+    "node_23cc6c2255b4e0b9",
+    "node_b924172df553f76f",
+    "node_510b365871d4d8c0"
+  ]
+}
