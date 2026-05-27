@@ -1,0 +1,6 @@
+{
+  "compatible_replay": true,
+  "drift_events": 0,
+  "confidence_regression": false,
+  "instability": false
+}

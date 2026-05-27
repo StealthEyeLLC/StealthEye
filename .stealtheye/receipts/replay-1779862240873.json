@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "check:readiness",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T06:10:40.873Z",
+  "replay_confidence": 0.9,
+  "integrity": {
+    "sha256": "2c538eeffd75af7d8bd59953ea45c15314f11037dd6ff3d91e018b7c8e4c7d4a",
+    "passed": true
+  },
+  "commands": [
+    "npm run check:readiness"
+  ],
+  "validation_results": {
+    "phase": "phase0-autonomy-substrate",
+    "status": "validated",
+    "continuity": {
+      "continuity_completeness": true,
+      "replay_integrity": true,
+      "memory_coverage": true,
+      "process_coverage": true,
+      "routing_completeness": true,
+      "next_action_determinism": true,
+      "recovery_determinism": true
+    },
+    "replay": {
+      "compatible_replay": true,
+      "drift_events": 0,
+      "confidence_regression": false,
+      "instability": false
+    },
+    "acceptance": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "new-session",
+          "pass": true
+        },
+        {
+          "name": "stale-session",
+          "pass": true
+        },
+        {
+          "name": "degraded-session",
+          "pass": true
+        },
+        {
+          "name": "replay-recovery",
+          "pass": true
+        },
+        {
+          "name": "blocked-recovery",
+          "pass": true
+        }
+      ]
+    },
+    "low_human_interruption": true,
+    "premium_worker_minimized": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "requirements": [
+    "continuity",
+    "replay",
+    "routing",
+    "diagnostics",
+    "freshness",
+    "recovery",
+    "explainability",
+    "validation-reliability",
+    "low-human-interruption"
+  ]
+}

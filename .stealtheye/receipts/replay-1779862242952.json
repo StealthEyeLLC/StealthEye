@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "inspect:repo",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T06:10:42.952Z",
+  "replay_confidence": 0.9,
+  "integrity": {
+    "sha256": "2c538eeffd75af7d8bd59953ea45c15314f11037dd6ff3d91e018b7c8e4c7d4a",
+    "passed": true
+  },
+  "commands": [
+    "npm run inspect:repo"
+  ]
+}

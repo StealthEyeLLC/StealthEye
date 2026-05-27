@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "graph",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T06:10:38.931Z",
+  "replay_confidence": 0.9,
+  "integrity": {
+    "sha256": "af0d25c6eba238015a1859a4074befc999d0c5fcc0a35d21e86dfd441e539b34",
+    "passed": true
+  },
+  "commands": [
+    "npm run graph"
+  ]
+}

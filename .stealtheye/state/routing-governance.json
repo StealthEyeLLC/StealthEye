@@ -1,0 +1,7 @@
+{
+  "escalation_threshold": 0.92,
+  "minimum_confidence": 0.75,
+  "low_cost_first": true,
+  "premium_worker_gate": true,
+  "human_interruption_minimization_score": 0.9
+}

@@ -1,0 +1,9 @@
+{
+  "score": 0.045,
+  "recommendations": [
+    "run compaction",
+    "prune stale memory",
+    "recalibrate routing",
+    "stabilize validation"
+  ]
+}

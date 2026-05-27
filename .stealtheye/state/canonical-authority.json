@@ -1,0 +1,14 @@
+{
+  "latest_files": [
+    "project-state.json",
+    "next-action.json",
+    "inspect-repo.json"
+  ],
+  "superseded_pattern": "replay-*.json",
+  "transient_paths": [
+    ".stealtheye/logs"
+  ],
+  "archival_paths": [
+    ".stealtheye/snapshots"
+  ]
+}

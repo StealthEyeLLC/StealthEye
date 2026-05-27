@@ -2,5 +2,8 @@
   "retry_count": 0,
   "repeated_failures": 0,
   "unstable_transitions": 0,
-  "repeated_drift": 0
+  "repeated_drift": 0,
+  "replay_oscillation": 0,
+  "routing_churn": 0,
+  "stale_regeneration_repeats": 0
 }

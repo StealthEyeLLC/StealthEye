@@ -1,38 +1,5 @@
 {
-  "retention": {
-    "hot": 8,
-    "warm": 16,
-    "cold": 32,
-    "transient_artifact_cap": 96,
-    "category_caps": {
-      "handoffs": 32,
-      "replay_receipts": 48,
-      "working_set_items": 18
-    }
-  },
-  "remaining": 26,
-  "supersession": {
-    "replay_supersession": "receipts/latest-replay.json",
-    "latest_only_pointers": [
-      "handoffs/latest.json",
-      "graphs/latest.json"
-    ]
-  },
   "anti_sprawl": {
-    "transient_artifacts": 55,
-    "over_cap": false,
-    "compaction_summary": {
-      "retained": {
-        "handoffs": 26,
-        "replay_receipts": 27
-      },
-      "stale_cleanup": {
-        "replay_supersession": "receipts/latest-replay.json",
-        "latest_only_pointers": [
-          "handoffs/latest.json",
-          "graphs/latest.json"
-        ]
-      }
-    }
+    "transient_artifacts": 36
   }
 }

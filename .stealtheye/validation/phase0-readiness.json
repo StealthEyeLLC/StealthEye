@@ -1,0 +1,49 @@
+{
+  "ready": true,
+  "report": {
+    "phase": "phase0-autonomy-substrate",
+    "status": "validated",
+    "continuity": {
+      "continuity_completeness": true,
+      "replay_integrity": true,
+      "memory_coverage": true,
+      "process_coverage": true,
+      "routing_completeness": true,
+      "next_action_determinism": true,
+      "recovery_determinism": true
+    },
+    "replay": {
+      "compatible_replay": true,
+      "drift_events": 0,
+      "confidence_regression": false,
+      "instability": false
+    },
+    "acceptance": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "new-session",
+          "pass": true
+        },
+        {
+          "name": "stale-session",
+          "pass": true
+        },
+        {
+          "name": "degraded-session",
+          "pass": true
+        },
+        {
+          "name": "replay-recovery",
+          "pass": true
+        },
+        {
+          "name": "blocked-recovery",
+          "pass": true
+        }
+      ]
+    },
+    "low_human_interruption": true,
+    "premium_worker_minimized": true
+  }
+}

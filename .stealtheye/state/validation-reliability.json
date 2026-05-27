@@ -1,7 +1,43 @@
 {
-  "flaky_validations": [],
-  "unstable_checks": [],
-  "repeated_failures": 0,
-  "repair_success_rate": 1,
-  "score": 0.98
+  "score": 0.99,
+  "replay": {
+    "compatible_replay": true,
+    "drift_events": 0,
+    "confidence_regression": false,
+    "instability": false
+  },
+  "continuity": {
+    "continuity_completeness": true,
+    "replay_integrity": true,
+    "memory_coverage": true,
+    "process_coverage": true,
+    "routing_completeness": true,
+    "next_action_determinism": true,
+    "recovery_determinism": true
+  },
+  "acceptance": {
+    "pass": true,
+    "cases": [
+      {
+        "name": "new-session",
+        "pass": true
+      },
+      {
+        "name": "stale-session",
+        "pass": true
+      },
+      {
+        "name": "degraded-session",
+        "pass": true
+      },
+      {
+        "name": "replay-recovery",
+        "pass": true
+      },
+      {
+        "name": "blocked-recovery",
+        "pass": true
+      }
+    ]
+  }
 }

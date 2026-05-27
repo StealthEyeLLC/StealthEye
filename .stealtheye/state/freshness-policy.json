@@ -1,0 +1,10 @@
+{
+  "ttl_hours": {
+    ".stealtheye/state/project-state.json": 48,
+    ".stealtheye/state/memory-index.json": 48,
+    ".stealtheye/receipts/latest-replay.json": 24,
+    ".stealtheye/validation/readiness-report.json": 24,
+    ".stealtheye/graphs/latest.json": 72,
+    ".stealtheye/handoffs/latest.json": 24
+  }
+}

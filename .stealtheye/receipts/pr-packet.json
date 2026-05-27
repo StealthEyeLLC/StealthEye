@@ -3,80 +3,136 @@
   "phase": "phase0-autonomy-substrate",
   "readiness": {
     "phase": "phase0-autonomy-substrate",
-    "bootstrap_enforced": true,
-    "mandatory_memory_hooks": true,
-    "mandatory_process_selection": true,
-    "mandatory_invariants": true,
-    "mandatory_handoffs": true,
-    "status": "validated"
+    "status": "validated",
+    "continuity": {
+      "continuity_completeness": true,
+      "replay_integrity": true,
+      "memory_coverage": true,
+      "process_coverage": true,
+      "routing_completeness": true,
+      "next_action_determinism": true,
+      "recovery_determinism": true
+    },
+    "replay": {
+      "compatible_replay": true,
+      "drift_events": 0,
+      "confidence_regression": false,
+      "instability": false
+    },
+    "acceptance": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "new-session",
+          "pass": true
+        },
+        {
+          "name": "stale-session",
+          "pass": true
+        },
+        {
+          "name": "degraded-session",
+          "pass": true
+        },
+        {
+          "name": "replay-recovery",
+          "pass": true
+        },
+        {
+          "name": "blocked-recovery",
+          "pass": true
+        }
+      ]
+    },
+    "low_human_interruption": true,
+    "premium_worker_minimized": true
   },
   "inspect": {
     "current_phase": "phase0-autonomy-substrate",
-    "current_tier": "autonomous",
-    "readiness": "validated",
-    "autonomy_score": 0.7,
-    "replay_health": 0.746,
-    "repair_reliability": 0.6,
-    "continuity_health": 0.85,
-    "operational_entropy": 0.2,
-    "recovery_readiness": 0.77,
-    "confidence_trends": {
-      "replay": 0.746,
-      "recovery": 0.77,
-      "next_action": 0.86
+    "phase0_readiness": "validated",
+    "continuity_health": 0.9,
+    "replay_determinism": {
+      "compatible_replay": true,
+      "drift_events": 0,
+      "confidence_regression": false,
+      "instability": false
     },
-    "next_action": {
-      "action": "run deterministic repair sequence",
-      "score": 0.68,
-      "confidence": 0.86,
-      "recommended_worker": "normal-chatgpt"
-    },
-    "recommended_worker": "normal-chatgpt",
-    "recovery_posture": {
-      "strategy": "retry",
-      "confidence": 0.77,
-      "evidence_weighting": {
-        "historical_success_rate": 0.5,
-        "recurrence_frequency": 0,
-        "replay_similarity": 0.74,
-        "prior_recovery_outcomes": []
-      },
-      "repair_sequence": [
-        "diagnose",
-        "repair",
-        "validate",
-        "replay-check",
-        "consistency-check",
-        "readiness-check"
+    "operational_entropy": {
+      "score": 0.045,
+      "recommendations": [
+        "run compaction",
+        "prune stale memory",
+        "recalibrate routing",
+        "stabilize validation"
       ]
     },
-    "explainability_packet": {
-      "why_next_action": {
-        "selected": "run deterministic repair sequence",
-        "reason": "maximizes deterministic stabilization and lowers interruption risk"
-      },
-      "why_worker": {
-        "recommended": "normal-chatgpt",
-        "reason": "based on routing memory and codex minimization goals"
-      },
-      "why_repair_path": {
-        "selected": "retry",
-        "reason": "evidence-weighted success/recurrence balance"
-      },
-      "why_drift_severity": {
-        "score": 0.201,
-        "factors": {
-          "drift": 0.3,
-          "repeated_failures": 0,
-          "replay_uncertainty": 0.254
-        }
-      },
-      "why_readiness_tier": {
-        "tier": "autonomous",
-        "reason": "derived from readiness report + operational risk bounds"
+    "coherence": {
+      "inspect_matches_next_action": true,
+      "recovery_consistent": true,
+      "replay_confidence": 0.9
+    },
+    "routing_efficiency": {
+      "unnecessary_codex_use": 0,
+      "successful_non_codex_handling": 3,
+      "repair_efficiency": 1,
+      "validation_stability": 1,
+      "recovery_efficiency": 1,
+      "human_interruption_frequency": 0.02
+    },
+    "repair_effectiveness": {
+      "repairs": []
+    },
+    "autonomy_trajectory": {
+      "autonomy_score": 0.996,
+      "trajectory": "improving"
+    },
+    "next_action": {
+      "action": "run deterministic maintenance scheduler",
+      "confidence": 0.9,
+      "recommended_worker": "normal-chatgpt"
+    },
+    "recommended_maintenance": {
+      "plans": [
+        "compaction",
+        "cleanup",
+        "replay-regeneration",
+        "freshness-repair",
+        "routing-recalibration",
+        "memory-pruning",
+        "validation-stabilization"
+      ],
+      "scheduler": {
+        "deterministic": true,
+        "mode": "state-driven"
       }
     },
-    "blockers": []
+    "human_input_needed": false,
+    "explainability_packet": {
+      "reasoning": "deterministic low-cost-first continuity hardening",
+      "evidence": [
+        "validation/*",
+        "state/*"
+      ],
+      "confidence": {
+        "next_action": 0.9,
+        "recovery": 0.82
+      },
+      "supporting_history": [
+        "replay-history.json",
+        "failure-pattern-memory.json"
+      ],
+      "invariant_references": [
+        "invariants.json"
+      ],
+      "drift_references": [
+        "drift-report.json"
+      ],
+      "tier": "validated",
+      "risk": {
+        "score": 0.3,
+        "factors": {}
+      }
+    }
   },
-  "generated_at": "2026-05-27T05:49:18.062Z"
+  "generated_at": "2026-05-27T06:10:41.975Z"
 }

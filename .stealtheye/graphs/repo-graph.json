@@ -5,6 +5,14 @@
       "type": "state-file"
     },
     {
+      "id": "autonomy-progression.json",
+      "type": "state-file"
+    },
+    {
+      "id": "canonical-authority.json",
+      "type": "state-file"
+    },
+    {
       "id": "capability-registry.json",
       "type": "state-file"
     },
@@ -25,6 +33,10 @@
       "type": "state-file"
     },
     {
+      "id": "freshness-policy.json",
+      "type": "state-file"
+    },
+    {
       "id": "inspect-repo.json",
       "type": "state-file"
     },
@@ -41,6 +53,10 @@
       "type": "state-file"
     },
     {
+      "id": "maintenance-plan.json",
+      "type": "state-file"
+    },
+    {
       "id": "memory-freshness.json",
       "type": "state-file"
     },
@@ -54,6 +70,10 @@
     },
     {
       "id": "operational-efficiency.json",
+      "type": "state-file"
+    },
+    {
+      "id": "phase0-gate.json",
       "type": "state-file"
     },
     {
@@ -90,6 +110,10 @@
     },
     {
       "id": "replay-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "routing-governance.json",
       "type": "state-file"
     },
     {

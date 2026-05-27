@@ -1,0 +1,15 @@
+{
+  "plans": [
+    "compaction",
+    "cleanup",
+    "replay-regeneration",
+    "freshness-repair",
+    "routing-recalibration",
+    "memory-pruning",
+    "validation-stabilization"
+  ],
+  "scheduler": {
+    "deterministic": true,
+    "mode": "state-driven"
+  }
+}

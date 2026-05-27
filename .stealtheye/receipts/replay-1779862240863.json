@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "validate",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T06:10:40.863Z",
+  "replay_confidence": 0.9,
+  "integrity": {
+    "sha256": "41d8c1593558b94625735945cd58f3d59eef40a1b775b23f08b129321b5b1bac",
+    "passed": true
+  },
+  "commands": [
+    "npm run validate"
+  ],
+  "validation_results": {
+    "ok": true,
+    "reliability": {
+      "score": 0.99,
+      "replay": {
+        "compatible_replay": true,
+        "drift_events": 0,
+        "confidence_regression": false,
+        "instability": false
+      },
+      "continuity": {
+        "continuity_completeness": true,
+        "replay_integrity": true,
+        "memory_coverage": true,
+        "process_coverage": true,
+        "routing_completeness": true,
+        "next_action_determinism": true,
+        "recovery_determinism": true
+      },
+      "acceptance": {
+        "pass": true,
+        "cases": [
+          {
+            "name": "new-session",
+            "pass": true
+          },
+          {
+            "name": "stale-session",
+            "pass": true
+          },
+          {
+            "name": "degraded-session",
+            "pass": true
+          },
+          {
+            "name": "replay-recovery",
+            "pass": true
+          },
+          {
+            "name": "blocked-recovery",
+            "pass": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "name": "new-session",
+      "pass": true
+    },
+    {
+      "name": "stale-session",
+      "pass": true
+    },
+    {
+      "name": "degraded-session",
+      "pass": true
+    },
+    {
+      "name": "replay-recovery",
+      "pass": true
+    },
+    {
+      "name": "blocked-recovery",
+      "pass": true
+    }
+  ]
+}
