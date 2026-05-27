@@ -1,0 +1,18 @@
+{
+  "sealed_h1_capabilities": [
+    "runtime",
+    "continuity",
+    "replay",
+    "authority",
+    "orchestration"
+  ],
+  "stable_interfaces": [
+    "npm run h1:inspect",
+    "npm run h1:validate",
+    "npm run h1:packet"
+  ],
+  "known_constraints": [
+    "CI_AUTHORITATIVE_FALLBACK"
+  ],
+  "approved_next_phase_direction": "H2 planning only; no implementation in H1 final pass"
+}

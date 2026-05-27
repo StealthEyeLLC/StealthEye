@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "latest": {
-    "proof_id": "h1-browser-1779869849701",
+    "proof_id": "h1-browser-1779870671321",
     "receipt": ".stealtheye/receipts/h1-packet.json",
     "state": "exhausted"
   },
@@ -182,6 +182,32 @@
           "ci-authority"
         ],
         "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779870647521",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T08:30:47.529Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
+      },
+      {
+        "proof_id": "h1-browser-1779870671321",
+        "state": "exhausted",
+        "status": "degraded",
+        "route": "ci-authoritative-repair",
+        "timestamp": "2026-05-27T08:31:11.328Z",
+        "authority_chain": [
+          "local-runtime",
+          "replay-authority",
+          "ci-authority"
+        ],
+        "superseded_by": null
       }
     ]
   },
@@ -348,6 +374,32 @@
       "status": "degraded",
       "route": "ci-authoritative-repair",
       "timestamp": "2026-05-27T08:17:29.706Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779870647521",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T08:30:47.529Z",
+      "authority_chain": [
+        "local-runtime",
+        "replay-authority",
+        "ci-authority"
+      ],
+      "superseded_by": null
+    },
+    {
+      "proof_id": "h1-browser-1779870671321",
+      "state": "exhausted",
+      "status": "degraded",
+      "route": "ci-authoritative-repair",
+      "timestamp": "2026-05-27T08:31:11.328Z",
       "authority_chain": [
         "local-runtime",
         "replay-authority",

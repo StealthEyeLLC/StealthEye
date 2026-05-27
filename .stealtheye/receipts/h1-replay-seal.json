@@ -1,0 +1,9 @@
+{
+  "status": "sealed",
+  "replay_determinism": true,
+  "replay_lineage_integrity": true,
+  "replay_reconstruction": true,
+  "replay_authority": true,
+  "replay_compaction_correctness": true,
+  "replay_fork_ambiguity": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "sealed",
+  "ci_authority": true,
+  "replay_authority": true,
+  "runtime_authority": true,
+  "repair_authority": true,
+  "restoration_authority": true,
+  "split_brain": false,
+  "stale_authority_resurrection": false
+}
