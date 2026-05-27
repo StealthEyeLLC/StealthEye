@@ -1,0 +1,85 @@
+{
+  "schema_version": "2.0.0",
+  "history": [
+    {
+      "mission_id": "h2:inspect:mission",
+      "route_history": [
+        "browser"
+      ],
+      "repair_history": [
+        "retry-then-escalate"
+      ],
+      "degraded_history": [],
+      "escalation_history": [],
+      "denial_history": [],
+      "replay_history": [
+        "rep_19d42cf299e4ebcdae75"
+      ],
+      "ci_authority_history": [
+        "governed"
+      ],
+      "execution_effectiveness_history": [
+        "completed"
+      ],
+      "latest_pointers": {
+        "execution_id": "env_c5b19aa45d776aead3889a74",
+        "receipt_id": "h2-execution-execution-b49a19b81ef14872"
+      }
+    },
+    {
+      "mission_id": "h2:validation:mission",
+      "route_history": [
+        "ci"
+      ],
+      "repair_history": [
+        "escalate-immediately"
+      ],
+      "degraded_history": [],
+      "escalation_history": [],
+      "denial_history": [],
+      "replay_history": [
+        "rep_48d951978e33ae2346a6"
+      ],
+      "ci_authority_history": [
+        "ci-authority"
+      ],
+      "execution_effectiveness_history": [
+        "completed"
+      ],
+      "latest_pointers": {
+        "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+        "receipt_id": "h2-execution-execution-e055265dc7807236"
+      }
+    },
+    {
+      "mission_id": "h2:packet:mission",
+      "route_history": [
+        "github"
+      ],
+      "repair_history": [
+        "retry-then-escalate"
+      ],
+      "degraded_history": [],
+      "escalation_history": [],
+      "denial_history": [],
+      "replay_history": [
+        "rep_4e361e066fe6185dbf3c"
+      ],
+      "ci_authority_history": [
+        "governed"
+      ],
+      "execution_effectiveness_history": [
+        "completed"
+      ],
+      "latest_pointers": {
+        "execution_id": "env_66198e26226dd38255f92e12",
+        "receipt_id": "h2-execution-execution-fb1bff72112d6b8e"
+      }
+    }
+  ],
+  "retention": {
+    "max_entries": 120,
+    "deterministic_pruning": "truncate-oldest",
+    "continuity_preservation": true
+  }
+}

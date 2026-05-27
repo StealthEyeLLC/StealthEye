@@ -10,7 +10,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -34,7 +36,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -46,7 +49,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -58,7 +62,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -70,7 +75,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     },
     {
@@ -82,7 +88,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ]
     }
   ]

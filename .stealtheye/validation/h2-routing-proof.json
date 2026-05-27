@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "deterministic_route": "ci",
+  "worker": "CIAdapter"
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h2:packet",
+  "processName": "generate",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T09:07:30.488Z",
+  "timestamp": "2026-05-27T09:07:10.444Z",
   "ordered_commands": [
-    "npm run h2:packet"
+    "npm run generate"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -32,10 +32,7 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "validation_outputs": {
-    "status": "ok",
-    "complete": true
-  },
+  "validation_outputs": {},
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
     ".stealtheye/state/queue.json",
@@ -43,9 +40,9 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "replay_confidence": 0.715,
+  "replay_confidence": 0.72,
   "replay_uncertainty": {
-    "score": 0.285,
+    "score": 0.28,
     "reasons": [
       "validation_not_fully_stable"
     ]
@@ -56,7 +53,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "4d751383253e91a6e198f5a800670ce9db7e2b3483c9c4ca5e5e006825961f79",
+      "digest": "bf15ed47db7e339cefaf85fdcb5a74b119fffc61bae9804b876fd2188bdbf3c1",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -64,10 +61,6 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h2:packet"
-  ],
-  "validation_results": {
-    "status": "ok",
-    "complete": true
-  }
+    "npm run generate"
+  ]
 }

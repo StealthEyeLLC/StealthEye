@@ -1,0 +1,77 @@
+{
+  "schema_version": "2.0.0",
+  "h2_phase": "execution-expansion",
+  "complete": true,
+  "execution_integrity": "pass",
+  "routing_integrity": "pass",
+  "governance_integrity": "pass",
+  "repair_integrity": "pass",
+  "replay_integrity": "pass",
+  "authority_integrity": "pass",
+  "ci_integrity": "pass",
+  "boundedness_integrity": "pass",
+  "route": {
+    "risk": "medium",
+    "authority": "governed",
+    "route": "github",
+    "worker": "GitHubAdapter",
+    "repair": "retry-then-escalate",
+    "receipt_id": "h2-execution-execution-fb1bff72112d6b8e",
+    "envelope": {
+      "execution_id": "env_66198e26226dd38255f92e12",
+      "attempt_id": "att_c94eefeb44a244d3dae4",
+      "mission_id": "h2:packet:mission",
+      "execution_class": "governed",
+      "tool_class": "github",
+      "authority_level": "governed",
+      "route_class": "github",
+      "replay_seed": "66198e26226dd382",
+      "repair_strategy": "retry-then-escalate",
+      "escalation_class": "ci_authority",
+      "bounded_retry_limit": 2,
+      "execution_window": {
+        "start": "2026-05-27T09:07:30.479Z",
+        "max_ms": 900000
+      },
+      "deterministic_clock": "h1-runtime-clock",
+      "continuity_parent": null,
+      "continuity_children": [
+        "h2-execution-execution-fb1bff72112d6b8e"
+      ],
+      "execution_contract_hash": "6d0351a75cd73ca9fa3a323077b5ffe6efd78d0b001c24b17e19bb7cf206f8f2",
+      "execution_receipt_hash": "0843b58b0d7de61695c90af1dbae508d556207dc07a7fe5910817fc0a9952963",
+      "runtime_posture": "bounded",
+      "ci_authority_required": false,
+      "anti_invariant_guards": [
+        "no-uncontrolled-execution",
+        "no-hidden-routing",
+        "no-nondeterministic-retry",
+        "no-silent-escalation",
+        "no-unbounded-loops",
+        "no-unrestricted-shell",
+        "no-policy-mutation-during-execution",
+        "no-hidden-authority-elevation",
+        "no-execution-without-receipts",
+        "no-execution-without-replay-lineage",
+        "no-orphaned-execution-states"
+      ],
+      "policy_snapshot": {
+        "schema_version": "2.0.0",
+        "approval_classes": [
+          "NONE",
+          "SECRET",
+          "CREDENTIAL",
+          "MONEY",
+          "IRREVERSIBLE_DELETE"
+        ],
+        "forbidden_global": [
+          "product-feature-implementation",
+          "autonomous-unsafe-merge",
+          "credential-exfiltration"
+        ]
+      },
+      "routing_snapshot": {},
+      "execution_outcome": "completed"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h2:packet",
+  "processName": "validate",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T09:07:30.488Z",
+  "timestamp": "2026-05-27T09:07:14.840Z",
   "ordered_commands": [
-    "npm run h2:packet"
+    "npm run validate"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -33,8 +33,14 @@
     ".stealtheye/validation/consistency-report.json"
   ],
   "validation_outputs": {
-    "status": "ok",
-    "complete": true
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -43,12 +49,10 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "replay_confidence": 0.715,
+  "replay_confidence": 0.915,
   "replay_uncertainty": {
-    "score": 0.285,
-    "reasons": [
-      "validation_not_fully_stable"
-    ]
+    "score": 0.085,
+    "reasons": []
   },
   "replay_integrity": {
     "status": "verified",
@@ -56,7 +60,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "4d751383253e91a6e198f5a800670ce9db7e2b3483c9c4ca5e5e006825961f79",
+      "digest": "3bb083e547f099c0e47d9bae69a6942ad1ebd79de33c3f2382e4b70ddbf306c2",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -64,10 +68,16 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h2:packet"
+    "npm run validate"
   ],
   "validation_results": {
-    "status": "ok",
-    "complete": true
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
   }
 }

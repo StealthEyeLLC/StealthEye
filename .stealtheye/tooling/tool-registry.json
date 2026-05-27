@@ -18,7 +18,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -90,7 +91,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -162,7 +164,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -234,7 +237,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -306,7 +310,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -378,7 +383,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,
@@ -450,7 +456,8 @@
       "forbidden_actions": [
         "unbounded-loop",
         "silent-side-effect",
-        "unsafe-merge"
+        "unsafe-merge",
+        "unrestricted-shell-execution"
       ],
       "escalation_policy": {
         "max_escalations": 2,

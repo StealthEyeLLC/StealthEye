@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "retry_limit": 2,
+  "infinite_loop_possible": false
+}
