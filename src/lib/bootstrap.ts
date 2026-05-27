@@ -6,7 +6,16 @@ export type BootstrapContext = { root: string; now: string; run_id: string; };
 export function bootstrap(root = process.cwd()): BootstrapContext {
   const now = new Date().toISOString();
   const run_id = `${Date.now()}`;
-  const dirs = ['.stealtheye', '.stealtheye/logs', '.stealtheye/state', '.stealtheye/receipts', '.stealtheye/handoffs', '.stealtheye/snapshots'];
+  const dirs = [
+    '.stealtheye',
+    '.stealtheye/logs',
+    '.stealtheye/state',
+    '.stealtheye/receipts',
+    '.stealtheye/handoffs',
+    '.stealtheye/snapshots',
+    '.stealtheye/graphs',
+    '.stealtheye/validation'
+  ];
   dirs.forEach((d) => mkdirSync(resolve(root, d), { recursive: true }));
   const statePath = resolve(root, '.stealtheye/state/project-state.json');
   if (!existsSync(statePath)) writeFileSync(statePath, JSON.stringify(defaultState(now), null, 2));
