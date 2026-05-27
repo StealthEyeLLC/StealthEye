@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h3:packet",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T15:09:24.899Z",
+  "ordered_commands": [
+    "npm run h3:packet"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "generated_at": "2026-05-27T15:09:24.895Z",
+    "h3_status": "COMPLETE",
+    "artifacts": [
+      "persistent-runtime",
+      "mission-continuity",
+      "repair-engine",
+      "browser-body",
+      "ci-stabilization",
+      "worker-swarm",
+      "memory-evolution",
+      "convergence-engine"
+    ]
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "168dab2aec508f0b1add504eecb9dba96b4a416e94ca7aca720d8fbe506149b6",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h3:packet"
+  ],
+  "validation_results": {
+    "generated_at": "2026-05-27T15:09:24.895Z",
+    "h3_status": "COMPLETE",
+    "artifacts": [
+      "persistent-runtime",
+      "mission-continuity",
+      "repair-engine",
+      "browser-body",
+      "ci-stabilization",
+      "worker-swarm",
+      "memory-evolution",
+      "convergence-engine"
+    ]
+  }
+}

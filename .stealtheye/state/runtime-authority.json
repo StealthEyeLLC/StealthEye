@@ -1,0 +1,7 @@
+{
+  "authority_owner": "runtime-controller",
+  "autonomy_level": "bounded",
+  "continuation_limit": 8,
+  "transfer": "explicit",
+  "updated_at": "2026-05-27T15:09:42.861Z"
+}

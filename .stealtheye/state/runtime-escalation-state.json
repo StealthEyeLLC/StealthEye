@@ -1,0 +1,14 @@
+{
+  "severity_model": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "current": "low",
+  "paths": [
+    "freeze",
+    "operator-route"
+  ],
+  "updated_at": "2026-05-27T15:09:42.861Z"
+}

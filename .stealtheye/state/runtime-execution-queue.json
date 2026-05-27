@@ -1,0 +1,31 @@
+{
+  "digest": "f372ba75eea25964ca1c5f2801273a5f2c0fe6ae1ff17a505763b4587bdaf2a8",
+  "execution_fingerprint": "2445ec0cf1f24fcd7e7126ea1a7c16bd4fbcf2560318aecc413e2f3676202a34",
+  "retry_contract": {
+    "max_retries": 2,
+    "backoff": "none",
+    "deterministic": true
+  },
+  "replayability": {
+    "stable": true,
+    "drift": false
+  },
+  "items": [
+    {
+      "order": 1,
+      "id": "cont-1779894573382",
+      "kind": "deterministic-continuation",
+      "owner": "runtime-controller",
+      "status": "active",
+      "terminal_state": "executing"
+    },
+    {
+      "order": 2,
+      "id": "cont-1779894582861",
+      "kind": "deterministic-continuation",
+      "owner": "runtime-controller",
+      "status": "queued",
+      "terminal_state": "pending"
+    }
+  ]
+}

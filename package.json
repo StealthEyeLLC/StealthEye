@@ -29,7 +29,15 @@
     "h3:repair:smoke": "tsx src/cli/h3-repair-smoke.ts",
     "h3:browser:smoke": "tsx src/cli/h3-browser-smoke.ts",
     "h4:runtime-check": "tsx src/cli/h4-runtime-check.ts",
-    "h4:validate": "tsx src/cli/h4-validate.ts"
+    "h4:validate": "tsx src/cli/h4-validate.ts",
+    "h4:audit": "npm run h4:runtime-check",
+    "h4:replay-check": "npm run h4:runtime-check",
+    "h4:orchestration-check": "npm run h4:runtime-check",
+    "h4:orchestrate": "tsx src/cli/h4-orchestrate.ts",
+    "h4:governance-check": "tsx src/cli/h4-governance-check.ts",
+    "h4:conflict-check": "tsx src/cli/h4-conflict-check.ts",
+    "h4:determinism-check": "tsx src/cli/h4-determinism-check.ts",
+    "h4:observability-check": "tsx src/cli/h4-observability-check.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",
