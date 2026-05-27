@@ -5,28 +5,36 @@ import { loadState, readJson } from './substrate.js';
 
 type Risk = { id: string; severity: 'low'|'medium'|'high'; status: 'open'|'mitigated'; detail: string; repair: string };
 
+function isEmpty(value: unknown) {
+  return !value || (typeof value === 'object' && Object.keys(value as Record<string, unknown>).length === 0);
+}
+
 export function runH4ContinuityFabric(rootArg = process.cwd()) {
   const { root } = bootstrap(rootArg);
   loadState(root);
   const now = new Date().toISOString();
-  const project = readJson(resolve(root, '.stealtheye/state/project-state.json'), {} as any) as any;
-  const next = readJson(resolve(root, '.stealtheye/state/next-action.json'), {} as any) as any;
-  const runtime = readJson(resolve(root, '.stealtheye/state/h4-runtime-state.json'), { status: 'ACTIVE' } as any) as any;
+  const project = readJson(resolve(root, '.stealtheye/state/project-state.json'), null as any) as any;
+  const next = readJson(resolve(root, '.stealtheye/state/next-action.json'), null as any) as any;
+  const runtime = readJson(resolve(root, '.stealtheye/state/h4-runtime-state.json'), null as any) as any;
 
   const blockers: string[] = [];
+  if (isEmpty(project)) blockers.push('missing-project-state');
+  if (isEmpty(next)) blockers.push('missing-next-action-state');
+  if (isEmpty(runtime)) blockers.push('missing-h4-runtime-state');
   if (project?.h4_status === 'COMPLETE' || project?.status === 'H4 COMPLETE') blockers.push('h4-complete-illegal');
-  if (String(JSON.stringify(project)).includes('H3 NOT STARTED')) blockers.push('h3-reopened-illegal');
+  if (project?.h3_status === 'NOT_STARTED' || project?.status === 'H3 NOT STARTED') blockers.push('h3-reopened-illegal');
   if (Array.isArray(next?.candidates) && next.candidates.length > 1) blockers.push('duplicate-next-actions');
+  if (runtime?.replay_mismatch === true || runtime?.runtime_status === 'replay-mismatch-rejected') blockers.push('replay-drift');
 
   const risks: Risk[] = [
     { id: 'stale-continuity', severity: 'medium', status: 'open', detail: 'continuity surfaces may lag latest replay', repair: 'run h4:runtime-reconstruction then h4:continuity-fabric' },
-    { id: 'replay-instability', severity: 'medium', status: 'open', detail: 'replay chain drift can invalidate autonomous resume', repair: 'run h4:replay-check and resolve pointer mismatch' },
+    { id: 'replay-instability', severity: blockers.includes('replay-drift') ? 'high' : 'medium', status: blockers.includes('replay-drift') ? 'open' : 'mitigated', detail: 'replay chain drift can invalidate autonomous resume', repair: 'run h4:replay-check and resolve pointer mismatch' },
     { id: 'branch-inconsistency', severity: 'low', status: 'open', detail: 'branch lineage ambiguity could block merge continuity', repair: 'run h4:conflict-check and quarantine stale runtime' }
   ];
 
   const score = Math.max(0, 100 - blockers.length * 40 - risks.filter((r) => r.status === 'open').length * 8);
   const confidence = score >= 85 ? 'high' : score >= 65 ? 'medium' : 'low';
-  const safe = blockers.length === 0 && runtime.status === 'ACTIVE';
+  const safe = blockers.length === 0 && runtime?.status === 'ACTIVE';
 
   const state = {
     phase: 'H4',
