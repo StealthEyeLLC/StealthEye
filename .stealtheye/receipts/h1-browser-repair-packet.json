@@ -1,0 +1,13 @@
+{
+  "failure_summary": "external-blocked",
+  "repair_id": "repair:h1-browser-1779872212930",
+  "probable_root_cause": "cdn-blocked",
+  "retry_lineage": {
+    "attempted": 0,
+    "max": 1
+  },
+  "retry_exhausted": true,
+  "effectiveness_score": 0.33,
+  "confidence_calibration": 0.42,
+  "escalation_classification": "workflow-repair-recovery"
+}

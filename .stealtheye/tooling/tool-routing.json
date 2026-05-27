@@ -1,0 +1,24 @@
+{
+  "schema_version": "2.0.0",
+  "route_classes": [
+    "github",
+    "browser",
+    "codex",
+    "ci",
+    "local_runtime",
+    "denied",
+    "escalated",
+    "degraded",
+    "replay_only"
+  ],
+  "deterministic": true,
+  "priority_order": [
+    "github",
+    "browser",
+    "codex",
+    "ci_actions",
+    "local_runtime",
+    "agent_mode",
+    "future_mcp_bridge"
+  ]
+}

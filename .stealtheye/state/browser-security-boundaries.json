@@ -1,0 +1,14 @@
+{
+  "forbidden": [
+    "credential-entry",
+    "payment-flows",
+    "secret-exposure",
+    "unrestricted-browser-wandering"
+  ],
+  "allowed_domain_policy": "allowlist-only",
+  "approval_gated_operations": [
+    "auth",
+    "payments",
+    "secrets"
+  ]
+}

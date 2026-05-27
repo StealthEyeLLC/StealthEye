@@ -1,0 +1,27 @@
+{
+  "phase": "H2",
+  "status": "COMPLETE",
+  "acceptance_semantics": [
+    "COMPLETE",
+    "NOT_READY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "runtime_boundaries": [
+    "bounded concurrency",
+    "policy envelope",
+    "authority convergence"
+  ],
+  "governance_semantics": [
+    "ci-authoritative"
+  ],
+  "replay_semantics": [
+    "deterministic order"
+  ],
+  "authority_semantics": [
+    "local+ci"
+  ],
+  "repair_semantics": [
+    "bounded repair lineage"
+  ]
+}

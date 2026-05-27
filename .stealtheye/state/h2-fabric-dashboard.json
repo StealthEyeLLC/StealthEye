@@ -1,0 +1,8 @@
+{
+  "dag_posture": "ACTIVE",
+  "checkpoint_posture": "ACTIVE",
+  "concurrency_posture": "BOUNDED",
+  "policy_posture": "ENFORCED",
+  "reconciliation_posture": "DETERMINISTIC",
+  "ci_posture": "AUTHORITATIVE"
+}

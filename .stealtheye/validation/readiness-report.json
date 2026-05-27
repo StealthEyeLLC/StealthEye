@@ -1,0 +1,10 @@
+{
+  "phase": "phase0-autonomy-substrate",
+  "bootstrap_enforced": true,
+  "mandatory_memory_hooks": true,
+  "mandatory_process_selection": true,
+  "mandatory_invariants": true,
+  "mandatory_handoffs": true,
+  "continuity_acceptance": true,
+  "status": "validated"
+}

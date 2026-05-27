@@ -1,0 +1,8 @@
+{
+  "required": [
+    "working-set.json",
+    "repo-facts.json",
+    "failure-pattern-memory.json"
+  ],
+  "compact": true
+}

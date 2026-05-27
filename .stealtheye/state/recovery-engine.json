@@ -1,0 +1,20 @@
+{
+  "strategy": "retry",
+  "confidence": 0.85,
+  "reason": "deterministic recovery policy based on failure recurrence",
+  "evidence": {
+    "recurrence_frequency": 0
+  },
+  "invariant_refs": [
+    "replay-integrity",
+    "continuity-correctness"
+  ],
+  "repair_sequence": [
+    "diagnose",
+    "repair",
+    "validate",
+    "replay-check",
+    "consistency-check",
+    "readiness-check"
+  ]
+}

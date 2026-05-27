@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.0.0",
+  "adapter_events": [
+    {
+      "adapter": "BrowserAdapter",
+      "status": "completed",
+      "bounded": true,
+      "deterministic": true,
+      "replay_id": "rep_19d42cf299e4ebcdae75",
+      "trace": [
+        "adapter:BrowserAdapter",
+        "route:browser"
+      ],
+      "lineage": {
+        "execution_id": "env_c5b19aa45d776aead3889a74",
+        "attempt_id": "att_064f504d17265becc9ab",
+        "mission_id": "h2:inspect:mission"
+      },
+      "authority_metadata": {
+        "authority": "governed",
+        "ci_required": false
+      },
+      "repair_metadata": {
+        "strategy": "retry-then-escalate",
+        "retry_limit": 2
+      },
+      "replay_metadata": {
+        "seed": "c5b19aa45d776aea",
+        "replay_only": false
+      }
+    },
+    {
+      "adapter": "CIAdapter",
+      "status": "completed",
+      "bounded": true,
+      "deterministic": true,
+      "replay_id": "rep_48d951978e33ae2346a6",
+      "trace": [
+        "adapter:CIAdapter",
+        "route:ci"
+      ],
+      "lineage": {
+        "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+        "attempt_id": "att_7dd58b0796e9fab362df",
+        "mission_id": "h2:validation:mission"
+      },
+      "authority_metadata": {
+        "authority": "ci-authority",
+        "ci_required": true
+      },
+      "repair_metadata": {
+        "strategy": "retry-then-escalate",
+        "retry_limit": 2
+      },
+      "replay_metadata": {
+        "seed": "bfd417c3f7a32dc8",
+        "replay_only": false
+      }
+    },
+    {
+      "adapter": "GitHubAdapter",
+      "status": "completed",
+      "bounded": true,
+      "deterministic": true,
+      "replay_id": "rep_4e361e066fe6185dbf3c",
+      "trace": [
+        "adapter:GitHubAdapter",
+        "route:github"
+      ],
+      "lineage": {
+        "execution_id": "env_66198e26226dd38255f92e12",
+        "attempt_id": "att_c94eefeb44a244d3dae4",
+        "mission_id": "h2:packet:mission"
+      },
+      "authority_metadata": {
+        "authority": "governed",
+        "ci_required": false
+      },
+      "repair_metadata": {
+        "strategy": "retry-then-escalate",
+        "retry_limit": 2
+      },
+      "replay_metadata": {
+        "seed": "66198e26226dd382",
+        "replay_only": false
+      }
+    }
+  ]
+}

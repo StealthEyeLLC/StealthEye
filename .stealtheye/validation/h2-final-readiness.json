@@ -1,0 +1,15 @@
+{
+  "status": "in_progress",
+  "checks": {
+    "scheduler": true,
+    "concurrency": true,
+    "replay": true,
+    "reconciliation": true,
+    "schemas": true,
+    "adapters": true,
+    "ledgers": true,
+    "recovery": true,
+    "policy": true,
+    "authority_convergence": true
+  }
+}

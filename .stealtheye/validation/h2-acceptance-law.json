@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "allowed_statuses": [
+    "COMPLETE",
+    "NOT_READY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "failing_conditions": [
+    "invariants drift",
+    "replay divergence",
+    "authority failure",
+    "policy failure",
+    "ledger failure",
+    "retention failure",
+    "event failure",
+    "schema failure",
+    "boundedness failure"
+  ]
+}

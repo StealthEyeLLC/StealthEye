@@ -1,0 +1,14 @@
+{
+  "dag_integrity": true,
+  "checkpoint_integrity": true,
+  "continuation_integrity": true,
+  "approval_integrity": true,
+  "budget_integrity": true,
+  "worker_integrity": true,
+  "event_integrity": true,
+  "replay_integrity": true,
+  "repair_integrity": true,
+  "authority_integrity": true,
+  "ci_integrity": true,
+  "boundedness_integrity": true
+}

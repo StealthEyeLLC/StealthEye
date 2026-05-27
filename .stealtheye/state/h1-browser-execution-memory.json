@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.0.0",
+  "runs": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "validation": {
+        "launch": false,
+        "screenshot": false,
+        "trace": false,
+        "dom": false,
+        "artifact_complete": false
+      },
+      "routing": {
+        "decision": "ci-authoritative-repair",
+        "route_class": "blocked-browser-task",
+        "local_blocked": true,
+        "persisted": true
+      },
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "validation": {
+        "launch": false,
+        "screenshot": false,
+        "trace": false,
+        "dom": false,
+        "artifact_complete": false
+      },
+      "routing": {
+        "decision": "ci-authoritative-repair",
+        "route_class": "blocked-browser-task",
+        "local_blocked": true,
+        "persisted": true
+      },
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867186512",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:33:06.515Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779867206625",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:33:26.628Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:44:40.635Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:45:14.037Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:47:24.365Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:47:53.694Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:48:39.171Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868568629",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:56:08.632Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868587785",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:56:27.788Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868715924",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:58:35.928Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868735105",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:58:55.110Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868769000",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T07:59:29.005Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779868787842",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T07:59:47.848Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869336427",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T08:08:56.432Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869357971",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T08:09:17.977Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T08:17:10.547Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T08:17:29.706Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779870647521",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T08:30:47.529Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779870671321",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T08:31:11.328Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779872190711",
+      "status": "degraded",
+      "replay_seed": "smoke-unknown-none",
+      "timestamp": "2026-05-27T08:56:30.718Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    },
+    {
+      "proof_id": "h1-browser-1779872212930",
+      "status": "degraded",
+      "replay_seed": "proof-unknown-none",
+      "timestamp": "2026-05-27T08:56:52.936Z",
+      "route": "ci-authoritative-repair",
+      "ci_authority": true
+    }
+  ],
+  "repair_outcomes": [
+    {
+      "failure_summary": "external-blocked",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "retryable": false,
+      "probable_root_cause": "external-blocked",
+      "timestamp": "2026-05-27T07:21:25.255Z"
+    },
+    {
+      "failure_summary": "external-blocked",
+      "diagnostics": [
+        "cdn-blocked",
+        "dependency-failure"
+      ],
+      "retryable": false,
+      "probable_root_cause": "external-blocked",
+      "timestamp": "2026-05-27T07:21:42.584Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867186512",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:33:06.515Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867206625",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:48:39.171Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868568629",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:56:08.632Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868587785",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:56:27.788Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868715924",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:58:35.928Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868735105",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:58:55.110Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868769000",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:59:29.005Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868787842",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T07:59:47.848Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869336427",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:08:56.432Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869357971",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:17:29.706Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870647521",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:30:47.529Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870671321",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:31:11.328Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872190711",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:56:30.718Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872212930",
+      "effectiveness": 0.33,
+      "exhausted": true,
+      "timestamp": "2026-05-27T08:56:52.936Z"
+    }
+  ],
+  "routing_decisions": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "decision": "ci-authoritative-repair",
+      "route_class": "blocked-browser-task",
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "decision": "ci-authoritative-repair",
+      "route_class": "blocked-browser-task",
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867186512",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:33:06.515Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867206625",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:48:39.171Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868568629",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:56:08.632Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868587785",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:56:27.788Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868715924",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:58:35.928Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868735105",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:58:55.110Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868769000",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:59:29.005Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868787842",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T07:59:47.848Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869336427",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:08:56.432Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869357971",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:17:29.706Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870647521",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:30:47.529Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870671321",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:31:11.328Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872190711",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:56:30.718Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872212930",
+      "decision": "ci-authoritative-repair",
+      "rationale": "runtime unavailable requires CI authority",
+      "timestamp": "2026-05-27T08:56:52.936Z"
+    }
+  ],
+  "ci_escalations": [
+    {
+      "proof_id": "h1-browser-1779866485254",
+      "reason": "external-blocked",
+      "timestamp": "2026-05-27T07:21:25.257Z"
+    },
+    {
+      "proof_id": "h1-browser-1779866502583",
+      "reason": "external-blocked",
+      "timestamp": "2026-05-27T07:21:42.586Z"
+    }
+  ],
+  "missions": [
+    {
+      "proof_id": "h1-browser-1779867186512",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:33:06.515Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867206625",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:33:26.628Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867880629",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:44:40.635Z"
+    },
+    {
+      "proof_id": "h1-browser-1779867914031",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:45:14.037Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868044360",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:47:24.365Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868073690",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:47:53.694Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868119166",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:48:39.171Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868568629",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:56:08.632Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868587785",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:56:27.788Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868715924",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:58:35.928Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868735105",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:58:55.110Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868769000",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:59:29.005Z"
+    },
+    {
+      "proof_id": "h1-browser-1779868787842",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T07:59:47.848Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869336427",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:08:56.432Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869357971",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:09:17.977Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869830540",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:17:10.547Z"
+    },
+    {
+      "proof_id": "h1-browser-1779869849701",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:17:29.706Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870647521",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:30:47.529Z"
+    },
+    {
+      "proof_id": "h1-browser-1779870671321",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:31:11.328Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872190711",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:56:30.718Z"
+    },
+    {
+      "proof_id": "h1-browser-1779872212930",
+      "mission_count": 8,
+      "status": "degraded",
+      "timestamp": "2026-05-27T08:56:52.936Z"
+    }
+  ]
+}

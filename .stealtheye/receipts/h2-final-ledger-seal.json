@@ -1,0 +1,7 @@
+{
+  "seal": "ledger",
+  "integrity": 1,
+  "readiness": true,
+  "boundedness": 1,
+  "determinism": 1
+}

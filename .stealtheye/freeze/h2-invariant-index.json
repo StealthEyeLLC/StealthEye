@@ -1,0 +1,9 @@
+{
+  "invariants": [
+    "deterministic-replay",
+    "ledger-ordering",
+    "bounded-retention",
+    "authority-convergence",
+    "policy-integrity"
+  ]
+}

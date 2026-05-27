@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "h2-execution-execution-e055265dc7807236",
+  "receipt_type": "execution",
+  "created_at": "2026-05-27T09:07:29.468Z",
+  "deterministic_ids": {
+    "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+    "attempt_id": "att_7dd58b0796e9fab362df",
+    "replay_id": "rep_48d951978e33ae2346a6"
+  },
+  "route_lineage": [
+    "ci"
+  ],
+  "repair_lineage": [
+    "escalate-immediately"
+  ],
+  "execution_lineage": [
+    "CIAdapter"
+  ],
+  "authority_lineage": [
+    "ci-authority"
+  ],
+  "ci_lineage": [
+    "required"
+  ],
+  "replay_lineage": [
+    "bfd417c3f7a32dc8"
+  ],
+  "policy_lineage": [
+    "d3a2ee901c7e708c6e20f599e6d6a1585f0c4dfcf7be043966546df88c33e39d"
+  ],
+  "boundedness_proofs": {
+    "retry_limit": 2,
+    "timebox_ms": 900000,
+    "deterministic": true
+  },
+  "adapter_result": {
+    "adapter": "CIAdapter",
+    "status": "completed",
+    "bounded": true,
+    "deterministic": true,
+    "replay_id": "rep_48d951978e33ae2346a6",
+    "trace": [
+      "adapter:CIAdapter",
+      "route:ci"
+    ],
+    "lineage": {
+      "execution_id": "env_bfd417c3f7a32dc8a8aa1590",
+      "attempt_id": "att_7dd58b0796e9fab362df",
+      "mission_id": "h2:validation:mission"
+    },
+    "authority_metadata": {
+      "authority": "ci-authority",
+      "ci_required": true
+    },
+    "repair_metadata": {
+      "strategy": "retry-then-escalate",
+      "retry_limit": 2
+    },
+    "replay_metadata": {
+      "seed": "bfd417c3f7a32dc8",
+      "replay_only": false
+    }
+  }
+}

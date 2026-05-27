@@ -1,0 +1,6 @@
+{
+  "must_bootstrap_first": true,
+  "must_select_process": true,
+  "must_emit_handoff": true,
+  "must_retrieve_memory": true
+}

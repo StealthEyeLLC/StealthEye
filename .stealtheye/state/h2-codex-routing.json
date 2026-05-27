@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0.0",
+  "classifications": [
+    "local_only",
+    "local_preferred",
+    "codex_allowed",
+    "codex_recommended",
+    "codex_required",
+    "human_required"
+  ],
+  "codex_budget_classification": [
+    "micro",
+    "standard",
+    "heavy"
+  ],
+  "difficulty_routing": [
+    "trivial",
+    "moderate",
+    "complex"
+  ],
+  "justification_requirements": [
+    "deterministic rationale",
+    "score breakdown"
+  ],
+  "mission_envelopes": true,
+  "repair_loop_integration": true
+}

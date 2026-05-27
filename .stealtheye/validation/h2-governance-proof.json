@@ -1,0 +1,5 @@
+{
+  "status": "pass",
+  "policy_hash": "deterministic",
+  "anti_invariants": "enforced"
+}

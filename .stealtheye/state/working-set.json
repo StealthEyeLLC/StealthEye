@@ -1,0 +1,19 @@
+{
+  "summary": "phase0 hardening",
+  "compression": {
+    "mode": "compact",
+    "max_items": 12
+  },
+  "priorities": {
+    "critical": [
+      "lifecycle"
+    ],
+    "active": [
+      "replay"
+    ],
+    "background": [
+      "compaction"
+    ],
+    "archival": []
+  }
+}

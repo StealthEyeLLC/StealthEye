@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0.0",
+  "approval_classes": [
+    "NONE",
+    "SECRET",
+    "CREDENTIAL",
+    "MONEY",
+    "IRREVERSIBLE_DELETE"
+  ],
+  "forbidden_global": [
+    "product-feature-implementation",
+    "autonomous-unsafe-merge",
+    "credential-exfiltration"
+  ]
+}

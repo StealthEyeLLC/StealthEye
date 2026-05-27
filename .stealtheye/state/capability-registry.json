@@ -1,0 +1,43 @@
+{
+  "scripts": [
+    "generate",
+    "validate",
+    "check",
+    "check:readiness",
+    "graph",
+    "compile:packet",
+    "inspect:repo",
+    "diagnose"
+  ],
+  "validations": [
+    "bootstrap-diagnostics.json",
+    "consistency-report.json",
+    "readiness-report.json"
+  ],
+  "packet_types": [
+    "pr-packet",
+    "replay-receipt",
+    "diagnostic"
+  ],
+  "graph_outputs": [
+    "knowledge-graph.json",
+    "latest.json",
+    "repo-graph.json"
+  ],
+  "diagnostics": [
+    "bootstrap-diagnostics",
+    "consistency-report"
+  ],
+  "recovery_systems": [
+    "recovery-engine",
+    "loop-protection"
+  ],
+  "memory_systems": [
+    "memory-index",
+    "failure-pattern-memory"
+  ],
+  "routing_systems": [
+    "process-selector",
+    "worker-recommendation"
+  ]
+}

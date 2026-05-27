@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "repair_planner": "deterministic",
+  "retry_planner": "bounded",
+  "bounded_retry_executor": {
+    "max_retries": 2
+  },
+  "escalation_planner": "ci-first",
+  "repair_confidence_scorer": "deterministic-static",
+  "repair_effectiveness_scorer": "deterministic-history",
+  "repair_exhaustion_detector": "retry-or-escalation-ceiling",
+  "events": []
+}

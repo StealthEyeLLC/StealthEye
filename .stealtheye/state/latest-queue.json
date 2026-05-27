@@ -1,0 +1,5 @@
+{
+  "task_id": "phase0-main",
+  "status": "validating",
+  "reason": "check:readiness"
+}

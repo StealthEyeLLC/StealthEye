@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "drift_severity": "low",
+  "current_process": "phase0-build",
+  "compatibility": {
+    "compatible": true,
+    "stale_schemas": false,
+    "process_version": "1.2.0",
+    "expected": {
+      "state": "^1.1.0",
+      "memory": "^1.1.0",
+      "replay": "^1.4.0",
+      "packet": "^1.1.0"
+    },
+    "replay_compatibility": true
+  },
+  "corruption": {
+    "signals": [],
+    "remediation": []
+  },
+  "authority": {
+    "ok": true,
+    "violations": [],
+    "orphaned_transient_artifacts": []
+  },
+  "coherence": {
+    "ok": true,
+    "contradiction_severity": "none",
+    "contradictions": [],
+    "score": 1,
+    "factors": {
+      "contradiction_count": 0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "memory_hooks": [
+    "memory-index.json",
+    "success-pattern-memory.json"
+  ],
+  "invariants": [
+    "invariants.json"
+  ],
+  "coherence": [
+    "coherence-report.json"
+  ]
+}

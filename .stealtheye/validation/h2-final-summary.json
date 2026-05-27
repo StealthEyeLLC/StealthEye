@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "metrics": {
+    "replay_equivalence_score": 1,
+    "authority_convergence_score": 1,
+    "policy_integrity_score": 1,
+    "boundedness_score": 1,
+    "repair_stability_score": 1,
+    "scheduler_determinism_score": 1,
+    "concurrency_determinism_score": 1,
+    "checkpoint_continuity_score": 1,
+    "ledger_continuity_score": 1
+  }
+}

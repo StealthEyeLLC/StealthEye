@@ -1,0 +1,42 @@
+name: h1-browser-proof
+on: [push, workflow_dispatch]
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - name: Install browser runtime
+        run: npx playwright install --with-deps chromium
+      - name: H1 Validate
+        run: npm run h1:validate
+      - name: H1 Browser Proof
+        run: npm run h1:browser:proof
+      - name: H1 Packet
+        run: npm run h1:packet
+      - name: Verify proof integrity
+        run: |
+          node -e "const fs=require('fs');const e=JSON.parse(fs.readFileSync('.stealtheye/receipts/h1-browser-evidence-packet.json','utf8'));if(e.status!=='ok') throw new Error('status not ok'); if(!e.validation?.artifact_complete) throw new Error('artifact incomplete'); if(!e.replay_seed) throw new Error('missing replay metadata');"
+      - name: Runtime metadata summary
+        if: always()
+        run: |
+          echo "## H1 Browser Runtime" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/state/h1-runtime-posture.json >> $GITHUB_STEP_SUMMARY || true
+          echo "\n## H1 Browser Proof" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/receipts/h1-browser-evidence-packet.json >> $GITHUB_STEP_SUMMARY || true
+          echo "\n## H1 Browser Repair" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/receipts/h1-browser-repair-packet.json >> $GITHUB_STEP_SUMMARY || true
+      - name: Upload browser artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h1-browser-artifacts
+          if-no-files-found: warn
+          path: |
+            .stealtheye/browser
+            .stealtheye/validation/fixtures/browser-proof.html
+            .stealtheye/receipts/h1-browser-*.json
+            .stealtheye/state/h1-runtime-*.json
+            .stealtheye/state/h1-browser-*.json

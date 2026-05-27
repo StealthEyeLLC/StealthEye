@@ -1,0 +1,9 @@
+{
+  "items": [
+    {
+      "id": "phase0-main",
+      "status": "validating"
+    }
+  ],
+  "required_process_selection": true
+}

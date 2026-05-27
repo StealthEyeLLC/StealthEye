@@ -1,0 +1,7 @@
+{
+  "avoidable_codex_usage": 0,
+  "successful_non_codex_handling": 0,
+  "preparation_quality": 0.9,
+  "packet_completeness": 0.8,
+  "estimated_future_autonomy_gain": 0.85
+}

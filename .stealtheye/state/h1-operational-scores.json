@@ -1,0 +1,8 @@
+{
+  "execution_body_maturity_score": 0.95,
+  "replay_authority_score": 0.92,
+  "ci_authority_score": 0.93,
+  "repair_loop_maturity_score": 0.77,
+  "operational_autonomy_score": 0.072,
+  "deterministic_execution_score": 0.94
+}

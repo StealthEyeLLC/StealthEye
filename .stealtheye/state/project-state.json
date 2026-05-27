@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "current_phase": "phase0-autonomy-substrate",
+  "next_action": "run generate then validate",
+  "blockers": [],
+  "freshness": {
+    "updated_at": "2026-05-27T05:08:32.799Z"
+  },
+  "autonomy_scoreboard": {
+    "reward_model_scaffolded": true,
+    "score": 0
+  },
+  "recovery": {
+    "retry_policy": "exponential-backoff",
+    "fallback": "handoff-and-resume"
+  }
+}

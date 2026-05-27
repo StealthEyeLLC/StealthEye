@@ -1,0 +1,53 @@
+{
+  "schema_version": "2.0.0",
+  "workers": [
+    {
+      "worker": "codex",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    },
+    {
+      "worker": "github_actions",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    },
+    {
+      "worker": "browser_runtime",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    },
+    {
+      "worker": "local_runtime",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    },
+    {
+      "worker": "ci_runtime",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    },
+    {
+      "worker": "replay_runtime",
+      "leased": false,
+      "health": 1,
+      "capability_score": 1,
+      "cooldown_until": null,
+      "superseded": false
+    }
+  ]
+}

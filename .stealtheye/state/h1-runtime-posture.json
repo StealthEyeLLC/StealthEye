@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.2.0",
+  "environment": "local",
+  "classes": [
+    "browser-missing"
+  ],
+  "runtime_source": "playwright-managed",
+  "external_blocked": false,
+  "local_browser_paths": []
+}

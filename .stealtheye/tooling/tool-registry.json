@@ -1,0 +1,516 @@
+{
+  "schema_version": "2.0.0",
+  "tools": [
+    {
+      "tool_id": "tool:github",
+      "tool_class": "github",
+      "capabilities": [
+        "github:read",
+        "github:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "governed",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 1,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:browser",
+      "tool_class": "browser",
+      "capabilities": [
+        "browser:read",
+        "browser:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "governed",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 2,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:codex",
+      "tool_class": "codex",
+      "capabilities": [
+        "codex:read",
+        "codex:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "governed",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 3,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:ci_actions",
+      "tool_class": "ci_actions",
+      "capabilities": [
+        "ci_actions:read",
+        "ci_actions:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "bounded",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 4,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:local_runtime",
+      "tool_class": "local_runtime",
+      "capabilities": [
+        "local_runtime:read",
+        "local_runtime:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "bounded",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 5,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:agent_mode",
+      "tool_class": "agent_mode",
+      "capabilities": [
+        "agent_mode:read",
+        "agent_mode:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "bounded",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 6,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    },
+    {
+      "tool_id": "tool:future_mcp_bridge",
+      "tool_class": "future_mcp_bridge",
+      "capabilities": [
+        "future_mcp_bridge:read",
+        "future_mcp_bridge:execute"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "route",
+        "bounded-retry",
+        "emit-receipt"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge",
+        "unrestricted-shell-execution"
+      ],
+      "escalation_policy": {
+        "max_escalations": 2,
+        "targets": [
+          "ci_actions",
+          "human_required"
+        ]
+      },
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff": "deterministic-linear"
+      },
+      "authority_level": "bounded",
+      "approval_requirements": [
+        "NONE",
+        "SECRET",
+        "CREDENTIAL",
+        "MONEY",
+        "IRREVERSIBLE_DELETE"
+      ],
+      "evidence_requirements": [
+        "lineage",
+        "rationale",
+        "score"
+      ],
+      "receipt_requirements": [
+        "execution-envelope",
+        "continuity",
+        "authority"
+      ],
+      "replay_requirements": [
+        "deterministic_execution_id",
+        "replay_lineage"
+      ],
+      "operational_bounds": {
+        "timebox_ms": 900000,
+        "max_actions": 16
+      },
+      "anti_invariants": [
+        "no-hidden-side-effects",
+        "no-unbounded-retries",
+        "no-unsafe-merge"
+      ],
+      "routing_priority": 7,
+      "degraded_modes": [
+        "ci-authoritative",
+        "read-only"
+      ],
+      "continuity_requirements": [
+        "runtime-clock-ref",
+        "event-bus-ref"
+      ],
+      "deterministic_execution_expectation": "strict"
+    }
+  ]
+}

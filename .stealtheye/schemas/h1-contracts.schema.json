@@ -1,0 +1,47 @@
+{
+  "BrowserTaskContractV0": {
+    "type": "object",
+    "required": [
+      "objective",
+      "allowedDomains",
+      "expectedEvidence",
+      "stopConditions",
+      "artifactPolicy",
+      "retryPolicy",
+      "approvalBoundaries"
+    ]
+  },
+  "BrowserEvidencePacketV0": {
+    "type": "object",
+    "required": [
+      "status",
+      "evidence",
+      "failures",
+      "nextAction"
+    ]
+  },
+  "BrowserFailurePacketV0": {
+    "type": "object",
+    "required": [
+      "failureClass",
+      "summary",
+      "evidenceRefs",
+      "likelyCause",
+      "nextCommand"
+    ]
+  },
+  "ExecutionAdapterV0": {
+    "type": "object",
+    "required": [
+      "name",
+      "capabilities",
+      "routingCost",
+      "escalationLevel",
+      "approvalGates",
+      "reliabilityScore",
+      "evidenceOutputs",
+      "allowedOperations",
+      "failureClasses"
+    ]
+  }
+}

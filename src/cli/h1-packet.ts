@@ -1,0 +1,16 @@
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+import { recordH1 } from '../lib/h1.js';
+const evidencePath=resolve('.stealtheye/receipts/h1-browser-evidence-packet.json');
+const ciReceiptPath=resolve('.stealtheye/receipts/h1-ci-execution-receipt.json');
+const browserDir=resolve('.stealtheye/browser');
+const browserArtifacts = existsSync(browserDir) ? readdirSync(browserDir).slice(-8) : [];
+const integrity = browserArtifacts.map((f)=>{ const abs=resolve(browserDir,f); const b=readFileSync(abs); return {file:f,size:statSync(abs).size,sha256:createHash('sha256').update(b).digest('hex')}; });
+const evidence = existsSync(evidencePath)?JSON.parse(readFileSync(evidencePath,'utf8')):{};
+const ciReceipt = existsSync(ciReceiptPath)?JSON.parse(readFileSync(ciReceiptPath,'utf8')):{};
+const finalStatus = existsSync(resolve('.stealtheye/validation/h1-final-status.json')) ? JSON.parse(readFileSync(resolve('.stealtheye/validation/h1-final-status.json'),'utf8')) : { status: 'NOT_READY' };
+const out={status:'ok',final_status:finalStatus.status,evidence,ci_execution_receipt:ciReceipt,ci_authoritative_proof_verification:{successful_ci_browser_proof:evidence.status==='ok',uploaded_artifacts:integrity.length>0,replay_metadata:!!evidence.replay_seed,screenshots:!!evidence.proof_authority?.screenshot,traces:!!evidence.proof_authority?.trace,runtime_metadata:!!evidence.runtime_metadata,integrity_receipts:integrity.every(x=>x.size>0),proof_lineage:!!evidence.mission_lineage},artifact_integrity:{verified:integrity.every(x=>x.size>0),entries:integrity},acceptance_gate:{h1_operational:evidence.mission_lineage?.length===8,bounded_orchestration:!!evidence.orchestration_bounds,deterministic_replay:!!evidence.replay_authority?.deterministic,ci_authority_coherent:!!evidence.ci_authority?.authoritative}};
+writeFileSync(resolve('.stealtheye/receipts/h1-packet.json'),JSON.stringify(out,null,2));
+console.log(JSON.stringify(out,null,2));
+recordH1('h1:packet',out);

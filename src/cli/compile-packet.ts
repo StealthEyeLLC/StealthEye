@@ -1,0 +1,11 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { loadState, emitRunEvidence, writeHandoff, writeReplayReceipt, inspectRepo } from '../lib/substrate.js';
+const st = loadState();
+const readiness = JSON.parse(readFileSync(resolve('.stealtheye/validation/readiness-report.json'),'utf8'));
+const inspect = inspectRepo();
+const packet = { objective: 'phase0 autonomy substrate', phase: st.current_phase, readiness, inspect, generated_at: new Date().toISOString() };
+writeFileSync(resolve('.stealtheye/receipts/pr-packet.json'), JSON.stringify(packet, null, 2));
+emitRunEvidence('compile:packet', { ok: true });
+writeReplayReceipt('compile:packet', { commands: ['npm run compile:packet'] });
+writeHandoff({ action: 'compile:packet', freshness: 'updated' });

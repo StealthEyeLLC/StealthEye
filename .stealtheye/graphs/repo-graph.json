@@ -1,0 +1,364 @@
+{
+  "nodes": [
+    {
+      "id": "artifact-retention.json",
+      "type": "state-file"
+    },
+    {
+      "id": "autonomy-progression.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-capability-registry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-retry-governance.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-routing-governance.json",
+      "type": "state-file"
+    },
+    {
+      "id": "browser-security-boundaries.json",
+      "type": "state-file"
+    },
+    {
+      "id": "capability-registry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "codex-minimization.json",
+      "type": "state-file"
+    },
+    {
+      "id": "coherence-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "continuity-optimizer.json",
+      "type": "state-file"
+    },
+    {
+      "id": "drift-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "execution-adapter-registry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "execution-result-normalizer.json",
+      "type": "state-file"
+    },
+    {
+      "id": "failure-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-anti-invariants.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-artifact-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-execution-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-flake-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-browser-latest.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-operational-scores.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-clock.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-event-bus.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-metadata.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-posture.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h1-runtime-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-adapter-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-approval-broker.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-approval-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-authority-convergence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-budget-kernel.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-ci-authority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-ci-reconciliation.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-codex-routing.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-concurrency-accounting.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-concurrency-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-continuations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-event-integrity.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-event-stream-hardened.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-event-timeline.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-contracts.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-envelopes.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-fabric-events.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-ledger.jsonl",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-fabric-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-github-actions.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-github-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-inspect-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-migration-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-mission-dags.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-operational-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-policy-graph.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-policy-kernel.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-policy-ledger.jsonl",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-reconciliation-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-recovery-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-repair-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-repair-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-replay-equivalence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-routing-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-runtime-accounting.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-runtime-event-bus.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-scheduler-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-worker-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-worker-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "handoff-compact-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "inspect-repo.json",
+      "type": "state-file"
+    },
+    {
+      "id": "invariants.json",
+      "type": "state-file"
+    },
+    {
+      "id": "latest-queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "loop-protection.json",
+      "type": "state-file"
+    },
+    {
+      "id": "memory-freshness.json",
+      "type": "state-file"
+    },
+    {
+      "id": "memory-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "next-action.json",
+      "type": "state-file"
+    },
+    {
+      "id": "operational-efficiency.json",
+      "type": "state-file"
+    },
+    {
+      "id": "phase0-gap-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "process-compatibility.json",
+      "type": "state-file"
+    },
+    {
+      "id": "process-selector.json",
+      "type": "state-file"
+    },
+    {
+      "id": "project-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "queue-transition-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "readiness.json",
+      "type": "state-file"
+    },
+    {
+      "id": "recovery-engine.json",
+      "type": "state-file"
+    },
+    {
+      "id": "recovery-outcomes.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replay-compact-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replay-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "routing-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "success-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "validation-reliability.json",
+      "type": "state-file"
+    },
+    {
+      "id": "working-set.json",
+      "type": "state-file"
+    }
+  ]
+}

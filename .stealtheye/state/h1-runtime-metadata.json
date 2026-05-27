@@ -1,0 +1,12 @@
+{
+  "runtime": {
+    "source": "none",
+    "diagnostics": [
+      "cdn-blocked",
+      "dependency-failure"
+    ]
+  },
+  "mode": "proof",
+  "last_success_at": null,
+  "replay_id": "browser-replay-proof-unknown-none"
+}

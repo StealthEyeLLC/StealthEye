@@ -1,0 +1,9 @@
+{
+  "stale_memory_cleanup": true,
+  "stale_artifact_cleanup": true,
+  "working_set_aging_days": 7,
+  "replay_supersession": true,
+  "state_freshness_enforced": true,
+  "continuity_health": 0.85,
+  "operational_entropy": 0.2
+}

@@ -1,0 +1,31 @@
+{
+  "runtime": {
+    "ok": true,
+    "contradictions": [],
+    "snapshot_hash": "2b5d0631e51d7b4101b187918d65bfdd018041e790e7e445b2d035fb78564f33"
+  },
+  "replay": {
+    "ok": true,
+    "replay_diverged": false
+  },
+  "repair": {
+    "ok": true,
+    "repair_leakage": false
+  },
+  "checkpoint": {
+    "ok": true,
+    "lineage_gaps": false
+  },
+  "authority": {
+    "ok": true,
+    "authority_mismatch": false
+  },
+  "worker": {
+    "ok": true,
+    "worker_drift": false
+  },
+  "budget": {
+    "ok": true,
+    "budget_overrun": false
+  }
+}

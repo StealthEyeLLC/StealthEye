@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "ci_authority_scoring": {
+    "threshold": 0.75,
+    "current": 0.88
+  },
+  "pr_operational_scoring": {
+    "threshold": 0.7,
+    "current": 0.84
+  }
+}

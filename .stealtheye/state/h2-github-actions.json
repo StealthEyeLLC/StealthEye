@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0.0",
+  "workflow_lineage": [],
+  "ci_failure_categories": [
+    "test-failure",
+    "lint-failure",
+    "build-failure",
+    "infra-failure",
+    "flaky-failure",
+    "auth-failure"
+  ],
+  "replay_linked": true
+}

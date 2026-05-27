@@ -1,0 +1,10 @@
+{
+  "migrations": [
+    {
+      "from": "2.1.0",
+      "to": "2.2.0",
+      "deterministic": true,
+      "replay_safe": true
+    }
+  ]
+}

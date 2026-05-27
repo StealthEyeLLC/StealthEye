@@ -1,0 +1,23 @@
+{
+  "retention": {
+    "hot": 8,
+    "warm": 16,
+    "cold": 24,
+    "transient_artifact_cap": 80,
+    "category_caps": {
+      "handoffs": 24,
+      "replay_receipts": 36,
+      "working_set_items": 18
+    }
+  },
+  "anti_sprawl": {
+    "transient_artifacts": 70,
+    "over_cap": false
+  },
+  "compact_index": {
+    "latest_handoff": "handoffs/latest.json",
+    "latest_replay": "receipts/latest-replay.json",
+    "compact_replay_index": "state/replay-compact-index.json",
+    "compact_handoff_index": "state/handoff-compact-index.json"
+  }
+}
