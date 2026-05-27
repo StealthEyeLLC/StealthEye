@@ -1,0 +1,7 @@
+{
+  "phase0_status": "COMPLETE",
+  "acceptance_gate": {
+    "passed": true,
+    "blockers": []
+  }
+}

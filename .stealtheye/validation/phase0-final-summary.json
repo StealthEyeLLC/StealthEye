@@ -1,0 +1,24 @@
+{
+  "phase0_status": "COMPLETE",
+  "readiness": "validated",
+  "continuity_status": "validated",
+  "replay_readiness_score": 0.715,
+  "coherence_score": 1,
+  "authoritative_state_ok": true,
+  "retention_sanity": true,
+  "routing_governance": {
+    "recommended_worker": "normal-chatgpt",
+    "escalation_thresholds": {
+      "to_codex": "route failure or low confidence < 0.6",
+      "to_agent_mode": "codex unavailable and task blocked"
+    },
+    "avoidable_escalation_detection": false,
+    "reason": "normal-chatgpt first policy",
+    "evidence": {
+      "premium_worker_waste": 0,
+      "route_failures": 0
+    }
+  },
+  "human_action_needed": false,
+  "generated_at": "2026-05-27T06:30:15.902Z"
+}

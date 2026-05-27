@@ -1,38 +1,38 @@
 {
-  "dashboard": "deterministic autonomous runtime",
+  "dashboard": "deterministic autonomous runtime bootstrap",
   "current_phase": "phase0-autonomy-substrate",
   "phase0_readiness": "validated",
+  "phase0_completion": "COMPLETE",
   "continuity_proof": {
     "status": "validated",
     "deterministic": true,
     "scenarios": [
       {
-        "scenario": "new-clean-session",
+        "scenario": "fresh-tab continuity",
         "passed": true,
-        "reason": "inspect:repo dashboard exposes required continuation context"
+        "reason": "inspect payload + latest pointers are complete"
       },
       {
-        "scenario": "stale-session",
+        "scenario": "degraded recovery",
         "passed": true,
-        "reason": "freshness and maintenance recommendations present"
+        "reason": "consistency and recovery posture are deterministic"
       },
       {
-        "scenario": "degraded-continuity",
+        "scenario": "replay recovery",
         "passed": true,
-        "reason": "recovery posture and contradictions surfaced"
+        "reason": "replay integrity dependency and supersession checks pass"
       },
       {
-        "scenario": "replay-recovery",
+        "scenario": "blocked recovery",
         "passed": true,
-        "reason": "replay integrity summary provides deterministic replay path"
+        "reason": "human_action_needed is explicit and deterministic"
       },
       {
-        "scenario": "blocked-recovery",
+        "scenario": "routing recovery",
         "passed": true,
-        "reason": "human_action_needed derived from blockers and coherence output"
+        "reason": "normal-chatgpt first policy"
       }
-    ],
-    "inspect_context_sufficient": true
+    ]
   },
   "coherence_health": {
     "ok": true,
@@ -49,7 +49,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "7977e56791a155f45d7979a0eb81c001c2905254ac4c0238b6afb9e1cd1e16fc",
+      "digest": "0902da169aedfd1d944dc0be355affb8ba180d089ebbb9828578ae1ee0b1eff9",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -82,8 +82,10 @@
     "compact_mode": true
   },
   "current_gaps": {
+    "phase0_status": "COMPLETE",
     "remaining_blockers": [],
-    "remaining_risks": []
+    "remaining_risks": [],
+    "contradiction_reasons": []
   },
   "human_action_needed": false,
   "autonomy_score": 0.7,
@@ -168,5 +170,6 @@
       }
     }
   },
-  "blockers": []
+  "blockers": [],
+  "remaining_blockers": []
 }
