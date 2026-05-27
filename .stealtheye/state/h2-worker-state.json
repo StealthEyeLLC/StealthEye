@@ -1,0 +1,11 @@
+{
+  "schema_version": "2.0.0",
+  "workers": [],
+  "scores": {
+    "complexity_score": 0.52,
+    "repair_score": 0.74,
+    "confidence_score": 0.81,
+    "replay_risk_score": 0.33,
+    "orchestration_cost_score": 0.41
+  }
+}

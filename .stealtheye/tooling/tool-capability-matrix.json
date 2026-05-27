@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.0.0",
+  "matrix": [
+    {
+      "tool_id": "tool:github",
+      "capabilities": [
+        "github:read",
+        "github:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:browser",
+      "capabilities": [
+        "browser:read",
+        "browser:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:codex",
+      "capabilities": [
+        "codex:read",
+        "codex:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:ci_actions",
+      "capabilities": [
+        "ci_actions:read",
+        "ci_actions:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:local_runtime",
+      "capabilities": [
+        "local_runtime:read",
+        "local_runtime:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:agent_mode",
+      "capabilities": [
+        "agent_mode:read",
+        "agent_mode:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    },
+    {
+      "tool_id": "tool:future_mcp_bridge",
+      "capabilities": [
+        "future_mcp_bridge:read",
+        "future_mcp_bridge:execute"
+      ],
+      "forbidden_actions": [
+        "unbounded-loop",
+        "silent-side-effect",
+        "unsafe-merge"
+      ]
+    }
+  ]
+}

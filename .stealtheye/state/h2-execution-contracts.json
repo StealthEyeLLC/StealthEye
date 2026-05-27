@@ -1,0 +1,103 @@
+{
+  "request": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-request",
+    "fields": [
+      "mission_lineage",
+      "authority_lineage",
+      "routing_rationale",
+      "runtime_clock_ref",
+      "event_bus_ref"
+    ]
+  },
+  "result": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-result",
+    "fields": [
+      "status",
+      "receipt_ref",
+      "retry_linkage",
+      "repair_linkage",
+      "bounded_metadata"
+    ]
+  },
+  "failure": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-failure",
+    "fields": [
+      "failure_class",
+      "exhaustion_classification",
+      "escalation_linkage"
+    ]
+  },
+  "replay": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-replay",
+    "fields": [
+      "replay_lineage",
+      "deterministic_execution_id",
+      "superseded_by"
+    ]
+  },
+  "escalation": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-escalation",
+    "fields": [
+      "approval_class",
+      "authority_score",
+      "escalation_reason"
+    ]
+  },
+  "authority": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-authority",
+    "fields": [
+      "authority_lineage",
+      "ci_authority_score",
+      "merge_recommendation_only"
+    ]
+  },
+  "continuity": {
+    "schema_version": "2.0.0",
+    "deterministic": true,
+    "type": "execution-continuity",
+    "fields": [
+      "continuity_ref",
+      "rollback_metadata",
+      "runtime_clock_ref"
+    ]
+  },
+  "envelope": {
+    "deterministic_execution_id": "95f0a1b8a10f0730b28f4970",
+    "mission_lineage": [
+      "h2:tool-sovereignty"
+    ],
+    "replay_lineage": [
+      "h2:replay:seed"
+    ],
+    "authority_lineage": [
+      "runtime:sovereign",
+      "ci:authoritative"
+    ],
+    "deterministic_routing_rationale": "policy-first bounded routing",
+    "repair_linkage": "repair:h2",
+    "retry_linkage": "retry:max-2",
+    "escalation_linkage": "escalation:h2",
+    "bounded_execution_metadata": {
+      "retry_ceiling": 2,
+      "escalation_ceiling": 2
+    },
+    "runtime_clock_references": [
+      "h1-runtime-clock"
+    ],
+    "event_bus_references": [
+      "h1-runtime-event-bus"
+    ]
+  }
+}

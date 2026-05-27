@@ -1,0 +1,18 @@
+{
+  "schema_version": "2.0.0",
+  "risk_classes": [
+    {
+      "name": "low",
+      "retry_ceiling": 2
+    },
+    {
+      "name": "medium",
+      "retry_ceiling": 1
+    },
+    {
+      "name": "high",
+      "retry_ceiling": 0,
+      "requires_escalation": true
+    }
+  ]
+}

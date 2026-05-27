@@ -1,0 +1,17 @@
+{
+  "schema_version": "2.0.0",
+  "capabilities": [
+    "issue-rw",
+    "pr-rw",
+    "labels",
+    "comments",
+    "workflow-rerun",
+    "artifact-index",
+    "ci-failure-classification",
+    "branch-status",
+    "mergeability"
+  ],
+  "unsafe_merge_execution": false,
+  "dry_run_governance": true,
+  "merge_recommendation": "classification-only"
+}
