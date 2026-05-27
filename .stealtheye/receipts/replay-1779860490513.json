@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.2.0",
+  "processName": "validate",
+  "process_version": "1.2.0",
+  "timestamp": "2026-05-27T05:41:30.513Z",
+  "ordered_commands": [
+    "npm run validate"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json"
+  ],
+  "validation_outputs": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json"
+  ],
+  "replay_confidence": 0.63,
+  "integrity": {
+    "sha256": "f0532a17a8acd24e11654117f9640dae959493cf653c9de9d23c8ccde4e21ca8",
+    "passed": true
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run validate"
+  ],
+  "validation_results": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  }
+}

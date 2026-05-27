@@ -1,5 +1,9 @@
 {
   "status": "ok",
   "classes": [],
-  "remediation": []
+  "remediation": [],
+  "corruption": {
+    "signals": [],
+    "remediation": []
+  }
 }

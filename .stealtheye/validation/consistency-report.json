@@ -1,5 +1,19 @@
 {
   "ok": true,
   "drift_severity": "low",
-  "current_process": "phase0-build"
+  "current_process": "phase0-build",
+  "compatibility": {
+    "compatible": true,
+    "process_version": "1.2.0",
+    "expected": {
+      "state": "^1.0.0",
+      "memory": "^1.0.0",
+      "replay": "^1.2.0",
+      "packet": "^1.0.0"
+    }
+  },
+  "corruption": {
+    "signals": [],
+    "remediation": []
+  }
 }

@@ -13,6 +13,14 @@
       "type": "state-file"
     },
     {
+      "id": "failure-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "inspect-repo.json",
+      "type": "state-file"
+    },
+    {
       "id": "invariants.json",
       "type": "state-file"
     },
@@ -33,6 +41,10 @@
       "type": "state-file"
     },
     {
+      "id": "process-compatibility.json",
+      "type": "state-file"
+    },
+    {
       "id": "process-selector.json",
       "type": "state-file"
     },
@@ -50,6 +62,10 @@
     },
     {
       "id": "readiness.json",
+      "type": "state-file"
+    },
+    {
+      "id": "validation-reliability.json",
       "type": "state-file"
     },
     {

@@ -17,3 +17,22 @@
 {"now":"2026-05-27T05:08:49.423Z","run_id":"1779858529423","process":"compile:packet","ok":true}
 {"now":"2026-05-27T05:08:50.168Z","run_id":"1779858530168","process":"inspect:repo","ok":true}
 {"now":"2026-05-27T05:08:50.849Z","run_id":"1779858530849","process":"diagnose","bootstrap":{"status":"ok","classes":[],"remediation":[]},"consistency":{"ok":true,"drift_severity":"low","current_process":"phase0-build"},"recovery_classification":"retryable","retry_recommendation":"retry validate/check chain from latest replay receipt"}
+{"now":"2026-05-27T05:41:20.301Z","run_id":"1779860480301","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:41:20.302Z","run_id":"1779860480302","process":"generate","generated":13}
+{"now":"2026-05-27T05:41:29.478Z","run_id":"1779860489478","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:41:29.479Z","run_id":"1779860489479","process":"generate","generated":13}
+{"now":"2026-05-27T05:41:30.510Z","run_id":"1779860490510","process":"queue-transition","task_id":"phase0-main","from":"active","to":"validating","reason":"validate"}
+{"now":"2026-05-27T05:41:30.511Z","run_id":"1779860490511","process":"validate","ok":true,"schema_count":2,"bootstrap":"ok","validation_reliability":0.98}
+{"now":"2026-05-27T05:41:31.522Z","run_id":"1779860491522","process":"graph","ok":true}
+{"now":"2026-05-27T05:41:32.562Z","run_id":"1779860492562","process":"queue-transition","task_id":"phase0-main","from":"validating","to":"validating","reason":"check:readiness"}
+{"now":"2026-05-27T05:41:32.563Z","run_id":"1779860492563","process":"check:readiness","phase":"phase0-autonomy-substrate","bootstrap_enforced":true,"mandatory_memory_hooks":true,"mandatory_process_selection":true,"mandatory_invariants":true,"mandatory_handoffs":true,"status":"validated"}
+{"now":"2026-05-27T05:41:33.591Z","run_id":"1779860493591","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:41:33.591Z","run_id":"1779860493591","process":"generate","generated":13}
+{"now":"2026-05-27T05:41:33.600Z","run_id":"1779860493600","process":"queue-transition","task_id":"phase0-main","from":"active","to":"validating","reason":"validate"}
+{"now":"2026-05-27T05:41:33.600Z","run_id":"1779860493600","process":"validate","ok":true,"schema_count":2,"bootstrap":"ok","validation_reliability":0.98}
+{"now":"2026-05-27T05:41:33.603Z","run_id":"1779860493603","process":"graph","ok":true}
+{"now":"2026-05-27T05:41:33.609Z","run_id":"1779860493609","process":"queue-transition","task_id":"phase0-main","from":"validating","to":"validating","reason":"check:readiness"}
+{"now":"2026-05-27T05:41:33.609Z","run_id":"1779860493609","process":"check:readiness","phase":"phase0-autonomy-substrate","bootstrap_enforced":true,"mandatory_memory_hooks":true,"mandatory_process_selection":true,"mandatory_invariants":true,"mandatory_handoffs":true,"status":"validated"}
+{"now":"2026-05-27T05:41:34.635Z","run_id":"1779860494635","process":"compile:packet","ok":true}
+{"now":"2026-05-27T05:41:35.692Z","run_id":"1779860495692","process":"inspect:repo","ok":true}
+{"now":"2026-05-27T05:41:36.731Z","run_id":"1779860496731","process":"diagnose","bootstrap":{"status":"ok","classes":[],"remediation":[],"corruption":{"signals":[],"remediation":[]}},"consistency":{"ok":true,"drift_severity":"low","current_process":"phase0-build","compatibility":{"compatible":true,"process_version":"1.2.0","expected":{"state":"^1.0.0","memory":"^1.0.0","replay":"^1.2.0","packet":"^1.0.0"}},"corruption":{"signals":[],"remediation":[]}},"reliability_summary":{"flaky_validations":[],"unstable_checks":[],"repeated_failures":0,"repair_success_rate":1,"score":0.98},"recurring_failures":0,"recovery_classification":"retry","retry_recommendation":"retry validate/check chain from latest replay receipt","confidence":{"recovery_recommendation":0.8,"validation_reliability":0.98}}
