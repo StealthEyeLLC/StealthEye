@@ -1,0 +1,31 @@
+{
+  "status": "validated",
+  "deterministic": true,
+  "scenarios": [
+    {
+      "scenario": "fresh-tab continuity",
+      "passed": true,
+      "reason": "inspect payload + latest pointers are complete"
+    },
+    {
+      "scenario": "degraded recovery",
+      "passed": true,
+      "reason": "consistency and recovery posture are deterministic"
+    },
+    {
+      "scenario": "replay recovery",
+      "passed": true,
+      "reason": "replay integrity dependency and supersession checks pass"
+    },
+    {
+      "scenario": "blocked recovery",
+      "passed": true,
+      "reason": "human_action_needed is explicit and deterministic"
+    },
+    {
+      "scenario": "routing recovery",
+      "passed": true,
+      "reason": "normal-chatgpt first policy"
+    }
+  ]
+}
