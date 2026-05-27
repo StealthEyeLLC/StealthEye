@@ -38,7 +38,9 @@ export function ensureH4RuntimeSurfaces(root = process.cwd()) {
 
   writeFileSync(resolve(root, '.stealtheye/state/h4-runtime-state.json'), JSON.stringify({ phase: 'H4', status: 'ACTIVE', runtime_status: recovery.status, updated_at: now, deterministic: true, bounded: true }, null, 2));
   writeFileSync(resolve(root, '.stealtheye/state/runtime-lineage.json'), JSON.stringify({ phase: 'H4', lineage: replayChain.chain, terminal_states: ['terminal','stale-rejected','replay-mismatch-rejected'], stale_state_detected: recovery.status === 'stale-rejected' }, null, 2));
-  writeFileSync(resolve(root, '.stealtheye/state/runtime-checkpoint-index.json'), JSON.stringify({ latest: checkpointId, checkpoints: readdirSync(resolve(root, '.stealtheye/runtime/checkpoints')).filter((f) => f.endsWith('.json')).sort(), orphan_checkpoints: orphanCheckpoints(root) }, null, 2));
+  const checkpointDir = resolve(root, '.stealtheye/runtime/checkpoints');
+  const checkpoints = readdirSync(checkpointDir).filter((f) => f.endsWith('.json')).sort();
+  writeFileSync(resolve(root, '.stealtheye/state/runtime-checkpoint-index.json'), JSON.stringify({ latest: checkpointId, checkpoints, orphan_checkpoints: orphanCheckpoints(root, checkpoints) }, null, 2));
   writeFileSync(resolve(root, '.stealtheye/state/runtime-recovery-state.json'), JSON.stringify(recovery, null, 2));
   const integrity = runtimeIntegrity(root, replayChain, recovery);
   writeFileSync(resolve(root, '.stealtheye/state/runtime-integrity-report.json'), JSON.stringify(integrity, null, 2));
@@ -55,7 +57,8 @@ export function ensureH4RuntimeSurfaces(root = process.cwd()) {
 }
 
 function buildReplayChain(root: string) {
-  const receipts = readdirSync(resolve(root, '.stealtheye/receipts')).filter((f) => f.startsWith('replay-')).sort();
+  const receiptsDir = resolve(root, '.stealtheye/receipts');
+  const receipts = existsSync(receiptsDir) ? readdirSync(receiptsDir).filter((f) => f.startsWith('replay-')).sort() : [];
   const chain = receipts.slice(-12).map((r, i, arr) => ({ id: r, prev_id: i === 0 ? 'root' : arr[i - 1], digest: `${r.length}-${i}` }));
   const latest_pointer = (readJson(resolve(root, '.stealtheye/receipts/latest-replay.json'), { timestamp: '' }) as any).timestamp ?? '';
   const out = { chain, latest_pointer };
@@ -93,10 +96,12 @@ function runtimeIntegrity(root: string, replayChain: any, recovery: any) {
   return { ok: failures.length === 0, failures, ambiguity: false, conflicting_latest_pointers: false, replay_mismatch: recovery.replay_mismatch_rejected, invalid_runtime_state: false, orphan_runtime_artifacts: orphans };
 }
 
-function orphanCheckpoints(root: string) {
+function orphanCheckpoints(root: string, knownCheckpoints?: string[]) {
+  const checkpointDir = resolve(root, '.stealtheye/runtime/checkpoints');
+  const files = existsSync(checkpointDir) ? readdirSync(checkpointDir).filter((f) => f.endsWith('.json')) : [];
   const index = readJson(resolve(root, '.stealtheye/state/runtime-checkpoint-index.json'), { checkpoints: [] }) as any;
-  const files = readdirSync(resolve(root, '.stealtheye/runtime/checkpoints')).filter((f) => f.endsWith('.json'));
-  const known = new Set(Array.isArray(index.checkpoints) ? index.checkpoints : []);
+  const knownList = knownCheckpoints ?? index.checkpoints;
+  const known = new Set(Array.isArray(knownList) ? knownList : []);
   return files.filter((f) => !known.has(f));
 }
 
@@ -106,7 +111,18 @@ function enforceH4Retention(root: string) {
   prune(resolve(root, '.stealtheye/runtime/checkpoints'), 'runtime-checkpoint-', retention.runtime_checkpoints);
 }
 
-function prune(dir: string, prefix: string, max: number) { if (!existsSync(dir)) return; const files = readdirSync(dir).filter((f) => f.startsWith(prefix)).sort(); files.slice(0, Math.max(0, files.length - max)).forEach((f) => rmSync(resolve(dir, f))); }
+function prune(dir: string, prefix: string, max: number) {
+  if (!existsSync(dir)) return;
+  const files = readdirSync(dir).filter((f) => f.startsWith(prefix)).sort();
+  const toPrune = files.slice(0, Math.max(0, files.length - max));
+  for (const f of toPrune) {
+    try {
+      rmSync(resolve(dir, f));
+    } catch {
+      // Retention pruning is non-critical; validation surfaces will report remaining files on the next run.
+    }
+  }
+}
 
 function writeTemplates(root: string) {
   const templates: Record<string, unknown> = {
