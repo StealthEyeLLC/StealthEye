@@ -444,6 +444,91 @@
         "schema_version": "2.0.0",
         "approvals": []
       }
+    },
+    {
+      "checkpoint_id": "cp_cd5a982b92e511c0977a",
+      "superseded": false,
+      "created_at": "2026-05-27T09:25:37.940Z",
+      "dag_state": {
+        "dag_id": "dag_74436662fcb0b33d260a",
+        "mission_id": "h2:validate",
+        "state": "active",
+        "nodes": [
+          {
+            "node_id": "node_510b365871d4d8c0",
+            "name": "a",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          },
+          {
+            "node_id": "node_b924172df553f76f",
+            "name": "b",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          },
+          {
+            "node_id": "node_23cc6c2255b4e0b9",
+            "name": "c",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          }
+        ],
+        "created_at": "2026-05-27T09:25:37.933Z",
+        "lineage": {
+          "continuation": [],
+          "recovery": [],
+          "repair": []
+        }
+      }
+    },
+    {
+      "checkpoint_id": "cp_9ff843fb23775aa53af4",
+      "superseded": false,
+      "created_at": "2026-05-27T09:25:39.408Z",
+      "dag_state": {
+        "dag_id": "dag_db4d62b2bb55950e5b8e",
+        "mission_id": "h2:smoke",
+        "state": "active",
+        "nodes": [
+          {
+            "node_id": "node_6675bf3df440cc37",
+            "name": "start",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          },
+          {
+            "node_id": "node_126b12c82c1f289d",
+            "name": "branchA",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          },
+          {
+            "node_id": "node_e995255bd67973a3",
+            "name": "branchB",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          },
+          {
+            "node_id": "node_738f90a91546d822",
+            "name": "finish",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "local_runtime"
+          }
+        ],
+        "created_at": "2026-05-27T09:25:39.402Z",
+        "lineage": {
+          "continuation": [],
+          "recovery": [],
+          "repair": []
+        }
+      }
     }
   ]
 }

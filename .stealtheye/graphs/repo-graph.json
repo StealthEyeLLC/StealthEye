@@ -105,7 +105,19 @@
       "type": "state-file"
     },
     {
+      "id": "h2-approval-broker.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-approval-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-budget-kernel.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-checkpoints.json",
       "type": "state-file"
     },
     {
@@ -117,6 +129,10 @@
       "type": "state-file"
     },
     {
+      "id": "h2-continuations.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-execution-contracts.json",
       "type": "state-file"
     },
@@ -125,7 +141,15 @@
       "type": "state-file"
     },
     {
+      "id": "h2-execution-fabric-events.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-execution-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-fabric-dashboard.json",
       "type": "state-file"
     },
     {
@@ -138,6 +162,10 @@
     },
     {
       "id": "h2-inspect-dashboard.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-mission-dags.json",
       "type": "state-file"
     },
     {
@@ -158,6 +186,10 @@
     },
     {
       "id": "h2-runtime-event-bus.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-worker-runtime.json",
       "type": "state-file"
     },
     {

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h2:packet",
+  "processName": "h2:inspect",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T09:25:38.672Z",
+  "timestamp": "2026-05-27T09:25:37.195Z",
   "ordered_commands": [
-    "npm run h2:packet"
+    "npm run h2:inspect"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -34,7 +34,14 @@
   ],
   "validation_outputs": {
     "status": "ok",
-    "complete": true
+    "dashboard": {
+      "dag_posture": "ACTIVE",
+      "checkpoint_posture": "ACTIVE",
+      "concurrency_posture": "BOUNDED",
+      "policy_posture": "ENFORCED",
+      "reconciliation_posture": "DETERMINISTIC",
+      "ci_posture": "AUTHORITATIVE"
+    }
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -64,10 +71,17 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h2:packet"
+    "npm run h2:inspect"
   ],
   "validation_results": {
     "status": "ok",
-    "complete": true
+    "dashboard": {
+      "dag_posture": "ACTIVE",
+      "checkpoint_posture": "ACTIVE",
+      "concurrency_posture": "BOUNDED",
+      "policy_posture": "ENFORCED",
+      "reconciliation_posture": "DETERMINISTIC",
+      "ci_posture": "AUTHORITATIVE"
+    }
   }
 }
