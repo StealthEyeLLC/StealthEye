@@ -49,6 +49,22 @@
       "type": "state-file"
     },
     {
+      "id": "continuity-fabric-health.json",
+      "type": "state-file"
+    },
+    {
+      "id": "continuity-fabric-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "continuity-fabric-risks.json",
+      "type": "state-file"
+    },
+    {
+      "id": "continuity-fabric-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "continuity-optimizer.json",
       "type": "state-file"
     },
@@ -74,6 +90,22 @@
     },
     {
       "id": "fresh-tab-bootstrap.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-decision-core.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-decision-evidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-decision-risks.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-decision-tree.json",
       "type": "state-file"
     },
     {
@@ -821,7 +853,15 @@
       "type": "state-file"
     },
     {
+      "id": "mobile-continuity-compaction.json",
+      "type": "state-file"
+    },
+    {
       "id": "mobile-handoff-contract.json",
+      "type": "state-file"
+    },
+    {
+      "id": "mobile-runtime-summary.json",
       "type": "state-file"
     },
     {
@@ -838,6 +878,22 @@
     },
     {
       "id": "pr-continuity-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "pr-review-fabric.json",
+      "type": "state-file"
+    },
+    {
+      "id": "pr-review-recovery.json",
+      "type": "state-file"
+    },
+    {
+      "id": "pr-review-resolution.json",
+      "type": "state-file"
+    },
+    {
+      "id": "pr-review-risk-analysis.json",
       "type": "state-file"
     },
     {
@@ -881,6 +937,22 @@
       "type": "state-file"
     },
     {
+      "id": "replayable-command-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replayable-command-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replayable-command-recovery.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replayable-command-runtime.json",
+      "type": "state-file"
+    },
+    {
       "id": "routing-memory.json",
       "type": "state-file"
     },
@@ -917,6 +989,10 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-continuity-anomalies.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-continuity-dashboard.json",
       "type": "state-file"
     },
@@ -926,6 +1002,10 @@
     },
     {
       "id": "runtime-deadlock-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-escalation-grid.json",
       "type": "state-file"
     },
     {
@@ -942,6 +1022,10 @@
     },
     {
       "id": "runtime-freeze-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-health-grid.json",
       "type": "state-file"
     },
     {
@@ -977,6 +1061,14 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-recovery-grid.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-recovery-matrix.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-recovery-observability.json",
       "type": "state-file"
     },
@@ -1009,7 +1101,19 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-runtime-conflicts.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-runtime-health-matrix.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-runtime-priority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-runtime-resolution.json",
       "type": "state-file"
     },
     {
@@ -1022,6 +1126,10 @@
     },
     {
       "id": "runtime-telemetry.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-validation-grid.json",
       "type": "state-file"
     },
     {

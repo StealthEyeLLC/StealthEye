@@ -1,0 +1,5 @@
+{
+  "bounded_continuation_policy": true,
+  "governance_aware_gating": true,
+  "replay_aware_gating": true
+}

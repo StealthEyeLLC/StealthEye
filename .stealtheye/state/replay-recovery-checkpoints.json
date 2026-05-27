@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-27T18:56:01.225Z",
+  "recovered_checkpoints": [
+    "latest-replay"
+  ],
+  "rerun_sequence": [
+    "load",
+    "verify",
+    "repair",
+    "resume"
+  ]
+}

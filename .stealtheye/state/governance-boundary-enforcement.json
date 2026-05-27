@@ -1,0 +1,11 @@
+{
+  "approval_boundary_enforced": true,
+  "forbidden_actions": [
+    "secrets",
+    "billing",
+    "deployment",
+    "destructive-git",
+    "production-delete"
+  ],
+  "unauthorized_autonomous_continuation": false
+}

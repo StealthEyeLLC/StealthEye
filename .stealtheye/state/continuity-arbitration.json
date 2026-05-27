@@ -1,0 +1,28 @@
+{
+  "phase": "H4",
+  "status": "ACTIVE",
+  "timestamp": "2026-05-27T18:55:57.734Z",
+  "arbitration_precedence": [
+    "latest-handoff",
+    "latest-replay",
+    "project-state",
+    "next-action"
+  ],
+  "conflicts_checked": [
+    "runtimes",
+    "branches",
+    "replay-chains",
+    "next-actions",
+    "pr-states",
+    "merge-states",
+    "mobile-continuity"
+  ],
+  "resolution": {
+    "canonical_runtime": "recovered",
+    "canonical_branch": "h4/autonomy-continuity-fresh-tab-runtime",
+    "canonical_replay_pointer": "2026-05-27T18:55:10.221Z",
+    "canonical_next_action": "run validate",
+    "quarantine_strategy": "none",
+    "escalation_required": false
+  }
+}

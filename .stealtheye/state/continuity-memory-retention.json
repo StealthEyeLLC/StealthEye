@@ -1,0 +1,5 @@
+{
+  "window": 64,
+  "deterministic": true,
+  "bounded_growth": true
+}

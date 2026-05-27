@@ -1,0 +1,6 @@
+{
+  "risks": [
+    "stale-branch-race",
+    "escalation-lineage-drift"
+  ]
+}

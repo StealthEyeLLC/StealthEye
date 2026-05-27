@@ -63,7 +63,16 @@
     "h4:runtime-chaos": "tsx src/cli/h4-runtime-chaos.ts",
     "h4:mobile-compaction": "tsx src/cli/h4-mobile-compaction.ts",
     "h4:health-grid": "tsx src/cli/h4-health-grid.ts",
-    "h4:cold-start-simulator": "tsx src/cli/h4-cold-start-simulator.ts"
+    "h4:cold-start-simulator": "tsx src/cli/h4-cold-start-simulator.ts",
+    "h4:continuity-arbitration": "tsx src/cli/h4-continuity-arbitration.ts",
+    "h4:governance-executor": "tsx src/cli/h4-governance-executor.ts",
+    "h4:replay-recovery": "tsx src/cli/h4-replay-recovery.ts",
+    "h4:autonomy-safety": "tsx src/cli/h4-autonomy-safety.ts",
+    "h4:chaos-lab": "tsx src/cli/h4-chaos-lab.ts",
+    "h4:runtime-quarantine": "tsx src/cli/h4-runtime-quarantine.ts",
+    "h4:memory-compaction": "tsx src/cli/h4-memory-compaction.ts",
+    "h4:operational-dashboard": "tsx src/cli/h4-operational-dashboard.ts",
+    "h4:zero-context-simulator": "tsx src/cli/h4-zero-context-simulator.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

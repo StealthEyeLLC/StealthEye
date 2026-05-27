@@ -1,0 +1,8 @@
+{
+  "unsafe_autonomy_risks": [
+    "none-critical"
+  ],
+  "replay_risks": [
+    "pointer-race"
+  ]
+}
