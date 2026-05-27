@@ -1,0 +1,9 @@
+{
+  "status": "healthy",
+  "metrics": {
+    "queue_depth": 2,
+    "determinism": 1,
+    "replay_integrity": 1
+  },
+  "updated_at": "2026-05-27T15:09:42.861Z"
+}

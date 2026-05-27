@@ -1,0 +1,11 @@
+{
+  "retention_cap": 64,
+  "samples": [
+    {
+      "t": "2026-05-27T15:09:42.861Z",
+      "queue_depth": 2,
+      "digest": "f372ba75eea25964ca1c5f2801273a5f2c0fe6ae1ff17a505763b4587bdaf2a8"
+    }
+  ],
+  "updated_at": "2026-05-27T15:09:42.861Z"
+}

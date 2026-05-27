@@ -1,0 +1,9 @@
+{
+  "dashboard": "json-only",
+  "reports": [
+    "health",
+    "telemetry",
+    "containment"
+  ],
+  "updated_at": "2026-05-27T15:09:42.861Z"
+}

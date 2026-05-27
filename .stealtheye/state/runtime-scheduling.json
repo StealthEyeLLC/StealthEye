@@ -1,0 +1,21 @@
+{
+  "algorithm": "canonical-fifo",
+  "max_queue": 16,
+  "window_contract": {
+    "max_runtime_ms": 120000,
+    "max_retries": 2
+  },
+  "ownership_transfer": "explicit-only",
+  "items": [
+    {
+      "order": 1,
+      "id": "cont-1779894573382",
+      "status": "active"
+    },
+    {
+      "order": 2,
+      "id": "cont-1779894582861",
+      "status": "queued"
+    }
+  ]
+}
