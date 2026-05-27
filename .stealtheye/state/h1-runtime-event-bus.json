@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "bounded": true,
+  "max_events": 96,
+  "events": [
+    {
+      "type": "mission-created",
+      "order": 1,
+      "stamp": "t1:e1",
+      "mission_id": "h1-browser-1779868715924"
+    },
+    {
+      "type": "replay-started",
+      "order": 2,
+      "stamp": "t2:e1",
+      "mission_id": "h1-browser-1779868715924"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 3,
+      "stamp": "t3:e1",
+      "mission_id": "h1-browser-1779868715924"
+    },
+    {
+      "type": "mission-created",
+      "order": 4,
+      "stamp": "t4:e2",
+      "mission_id": "h1-browser-1779868735105"
+    },
+    {
+      "type": "replay-started",
+      "order": 5,
+      "stamp": "t5:e2",
+      "mission_id": "h1-browser-1779868735105"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 6,
+      "stamp": "t6:e2",
+      "mission_id": "h1-browser-1779868735105"
+    },
+    {
+      "type": "mission-created",
+      "order": 7,
+      "stamp": "t7:e3",
+      "mission_id": "h1-browser-1779868769000"
+    },
+    {
+      "type": "replay-started",
+      "order": 8,
+      "stamp": "t8:e3",
+      "mission_id": "h1-browser-1779868769000"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 9,
+      "stamp": "t9:e3",
+      "mission_id": "h1-browser-1779868769000"
+    },
+    {
+      "type": "mission-created",
+      "order": 10,
+      "stamp": "t10:e4",
+      "mission_id": "h1-browser-1779868787842"
+    },
+    {
+      "type": "replay-started",
+      "order": 11,
+      "stamp": "t11:e4",
+      "mission_id": "h1-browser-1779868787842"
+    },
+    {
+      "type": "CI-authority-promoted",
+      "order": 12,
+      "stamp": "t12:e4",
+      "mission_id": "h1-browser-1779868787842"
+    }
+  ]
+}

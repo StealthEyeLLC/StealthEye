@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "proof_id": "h1-browser-1779868119166",
+  "proof_id": "h1-browser-1779868787842",
   "ci_replay_authority": {
     "deterministic": true,
     "replay_seed": "proof-unknown-none"
@@ -19,8 +19,8 @@
       "playwright-install",
       "repair-packet-escalation"
     ],
-    "duration_ms": 1,
-    "timestamp": "2026-05-27T07:48:39.171Z",
+    "duration_ms": 3,
+    "timestamp": "2026-05-27T07:59:47.848Z",
     "browser_version": "unknown"
   },
   "status": "degraded"
