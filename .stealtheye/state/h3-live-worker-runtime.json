@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "workers": [
+    "codex_high",
+    "codex_medium",
+    "browser_runtime",
+    "ci_runtime",
+    "repair_runtime",
+    "replay_runtime",
+    "review_runtime"
+  ],
+  "scheduler": "active",
+  "bounded_parallel_execution": 3,
+  "task_queues": [
+    {
+      "worker": "repair_runtime",
+      "queued": 1
+    }
+  ],
+  "continuation_recovery": true,
+  "escalation_chains": [
+    {
+      "from": "repair_runtime",
+      "to": "codex_high",
+      "trigger": "low-confidence"
+    }
+  ]
+}

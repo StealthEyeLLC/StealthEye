@@ -1,8 +1,8 @@
 {
-  "replay": 54,
+  "replay": 61,
   "handoff": 0,
   "proofs": 0,
   "events": 0,
-  "checkpoints": 10,
+  "checkpoints": 11,
   "bounded": true
 }

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "rollback_plans": [
+    {
+      "candidate_id": "RC-1",
+      "steps": [
+        "git restore --source=HEAD~1 -- src/lib/h3.ts",
+        "npm run h3:validate"
+      ],
+      "deterministic": true
+    }
+  ]
+}

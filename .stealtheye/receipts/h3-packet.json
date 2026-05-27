@@ -1,16 +1,15 @@
 {
-  "generated_at": "2026-05-27T11:10:19.974Z",
+  "generated_at": "2026-05-27T11:29:00.052Z",
   "h3_status": "ACTIVE",
   "artifacts": [
-    "github",
-    "repair",
-    "browser",
-    "continuation",
-    "worker",
-    "memory",
-    "dashboard",
-    "smoke",
-    "readiness"
+    "live-github",
+    "live-ci",
+    "repair-execution",
+    "live-browser",
+    "worker-runtime",
+    "mission-runtime",
+    "runtime-memory",
+    "operational-smoke"
   ],
   "no_product_features": true
 }

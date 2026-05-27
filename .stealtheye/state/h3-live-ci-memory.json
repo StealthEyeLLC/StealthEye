@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "repeated_failures": [],
+  "instability_score": 0.05,
+  "replay_lineage": [
+    {
+      "workflow": "ci",
+      "run_id": 1,
+      "attempt": 1
+    }
+  ]
+}

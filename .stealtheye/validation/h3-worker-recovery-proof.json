@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-05-27T11:29:02.262Z",
+  "status": "pass",
+  "repair_smoke": [
+    "flaky_ci_repair",
+    "failed_patch_rollback",
+    "regression_rejection",
+    "repair_supersession"
+  ]
+}

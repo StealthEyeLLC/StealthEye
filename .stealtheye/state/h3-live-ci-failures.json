@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "failures": [
+    {
+      "workflow": "ci",
+      "run_id": 1,
+      "duration_sec": 311,
+      "conclusion": "failure"
+    }
+  ]
+}

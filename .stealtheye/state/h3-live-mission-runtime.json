@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "lifecycle": [
+    "CREATED",
+    "READY",
+    "ACTIVE",
+    "BLOCKED",
+    "RECOVERING",
+    "QUARANTINED",
+    "FAILED",
+    "COMPLETE"
+  ],
+  "missions": [
+    {
+      "id": "M-1",
+      "type": "ci_stabilization",
+      "status": "ACTIVE",
+      "lease_sec": 900
+    }
+  ]
+}

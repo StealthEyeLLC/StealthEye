@@ -1,64 +1,69 @@
 {
   "status": "ACTIVE",
-  "repo_operational_posture": {
-    "deterministic_repo_health_score": 0.812,
-    "deterministic_ci_health_score": 0.744,
-    "deterministic_pr_convergence_score": 0.79,
-    "deterministic_repo_instability_score": 0.266,
-    "release_readiness_score": 0.76,
-    "branch_health_score": 0.84,
-    "generated_at": "2026-05-27T11:10:28.633Z"
-  },
-  "active_repairs": [
+  "active_missions": [
     {
-      "mission": "repair-ci-flake",
-      "score": 0.81,
-      "converged": true
+      "id": "M-1",
+      "type": "ci_stabilization",
+      "status": "ACTIVE",
+      "lease_sec": 900
     }
   ],
-  "worker_utilization": [
+  "blocked_missions": [],
+  "ci_instability": 0.05,
+  "browser_anomalies": [
     {
-      "worker": "repair_runtime",
-      "utilization": 0.64
-    }
-  ],
-  "browser_mission_state": [
-    {
-      "mission": "inspect_ci_dashboard",
-      "score": 0.77
-    }
-  ],
-  "ci_instability": [
-    {
-      "workflow": "h3-browser-smoke",
-      "flake_probability": 0.31
+      "level": "error",
+      "message": "selector drift simulated"
     }
   ],
   "replay_divergence": [
     {
-      "mission": "repair-ci-flake",
-      "diverged": false
-    }
-  ],
-  "recovery_posture": [
-    {
-      "mission": "inspect_actions_page",
-      "score": 0.82
+      "mission": "inspect_github_pr",
+      "steps": [
+        "goto",
+        "wait",
+        "assert-selector",
+        "snapshot"
+      ],
+      "replay_safe": true
     }
   ],
   "repair_convergence": [
     {
-      "mission": "repair-ci-flake",
-      "score": 0.81,
-      "converged": true
+      "id": "RC-1",
+      "scope": [
+        "src/lib/h3.ts"
+      ],
+      "score": 0.73,
+      "validation": [
+        "npm run h3:validate"
+      ],
+      "quarantined": false
     }
   ],
-  "operational_confidence": 0.778,
-  "top_blockers": [
-    "no critical blockers"
+  "worker_exhaustion": [
+    {
+      "worker": "repair_runtime",
+      "queued": 1
+    }
   ],
-  "next_best_action": "Run h3 smoke suites and apply targeted repair for unstable flows",
+  "worker_reliability": [
+    {
+      "worker": "browser_runtime",
+      "reliability": 0.74
+    }
+  ],
+  "top_unstable_subsystems": [
+    "ci_runtime",
+    "browser_runtime"
+  ],
+  "top_failing_workflows": [],
+  "highest_value_repair_targets": [
+    "src/lib/h3.ts"
+  ],
+  "operational_confidence": 0.95,
+  "autonomy_readiness": 0.78,
+  "next_best_action": "Run h3 repair smoke and route top candidate for targeted validation",
   "human_attention_priority": "medium",
-  "compact_mobile_summary": "H3 ACTIVE | conf=0.778 | blockers=0 | repairs=1",
-  "human_action_needed": "No"
+  "compact_mobile_summary": "H3 fallback-deterministic | missions=1 | instability=0.05"
 }

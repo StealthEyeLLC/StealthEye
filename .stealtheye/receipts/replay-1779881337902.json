@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "h3:inspect",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-27T11:28:57.902Z",
+  "ordered_commands": [
+    "npm run h3:inspect"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "status": "ACTIVE",
+    "active_missions": [
+      {
+        "id": "M-1",
+        "type": "ci_stabilization",
+        "status": "ACTIVE",
+        "lease_sec": 900
+      }
+    ],
+    "blocked_missions": [],
+    "ci_instability": 0.05,
+    "browser_anomalies": [
+      {
+        "level": "error",
+        "message": "selector drift simulated"
+      }
+    ],
+    "replay_divergence": [
+      {
+        "mission": "inspect_github_pr",
+        "steps": [
+          "goto",
+          "wait",
+          "assert-selector",
+          "snapshot"
+        ],
+        "replay_safe": true
+      }
+    ],
+    "repair_convergence": [
+      {
+        "id": "RC-1",
+        "scope": [
+          "src/lib/h3.ts"
+        ],
+        "score": 0.73,
+        "validation": [
+          "npm run h3:validate"
+        ],
+        "quarantined": false
+      }
+    ],
+    "worker_exhaustion": [
+      {
+        "worker": "repair_runtime",
+        "queued": 1
+      }
+    ],
+    "worker_reliability": [
+      {
+        "worker": "browser_runtime",
+        "reliability": 0.74
+      }
+    ],
+    "top_unstable_subsystems": [
+      "ci_runtime",
+      "browser_runtime"
+    ],
+    "top_failing_workflows": [],
+    "highest_value_repair_targets": [
+      "src/lib/h3.ts"
+    ],
+    "operational_confidence": 0.95,
+    "autonomy_readiness": 0.78,
+    "next_best_action": "Run h3 repair smoke and route top candidate for targeted validation",
+    "human_attention_priority": "medium",
+    "compact_mobile_summary": "H3 fallback-deterministic | missions=1 | instability=0.05"
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "01262a27bc3f5dd33fcd448fbc974171e32f0aa095579f801434fc5911ebaabb",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run h3:inspect"
+  ],
+  "validation_results": {
+    "status": "ACTIVE",
+    "active_missions": [
+      {
+        "id": "M-1",
+        "type": "ci_stabilization",
+        "status": "ACTIVE",
+        "lease_sec": 900
+      }
+    ],
+    "blocked_missions": [],
+    "ci_instability": 0.05,
+    "browser_anomalies": [
+      {
+        "level": "error",
+        "message": "selector drift simulated"
+      }
+    ],
+    "replay_divergence": [
+      {
+        "mission": "inspect_github_pr",
+        "steps": [
+          "goto",
+          "wait",
+          "assert-selector",
+          "snapshot"
+        ],
+        "replay_safe": true
+      }
+    ],
+    "repair_convergence": [
+      {
+        "id": "RC-1",
+        "scope": [
+          "src/lib/h3.ts"
+        ],
+        "score": 0.73,
+        "validation": [
+          "npm run h3:validate"
+        ],
+        "quarantined": false
+      }
+    ],
+    "worker_exhaustion": [
+      {
+        "worker": "repair_runtime",
+        "queued": 1
+      }
+    ],
+    "worker_reliability": [
+      {
+        "worker": "browser_runtime",
+        "reliability": 0.74
+      }
+    ],
+    "top_unstable_subsystems": [
+      "ci_runtime",
+      "browser_runtime"
+    ],
+    "top_failing_workflows": [],
+    "highest_value_repair_targets": [
+      "src/lib/h3.ts"
+    ],
+    "operational_confidence": 0.95,
+    "autonomy_readiness": 0.78,
+    "next_best_action": "Run h3 repair smoke and route top candidate for targeted validation",
+    "human_attention_priority": "medium",
+    "compact_mobile_summary": "H3 fallback-deterministic | missions=1 | instability=0.05"
+  }
+}

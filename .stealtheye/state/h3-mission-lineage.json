@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-27T11:29:03.408Z",
+  "lineage": [
+    {
+      "mission": "M-1",
+      "parents": [
+        "M-0"
+      ],
+      "replay": "R-1"
+    }
+  ]
+}
