@@ -1,5 +1,18 @@
 {
   "strategy": "retry",
-  "confidence": 0.78,
-  "repair_attempt_history": []
+  "confidence": 0.77,
+  "evidence_weighting": {
+    "historical_success_rate": 0.5,
+    "recurrence_frequency": 0,
+    "replay_similarity": 0.74,
+    "prior_recovery_outcomes": []
+  },
+  "repair_sequence": [
+    "diagnose",
+    "repair",
+    "validate",
+    "replay-check",
+    "consistency-check",
+    "readiness-check"
+  ]
 }

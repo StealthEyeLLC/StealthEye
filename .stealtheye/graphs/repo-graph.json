@@ -5,7 +5,15 @@
       "type": "state-file"
     },
     {
+      "id": "capability-registry.json",
+      "type": "state-file"
+    },
+    {
       "id": "codex-minimization.json",
+      "type": "state-file"
+    },
+    {
+      "id": "continuity-optimizer.json",
       "type": "state-file"
     },
     {
@@ -33,11 +41,19 @@
       "type": "state-file"
     },
     {
+      "id": "memory-freshness.json",
+      "type": "state-file"
+    },
+    {
       "id": "memory-index.json",
       "type": "state-file"
     },
     {
       "id": "next-action.json",
+      "type": "state-file"
+    },
+    {
+      "id": "operational-efficiency.json",
       "type": "state-file"
     },
     {
@@ -62,6 +78,26 @@
     },
     {
       "id": "readiness.json",
+      "type": "state-file"
+    },
+    {
+      "id": "recovery-engine.json",
+      "type": "state-file"
+    },
+    {
+      "id": "recovery-outcomes.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replay-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "routing-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "success-pattern-memory.json",
       "type": "state-file"
     },
     {
