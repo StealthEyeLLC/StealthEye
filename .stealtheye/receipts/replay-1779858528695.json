@@ -1,0 +1,26 @@
+{
+  "processName": "generate",
+  "timestamp": "2026-05-27T05:08:48.695Z",
+  "commands": [
+    "npm run generate"
+  ],
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json"
+    ]
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "validation_results": {},
+  "drift_status": "stable",
+  "blockers": [],
+  "next_action": "run generate then validate"
+}

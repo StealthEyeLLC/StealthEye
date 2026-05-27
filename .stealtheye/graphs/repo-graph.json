@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "artifact-retention.json",
+      "type": "state-file"
+    },
+    {
+      "id": "codex-minimization.json",
+      "type": "state-file"
+    },
+    {
+      "id": "drift-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "invariants.json",
+      "type": "state-file"
+    },
+    {
+      "id": "latest-queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "loop-protection.json",
+      "type": "state-file"
+    },
+    {
+      "id": "memory-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "next-action.json",
+      "type": "state-file"
+    },
+    {
+      "id": "process-selector.json",
+      "type": "state-file"
+    },
+    {
+      "id": "project-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "queue-transition-history.json",
+      "type": "state-file"
+    },
+    {
+      "id": "queue.json",
+      "type": "state-file"
+    },
+    {
+      "id": "readiness.json",
+      "type": "state-file"
+    },
+    {
+      "id": "working-set.json",
+      "type": "state-file"
+    }
+  ]
+}

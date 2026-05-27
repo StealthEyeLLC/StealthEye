@@ -1,0 +1,28 @@
+{
+  "objective": "phase0 autonomy substrate",
+  "phase": "phase0-autonomy-substrate",
+  "readiness": {
+    "phase": "phase0-autonomy-substrate",
+    "bootstrap_enforced": true,
+    "mandatory_memory_hooks": true,
+    "mandatory_process_selection": true,
+    "mandatory_invariants": true,
+    "mandatory_handoffs": true,
+    "status": "validated"
+  },
+  "inspect": {
+    "current_phase": "phase0-autonomy-substrate",
+    "current_process": "phase0-build",
+    "next_action": "run generate then validate",
+    "blockers": [],
+    "active_task": "phase0-main",
+    "drift_severity": "low",
+    "readiness": "validated",
+    "recommended_worker": "codex",
+    "codex_needed": false,
+    "human_action_needed": false,
+    "replay_source": "receipts/latest-replay.json",
+    "last_successful_validation": true
+  },
+  "generated_at": "2026-05-27T05:08:49.423Z"
+}

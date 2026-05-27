@@ -1,0 +1,8 @@
+{
+  "current": "phase0-build",
+  "allowed": [
+    "phase0-build",
+    "recovery",
+    "validation"
+  ]
+}

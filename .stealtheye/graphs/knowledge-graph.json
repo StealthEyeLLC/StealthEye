@@ -1,0 +1,8 @@
+{
+  "memory_hooks": [
+    "memory-index.json"
+  ],
+  "invariants": [
+    "invariants.json"
+  ]
+}

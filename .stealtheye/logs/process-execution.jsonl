@@ -1,0 +1,19 @@
+{"now":"2026-05-27T05:08:39.984Z","run_id":"1779858519984","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:08:39.984Z","run_id":"1779858519984","process":"generate","generated":10}
+{"now":"2026-05-27T05:08:45.751Z","run_id":"1779858525751","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:08:45.751Z","run_id":"1779858525751","process":"generate","generated":10}
+{"now":"2026-05-27T05:08:46.522Z","run_id":"1779858526522","process":"queue-transition","task_id":"phase0-main","from":"active","to":"validating","reason":"validate"}
+{"now":"2026-05-27T05:08:46.523Z","run_id":"1779858526523","process":"validate","ok":true,"schema_count":2,"bootstrap":"ok"}
+{"now":"2026-05-27T05:08:47.277Z","run_id":"1779858527277","process":"graph","ok":true}
+{"now":"2026-05-27T05:08:47.986Z","run_id":"1779858527986","process":"queue-transition","task_id":"phase0-main","from":"validating","to":"validating","reason":"check:readiness"}
+{"now":"2026-05-27T05:08:47.987Z","run_id":"1779858527987","process":"check:readiness","phase":"phase0-autonomy-substrate","bootstrap_enforced":true,"mandatory_memory_hooks":true,"mandatory_process_selection":true,"mandatory_invariants":true,"mandatory_handoffs":true,"status":"validated"}
+{"now":"2026-05-27T05:08:48.694Z","run_id":"1779858528694","process":"queue-transition","task_id":"phase0-main","from":"queued","to":"active","reason":"generate"}
+{"now":"2026-05-27T05:08:48.694Z","run_id":"1779858528694","process":"generate","generated":10}
+{"now":"2026-05-27T05:08:48.699Z","run_id":"1779858528699","process":"queue-transition","task_id":"phase0-main","from":"active","to":"validating","reason":"validate"}
+{"now":"2026-05-27T05:08:48.700Z","run_id":"1779858528700","process":"validate","ok":true,"schema_count":2,"bootstrap":"ok"}
+{"now":"2026-05-27T05:08:48.702Z","run_id":"1779858528702","process":"graph","ok":true}
+{"now":"2026-05-27T05:08:48.704Z","run_id":"1779858528704","process":"queue-transition","task_id":"phase0-main","from":"validating","to":"validating","reason":"check:readiness"}
+{"now":"2026-05-27T05:08:48.704Z","run_id":"1779858528704","process":"check:readiness","phase":"phase0-autonomy-substrate","bootstrap_enforced":true,"mandatory_memory_hooks":true,"mandatory_process_selection":true,"mandatory_invariants":true,"mandatory_handoffs":true,"status":"validated"}
+{"now":"2026-05-27T05:08:49.423Z","run_id":"1779858529423","process":"compile:packet","ok":true}
+{"now":"2026-05-27T05:08:50.168Z","run_id":"1779858530168","process":"inspect:repo","ok":true}
+{"now":"2026-05-27T05:08:50.849Z","run_id":"1779858530849","process":"diagnose","bootstrap":{"status":"ok","classes":[],"remediation":[]},"consistency":{"ok":true,"drift_severity":"low","current_process":"phase0-build"},"recovery_classification":"retryable","retry_recommendation":"retry validate/check chain from latest replay receipt"}

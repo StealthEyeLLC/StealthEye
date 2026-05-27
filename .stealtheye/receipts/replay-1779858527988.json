@@ -1,0 +1,34 @@
+{
+  "processName": "check:readiness",
+  "timestamp": "2026-05-27T05:08:47.988Z",
+  "commands": [
+    "npm run check:readiness"
+  ],
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json"
+    ]
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "validation_results": {
+    "phase": "phase0-autonomy-substrate",
+    "bootstrap_enforced": true,
+    "mandatory_memory_hooks": true,
+    "mandatory_process_selection": true,
+    "mandatory_invariants": true,
+    "mandatory_handoffs": true,
+    "status": "validated"
+  },
+  "drift_status": "stable",
+  "blockers": [],
+  "next_action": "run generate then validate"
+}
