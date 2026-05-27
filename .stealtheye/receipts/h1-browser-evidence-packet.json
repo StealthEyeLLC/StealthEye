@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "evidence": {
+    "screenshots": [],
+    "console_errors": [],
+    "failed_requests": [],
+    "trace_refs": [],
+    "dom_summary": "compact"
+  },
+  "blockers": [],
+  "failures": [],
+  "next_action": "npm run h1:validate",
+  "escalation_reason": "none"
+}

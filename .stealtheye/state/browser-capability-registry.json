@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "capabilities": [
+    "smoke",
+    "proof",
+    "screenshot",
+    "trace",
+    "console-log",
+    "network-log",
+    "dom-summary",
+    "repair-packet-generation"
+  ]
+}

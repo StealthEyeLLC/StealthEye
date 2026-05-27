@@ -1,0 +1,11 @@
+{
+  "max_retries": 2,
+  "flake_detection": true,
+  "classifiers": [
+    "likely-flake",
+    "deterministic-failure",
+    "environment-failure",
+    "transient-network"
+  ],
+  "infinite_loop_prevention": true
+}

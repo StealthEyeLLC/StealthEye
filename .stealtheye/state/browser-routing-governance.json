@@ -1,0 +1,12 @@
+{
+  "policy": "low-cost-first",
+  "browser_only_when_necessary": true,
+  "codex_escalation_justified_only": true,
+  "agent_mode_for_multi_app_only": true,
+  "routing_confidence": 0.86,
+  "avoidable_escalation_detection": true,
+  "escalation_explanations": [
+    "browser needed only when evidence requires DOM/runtime",
+    "codex only for execution repair"
+  ]
+}

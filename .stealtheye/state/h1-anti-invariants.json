@@ -1,0 +1,10 @@
+{
+  "forbidden": [
+    "uncontrolled-browser-execution",
+    "unmanaged-artifacts",
+    "hidden-side-effects",
+    "unrestricted-external-browsing",
+    "product-feature-work",
+    "credential-payment-handling"
+  ]
+}

@@ -11,12 +11,19 @@
     "graph": "tsx src/cli/graph.ts",
     "compile:packet": "tsx src/cli/compile-packet.ts",
     "inspect:repo": "tsx src/cli/inspect-repo.ts",
-    "diagnose": "tsx src/cli/diagnose.ts"
+    "diagnose": "tsx src/cli/diagnose.ts",
+    "h1:inspect": "tsx src/cli/h1-inspect.ts",
+    "h1:validate": "tsx src/cli/h1-validate.ts",
+    "h1:route": "tsx src/cli/h1-route.ts",
+    "h1:browser:smoke": "tsx src/cli/h1-browser-smoke.ts",
+    "h1:browser:proof": "tsx src/cli/h1-browser-proof.ts",
+    "h1:packet": "tsx src/cli/h1-packet.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",
     "ajv": "^8.17.1",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "playwright": "^1.54.0"
   }
 }

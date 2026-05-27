@@ -1,0 +1,11 @@
+{
+  "processes": [
+    "h1.execution-adapter-bootstrap",
+    "h1.browser-smoke",
+    "h1.browser-proof",
+    "h1.browser-repair",
+    "h1.github-actions-proof",
+    "h1.agent-mode-route",
+    "h1.codex-execution-route"
+  ]
+}
