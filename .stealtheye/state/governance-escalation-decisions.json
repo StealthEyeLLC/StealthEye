@@ -1,0 +1,5 @@
+{
+  "deterministic_classification": "autonomous-safe-continuation",
+  "human_action_gate": false,
+  "merge_authorization": false
+}

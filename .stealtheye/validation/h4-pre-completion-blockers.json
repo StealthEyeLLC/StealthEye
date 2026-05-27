@@ -1,0 +1,7 @@
+{
+  "blockers": [
+    "chaos-lab-real-world-replay-corruption-rehearsal",
+    "independent-governance-audit"
+  ],
+  "estimated_remaining_h4_passes": 2
+}

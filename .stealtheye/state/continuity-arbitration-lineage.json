@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-05-27T18:55:57.734Z",
+  "replay_safe": true,
+  "lineage": [
+    {
+      "id": "replay-1779908085486.json",
+      "prev_id": "root",
+      "digest": "25-0"
+    },
+    {
+      "id": "replay-1779908087440.json",
+      "prev_id": "replay-1779908085486.json",
+      "digest": "25-1"
+    },
+    {
+      "id": "replay-1779908089045.json",
+      "prev_id": "replay-1779908087440.json",
+      "digest": "25-2"
+    },
+    {
+      "id": "replay-1779908092301.json",
+      "prev_id": "replay-1779908089045.json",
+      "digest": "25-3"
+    },
+    {
+      "id": "replay-1779908093805.json",
+      "prev_id": "replay-1779908092301.json",
+      "digest": "25-4"
+    },
+    {
+      "id": "replay-1779908095295.json",
+      "prev_id": "replay-1779908093805.json",
+      "digest": "25-5"
+    },
+    {
+      "id": "replay-1779908097078.json",
+      "prev_id": "replay-1779908095295.json",
+      "digest": "25-6"
+    },
+    {
+      "id": "replay-1779908098880.json",
+      "prev_id": "replay-1779908097078.json",
+      "digest": "25-7"
+    },
+    {
+      "id": "replay-1779908100477.json",
+      "prev_id": "replay-1779908098880.json",
+      "digest": "25-8"
+    },
+    {
+      "id": "replay-1779908102152.json",
+      "prev_id": "replay-1779908100477.json",
+      "digest": "25-9"
+    },
+    {
+      "id": "replay-1779908105365.json",
+      "prev_id": "replay-1779908102152.json",
+      "digest": "25-10"
+    },
+    {
+      "id": "replay-1779908107021.json",
+      "prev_id": "replay-1779908105365.json",
+      "digest": "25-11"
+    }
+  ],
+  "selection": "recovered"
+}

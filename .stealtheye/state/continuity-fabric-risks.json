@@ -10,7 +10,7 @@
     {
       "id": "replay-instability",
       "severity": "medium",
-      "status": "open",
+      "status": "mitigated",
       "detail": "replay chain drift can invalidate autonomous resume",
       "repair": "run h4:replay-check and resolve pointer mismatch"
     },
@@ -28,5 +28,5 @@
       "valid": true
     }
   ],
-  "updated_at": "2026-05-27T16:09:02.263Z"
+  "updated_at": "2026-05-27T18:55:44.006Z"
 }

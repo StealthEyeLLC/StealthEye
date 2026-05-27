@@ -1,0 +1,124 @@
+{
+  "repairs": [
+    {
+      "fixture": "replay-corruption",
+      "repair": "repair-replay-corruption"
+    },
+    {
+      "fixture": "replay-poisoning",
+      "repair": "repair-replay-poisoning"
+    },
+    {
+      "fixture": "replay-ancestry-divergence",
+      "repair": "repair-replay-ancestry-divergence"
+    },
+    {
+      "fixture": "replay-pointer-corruption",
+      "repair": "repair-replay-pointer-corruption"
+    },
+    {
+      "fixture": "stale-replay",
+      "repair": "repair-stale-replay"
+    },
+    {
+      "fixture": "invalid-runtime-lineage",
+      "repair": "repair-invalid-runtime-lineage"
+    },
+    {
+      "fixture": "invalid-branch-lineage",
+      "repair": "repair-invalid-branch-lineage"
+    },
+    {
+      "fixture": "invalid-merge-lineage",
+      "repair": "repair-invalid-merge-lineage"
+    },
+    {
+      "fixture": "stale-branch-after-merge",
+      "repair": "repair-stale-branch-after-merge"
+    },
+    {
+      "fixture": "conflicting-next-actions",
+      "repair": "repair-conflicting-next-actions"
+    },
+    {
+      "fixture": "duplicate-runtimes",
+      "repair": "repair-duplicate-runtimes"
+    },
+    {
+      "fixture": "duplicate-runtime-authority",
+      "repair": "repair-duplicate-runtime-authority"
+    },
+    {
+      "fixture": "unresolved-escalation",
+      "repair": "repair-unresolved-escalation"
+    },
+    {
+      "fixture": "invalid-escalation-path",
+      "repair": "repair-invalid-escalation-path"
+    },
+    {
+      "fixture": "replay-invalid-recovery",
+      "repair": "repair-replay-invalid-recovery"
+    },
+    {
+      "fixture": "interrupted-merge-recovery",
+      "repair": "repair-interrupted-merge-recovery"
+    },
+    {
+      "fixture": "interrupted-validation-recovery",
+      "repair": "repair-interrupted-validation-recovery"
+    },
+    {
+      "fixture": "interrupted-replay-generation",
+      "repair": "repair-interrupted-replay-generation"
+    },
+    {
+      "fixture": "interrupted-continuity-generation",
+      "repair": "repair-interrupted-continuity-generation"
+    },
+    {
+      "fixture": "stale-mobile-handoff",
+      "repair": "repair-stale-mobile-handoff"
+    },
+    {
+      "fixture": "invalid-mobile-compaction",
+      "repair": "repair-invalid-mobile-compaction"
+    },
+    {
+      "fixture": "missing-continuity-surfaces",
+      "repair": "repair-missing-continuity-surfaces"
+    },
+    {
+      "fixture": "broken-load-order",
+      "repair": "repair-broken-load-order"
+    },
+    {
+      "fixture": "missing-recovery-packet",
+      "repair": "repair-missing-recovery-packet"
+    },
+    {
+      "fixture": "stale-decision-core-state",
+      "repair": "repair-stale-decision-core-state"
+    },
+    {
+      "fixture": "stale-continuity-fabric-state",
+      "repair": "repair-stale-continuity-fabric-state"
+    },
+    {
+      "fixture": "H4-COMPLETE-mutation",
+      "repair": "repair-H4-COMPLETE-mutation"
+    },
+    {
+      "fixture": "reopened-H3-mutation",
+      "repair": "repair-reopened-H3-mutation"
+    },
+    {
+      "fixture": "invalid-governance-state",
+      "repair": "repair-invalid-governance-state"
+    },
+    {
+      "fixture": "invalid-autonomous-continuation",
+      "repair": "repair-invalid-autonomous-continuation"
+    }
+  ]
+}

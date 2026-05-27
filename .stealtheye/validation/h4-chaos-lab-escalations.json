@@ -1,0 +1,76 @@
+{
+  "escalations": [
+    {
+      "fixture": "replay-corruption",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-replay-corruption",
+      "escalation": "required",
+      "quarantine": true
+    },
+    {
+      "fixture": "stale-replay",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-stale-replay",
+      "escalation": "required",
+      "quarantine": false
+    },
+    {
+      "fixture": "stale-branch-after-merge",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-stale-branch-after-merge",
+      "escalation": "required",
+      "quarantine": false
+    },
+    {
+      "fixture": "unresolved-escalation",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-unresolved-escalation",
+      "escalation": "required",
+      "quarantine": false
+    },
+    {
+      "fixture": "interrupted-validation-recovery",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-interrupted-validation-recovery",
+      "escalation": "required",
+      "quarantine": false
+    },
+    {
+      "fixture": "invalid-mobile-compaction",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-invalid-mobile-compaction",
+      "escalation": "required",
+      "quarantine": true
+    },
+    {
+      "fixture": "stale-decision-core-state",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-stale-decision-core-state",
+      "escalation": "required",
+      "quarantine": false
+    },
+    {
+      "fixture": "invalid-governance-state",
+      "mutated": true,
+      "validator": "deterministic",
+      "expected": "escalate-or-repair",
+      "repair_guidance": "repair-invalid-governance-state",
+      "escalation": "required",
+      "quarantine": false
+    }
+  ]
+}
