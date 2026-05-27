@@ -1,1 +1,19 @@
-{"processes":[{"id":"phase0-build","steps":["bootstrap","memory-retrieval","invariant-check","generate","validate","graph","readiness","handoff"]},{"id":"recovery","steps":["bootstrap","snapshot-restore","retry","handoff"]}]}
+{
+  "version": "1.2.0",
+  "compatibility": {
+    "state_schema": "1.x",
+    "memory_schema": "1.x",
+    "replay_schema": "1.2.x",
+    "packet_schema": "1.x"
+  },
+  "processes": [
+    {
+      "id": "phase0-build",
+      "steps": ["bootstrap", "memory-retrieval", "invariant-check", "generate", "validate", "graph", "readiness", "handoff"]
+    },
+    {
+      "id": "recovery",
+      "steps": ["bootstrap", "snapshot-restore", "retry", "retry-with-repair", "rollback-to-last-known-good", "escalate", "invariant-stop", "handoff"]
+    }
+  ]
+}

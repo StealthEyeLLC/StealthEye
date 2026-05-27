@@ -3,11 +3,16 @@
     "hot": 10,
     "warm": 20,
     "cold": 40,
-    "archival": "compressed-summary"
+    "archival": "compressed-summary",
+    "transient_artifact_cap": 120
   },
-  "remaining": 4,
+  "remaining": 15,
   "supersession": {
     "handoff": "handoffs/latest.json",
     "replay": "receipts/latest-replay.json"
+  },
+  "anti_sprawl": {
+    "transient_artifacts": 17,
+    "over_cap": false
   }
 }

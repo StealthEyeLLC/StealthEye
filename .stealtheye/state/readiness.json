@@ -1,4 +1,5 @@
 {
   "status": "partial",
-  "missing": []
+  "missing": [],
+  "tier": "bootstrap"
 }

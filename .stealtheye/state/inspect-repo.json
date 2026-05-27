@@ -1,14 +1,102 @@
 {
   "current_phase": "phase0-autonomy-substrate",
   "current_process": "phase0-build",
-  "next_action": "run generate then validate",
-  "blockers": [],
-  "active_task": "phase0-main",
-  "drift_severity": "low",
+  "process_version": "1.2.0",
+  "current_tier": "resilient",
+  "current_risk": {
+    "score": 0.299,
+    "factors": {
+      "drift": 0.3,
+      "lifecycle_instability": 0,
+      "replay_uncertainty": 0.5700000000000001,
+      "repeated_failures": 0,
+      "weak_memory_coverage": 0.3,
+      "weak_validation_coverage": 0.020000000000000018
+    }
+  },
+  "next_action": {
+    "action": "run validate/check chain",
+    "deterministic_priority": {
+      "urgency": 0.3,
+      "drift_severity": 0.3,
+      "readiness_impact": 0.8,
+      "recovery_impact": 0.7,
+      "autonomy_gain": 0.75,
+      "codex_avoidance_value": 0.9
+    },
+    "score": 0.825,
+    "confidence": 0.84,
+    "recommended_worker": "agent-mode"
+  },
+  "recommended_worker": "agent-mode",
+  "recovery_posture": {
+    "strategy": "retry",
+    "confidence": 0.78,
+    "repair_attempt_history": []
+  },
+  "replay_confidence": 0.43,
+  "validation_health": {
+    "flaky_validations": [],
+    "unstable_checks": [],
+    "repeated_failures": 0,
+    "repair_success_rate": 1,
+    "score": 0.98
+  },
+  "confidence": {
+    "next_action": 0.84,
+    "replay_validity": 0.43,
+    "recovery_recommendation": 0.78,
+    "packet_completeness": 0.88,
+    "validation_reliability": 0.98
+  },
+  "autonomy_gain_opportunities": [
+    "repair memory compaction",
+    "prefer agent-mode before codex"
+  ],
+  "codex_necessity_assessment": "avoidable",
+  "capabilities": {
+    "scripts": [
+      "generate",
+      "validate",
+      "check",
+      "check:readiness",
+      "graph",
+      "compile:packet",
+      "inspect:repo",
+      "diagnose"
+    ],
+    "validations": [
+      "bootstrap-diagnostics.json",
+      "consistency-report.json",
+      "readiness-report.json"
+    ],
+    "packet_types": [
+      "pr-packet",
+      "replay-receipt",
+      "diagnostic"
+    ],
+    "graph_outputs": [
+      "knowledge-graph.json",
+      "latest.json",
+      "repo-graph.json"
+    ],
+    "diagnostics": [
+      "bootstrap-diagnostics",
+      "consistency-report"
+    ],
+    "recovery_systems": [
+      "recovery-engine",
+      "loop-protection"
+    ],
+    "memory_systems": [
+      "memory-index",
+      "failure-pattern-memory"
+    ],
+    "routing_systems": [
+      "process-selector",
+      "worker-recommendation"
+    ]
+  },
   "readiness": "validated",
-  "recommended_worker": "codex",
-  "codex_needed": false,
-  "human_action_needed": false,
-  "replay_source": "receipts/latest-replay.json",
-  "last_successful_validation": true
+  "blockers": []
 }

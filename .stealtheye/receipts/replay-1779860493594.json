@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.2.0",
+  "processName": "generate",
+  "process_version": "1.2.0",
+  "timestamp": "2026-05-27T05:41:33.594Z",
+  "ordered_commands": [
+    "npm run generate"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json"
+  ],
+  "validation_outputs": {},
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json"
+  ],
+  "replay_confidence": 0.43,
+  "integrity": {
+    "sha256": "b023bc92483c74154843d5963e14c08a08e07c1925095b966a85e2aa8892899c",
+    "passed": true
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run generate"
+  ]
+}
