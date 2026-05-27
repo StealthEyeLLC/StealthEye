@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "phase": "H4",
+  "expected_active_branch": "work",
+  "expected_pr_state": "open",
+  "expected_merge_state": "not-merged",
+  "expected_review_status": "pending",
+  "expected_next_operational_step": "run npm run h4:fresh-tab-smoke",
+  "merge_already_occurred": false,
+  "runtime_drift_detected": false,
+  "branch_continuity_diverged": false
+}

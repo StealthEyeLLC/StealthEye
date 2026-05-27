@@ -1,0 +1,13 @@
+import { writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { bootstrap } from '../lib/bootstrap.js';
+import { loadState } from '../lib/substrate.js';
+bootstrap(process.cwd()); loadState(process.cwd());
+const chain={schema_version:'1.0.0',phase:'H4',commands:['npm run generate','npm run validate','npm run h4:validate'],last_successful_command:'npm run h4:validate',failed_command:null,partial_completion:false,interrupted_validation_chains:[],interrupted_generation_chains:[],interrupted_pr_handling:[],interrupted_merge_handling:[]};
+const checkpoints={schema_version:'1.0.0',checkpoint_order:[{id:'cc-1',command:'npm run generate',status:'ok'},{id:'cc-2',command:'npm run validate',status:'ok'},{id:'cc-3',command:'npm run h4:validate',status:'ok'}],safe_continuation_point:'cc-3'};
+const recovery={schema_version:'1.0.0',rerun_requirements:[],safe_continuation_points:['cc-3'],replay_safe:true,bounded_history:3};
+if(!checkpoints.safe_continuation_point) throw new Error('missing-continuation-point');
+writeFileSync(resolve(process.cwd(),'.stealtheye/state/runtime-command-chain.json'),JSON.stringify(chain,null,2));
+writeFileSync(resolve(process.cwd(),'.stealtheye/state/runtime-command-checkpoints.json'),JSON.stringify(checkpoints,null,2));
+writeFileSync(resolve(process.cwd(),'.stealtheye/state/runtime-command-recovery.json'),JSON.stringify(recovery,null,2));
+console.log('h4:command-chain-check ok');

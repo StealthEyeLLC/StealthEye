@@ -1,0 +1,7 @@
+{
+  "resume_safe": true,
+  "continuation_mode": "autonomous-bounded",
+  "blocked": false,
+  "human_action_needed": false,
+  "deterministic_next_action": "run npm run h4:fresh-tab-smoke"
+}

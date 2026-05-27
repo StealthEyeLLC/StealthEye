@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "autonomous_continuation_allowed_when": [
+    "single-active-branch",
+    "no-unresolved-review-ambiguity",
+    "deterministic-next-action"
+  ],
+  "forbidden_autonomous_actions": [
+    "deployment",
+    "merge-without-checks",
+    "secrets-handling"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "expected_pr_state": "open",
+  "expected_review_status": "pending",
+  "expected_merge_state": "not-merged"
+}

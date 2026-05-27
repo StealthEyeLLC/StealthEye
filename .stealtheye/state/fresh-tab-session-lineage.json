@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "sessions": [
+    {
+      "id": "h4-session-0",
+      "parent": "root"
+    },
+    {
+      "id": "h4-session-1",
+      "parent": "h4-session-0"
+    }
+  ],
+  "canonical_order": [
+    "h4-session-0",
+    "h4-session-1"
+  ]
+}

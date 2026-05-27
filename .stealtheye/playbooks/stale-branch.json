@@ -1,0 +1,27 @@
+{
+  "id": "stale-branch",
+  "symptoms": [
+    "stale-branch-detected"
+  ],
+  "deterministic_detection": [
+    "repo-state-assertions"
+  ],
+  "safe_recovery_steps": [
+    "run relevant h4 command",
+    "revalidate"
+  ],
+  "bounded_escalation_path": [
+    "escalate to human if blocked"
+  ],
+  "approval_boundary_guidance": [
+    "no secrets/billing/destructive prod actions"
+  ],
+  "forbidden_actions": [
+    "unbounded shell",
+    "unrestricted destructive git"
+  ],
+  "next_validation_chain": [
+    "npm run h4:validate",
+    "npm run h4:fresh-tab-acceptance"
+  ]
+}

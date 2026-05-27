@@ -73,6 +73,14 @@
       "type": "state-file"
     },
     {
+      "id": "fresh-tab-recovery-packet.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-runtime-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "h1-anti-invariants.json",
       "type": "state-file"
     },
@@ -753,6 +761,10 @@
       "type": "state-file"
     },
     {
+      "id": "h4-next-action-resolution.json",
+      "type": "state-file"
+    },
+    {
       "id": "h4-runtime-state.json",
       "type": "state-file"
     },
@@ -806,6 +818,10 @@
     },
     {
       "id": "phase0-gap-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "pr-continuity-state.json",
       "type": "state-file"
     },
     {

@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "fixtures": [
+    {
+      "id": "interrupted-merge",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "interrupted-validation-chain",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "interrupted-generation-chain",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "interrupted-replay-update",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "stale-branch-after-merge",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "wrong-active-branch",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "duplicate-active-runtime",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "duplicate-next-action",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "replay-pointer-corruption",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "stale-mobile-handoff",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "stale-recovery-packet",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "replay-mismatch-after-recovery",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "unresolved-review-defect",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "missing-rerun-chain",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "invalid-recovery-escalation",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "branch-reconstruction-conflict",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "stale-session-replay",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "invalid-session-lineage",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    },
+    {
+      "id": "replay-invalid-checkpoint-chain",
+      "mutate": true,
+      "validator": "deterministic",
+      "expected": "pass-or-fail-explicit",
+      "assertion": "bounded"
+    }
+  ]
+}

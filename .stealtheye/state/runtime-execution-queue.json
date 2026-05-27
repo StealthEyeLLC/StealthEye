@@ -1,6 +1,6 @@
 {
-  "digest": "cf0cb3cc4889f70ba54f78a76c92ab7cb3a9d0384c05d7cfcedc1566f1836f4c",
-  "execution_fingerprint": "cb71c69bb15fb58f01da8cbedc2d30ac56e5f1f28d6a372f99a5aa4e48bfa549",
+  "digest": "e11a0d40fe79bbb32525cfba02dc214928ffe4ed6eef2e5df6bbf89f0f073600",
+  "execution_fingerprint": "5e62030e8f4a4c77374b63d6a9937046f560761b79fa6b5e4e0fe7da83c752d2",
   "items": [
     {
       "id": "cont-1779894573382",
@@ -22,6 +22,14 @@
       "id": "cont-6c09f48dd2c64cfd",
       "kind": "deterministic-continuation",
       "order": 3,
+      "owner": "runtime-controller",
+      "status": "queued",
+      "terminal_state": "pending"
+    },
+    {
+      "id": "cont-5b2b644171c0ca5c",
+      "kind": "deterministic-continuation",
+      "order": 4,
       "owner": "runtime-controller",
       "status": "queued",
       "terminal_state": "pending"
