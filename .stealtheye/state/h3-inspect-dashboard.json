@@ -1,64 +1,89 @@
 {
   "status": "ACTIVE",
-  "active_repair_chains": [
-    "R-1"
-  ],
-  "active_browser_missions": [
-    "inspect failing GitHub Actions page"
-  ],
-  "active_ci_stabilization": true,
-  "active_mission_chains": [
-    {
-      "chain_id": "MC-1",
-      "missions": [
-        "M-REPAIR",
-        "M-VALIDATE",
-        "M-BROWSER"
-      ],
-      "deterministic_recovery": true
-    }
-  ],
-  "worker_swarm_status": {
-    "parallel_limit": 4,
-    "deadlock": false
+  "runtime_lifecycle": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "current": "ACTIVE",
+    "allowed": [
+      "BOOTING",
+      "ACTIVE",
+      "DEGRADED",
+      "RECOVERING",
+      "PAUSED",
+      "BLOCKED",
+      "HALTED"
+    ],
+    "blocked_reasoning": [],
+    "degraded_reasoning": []
   },
-  "replay_divergence": [
-    {
-      "mission_id": "M-REPAIR",
-      "divergence_kind": "replay-drift",
-      "recovered": true
-    }
+  "mission_convergence": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "convergence_score": 0.85,
+    "confidence": 0.86
+  },
+  "repair_convergence": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "convergence_loops": true,
+    "stabilization_runtime": true
+  },
+  "browser_anomalies": [],
+  "ci_instability": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "instability_suppression": true,
+    "regression_clusters": []
+  },
+  "worker_exhaustion": "suppressed",
+  "escalation_queues": [
+    "repair_runtime",
+    "critic_runtime"
   ],
-  "convergence_score": 0.723,
-  "instability_propagation": 0.31,
-  "deadlock_alerts": [],
-  "blocked_operational_chains": [],
-  "highest_value_repair_target": "src/lib/h3.ts",
-  "highest_risk_workflow": "ci",
-  "highest_risk_subsystem": "browser_runtime",
-  "browser_anomaly_clusters": [
-    {
-      "id": "AN-1",
-      "kind": "selector-drift",
-      "count": 2
-    },
-    {
-      "id": "AN-2",
-      "kind": "navigation-interruption",
-      "count": 1
-    }
-  ],
-  "worker_exhaustion": "managed",
-  "continuation_backlog": 1,
-  "escalation_queue": [
-    {
-      "from": "repair_runtime",
-      "to": "critic_runtime"
-    }
-  ],
-  "operational_confidence": 0.33,
-  "autonomy_progression": 0.74,
-  "next_best_autonomous_action": "Run targeted validation on RC-1 then execute browser verify mission",
-  "human_attention_priority": "medium",
-  "compact_mobile_summary": "H3 ACTIVE | convergence=0.72 | backlog=1"
+  "replay_divergence": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "divergence_suppression": true,
+    "recovery_routing": true
+  },
+  "checkpoint_lineage": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "checkpoints": [
+      {
+        "id": "MCP-1",
+        "parent": null
+      },
+      {
+        "id": "MCP-2",
+        "parent": "MCP-1"
+      }
+    ]
+  },
+  "operational_confidence": 0.84,
+  "operational_readiness": 0.83,
+  "convergence_score": 0.84,
+  "autonomy_score": 0.81,
+  "next_best_autonomous_action": "Continue bounded mission queue using deterministic replay path",
+  "blocked_state_reasoning": [],
+  "runtime_persistence_posture": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "persistent_operational_continuity": true,
+    "external_daemon_required": false,
+    "hidden_mutable_state": false
+  },
+  "restoration_posture": {
+    "generated_at": "2026-05-27T12:31:34.244Z",
+    "recovery_topology": [
+      "mission",
+      "repair",
+      "browser",
+      "ci",
+      "worker",
+      "memory"
+    ],
+    "restoration_integrity": true,
+    "replay_reconstruction": true,
+    "mission_state_restored": true,
+    "worker_assignments_restored": true,
+    "repair_chains_restored": true,
+    "browser_state_restored": true,
+    "ci_state_restored": true,
+    "convergence_state_restored": true
+  },
+  "compact_mobile_summary": "H3 ACTIVE | persistence=READY | convergence=0.84 | readiness=0.83"
 }

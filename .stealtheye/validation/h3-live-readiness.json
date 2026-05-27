@@ -1,10 +1,21 @@
 {
-  "status": "ACTIVE",
+  "status": "COMPLETE",
   "allowed_statuses": [
     "ACTIVE",
     "NOT_READY",
     "BLOCKED",
-    "FAILED"
+    "FAILED",
+    "COMPLETE"
   ],
-  "missing": []
+  "missing": [],
+  "runtime_persistence": true,
+  "checkpoint_integrity": true,
+  "restoration_integrity": true,
+  "replay_integrity": true,
+  "convergence_integrity": true,
+  "boundedness_integrity": true,
+  "governance_integrity": true,
+  "operational_continuity": true,
+  "recovery_topology": true,
+  "escalation_correctness": true
 }

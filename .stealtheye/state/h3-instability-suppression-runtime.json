@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "instability_suppression": true,
+  "escalation_topology": [
+    "repair_runtime",
+    "critic_runtime"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "bounded_autonomous_execution_loops": true,
+  "deterministic_convergence": true,
+  "max_runtime_loops": 12,
+  "governance_lock": "H2_INVARIANTS_ENFORCED",
+  "uncontrolled_autonomy": false,
+  "forbidden_actions": [
+    "auto-merge",
+    "auto-deploy",
+    "force-push",
+    "destructive-git",
+    "unrestricted-shell",
+    "unrestricted-domains"
+  ],
+  "convergence_score": 0.84,
+  "readiness_score": 0.83
+}

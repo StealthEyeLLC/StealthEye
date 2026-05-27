@@ -1,12 +1,6 @@
 {
-  "generated_at": "2026-05-27T12:11:05.315Z",
-  "suppress_historically_unstable_paths": true,
-  "prioritize_historically_successful_paths": true,
-  "repeated_operational_failure_detection": [
-    {
-      "path": "repair->validate",
-      "count": 2
-    }
-  ],
-  "convergence_routing_improvement": 0.69
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "convergence_memory": true,
+  "browser_anomaly_memory": true,
+  "worker_reliability_memory": true
 }

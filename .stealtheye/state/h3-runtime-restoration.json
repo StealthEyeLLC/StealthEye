@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "recovery_topology": [
+    "mission",
+    "repair",
+    "browser",
+    "ci",
+    "worker",
+    "memory"
+  ],
+  "restoration_integrity": true,
+  "replay_reconstruction": true,
+  "mission_state_restored": true,
+  "worker_assignments_restored": true,
+  "repair_chains_restored": true,
+  "browser_state_restored": true,
+  "ci_state_restored": true,
+  "convergence_state_restored": true
+}

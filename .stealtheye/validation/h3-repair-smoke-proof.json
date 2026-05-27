@@ -1,7 +1,5 @@
 {
-  "kind": "repair",
+  "generated_at": "2026-05-27T12:31:38.239Z",
   "status": "pass",
-  "bounded": true,
-  "fixture_safe": true,
-  "timestamp": "2026-05-27T11:10:21.486Z"
+  "kind": "repair"
 }
