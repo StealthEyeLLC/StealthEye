@@ -1,12 +1,14 @@
 {
   "strategy": "retry",
-  "confidence": 0.77,
-  "evidence_weighting": {
-    "historical_success_rate": 0.5,
-    "recurrence_frequency": 0,
-    "replay_similarity": 0.74,
-    "prior_recovery_outcomes": []
+  "confidence": 0.85,
+  "reason": "deterministic recovery policy based on failure recurrence",
+  "evidence": {
+    "recurrence_frequency": 0
   },
+  "invariant_refs": [
+    "replay-integrity",
+    "continuity-correctness"
+  ],
   "repair_sequence": [
     "diagnose",
     "repair",

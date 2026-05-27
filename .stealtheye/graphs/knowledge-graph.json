@@ -5,5 +5,8 @@
   ],
   "invariants": [
     "invariants.json"
+  ],
+  "coherence": [
+    "coherence-report.json"
   ]
 }
