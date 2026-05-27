@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "generate",
+  "processName": "validate",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T06:18:33.993Z",
+  "timestamp": "2026-05-27T06:59:11.239Z",
   "ordered_commands": [
-    "npm run generate"
+    "npm run validate"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -32,7 +32,16 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "validation_outputs": {},
+  "validation_outputs": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
     ".stealtheye/state/queue.json",
@@ -40,12 +49,10 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "replay_confidence": 0.72,
+  "replay_confidence": 0.915,
   "replay_uncertainty": {
-    "score": 0.28,
-    "reasons": [
-      "validation_not_fully_stable"
-    ]
+    "score": 0.085,
+    "reasons": []
   },
   "replay_integrity": {
     "status": "verified",
@@ -53,7 +60,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "8141858166094b68e84cfdd49e3edcb84cfabed0b07a549941d66fa014e8aaff",
+      "digest": "d8c007f1d672bac471476936e38a1b190ae876326566a8a20a1e47aa6a0d981e",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -61,6 +68,16 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run generate"
-  ]
+    "npm run validate"
+  ],
+  "validation_results": {
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
+  }
 }

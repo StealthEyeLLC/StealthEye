@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "inspect:repo",
+  "processName": "graph",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T06:18:35.820Z",
+  "timestamp": "2026-05-27T06:59:12.286Z",
   "ordered_commands": [
-    "npm run inspect:repo"
+    "npm run graph"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -53,7 +53,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "7977e56791a155f45d7979a0eb81c001c2905254ac4c0238b6afb9e1cd1e16fc",
+      "digest": "d8c007f1d672bac471476936e38a1b190ae876326566a8a20a1e47aa6a0d981e",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -61,6 +61,6 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run inspect:repo"
+    "npm run graph"
   ]
 }

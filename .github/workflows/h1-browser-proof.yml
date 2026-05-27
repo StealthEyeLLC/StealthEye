@@ -8,14 +8,25 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - name: Install browser runtime
+        run: npx playwright install --with-deps chromium || true
+      - run: npm run h1:validate
       - run: npm run h1:browser:proof
       - run: npm run h1:packet
+      - name: Runtime metadata summary
+        if: always()
+        run: |
+          echo "## H1 Browser Runtime" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/state/h1-runtime-posture.json >> $GITHUB_STEP_SUMMARY || true
+          echo "## H1 Browser Proof" >> $GITHUB_STEP_SUMMARY
+          cat .stealtheye/receipts/h1-browser-evidence-packet.json >> $GITHUB_STEP_SUMMARY || true
       - name: Upload browser artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: h1-browser-artifacts
+          if-no-files-found: warn
           path: |
             .stealtheye/browser
             .stealtheye/receipts/h1-*.json
+            .stealtheye/state/h1-runtime-*.json

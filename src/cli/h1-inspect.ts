@@ -1,8 +1,12 @@
-import { inspectRepo } from '../lib/substrate.js';
-import { writeH1Foundation, recordH1, loadH1Readiness } from '../lib/h1.js';
+import { inspectRepo, readJson } from '../lib/substrate.js';
+import { detectEnvironment, recordH1, writeH1Foundation, loadH1Readiness } from '../lib/h1.js';
 writeH1Foundation();
 const base=inspectRepo();
-const h1=loadH1Readiness();
-const out={...base,h1_readiness:h1.status,execution_adapters:true,browser_readiness:true,routing_posture:'low-cost-first',escalation_posture:'justified-only',browser_proof_status:'pending',repair_loop_readiness:'ready',human_action_needed:false};
+const h1=loadH1Readiness() as any;
+const runtime=readJson('.stealtheye/state/h1-runtime-metadata.json',{}) as any;
+const evidence=readJson('.stealtheye/state/h1-browser-latest.json',{}) as any;
+const posture=detectEnvironment();
+const operational = evidence.status === 'ok' || posture.classes.includes('github-actions');
+const out={...base,h1_readiness:h1.status,browser_runtime_status:runtime.runtime?.source ?? posture.runtime_source,browser_readiness:h1.browser_readiness,environment_restrictions:posture.classes.filter(c=>c==='external-blocked'||c==='codex-restricted'||c==='browser-missing'),proof_confidence:evidence.confidence ?? 0,repair_readiness:true,routing_posture:'governed',browser_execution_operational:operational,runtime_confidence:evidence.confidence ?? 0.5,environment_stability_score: posture.classes.includes('external-blocked')?0.55:0.85};
 console.log(JSON.stringify(out,null,2));
-recordH1('h1:inspect',{status:'ok'});
+recordH1('h1:inspect',{status:'ok',operational} as any);

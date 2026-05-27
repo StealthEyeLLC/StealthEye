@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "graph",
+  "processName": "compile:packet",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T06:18:32.204Z",
+  "timestamp": "2026-05-27T06:59:15.351Z",
   "ordered_commands": [
-    "npm run graph"
+    "npm run compile:packet"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -53,7 +53,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "efa02d04604d5a5997d464f4042d7892c008942abb6bf6a9f225a39f9ae1810d",
+      "digest": "98b3b202f8b80887a02617a1637dfee43680a391f81a6e10479d1eafd7669683",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -61,6 +61,6 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run graph"
+    "npm run compile:packet"
   ]
 }

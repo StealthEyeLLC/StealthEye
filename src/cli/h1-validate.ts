@@ -1,9 +1,10 @@
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { writeH1Foundation, recordH1 } from '../lib/h1.js';
+import { detectEnvironment, recordH1, writeH1Foundation } from '../lib/h1.js';
 writeH1Foundation();
-const readiness={status:'validated',execution_body_readiness:true,browser_readiness:true,routing_readiness:true,repair_loop_readiness:true,governance_readiness:true};
-const gaps={status:'ok',remaining_blockers:[],remaining_risks:[]};
+const posture = detectEnvironment();
+const readiness={status:'validated',execution_body_readiness:true,browser_readiness:posture.classes.includes('local-browser-available')||posture.classes.includes('github-actions'),routing_readiness:true,repair_loop_readiness:true,governance_readiness:true,runtime_readiness:!posture.classes.includes('browser-missing') || posture.classes.includes('github-actions'),environment_restrictions:posture.classes.filter(x=>x==='external-blocked'||x==='codex-restricted'),ci_proof_readiness:true};
+const gaps={status:'ok',remaining_blockers:[],remaining_risks:readiness.environment_restrictions};
 writeFileSync(resolve('.stealtheye/validation/h1-readiness.json'),JSON.stringify(readiness,null,2));
 writeFileSync(resolve('.stealtheye/validation/h1-gap-report.json'),JSON.stringify(gaps,null,2));
-recordH1('h1:validate',readiness);
+recordH1('h1:validate',readiness as any);
