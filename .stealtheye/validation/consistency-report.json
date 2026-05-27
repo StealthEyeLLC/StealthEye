@@ -4,21 +4,32 @@
   "current_process": "phase0-build",
   "compatibility": {
     "compatible": true,
+    "stale_schemas": false,
     "process_version": "1.2.0",
     "expected": {
-      "state": "^1.0.0",
+      "state": "^1.1.0",
       "memory": "^1.1.0",
-      "replay": "^1.3.0",
-      "packet": "^1.0.0"
-    }
+      "replay": "^1.4.0",
+      "packet": "^1.1.0"
+    },
+    "replay_compatibility": true
   },
   "corruption": {
     "signals": [],
     "remediation": []
   },
-  "invariant_bounds": {
-    "replay_confidence_min": 0.2,
-    "replay_confidence_max": 1,
-    "readiness_coherence": true
+  "authority": {
+    "ok": true,
+    "violations": [],
+    "orphaned_transient_artifacts": []
+  },
+  "coherence": {
+    "ok": true,
+    "contradiction_severity": "none",
+    "contradictions": [],
+    "score": 1,
+    "factors": {
+      "contradiction_count": 0
+    }
   }
 }

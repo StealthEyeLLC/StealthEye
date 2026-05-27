@@ -5,11 +5,19 @@
       "type": "state-file"
     },
     {
+      "id": "autonomy-progression.json",
+      "type": "state-file"
+    },
+    {
       "id": "capability-registry.json",
       "type": "state-file"
     },
     {
       "id": "codex-minimization.json",
+      "type": "state-file"
+    },
+    {
+      "id": "coherence-report.json",
       "type": "state-file"
     },
     {
@@ -22,6 +30,10 @@
     },
     {
       "id": "failure-pattern-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "handoff-compact-index.json",
       "type": "state-file"
     },
     {
@@ -57,6 +69,10 @@
       "type": "state-file"
     },
     {
+      "id": "phase0-gap-report.json",
+      "type": "state-file"
+    },
+    {
       "id": "process-compatibility.json",
       "type": "state-file"
     },
@@ -86,6 +102,10 @@
     },
     {
       "id": "recovery-outcomes.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replay-compact-index.json",
       "type": "state-file"
     },
     {

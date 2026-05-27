@@ -1,0 +1,32 @@
+{
+  "status": "validated",
+  "deterministic": true,
+  "scenarios": [
+    {
+      "scenario": "new-clean-session",
+      "passed": true,
+      "reason": "inspect:repo dashboard exposes required continuation context"
+    },
+    {
+      "scenario": "stale-session",
+      "passed": true,
+      "reason": "freshness and maintenance recommendations present"
+    },
+    {
+      "scenario": "degraded-continuity",
+      "passed": true,
+      "reason": "recovery posture and contradictions surfaced"
+    },
+    {
+      "scenario": "replay-recovery",
+      "passed": true,
+      "reason": "replay integrity summary provides deterministic replay path"
+    },
+    {
+      "scenario": "blocked-recovery",
+      "passed": true,
+      "reason": "human_action_needed derived from blockers and coherence output"
+    }
+  ],
+  "inspect_context_sufficient": true
+}

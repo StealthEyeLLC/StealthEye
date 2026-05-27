@@ -8,39 +8,126 @@
     "mandatory_process_selection": true,
     "mandatory_invariants": true,
     "mandatory_handoffs": true,
+    "continuity_acceptance": true,
     "status": "validated"
   },
   "inspect": {
+    "dashboard": "deterministic autonomous runtime",
     "current_phase": "phase0-autonomy-substrate",
-    "current_tier": "autonomous",
-    "readiness": "validated",
-    "autonomy_score": 0.7,
-    "replay_health": 0.746,
-    "repair_reliability": 0.6,
-    "continuity_health": 0.85,
-    "operational_entropy": 0.2,
-    "recovery_readiness": 0.77,
-    "confidence_trends": {
-      "replay": 0.746,
-      "recovery": 0.77,
-      "next_action": 0.86
+    "phase0_readiness": "validated",
+    "continuity_proof": {
+      "status": "validated",
+      "deterministic": true,
+      "scenarios": [
+        {
+          "scenario": "new-clean-session",
+          "passed": true,
+          "reason": "inspect:repo dashboard exposes required continuation context"
+        },
+        {
+          "scenario": "stale-session",
+          "passed": true,
+          "reason": "freshness and maintenance recommendations present"
+        },
+        {
+          "scenario": "degraded-continuity",
+          "passed": true,
+          "reason": "recovery posture and contradictions surfaced"
+        },
+        {
+          "scenario": "replay-recovery",
+          "passed": true,
+          "reason": "replay integrity summary provides deterministic replay path"
+        },
+        {
+          "scenario": "blocked-recovery",
+          "passed": true,
+          "reason": "human_action_needed derived from blockers and coherence output"
+        }
+      ],
+      "inspect_context_sufficient": true
     },
+    "coherence_health": {
+      "ok": true,
+      "contradiction_severity": "none",
+      "contradictions": [],
+      "score": 1,
+      "factors": {
+        "contradiction_count": 0
+      }
+    },
+    "replay_integrity": {
+      "status": "verified",
+      "chain_integrity": true,
+      "dependency_validation": true,
+      "supersession_correctness": true,
+      "drift_proof": {
+        "digest": "7977e56791a155f45d7979a0eb81c001c2905254ac4c0238b6afb9e1cd1e16fc",
+        "compared_to_latest_schema": "1.4.0"
+      },
+      "reproducibility_confidence": 0.88
+    },
+    "entropy": 0.2,
+    "routing_governance": {
+      "recommended_worker": "normal-chatgpt",
+      "escalation_thresholds": {
+        "to_codex": "route failure or low confidence < 0.6",
+        "to_agent_mode": "codex unavailable and task blocked"
+      },
+      "avoidable_escalation_detection": false,
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      }
+    },
+    "operational_contradictions": [],
+    "maintenance_recommendations": {
+      "actions": [
+        "cleanup",
+        "compaction",
+        "freshness-repair",
+        "replay-regeneration",
+        "routing-recalibration",
+        "memory-pruning"
+      ],
+      "maintenance_confidence": 0.9,
+      "compact_mode": true
+    },
+    "current_gaps": {
+      "remaining_blockers": [],
+      "remaining_risks": []
+    },
+    "human_action_needed": false,
+    "autonomy_score": 0.7,
+    "replay_health": 0.915,
+    "recommended_worker": "normal-chatgpt",
     "next_action": {
       "action": "run deterministic repair sequence",
-      "score": 0.68,
-      "confidence": 0.86,
-      "recommended_worker": "normal-chatgpt"
+      "score": 0.72,
+      "confidence": 0.88,
+      "recommended_worker": "normal-chatgpt",
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      },
+      "invariant_refs": [
+        "routing-stability",
+        "anti-loop-correctness"
+      ]
     },
-    "recommended_worker": "normal-chatgpt",
     "recovery_posture": {
       "strategy": "retry",
-      "confidence": 0.77,
-      "evidence_weighting": {
-        "historical_success_rate": 0.5,
-        "recurrence_frequency": 0,
-        "replay_similarity": 0.74,
-        "prior_recovery_outcomes": []
+      "confidence": 0.85,
+      "reason": "deterministic recovery policy based on failure recurrence",
+      "evidence": {
+        "recurrence_frequency": 0
       },
+      "invariant_refs": [
+        "replay-integrity",
+        "continuity-correctness"
+      ],
       "repair_sequence": [
         "diagnose",
         "repair",
@@ -53,30 +140,48 @@
     "explainability_packet": {
       "why_next_action": {
         "selected": "run deterministic repair sequence",
-        "reason": "maximizes deterministic stabilization and lowers interruption risk"
+        "reason": "normal-chatgpt first policy",
+        "evidence": {
+          "premium_worker_waste": 0,
+          "route_failures": 0
+        },
+        "confidence": 0.88,
+        "invariant_refs": [
+          "routing-stability",
+          "anti-loop-correctness"
+        ]
       },
       "why_worker": {
         "recommended": "normal-chatgpt",
-        "reason": "based on routing memory and codex minimization goals"
+        "reason": "routing governance thresholds",
+        "supporting_history": {
+          "worker_outcomes": [],
+          "failed_routes": [],
+          "premium_worker_waste": 0,
+          "low_intervention_routes": 0
+        }
       },
       "why_repair_path": {
         "selected": "retry",
-        "reason": "evidence-weighted success/recurrence balance"
-      },
-      "why_drift_severity": {
-        "score": 0.201,
-        "factors": {
-          "drift": 0.3,
-          "repeated_failures": 0,
-          "replay_uncertainty": 0.254
-        }
+        "reason": "deterministic recovery policy based on failure recurrence",
+        "confidence": 0.85,
+        "invariant_refs": [
+          "replay-integrity",
+          "continuity-correctness"
+        ]
       },
       "why_readiness_tier": {
-        "tier": "autonomous",
-        "reason": "derived from readiness report + operational risk bounds"
+        "tier": "validated",
+        "reason": "derived from readiness + coherence",
+        "evidence": {
+          "score": 1,
+          "factors": {
+            "contradiction_count": 0
+          }
+        }
       }
     },
     "blockers": []
   },
-  "generated_at": "2026-05-27T05:49:18.062Z"
+  "generated_at": "2026-05-27T06:18:34.889Z"
 }

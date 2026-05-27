@@ -25,7 +25,10 @@ const payloads: Record<string, unknown> = {
   recovery_outcomes: { successful_recoveries: 0, partial_recoveries: 0, failed_recoveries: 0, replay_stable: 0, replay_unstable: 0, validation_stabilized: 0, validation_regressed: 0 },
   operational_efficiency: { unnecessary_codex_use: 0, successful_non_codex_handling: 0, repair_efficiency: 1, validation_stability: 1, recovery_efficiency: 1, human_interruption_frequency: 0 },
   continuity_optimizer: { stale_memory_cleanup: true, stale_artifact_cleanup: true, working_set_aging_days: 7, replay_supersession: true, state_freshness_enforced: true, continuity_health: 0.85, operational_entropy: 0.2 },
-  memory_freshness: { freshness_score: 1, stale_items: [] }
+  memory_freshness: { freshness_score: 1, stale_items: [] },
+  replay_compact_index: { latest_only: true, retained: [] },
+  handoff_compact_index: { latest_only: true, retained: [] },
+  phase0_gap_report: { remaining_blockers: [], remaining_risks: ['semantic-coherence'], remaining_acceptance_failures: [] }
 };
 for (const [k, v] of Object.entries(payloads)) writeFileSync(resolve(root, `.stealtheye/state/${k.replaceAll('_','-')}.json`), JSON.stringify(v, null, 2));
 updateLifecycle('generate', 'success');
