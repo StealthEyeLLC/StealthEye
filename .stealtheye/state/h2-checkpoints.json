@@ -837,6 +837,45 @@
           "repair": []
         }
       }
+    },
+    {
+      "checkpoint_id": "cp_7ccaabccd4309990c44b",
+      "superseded": false,
+      "created_at": "2026-05-27T12:31:31.188Z",
+      "dag_state": {
+        "dag_id": "dag_12955b6877329dbb3a66",
+        "mission_id": "h2:validate",
+        "state": "active",
+        "nodes": [
+          {
+            "node_id": "node_8f47b095a2cacf42",
+            "name": "a",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "github"
+          },
+          {
+            "node_id": "node_bddcfa957acf3e5a",
+            "name": "b",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "browser"
+          },
+          {
+            "node_id": "node_91454ce474f36954",
+            "name": "c",
+            "state": "completed",
+            "dependencies": [],
+            "adapter": "codex"
+          }
+        ],
+        "created_at": "2026-05-27T12:31:31.185Z",
+        "lineage": {
+          "continuation": [],
+          "recovery": [],
+          "repair": []
+        }
+      }
     }
   ]
 }

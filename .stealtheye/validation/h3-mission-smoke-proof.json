@@ -1,7 +1,5 @@
 {
-  "kind": "mission",
+  "generated_at": "2026-05-27T12:31:37.265Z",
   "status": "pass",
-  "bounded": true,
-  "fixture_safe": true,
-  "timestamp": "2026-05-27T11:10:20.747Z"
+  "kind": "mission"
 }

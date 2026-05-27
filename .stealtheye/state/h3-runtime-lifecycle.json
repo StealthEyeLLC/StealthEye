@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "current": "ACTIVE",
+  "allowed": [
+    "BOOTING",
+    "ACTIVE",
+    "DEGRADED",
+    "RECOVERING",
+    "PAUSED",
+    "BLOCKED",
+    "HALTED"
+  ],
+  "blocked_reasoning": [],
+  "degraded_reasoning": []
+}

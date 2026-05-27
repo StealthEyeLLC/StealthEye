@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-27T12:31:39.264Z",
+  "scheduler": true,
+  "tournament_runtime": true,
+  "retry_budgeting": {
+    "max": 5,
+    "remaining": 3
+  },
+  "rollback_chains": true,
+  "escalation_routing": true,
+  "confidence_score": 0.82
+}

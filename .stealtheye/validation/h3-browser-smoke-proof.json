@@ -1,7 +1,5 @@
 {
-  "kind": "browser",
+  "generated_at": "2026-05-27T12:31:39.271Z",
   "status": "pass",
-  "bounded": true,
-  "fixture_safe": true,
-  "timestamp": "2026-05-27T11:10:22.221Z"
+  "kind": "browser"
 }
