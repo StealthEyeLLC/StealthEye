@@ -1,0 +1,39 @@
+{
+  "schema_version": "3.1.0",
+  "workers": [
+    "codex_high",
+    "codex_medium",
+    "local_runtime",
+    "browser_runtime",
+    "replay_runtime",
+    "repair_runtime",
+    "ci_runtime"
+  ],
+  "bounded_concurrency_windows": {
+    "max_parallel": 3
+  },
+  "deterministic_worker_assignment": [
+    {
+      "mission": "repair-ci-flake",
+      "worker": "repair_runtime"
+    }
+  ],
+  "mission_to_worker_affinity": [
+    {
+      "mission_type": "inspect_ci_dashboard",
+      "worker": "browser_runtime"
+    }
+  ],
+  "critic_reviewer_pairing": [
+    {
+      "primary": "codex_medium",
+      "critic": "codex_high"
+    }
+  ],
+  "fallback_routing": [
+    {
+      "from": "browser_runtime",
+      "to": "local_runtime"
+    }
+  ]
+}

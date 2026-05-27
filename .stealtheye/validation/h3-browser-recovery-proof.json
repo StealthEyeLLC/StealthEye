@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "bounded": true,
+  "fixture_safe": true,
+  "timestamp": "2026-05-27T11:10:22.221Z",
+  "browser_smoke": [
+    "selector_drift",
+    "console_failure",
+    "network_anomaly",
+    "screenshot_lineage",
+    "browser_continuation_recovery"
+  ]
+}

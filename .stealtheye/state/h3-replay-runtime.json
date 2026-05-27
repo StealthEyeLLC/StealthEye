@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.1.0",
+  "replay_reconstruction": [
+    {
+      "mission": "repair-ci-flake",
+      "steps": 4
+    }
+  ],
+  "mission_replay_resumption": [
+    {
+      "mission": "repair-ci-flake",
+      "resumed_from_step": 3
+    }
+  ]
+}

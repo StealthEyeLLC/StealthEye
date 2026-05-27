@@ -1,0 +1,39 @@
+{
+  "failure_clustering": [
+    {
+      "cluster": "typescript-compile",
+      "failures": [
+        "type-error",
+        "missing-export"
+      ],
+      "size": 3
+    },
+    {
+      "cluster": "flake-e2e",
+      "failures": [
+        "timeout",
+        "selector-drift"
+      ],
+      "size": 2
+    }
+  ],
+  "flaky_ci_detection": [
+    {
+      "workflow": "h3-browser-smoke",
+      "flake_probability": 0.31
+    }
+  ],
+  "release_readiness_scoring": {
+    "score": 0.76,
+    "blockers": [
+      "1 flaky cluster pending quarantine"
+    ]
+  },
+  "repository_drift_detection": {
+    "drift_score": 0.21,
+    "drift_vectors": [
+      "stale-branch",
+      "ci-config-divergence"
+    ]
+  }
+}
