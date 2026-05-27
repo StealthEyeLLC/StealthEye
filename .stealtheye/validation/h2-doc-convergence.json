@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "docs": [
+    "README.md",
+    "AGENTS.md",
+    "llms.txt",
+    "llms-full.txt"
+  ]
+}

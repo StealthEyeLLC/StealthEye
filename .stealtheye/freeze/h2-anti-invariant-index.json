@@ -1,0 +1,8 @@
+{
+  "anti_invariants": [
+    "unrestricted-shell",
+    "silent-fallback",
+    "unbounded-growth",
+    "authority-drift"
+  ]
+}

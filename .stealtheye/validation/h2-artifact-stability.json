@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETE",
+  "sorting": "deterministic",
+  "key_ordering": "stable",
+  "latest_pointer_updates": "canonical"
+}

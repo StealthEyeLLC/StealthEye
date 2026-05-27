@@ -1,0 +1,18 @@
+{
+  "capabilities": [
+    "runtime-kernel",
+    "dag-runtime",
+    "concurrency-runtime",
+    "policy-kernel",
+    "authority-convergence",
+    "replay-equivalence",
+    "restoration",
+    "ledger-continuity",
+    "event-continuity",
+    "schema-integrity",
+    "checkpoint-continuity",
+    "repair-lineage",
+    "adapter-governance",
+    "boundedness"
+  ]
+}

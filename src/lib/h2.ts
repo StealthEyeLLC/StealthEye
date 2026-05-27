@@ -137,5 +137,19 @@ export function writeH2State(root = process.cwd()) {
   w(root, '.stealtheye/schemas/h2/schema-migrations.json', { migrations: [{ from: '2.1.0', to: '2.2.0', deterministic: true, replay_safe: true }] });
 }
 
+
+export function verifyH2RuntimeIntegrity(input: any) { return { ok: !!input.runtime && !!input.dag && !!input.concurrency && !!input.policy, status: (!!input.runtime && !!input.dag && !!input.concurrency && !!input.policy) ? 'COMPLETE' : 'INCOMPLETE' }; }
+export function verifyH2SealIntegrity(input: any) { return { ok: Object.values(input ?? {}).every((v:any)=>typeof v==='number' && v>=0.99), status: Object.values(input ?? {}).every((v:any)=>typeof v==='number' && v>=0.99) ? 'COMPLETE' : 'NOT_READY' }; }
+export function verifyH2Determinism(input: any) { return { ok: !!input.execution_order_stable && !!input.replay_order_stable && !!input.event_order_stable, status: (!!input.execution_order_stable && !!input.replay_order_stable && !!input.event_order_stable) ? 'COMPLETE' : 'NOT_READY' }; }
+export function verifyH2ReplayIntegrity(input: any) { return { ok: !input.replay_diverged && (input.replay_equivalence_score ?? 0) >= 0.99, status: (!input.replay_diverged && (input.replay_equivalence_score ?? 0) >= 0.99) ? 'COMPLETE' : 'BLOCKED' }; }
+export function verifyH2LedgerIntegrity(input: any) { return { ok: !!input.ledger_ordered && !!input.event_continuity && !!input.checkpoint_continuity, status: (!!input.ledger_ordered && !!input.event_continuity && !!input.checkpoint_continuity) ? 'COMPLETE' : 'FAILED' }; }
+export function verifyH2AuthorityIntegrity(input: any) { return { ok: (input.authority_convergence_score ?? 0) >= 0.99 && !input.authority_drift, status: ((input.authority_convergence_score ?? 0) >= 0.99 && !input.authority_drift) ? 'COMPLETE' : 'BLOCKED' }; }
+
+export function pruneReplayHistory(items: any[], keep = MAX_HISTORY) { return [...items].slice(-keep); }
+export function pruneHandoffHistory(items: any[], keep = MAX_HISTORY) { return [...items].slice(-keep); }
+export function pruneProofHistory(items: any[], keep = MAX_HISTORY) { return [...items].slice(-keep); }
+export function pruneEventHistory(items: any[], keep = MAX_HISTORY * 12) { return [...items].slice(-keep); }
+export function pruneCheckpointHistory(items: any[], keep = MAX_HISTORY) { return [...items].slice(-keep); }
+
 export function h2Inspect(root = process.cwd()) { const out = { dag_posture: 'ACTIVE', checkpoint_posture: 'ACTIVE', concurrency_posture: 'BOUNDED', policy_posture: 'ENFORCED', reconciliation_posture: 'DETERMINISTIC', ci_posture: 'AUTHORITATIVE' }; writeState(root, 'h2-fabric-dashboard.json', out); return out; }
 export function recordH2(command: string, payload: Record<string, unknown>) { emitRunEvidence(command, payload); writeReplayReceipt(command, { commands: [`npm run ${command}`], validation_results: payload }); writeHandoff({ action: command, freshness: 'updated' }); }
