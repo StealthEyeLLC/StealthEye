@@ -9,6 +9,10 @@
       "type": "state-file"
     },
     {
+      "id": "autonomous-resume-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "autonomy-progression.json",
       "type": "state-file"
     },
@@ -78,6 +82,18 @@
     },
     {
       "id": "fresh-tab-runtime-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-session-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-session-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "fresh-tab-session.json",
       "type": "state-file"
     },
     {
@@ -873,11 +889,35 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-boundary-law.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-branch-reconstruction.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-checkpoint-index.json",
       "type": "state-file"
     },
     {
+      "id": "runtime-command-chain.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-command-checkpoints.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-command-recovery.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-conflict-containment.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-continuity-dashboard.json",
       "type": "state-file"
     },
     {
@@ -886,6 +926,10 @@
     },
     {
       "id": "runtime-deadlock-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-escalation-law.json",
       "type": "state-file"
     },
     {
@@ -925,11 +969,51 @@
       "type": "state-file"
     },
     {
+      "id": "runtime-pr-reconstruction.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-reconstruction.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-recovery-observability.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-recovery-playbooks.json",
+      "type": "state-file"
+    },
+    {
       "id": "runtime-recovery-state.json",
       "type": "state-file"
     },
     {
       "id": "runtime-repair-recommendations.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-resume-confidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-resume-decision.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-resume-observability.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-runtime-anomaly-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-runtime-health-matrix.json",
+      "type": "state-file"
+    },
+    {
+      "id": "runtime-safety-law.json",
       "type": "state-file"
     },
     {

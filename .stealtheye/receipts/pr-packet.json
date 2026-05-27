@@ -62,7 +62,7 @@
       "dependency_validation": true,
       "supersession_correctness": true,
       "drift_proof": {
-        "digest": "9c8ccf83d2da4ee16b0b589dffeca9f0d2a0d81b99a7eba917258b3ad567546b",
+        "digest": "6479778a7d43440ce84893dc910cff4aa419a28b89cf4be9760f27054ca53a46",
         "compared_to_latest_schema": "1.4.0"
       },
       "reproducibility_confidence": 0.88
@@ -186,5 +186,5 @@
     "blockers": [],
     "remaining_blockers": []
   },
-  "generated_at": "2026-05-27T15:53:39.609Z"
+  "generated_at": "2026-05-27T16:07:48.022Z"
 }

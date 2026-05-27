@@ -1,0 +1,31 @@
+{
+  "remaining_blockers": [
+    "full adversarial lineage saturation"
+  ],
+  "remaining_unsafe_conditions": [
+    "none critical"
+  ],
+  "remaining_nondeterminism": [
+    "timestamp variance"
+  ],
+  "remaining_continuity_gaps": [
+    "deep merge ancestry replay fuzzing"
+  ],
+  "remaining_replay_risks": [
+    "cross-branch stale replay drift"
+  ],
+  "remaining_escalation_ambiguity": [
+    "none"
+  ],
+  "remaining_recovery_gaps": [
+    "multi-day interrupted review chain"
+  ],
+  "remaining_fixture_weaknesses": [
+    "insufficient long-tail mutations"
+  ],
+  "remaining_governance_gaps": [
+    "none"
+  ],
+  "estimated_remaining_h4_passes": 2,
+  "updated_at": "2026-05-27T16:09:14.047Z"
+}

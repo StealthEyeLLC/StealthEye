@@ -1,0 +1,8 @@
+{
+  "continuity": "bounded",
+  "replay": "tracked",
+  "interruptions": "recoverable",
+  "pr": "continuity-guarded",
+  "blockers": [],
+  "updated_at": "2026-05-27T16:09:11.155Z"
+}

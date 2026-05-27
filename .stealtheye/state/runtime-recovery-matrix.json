@@ -1,0 +1,11 @@
+{
+  "phase": "H4",
+  "status": "ACTIVE",
+  "active_authoritative_runtimes": 1,
+  "arbitration": "deterministic-priority-selection",
+  "quarantined_runtime_count": 0,
+  "canonical_runtime_id": "runtime-primary",
+  "replay_safe": true,
+  "merge_authority_conflict": false,
+  "updated_at": "2026-05-27T16:09:03.639Z"
+}

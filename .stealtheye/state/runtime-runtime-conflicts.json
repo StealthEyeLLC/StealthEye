@@ -1,0 +1,12 @@
+{
+  "conflicts": [],
+  "unresolved": 0,
+  "hard_fail_conditions": [
+    "multiple active authoritative runtimes",
+    "unresolved runtime conflict",
+    "replay-invalid runtime selection",
+    "unresolved runtime quarantine",
+    "conflicting merge authority"
+  ],
+  "updated_at": "2026-05-27T16:09:03.639Z"
+}

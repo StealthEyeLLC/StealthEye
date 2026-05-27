@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "condition": "continuity blockers empty"
+    },
+    {
+      "id": "resume",
+      "action": "continue bounded validation chain"
+    }
+  ],
+  "updated_at": "2026-05-27T16:09:06.706Z"
+}

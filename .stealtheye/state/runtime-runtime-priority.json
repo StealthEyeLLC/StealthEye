@@ -1,0 +1,10 @@
+{
+  "priority": [
+    "authoritative-active",
+    "replay-integrity",
+    "branch-consistency",
+    "merge-consistency",
+    "next-action-uniqueness"
+  ],
+  "updated_at": "2026-05-27T16:09:03.639Z"
+}

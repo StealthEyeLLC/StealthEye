@@ -1,0 +1,16 @@
+{
+  "source_precedence": [
+    "handoff",
+    "replay",
+    "project-state",
+    "next-action"
+  ],
+  "derivation_chain": [
+    "runtime continuity",
+    "replay continuity",
+    "branch continuity",
+    "pr continuity",
+    "mobile continuity"
+  ],
+  "updated_at": "2026-05-27T16:09:02.263Z"
+}

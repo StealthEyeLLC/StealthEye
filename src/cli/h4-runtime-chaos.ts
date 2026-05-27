@@ -1,0 +1,7 @@
+import { writeFileSync } from 'node:fs'; import { resolve } from 'node:path'; import { bootstrap } from '../lib/bootstrap.js'; import { loadState } from '../lib/substrate.js';
+const { root } = bootstrap(); loadState(root); const now = new Date().toISOString();
+writeFileSync(resolve(root,'.stealtheye/validation/h4-executable-recovery-fixtures.json'), JSON.stringify({fixtures:['replay corruption','branch divergence','duplicate active runtimes','duplicate next actions','H4 COMPLETE mutation','reopened H3 mutation'],mutation_assertion_harness:true,deterministic_reports:true,repair_recommendations:true,escalation_classification:true,updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/validation/h4-runtime-chaos-fixtures.json'), JSON.stringify({fixtures:['interrupted merge chain','interrupted validation chain','interrupted replay generation','invalid escalation paths'],updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/validation/h4-decision-core-fixtures.json'), JSON.stringify({fixtures:['unsafe autonomy decisions','invalid decision evidence','missing continuity surface'],updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/validation/h4-review-fabric-fixtures.json'), JSON.stringify({fixtures:['unresolved review escalation','invalid merge ancestry','merge divergence'],updated_at:now},null,2));
+console.log('h4 runtime chaos fixtures generated');

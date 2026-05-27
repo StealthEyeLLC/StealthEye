@@ -1,0 +1,9 @@
+{
+  "deterministic_ordering": true,
+  "retention_window": 64,
+  "replay_safe": true,
+  "execution_proofs": true,
+  "completion_proofs": true,
+  "failure_proofs": true,
+  "updated_at": "2026-05-27T16:09:05.278Z"
+}

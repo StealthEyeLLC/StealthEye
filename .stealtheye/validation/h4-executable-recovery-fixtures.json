@@ -1,0 +1,15 @@
+{
+  "fixtures": [
+    "replay corruption",
+    "branch divergence",
+    "duplicate active runtimes",
+    "duplicate next actions",
+    "H4 COMPLETE mutation",
+    "reopened H3 mutation"
+  ],
+  "mutation_assertion_harness": true,
+  "deterministic_reports": true,
+  "repair_recommendations": true,
+  "escalation_classification": true,
+  "updated_at": "2026-05-27T16:09:09.670Z"
+}

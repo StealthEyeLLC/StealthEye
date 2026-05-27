@@ -1,0 +1,12 @@
+{
+  "checkpoints": [
+    {
+      "id": "cmd-1",
+      "status": "completed"
+    }
+  ],
+  "interruption_markers": [],
+  "retry_lineage": [],
+  "validation_rerun_lineage": [],
+  "updated_at": "2026-05-27T16:09:05.278Z"
+}

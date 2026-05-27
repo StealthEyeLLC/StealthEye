@@ -1,0 +1,30 @@
+{
+  "receipt_id": "h2-browser-execution-01ad4522c7b9ff47",
+  "created_at": "2026-05-27T16:08:07.935Z",
+  "node_id": "node_bddcfa957acf3e5a",
+  "adapter": "browser",
+  "lineage": {
+    "dag_id": "dag_12955b6877329dbb3a66"
+  },
+  "replay_metadata": {
+    "deterministic": true
+  },
+  "authority_metadata": {
+    "source": "local"
+  },
+  "repair_metadata": {
+    "deterministic": true
+  },
+  "boundedness_metadata": {
+    "bounded": true
+  },
+  "policy_metadata": {
+    "result": "allow"
+  },
+  "runtime_metadata": {
+    "started_at": "2026-05-27T16:08:07.935Z"
+  },
+  "continuation_metadata": {
+    "continuation_id": null
+  }
+}

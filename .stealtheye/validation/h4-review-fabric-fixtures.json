@@ -1,0 +1,8 @@
+{
+  "fixtures": [
+    "unresolved review escalation",
+    "invalid merge ancestry",
+    "merge divergence"
+  ],
+  "updated_at": "2026-05-27T16:09:09.670Z"
+}

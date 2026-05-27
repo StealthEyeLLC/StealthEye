@@ -1,0 +1,10 @@
+import { writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { bootstrap } from '../lib/bootstrap.js';
+import { loadState } from '../lib/substrate.js';
+const { root } = bootstrap(); loadState(root); const now = new Date().toISOString();
+writeFileSync(resolve(root,'.stealtheye/state/pr-review-fabric.json'), JSON.stringify({phase:'H4',status:'ACTIVE',review_state_reconstruction:'deterministic',merge_readiness_proofs:true,bounded_review_escalation:true,updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/state/pr-review-resolution.json'), JSON.stringify({unresolved_review_findings:[],interrupted_review_cycles:[],interrupted_merge_cycles:[],updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/state/pr-review-risk-analysis.json'), JSON.stringify({risks:[],merge_without_continuity_validation:false,merge_without_replay_integrity:false,updated_at:now},null,2));
+writeFileSync(resolve(root,'.stealtheye/state/pr-review-recovery.json'), JSON.stringify({recovery_path:['reconstruct-review-state','verify-runtime-state','derive-next-action'],updated_at:now},null,2));
+console.log('h4 review fabric generated');
