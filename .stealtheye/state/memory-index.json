@@ -1,0 +1,6 @@
+{
+  "required": [
+    "working-set.json",
+    "repo-facts.json"
+  ]
+}

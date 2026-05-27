@@ -9,7 +9,9 @@
     "check": "tsx src/cli/check.ts",
     "check:readiness": "tsx src/cli/check-readiness.ts",
     "graph": "tsx src/cli/graph.ts",
-    "compile:packet": "tsx src/cli/compile-packet.ts"
+    "compile:packet": "tsx src/cli/compile-packet.ts",
+    "inspect:repo": "tsx src/cli/inspect-repo.ts",
+    "diagnose": "tsx src/cli/diagnose.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

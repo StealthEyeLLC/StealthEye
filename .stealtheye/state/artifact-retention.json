@@ -1,0 +1,13 @@
+{
+  "retention": {
+    "hot": 10,
+    "warm": 20,
+    "cold": 40,
+    "archival": "compressed-summary"
+  },
+  "remaining": 4,
+  "supersession": {
+    "handoff": "handoffs/latest.json",
+    "replay": "receipts/latest-replay.json"
+  }
+}

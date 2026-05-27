@@ -1,0 +1,15 @@
+{
+  "summary": "phase0 hardening",
+  "priorities": {
+    "critical": [
+      "lifecycle"
+    ],
+    "active": [
+      "replay"
+    ],
+    "background": [
+      "compaction"
+    ],
+    "archival": []
+  }
+}
