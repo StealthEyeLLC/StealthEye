@@ -1,0 +1,141 @@
+{
+  "schema_version": "2.0.0",
+  "dags": [
+    {
+      "dag_id": "dag_b9b250a1a1a82be6dd22",
+      "mission_id": "h2:validate",
+      "state": "active",
+      "nodes": [
+        {
+          "node_id": "node_dfdc23f138639e78",
+          "name": "a",
+          "state": "completed",
+          "dependencies": [],
+          "execution_envelope": {},
+          "execution_contract": {},
+          "authority_requirement": "SAFE_AUTONOMOUS",
+          "retry_policy": {
+            "max": 1
+          },
+          "escalation_policy": {
+            "to": "ci_runtime"
+          },
+          "repair_hooks": [],
+          "replay_hooks": [],
+          "checkpoint_hooks": [],
+          "execution_window": {
+            "max_ms": 60000
+          },
+          "execution_budgets": {
+            "execution_budget": 1
+          },
+          "anti_invariant_guards": [
+            "no-unbounded-dag-recursion"
+          ]
+        },
+        {
+          "node_id": "node_ba7e897ae983791c",
+          "name": "b",
+          "state": "pending",
+          "dependencies": [
+            "node_"
+          ],
+          "execution_envelope": {},
+          "execution_contract": {},
+          "authority_requirement": "SAFE_AUTONOMOUS",
+          "retry_policy": {
+            "max": 1
+          },
+          "escalation_policy": {
+            "to": "ci_runtime"
+          },
+          "repair_hooks": [],
+          "replay_hooks": [],
+          "checkpoint_hooks": [],
+          "execution_window": {
+            "max_ms": 60000
+          },
+          "execution_budgets": {
+            "execution_budget": 1
+          },
+          "anti_invariant_guards": [
+            "no-unbounded-dag-recursion"
+          ]
+        }
+      ],
+      "created_at": "2026-05-27T09:17:17.636Z",
+      "lineage": {
+        "continuation": [],
+        "recovery": [],
+        "repair": []
+      }
+    },
+    {
+      "dag_id": "dag_7cac3be0593fad05d7ab",
+      "mission_id": "h2:smoke",
+      "state": "active",
+      "nodes": [
+        {
+          "node_id": "node_a2203e9c72360e5b",
+          "name": "start",
+          "state": "completed",
+          "dependencies": [],
+          "execution_envelope": {},
+          "execution_contract": {},
+          "authority_requirement": "SAFE_AUTONOMOUS",
+          "retry_policy": {
+            "max": 1
+          },
+          "escalation_policy": {
+            "to": "ci_runtime"
+          },
+          "repair_hooks": [],
+          "replay_hooks": [],
+          "checkpoint_hooks": [],
+          "execution_window": {
+            "max_ms": 60000
+          },
+          "execution_budgets": {
+            "execution_budget": 1
+          },
+          "anti_invariant_guards": [
+            "no-unbounded-dag-recursion"
+          ]
+        },
+        {
+          "node_id": "node_6cc85242eb1afde7",
+          "name": "finish",
+          "state": "completed",
+          "dependencies": [],
+          "execution_envelope": {},
+          "execution_contract": {},
+          "authority_requirement": "SAFE_AUTONOMOUS",
+          "retry_policy": {
+            "max": 1
+          },
+          "escalation_policy": {
+            "to": "ci_runtime"
+          },
+          "repair_hooks": [],
+          "replay_hooks": [],
+          "checkpoint_hooks": [],
+          "execution_window": {
+            "max_ms": 60000
+          },
+          "execution_budgets": {
+            "execution_budget": 1
+          },
+          "anti_invariant_guards": [
+            "no-unbounded-dag-recursion"
+          ]
+        }
+      ],
+      "created_at": "2026-05-27T09:17:19.660Z",
+      "lineage": {
+        "continuation": [],
+        "recovery": [],
+        "repair": []
+      }
+    }
+  ]
+}

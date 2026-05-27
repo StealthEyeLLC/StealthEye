@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0.0",
+  "budgets": {
+    "retry_budget": 0,
+    "repair_budget": 0,
+    "execution_budget": 0,
+    "token_budget": 0,
+    "runtime_budget": 0,
+    "ci_budget": 0,
+    "browser_budget": 0,
+    "codex_budget": 0,
+    "escalation_budget": 0
+  }
+}

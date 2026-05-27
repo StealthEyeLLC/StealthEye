@@ -1,0 +1,11 @@
+{
+  "dag_posture": "ACTIVE",
+  "checkpoint_posture": "ACTIVE",
+  "continuation_posture": "ACTIVE",
+  "approval_posture": "GOVERNED",
+  "budget_posture": "BOUNDED",
+  "worker_posture": "BOUNDED",
+  "orchestration_posture": "DETERMINISTIC",
+  "escalation_posture": "VISIBLE",
+  "mission_fabric_posture": "DURABLE"
+}

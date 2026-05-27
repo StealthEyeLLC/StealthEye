@@ -101,6 +101,10 @@
       "type": "state-file"
     },
     {
+      "id": "h2-adapter-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-approval-state.json",
       "type": "state-file"
     },
@@ -117,6 +121,14 @@
       "type": "state-file"
     },
     {
+      "id": "h2-execution-envelopes.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-execution-memory.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-github-actions.json",
       "type": "state-file"
     },
@@ -129,7 +141,23 @@
       "type": "state-file"
     },
     {
+      "id": "h2-operational-dashboard.json",
+      "type": "state-file"
+    },
+    {
       "id": "h2-repair-memory.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-repair-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-routing-runtime.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h2-runtime-event-bus.json",
       "type": "state-file"
     },
     {

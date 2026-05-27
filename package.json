@@ -20,7 +20,8 @@
     "h1:packet": "tsx src/cli/h1-packet.ts",
     "h2:inspect": "tsx src/cli/h2-inspect.ts",
     "h2:validate": "tsx src/cli/h2-validate.ts",
-    "h2:packet": "tsx src/cli/h2-packet.ts"
+    "h2:packet": "tsx src/cli/h2-packet.ts",
+    "h2:execution:smoke": "tsx src/cli/h2-execution-smoke.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",
