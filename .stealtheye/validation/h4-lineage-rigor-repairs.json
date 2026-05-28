@@ -1,0 +1,8 @@
+{
+  "repairs": [
+    {
+      "blocker": "conflicting canonical lineage",
+      "action": "rebuild merge lineage from replay + checkpoint canonical chain"
+    }
+  ]
+}

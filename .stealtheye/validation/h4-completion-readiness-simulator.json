@@ -17,7 +17,7 @@
   "governance": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.294Z",
+    "timestamp": "2026-05-27T19:51:10.812Z",
     "audit_status": "pass",
     "evidence_files": [
       ".stealtheye/state/project-state.json",
@@ -44,7 +44,7 @@
   "replay": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.294Z",
+    "timestamp": "2026-05-27T19:51:10.813Z",
     "rehearsal_status": "pass",
     "fixtures_deterministic": true,
     "cases": [
@@ -137,7 +137,7 @@
   "lineage": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.295Z",
+    "timestamp": "2026-05-27T19:51:10.814Z",
     "lineage_status": "conflict-detected-and-repairable",
     "conflict_count": 10,
     "conflicts": [
@@ -211,7 +211,7 @@
   "quarantine": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.296Z",
+    "timestamp": "2026-05-27T19:51:10.814Z",
     "quarantine_status": "pass",
     "proofs": [
       "stale runtime quarantined",
@@ -229,7 +229,7 @@
   "merge": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.296Z",
+    "timestamp": "2026-05-27T19:51:10.815Z",
     "merge_readiness_status": "guarded",
     "allowed_only_when": [
       "h4 active",
@@ -243,7 +243,7 @@
   "no_memory": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.297Z",
+    "timestamp": "2026-05-27T19:51:10.815Z",
     "recovery_status": "pass",
     "canonical_load_order": [
       "handoff",
@@ -259,7 +259,7 @@
   "mobile": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.298Z",
+    "timestamp": "2026-05-27T19:51:10.816Z",
     "mobile_acceptance_status": "pass",
     "compact": true,
     "required_order": true,
@@ -268,7 +268,7 @@
   "gates": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.299Z",
+    "timestamp": "2026-05-27T19:51:10.817Z",
     "gate_status": "not-ready",
     "gates_passed": [
       "fresh-tab recovery",
@@ -293,16 +293,16 @@
   "artifact": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.299Z",
+    "timestamp": "2026-05-27T19:51:10.817Z",
     "churn_status": "pass",
     "churn": [
       {
         "dir": ".stealtheye/handoffs",
-        "count": 33
+        "count": 38
       },
       {
         "dir": ".stealtheye/receipts",
-        "count": 134
+        "count": 140
       },
       {
         "dir": ".stealtheye/runtime/checkpoints",
@@ -310,7 +310,7 @@
       },
       {
         "dir": ".stealtheye/validation",
-        "count": 188
+        "count": 232
       }
     ],
     "retention_recommendations": [
@@ -331,7 +331,7 @@
   "blockers": {
     "phase": "H4",
     "h4_status": "ACTIVE",
-    "timestamp": "2026-05-27T19:37:13.300Z",
+    "timestamp": "2026-05-27T19:51:10.819Z",
     "blockers_total": 3,
     "true_blockers": [
       {

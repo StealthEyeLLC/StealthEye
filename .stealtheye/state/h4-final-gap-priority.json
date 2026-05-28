@@ -1,0 +1,8 @@
+{
+  "priority": [
+    "replay",
+    "lineage",
+    "serialization",
+    "freeze"
+  ]
+}

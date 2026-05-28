@@ -1,0 +1,110 @@
+[
+  {
+    "name": "fresh-tab restart",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted runtime",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted replay",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted repair",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted merge",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted validation",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted quarantine",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted mobile handoff",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted governance escalation",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted next-action derivation",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  },
+  {
+    "name": "interrupted serialization write",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": false
+  },
+  {
+    "name": "interrupted continuity generation",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "passed": true
+  }
+]

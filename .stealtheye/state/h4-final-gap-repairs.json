@@ -1,0 +1,7 @@
+{
+  "repairs": [
+    "tighten replay signature validation",
+    "resolve merge lineage authority",
+    "enforce atomic serialization writes"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "risks": [
+    "hard-fail-risk:replay receipt forgery",
+    "hard-fail-risk:replay recovery recursion"
+  ]
+}

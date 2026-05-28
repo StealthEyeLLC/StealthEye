@@ -1,0 +1,60 @@
+{
+  "repairs": [
+    {
+      "scenario": "replay ancestry corruption",
+      "repair": "repair-replay-ancestry-corruption"
+    },
+    {
+      "scenario": "replay timestamp inversion",
+      "repair": "repair-replay-timestamp-inversion"
+    },
+    {
+      "scenario": "replay receipt forgery",
+      "repair": "repair-replay-receipt-forgery"
+    },
+    {
+      "scenario": "replay lineage poisoning",
+      "repair": "repair-replay-lineage-poisoning"
+    },
+    {
+      "scenario": "replay chain truncation",
+      "repair": "repair-replay-chain-truncation"
+    },
+    {
+      "scenario": "replay checkpoint duplication",
+      "repair": "repair-replay-checkpoint-duplication"
+    },
+    {
+      "scenario": "replay branch divergence",
+      "repair": "repair-replay-branch-divergence"
+    },
+    {
+      "scenario": "replay merge divergence",
+      "repair": "repair-replay-merge-divergence"
+    },
+    {
+      "scenario": "replay-next-action divergence",
+      "repair": "repair-replay-next-action-divergence"
+    },
+    {
+      "scenario": "replay mobile divergence",
+      "repair": "repair-replay-mobile-divergence"
+    },
+    {
+      "scenario": "replay governance divergence",
+      "repair": "repair-replay-governance-divergence"
+    },
+    {
+      "scenario": "replay recovery recursion",
+      "repair": "repair-replay-recovery-recursion"
+    },
+    {
+      "scenario": "replay quarantine recursion",
+      "repair": "repair-replay-quarantine-recursion"
+    },
+    {
+      "scenario": "replay repair recursion",
+      "repair": "repair-replay-repair-recursion"
+    }
+  ]
+}
