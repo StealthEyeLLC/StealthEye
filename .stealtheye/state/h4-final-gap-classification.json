@@ -1,26 +1,17 @@
 {
   "true_blockers": [
-    "replay-hard-fail-open",
-    "lineage-conflict-open"
+    "continuity-failed",
+    "eligibility-failed",
+    "completion-law-not-authorized"
   ],
   "advisory_blockers": [
-    "serialization-atomicity-margin"
+    "mobile-convergence-missing-evidence"
   ],
-  "nondeterminism_blockers": [
-    "interrupt-write-window"
-  ],
-  "replay_blockers": [
-    "receipt-forgery-detection-gap"
-  ],
-  "lineage_blockers": [
-    "merge-lineage-ambiguity"
-  ],
-  "freeze_blockers": [
-    "freeze-validation-blocker-open"
-  ],
+  "nondeterminism_blockers": [],
+  "replay_blockers": [],
+  "lineage_blockers": [],
+  "freeze_blockers": [],
   "governance_blockers": [],
   "mobile_blockers": [],
-  "serialization_blockers": [
-    "atomic-write-proof-gap"
-  ]
+  "serialization_blockers": []
 }

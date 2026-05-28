@@ -1,7 +1,7 @@
 {
   "repairs": [
-    "tighten replay signature validation",
-    "resolve merge lineage authority",
-    "enforce atomic serialization writes"
+    "continuity-failed",
+    "eligibility-failed",
+    "completion-law-not-authorized"
   ]
 }

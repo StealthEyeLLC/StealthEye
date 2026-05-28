@@ -11,13 +11,17 @@ export function runH4FinalLaw(root = process.cwd()) {
   const serialization = readJson(resolve(root, '.stealtheye/validation/h4-serialization-final.json'), {}) as any;
   const freeze = readJson(resolve(root, '.stealtheye/validation/h4-freeze-authority-proof.json'), {}) as any;
   const e2e = readJson(resolve(root, '.stealtheye/validation/h4-final-end-to-end-proof.json'), {}) as any;
+  const eligibility = readJson(resolve(root, '.stealtheye/validation/h4-completion-eligibility.json'), {}) as any;
+  const authority = readJson(resolve(root, '.stealtheye/validation/h4-completion-authority.json'), {}) as any;
 
   const failed = [
     ['replay', replay?.status !== 'PASS'],
     ['lineage', lineage?.status !== 'PASS'],
     ['serialization', serialization?.status !== 'PASS'],
     ['freeze', freeze?.status !== 'PASS'],
-    ['final-end-to-end-proof', e2e?.status !== 'PASS']
+    ['final-end-to-end-proof', e2e?.status !== 'PASS'],
+    ['completion-eligibility', eligibility?.status !== 'PASS'],
+    ['completion-authority', authority?.status !== 'PASS']
   ].filter(([, v]) => v).map(([k]) => k);
 
   const decision = failed.length === 0 ? 'AUTHORIZE_H4_COMPLETE' : 'FORBID_H4_COMPLETE_KEEP_ACTIVE';

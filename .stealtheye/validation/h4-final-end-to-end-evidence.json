@@ -1,76 +1,52 @@
 {
   "evidence": [
     {
-      "check": "completely fresh tab",
-      "pass": true
+      "name": "proof",
+      "status": "UNKNOWN"
     },
     {
-      "check": "zero memory",
-      "pass": true
+      "name": "replay",
+      "status": "PASS"
     },
     {
-      "check": "replay corruption",
-      "pass": true
+      "name": "lineage",
+      "status": "PASS"
     },
     {
-      "check": "replay repair",
-      "pass": true
+      "name": "serialization",
+      "status": "PASS"
     },
     {
-      "check": "lineage corruption",
-      "pass": true
+      "name": "governance",
+      "status": "UNKNOWN"
     },
     {
-      "check": "lineage repair",
-      "pass": true
+      "name": "mobile",
+      "status": "PASS"
     },
     {
-      "check": "interrupted validation",
-      "pass": true
+      "name": "continuity",
+      "status": "FAIL"
     },
     {
-      "check": "interrupted runtime",
-      "pass": true
+      "name": "freeze",
+      "status": "PASS"
     },
     {
-      "check": "interrupted merge",
-      "pass": true
+      "name": "eligibility",
+      "status": "FAIL"
     },
     {
-      "check": "interrupted repair",
-      "pass": true
+      "name": "authority",
+      "status": "PASS"
     },
     {
-      "check": "interrupted quarantine",
-      "pass": true
+      "name": "continuity-realism",
+      "status": "PASS"
     },
     {
-      "check": "mobile-only supervision",
-      "pass": true
-    },
-    {
-      "check": "continuity restoration",
-      "pass": true
-    },
-    {
-      "check": "runtime reconstruction",
-      "pass": true
-    },
-    {
-      "check": "autonomous repair orchestration",
-      "pass": true
-    },
-    {
-      "check": "governance escalation",
-      "pass": true
-    },
-    {
-      "check": "freeze validation",
-      "pass": true
-    },
-    {
-      "check": "final next-action derivation",
-      "pass": true
+      "name": "mobile-convergence",
+      "status": "PASS"
     }
   ]
 }

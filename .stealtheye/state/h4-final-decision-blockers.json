@@ -1,5 +1,6 @@
 {
   "blockers": [
-    "final-end-to-end-proof"
+    "final-end-to-end-proof",
+    "completion-eligibility"
   ]
 }

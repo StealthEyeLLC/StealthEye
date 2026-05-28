@@ -1,6 +1,7 @@
 {
   "decision": "FORBID_H4_COMPLETE_KEEP_ACTIVE",
   "failed_requirements": [
-    "final-end-to-end-proof"
+    "final-end-to-end-proof",
+    "completion-eligibility"
   ]
 }

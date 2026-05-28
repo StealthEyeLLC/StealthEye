@@ -1,8 +1,7 @@
 {
   "priority": [
-    "replay",
-    "lineage",
-    "serialization",
-    "freeze"
+    "proof",
+    "law",
+    "decision"
   ]
 }

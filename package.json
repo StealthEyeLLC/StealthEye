@@ -102,7 +102,12 @@
     "h4:final-law": "tsx src/cli/h4-final-law.ts",
     "h4:final-gap-classifier": "tsx src/cli/h4-final-gap-classifier.ts",
     "h4:final-end-to-end-proof": "tsx src/cli/h4-final-end-to-end-proof.ts",
-    "h4:final-decision": "tsx src/cli/h4-final-decision.ts"
+    "h4:final-decision": "tsx src/cli/h4-final-decision.ts",
+    "h4:completion-eligibility": "tsx src/cli/h4-completion-eligibility.ts",
+    "h4:completion-authority": "tsx src/cli/h4-completion-authority.ts",
+    "h4:continuity-realism": "tsx src/cli/h4-continuity-realism.ts",
+    "h4:mobile-convergence": "tsx src/cli/h4-mobile-convergence.ts",
+    "h4:final-completion-readiness": "tsx src/cli/h4-final-completion-readiness.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",
