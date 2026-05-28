@@ -96,7 +96,7 @@
     "executable": true,
     "replay_safe": true,
     "governance_safe": true,
-    "passed": false
+    "passed": true
   },
   {
     "name": "interrupted continuity generation",

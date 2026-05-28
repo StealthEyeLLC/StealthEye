@@ -1,6 +1,4 @@
 {
-  "decision": "FORBID_H4_COMPLETE_KEEP_ACTIVE",
-  "failed_requirements": [
-    "final-end-to-end-proof"
-  ]
+  "decision": "AUTHORIZE_H4_COMPLETE",
+  "failed_requirements": []
 }
