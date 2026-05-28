@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "h4:continuity-arbitration",
+  "processName": "validate",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T18:55:57.739Z",
+  "timestamp": "2026-05-28T03:04:12.996Z",
   "ordered_commands": [
-    "npm run h4:continuity-arbitration"
+    "npm run validate"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -33,7 +33,14 @@
     ".stealtheye/validation/consistency-report.json"
   ],
   "validation_outputs": {
-    "ok": true
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
   },
   "replay_dependencies": [
     ".stealtheye/state/project-state.json",
@@ -53,7 +60,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "a660d8076c382e4d65640c6f10686f267d34b9fbdddaec34d6ee7292333b5e69",
+      "digest": "2e6ad757be5b12b399d086b2cdb7438a726d601ae7f15dd7d56cd16de6ca287f",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -61,9 +68,16 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run h4:continuity-arbitration"
+    "npm run validate"
   ],
   "validation_results": {
-    "ok": true
+    "ok": true,
+    "reliability": {
+      "flaky_validations": [],
+      "unstable_checks": [],
+      "repeated_failures": 0,
+      "repair_success_rate": 1,
+      "score": 0.98
+    }
   }
 }

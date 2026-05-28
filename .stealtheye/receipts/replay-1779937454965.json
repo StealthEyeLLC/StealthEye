@@ -2,7 +2,7 @@
   "schema_version": "1.4.0",
   "processName": "check:readiness",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T19:20:55.095Z",
+  "timestamp": "2026-05-28T03:04:14.965Z",
   "ordered_commands": [
     "npm run check:readiness"
   ],
@@ -62,7 +62,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "05b8b0a68414edd83dc83f9d7491c794fd654f00504f0b0b6489195ce68ad364",
+      "digest": "85702f0d0145ae9758ae1f5a18940ccd1703ed3d408b42e3804a8553f5d04d0a",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88

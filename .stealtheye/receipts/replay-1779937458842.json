@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.4.0",
+  "processName": "inspect:repo",
+  "process_version": "1.4.0",
+  "timestamp": "2026-05-28T03:04:18.842Z",
+  "ordered_commands": [
+    "npm run inspect:repo"
+  ],
+  "active_task": "phase0-main",
+  "lifecycle_state": "phase0-autonomy-substrate",
+  "state_inputs": [
+    "project-state.json",
+    "queue.json",
+    "next-action.json"
+  ],
+  "memory_inputs": {
+    "required": [
+      "working-set.json",
+      "repo-facts.json",
+      "failure-pattern-memory.json"
+    ],
+    "compact": true
+  },
+  "graph_inputs": {
+    "repo": "repo-graph.json",
+    "knowledge": "knowledge-graph.json"
+  },
+  "relevant_files": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "validation_outputs": {
+    "dashboard": "deterministic autonomous runtime bootstrap",
+    "current_phase": "phase0-autonomy-substrate",
+    "phase0_readiness": "validated",
+    "phase0_completion": "COMPLETE",
+    "continuity_proof": {
+      "status": "validated",
+      "deterministic": true,
+      "scenarios": [
+        {
+          "scenario": "fresh-tab continuity",
+          "passed": true,
+          "reason": "inspect payload + latest pointers are complete"
+        },
+        {
+          "scenario": "degraded recovery",
+          "passed": true,
+          "reason": "consistency and recovery posture are deterministic"
+        },
+        {
+          "scenario": "replay recovery",
+          "passed": true,
+          "reason": "replay integrity dependency and supersession checks pass"
+        },
+        {
+          "scenario": "blocked recovery",
+          "passed": true,
+          "reason": "human_action_needed is explicit and deterministic"
+        },
+        {
+          "scenario": "routing recovery",
+          "passed": true,
+          "reason": "normal-chatgpt first policy"
+        }
+      ]
+    },
+    "coherence_health": {
+      "ok": true,
+      "contradiction_severity": "none",
+      "contradictions": [],
+      "score": 1,
+      "factors": {
+        "contradiction_count": 0
+      }
+    },
+    "replay_integrity": {
+      "status": "verified",
+      "chain_integrity": true,
+      "dependency_validation": true,
+      "supersession_correctness": true,
+      "drift_proof": {
+        "digest": "0aedcde38d88490e130cd3a0b500fda30cf4f32a0e133ca27ba30c5efbd93969",
+        "compared_to_latest_schema": "1.4.0"
+      },
+      "reproducibility_confidence": 0.88
+    },
+    "entropy": 0.2,
+    "routing_governance": {
+      "recommended_worker": "normal-chatgpt",
+      "escalation_thresholds": {
+        "to_codex": "route failure or low confidence < 0.6",
+        "to_agent_mode": "codex unavailable and task blocked"
+      },
+      "avoidable_escalation_detection": false,
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      }
+    },
+    "operational_contradictions": [],
+    "maintenance_recommendations": {
+      "actions": [
+        "cleanup",
+        "compaction",
+        "freshness-repair",
+        "replay-regeneration",
+        "routing-recalibration",
+        "memory-pruning"
+      ],
+      "maintenance_confidence": 0.9,
+      "compact_mode": true
+    },
+    "current_gaps": {
+      "phase0_status": "COMPLETE",
+      "remaining_blockers": [],
+      "remaining_risks": [],
+      "contradiction_reasons": []
+    },
+    "human_action_needed": false,
+    "autonomy_score": 0.7,
+    "replay_health": 0.715,
+    "recommended_worker": "normal-chatgpt",
+    "next_action": {
+      "action": "run deterministic repair sequence",
+      "score": 0.72,
+      "confidence": 0.88,
+      "recommended_worker": "normal-chatgpt",
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      },
+      "invariant_refs": [
+        "routing-stability",
+        "anti-loop-correctness"
+      ]
+    },
+    "recovery_posture": {
+      "strategy": "retry",
+      "confidence": 0.85,
+      "reason": "deterministic recovery policy based on failure recurrence",
+      "evidence": {
+        "recurrence_frequency": 0
+      },
+      "invariant_refs": [
+        "replay-integrity",
+        "continuity-correctness"
+      ],
+      "repair_sequence": [
+        "diagnose",
+        "repair",
+        "validate",
+        "replay-check",
+        "consistency-check",
+        "readiness-check"
+      ]
+    },
+    "explainability_packet": {
+      "why_next_action": {
+        "selected": "run deterministic repair sequence",
+        "reason": "normal-chatgpt first policy",
+        "evidence": {
+          "premium_worker_waste": 0,
+          "route_failures": 0
+        },
+        "confidence": 0.88,
+        "invariant_refs": [
+          "routing-stability",
+          "anti-loop-correctness"
+        ]
+      },
+      "why_worker": {
+        "recommended": "normal-chatgpt",
+        "reason": "routing governance thresholds",
+        "supporting_history": {
+          "worker_outcomes": [],
+          "failed_routes": [],
+          "premium_worker_waste": 0,
+          "low_intervention_routes": 0
+        }
+      },
+      "why_repair_path": {
+        "selected": "retry",
+        "reason": "deterministic recovery policy based on failure recurrence",
+        "confidence": 0.85,
+        "invariant_refs": [
+          "replay-integrity",
+          "continuity-correctness"
+        ]
+      },
+      "why_readiness_tier": {
+        "tier": "validated",
+        "reason": "derived from readiness + coherence",
+        "evidence": {
+          "score": 1,
+          "factors": {
+            "contradiction_count": 0
+          }
+        }
+      }
+    },
+    "blockers": [],
+    "remaining_blockers": [],
+    "phase0_status": "COMPLETE",
+    "h1_status": "COMPLETE",
+    "h2_status": "COMPLETE",
+    "h3_status": "NOT_STARTED",
+    "exact_canonical_seal_sha": "6f42593e64bf119eeace0323f0758bcd2a9ac9ad40dbc48847d841bd5b303f43",
+    "exact_convergence_score": 1,
+    "exact_boundedness_score": 1,
+    "exact_retention_posture": "BOUNDED",
+    "exact_authority_posture": 1,
+    "exact_replay_posture": 1
+  },
+  "replay_dependencies": [
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/queue.json",
+    ".stealtheye/state/process-selector.json",
+    ".stealtheye/state/memory-index.json",
+    ".stealtheye/validation/consistency-report.json"
+  ],
+  "replay_confidence": 0.715,
+  "replay_uncertainty": {
+    "score": 0.285,
+    "reasons": [
+      "validation_not_fully_stable"
+    ]
+  },
+  "replay_integrity": {
+    "status": "verified",
+    "chain_integrity": true,
+    "dependency_validation": true,
+    "supersession_correctness": true,
+    "drift_proof": {
+      "digest": "0aedcde38d88490e130cd3a0b500fda30cf4f32a0e133ca27ba30c5efbd93969",
+      "compared_to_latest_schema": "1.4.0"
+    },
+    "reproducibility_confidence": 0.88
+  },
+  "blockers": [],
+  "next_action": "run generate then validate",
+  "commands": [
+    "npm run inspect:repo"
+  ],
+  "validation_results": {
+    "dashboard": "deterministic autonomous runtime bootstrap",
+    "current_phase": "phase0-autonomy-substrate",
+    "phase0_readiness": "validated",
+    "phase0_completion": "COMPLETE",
+    "continuity_proof": {
+      "status": "validated",
+      "deterministic": true,
+      "scenarios": [
+        {
+          "scenario": "fresh-tab continuity",
+          "passed": true,
+          "reason": "inspect payload + latest pointers are complete"
+        },
+        {
+          "scenario": "degraded recovery",
+          "passed": true,
+          "reason": "consistency and recovery posture are deterministic"
+        },
+        {
+          "scenario": "replay recovery",
+          "passed": true,
+          "reason": "replay integrity dependency and supersession checks pass"
+        },
+        {
+          "scenario": "blocked recovery",
+          "passed": true,
+          "reason": "human_action_needed is explicit and deterministic"
+        },
+        {
+          "scenario": "routing recovery",
+          "passed": true,
+          "reason": "normal-chatgpt first policy"
+        }
+      ]
+    },
+    "coherence_health": {
+      "ok": true,
+      "contradiction_severity": "none",
+      "contradictions": [],
+      "score": 1,
+      "factors": {
+        "contradiction_count": 0
+      }
+    },
+    "replay_integrity": {
+      "status": "verified",
+      "chain_integrity": true,
+      "dependency_validation": true,
+      "supersession_correctness": true,
+      "drift_proof": {
+        "digest": "0aedcde38d88490e130cd3a0b500fda30cf4f32a0e133ca27ba30c5efbd93969",
+        "compared_to_latest_schema": "1.4.0"
+      },
+      "reproducibility_confidence": 0.88
+    },
+    "entropy": 0.2,
+    "routing_governance": {
+      "recommended_worker": "normal-chatgpt",
+      "escalation_thresholds": {
+        "to_codex": "route failure or low confidence < 0.6",
+        "to_agent_mode": "codex unavailable and task blocked"
+      },
+      "avoidable_escalation_detection": false,
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      }
+    },
+    "operational_contradictions": [],
+    "maintenance_recommendations": {
+      "actions": [
+        "cleanup",
+        "compaction",
+        "freshness-repair",
+        "replay-regeneration",
+        "routing-recalibration",
+        "memory-pruning"
+      ],
+      "maintenance_confidence": 0.9,
+      "compact_mode": true
+    },
+    "current_gaps": {
+      "phase0_status": "COMPLETE",
+      "remaining_blockers": [],
+      "remaining_risks": [],
+      "contradiction_reasons": []
+    },
+    "human_action_needed": false,
+    "autonomy_score": 0.7,
+    "replay_health": 0.715,
+    "recommended_worker": "normal-chatgpt",
+    "next_action": {
+      "action": "run deterministic repair sequence",
+      "score": 0.72,
+      "confidence": 0.88,
+      "recommended_worker": "normal-chatgpt",
+      "reason": "normal-chatgpt first policy",
+      "evidence": {
+        "premium_worker_waste": 0,
+        "route_failures": 0
+      },
+      "invariant_refs": [
+        "routing-stability",
+        "anti-loop-correctness"
+      ]
+    },
+    "recovery_posture": {
+      "strategy": "retry",
+      "confidence": 0.85,
+      "reason": "deterministic recovery policy based on failure recurrence",
+      "evidence": {
+        "recurrence_frequency": 0
+      },
+      "invariant_refs": [
+        "replay-integrity",
+        "continuity-correctness"
+      ],
+      "repair_sequence": [
+        "diagnose",
+        "repair",
+        "validate",
+        "replay-check",
+        "consistency-check",
+        "readiness-check"
+      ]
+    },
+    "explainability_packet": {
+      "why_next_action": {
+        "selected": "run deterministic repair sequence",
+        "reason": "normal-chatgpt first policy",
+        "evidence": {
+          "premium_worker_waste": 0,
+          "route_failures": 0
+        },
+        "confidence": 0.88,
+        "invariant_refs": [
+          "routing-stability",
+          "anti-loop-correctness"
+        ]
+      },
+      "why_worker": {
+        "recommended": "normal-chatgpt",
+        "reason": "routing governance thresholds",
+        "supporting_history": {
+          "worker_outcomes": [],
+          "failed_routes": [],
+          "premium_worker_waste": 0,
+          "low_intervention_routes": 0
+        }
+      },
+      "why_repair_path": {
+        "selected": "retry",
+        "reason": "deterministic recovery policy based on failure recurrence",
+        "confidence": 0.85,
+        "invariant_refs": [
+          "replay-integrity",
+          "continuity-correctness"
+        ]
+      },
+      "why_readiness_tier": {
+        "tier": "validated",
+        "reason": "derived from readiness + coherence",
+        "evidence": {
+          "score": 1,
+          "factors": {
+            "contradiction_count": 0
+          }
+        }
+      }
+    },
+    "blockers": [],
+    "remaining_blockers": [],
+    "phase0_status": "COMPLETE",
+    "h1_status": "COMPLETE",
+    "h2_status": "COMPLETE",
+    "h3_status": "NOT_STARTED",
+    "exact_canonical_seal_sha": "6f42593e64bf119eeace0323f0758bcd2a9ac9ad40dbc48847d841bd5b303f43",
+    "exact_convergence_score": 1,
+    "exact_boundedness_score": 1,
+    "exact_retention_posture": "BOUNDED",
+    "exact_authority_posture": 1,
+    "exact_replay_posture": 1
+  }
+}

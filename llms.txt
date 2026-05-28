@@ -1,7 +1,8 @@
-StealthEye substrate quick orientation (synced post-H3):
-- H0/H1/H2/H3 are COMPLETE; H4 is NOT STARTED.
+StealthEye substrate quick orientation (synced post-H4):
+- H0/H1/H2/H3/H4 are COMPLETE.
 - Bootstrap-first invariant: load `.stealtheye/state/project-state.json` before meaningful execution.
 - Continuity recovery entrypoint: `.stealtheye/state/fresh-tab-bootstrap.json`.
 - Source-of-truth precedence: handoff latest -> replay latest -> project-state -> next-action.
+- Canonical H4 guarantees: deterministic continuity, replay-safe recovery, lineage rigor, serialization stability, bounded governance, bounded autonomy, mobile-supervised continuity.
 - Forbidden autonomous actions remain enforced: secrets handling, purchases/billing, irreversible prod-data deletion, unrestricted shell/destructive git.
 - Run `npm run check` for deterministic generation+validation+graph+readiness.
