@@ -1,0 +1,5 @@
+{
+  "risks": [
+    "interrupted serialization write-needs-atomic-write-hardening"
+  ]
+}

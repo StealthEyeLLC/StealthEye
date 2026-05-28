@@ -1,0 +1,7 @@
+{
+  "risks": [
+    "replay-hard-fail-open",
+    "lineage-conflict-open",
+    "serialization-margin"
+  ]
+}

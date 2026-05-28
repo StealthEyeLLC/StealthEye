@@ -1,0 +1,745 @@
+{
+  "validators": {},
+  "proofs": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:39:13.973Z",
+    "proof_status": "strong-pass-with-blockers",
+    "blockers": [
+      "final-chaos-fixture-depth"
+    ],
+    "risks": [
+      "advisory-mobile-compactness-margin"
+    ]
+  },
+  "simulators": {
+    "h4_status": "ACTIVE",
+    "simulated": [
+      "fresh tab",
+      "zero memory",
+      "replay corruption",
+      "replay recovery",
+      "lineage conflict",
+      "quarantine restoration",
+      "governance audit",
+      "merge readiness",
+      "mobile supervision",
+      "artifact churn",
+      "blocker reduction",
+      "final next-action derivation"
+    ],
+    "governance": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.294Z",
+      "audit_status": "pass",
+      "evidence_files": [
+        ".stealtheye/state/project-state.json",
+        ".stealtheye/handoffs/latest.json",
+        ".stealtheye/receipts/latest-replay.json"
+      ],
+      "governance_findings": [
+        "approval boundaries preserved",
+        "repo state canonical",
+        "chat memory advisory only"
+      ],
+      "boundary_findings": [
+        "no unrestricted shell authority",
+        "no unrestricted destructive git"
+      ],
+      "autonomy_findings": [
+        "bounded deterministic autonomy only"
+      ],
+      "human_action_needed": false,
+      "approval_boundary_hit": false,
+      "unresolved_audit_risks": [],
+      "recommended_repair_actions": []
+    },
+    "replay": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.294Z",
+      "rehearsal_status": "pass",
+      "fixtures_deterministic": true,
+      "cases": [
+        {
+          "case": "missing latest replay",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:missing latest replay",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "stale latest replay",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:stale latest replay",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay timestamp drift",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay timestamp drift",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay chain break",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay chain break",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay receipt corruption",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay receipt corruption",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "invalid replay pointer",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:invalid replay pointer",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "duplicate replay authority",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:duplicate replay authority",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay mismatch after recovery",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay mismatch after recovery",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay-invalid command rerun",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay-invalid command rerun",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay-invalid next action",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay-invalid next action",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay-invalid merge readiness",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay-invalid merge readiness",
+          "escalation": "bounded-safe-stop"
+        },
+        {
+          "case": "replay-invalid mobile handoff",
+          "detected": true,
+          "expected_failure_asserted": true,
+          "repair_guidance": "repair:replay-invalid mobile handoff",
+          "escalation": "bounded-safe-stop"
+        }
+      ]
+    },
+    "lineage": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.295Z",
+      "lineage_status": "conflict-detected-and-repairable",
+      "conflict_count": 10,
+      "conflicts": [
+        {
+          "type": "branch",
+          "resolved": true
+        },
+        {
+          "type": "replay",
+          "resolved": true
+        },
+        {
+          "type": "runtime",
+          "resolved": true
+        },
+        {
+          "type": "command",
+          "resolved": true
+        },
+        {
+          "type": "pr",
+          "resolved": true
+        },
+        {
+          "type": "merge",
+          "resolved": true
+        },
+        {
+          "type": "handoff",
+          "resolved": true
+        },
+        {
+          "type": "mobile-handoff",
+          "resolved": true
+        },
+        {
+          "type": "checkpoint",
+          "resolved": true
+        },
+        {
+          "type": "decision-core",
+          "resolved": true
+        }
+      ],
+      "proof_chain": [
+        "canonical-load",
+        "conflict-detect",
+        "reject-non-canonical",
+        "repair-recommended"
+      ],
+      "canonical_lineage": "repo-state",
+      "rejected_lineage": [
+        "chat-memory",
+        "duplicate-authority"
+      ],
+      "repair_actions": [
+        "repair-branch-lineage",
+        "repair-replay-lineage",
+        "repair-runtime-lineage",
+        "repair-command-lineage",
+        "repair-pr-lineage",
+        "repair-merge-lineage",
+        "repair-handoff-lineage",
+        "repair-mobile-handoff-lineage",
+        "repair-checkpoint-lineage",
+        "repair-decision-core-lineage"
+      ],
+      "escalation_required": false,
+      "human_action_needed": false
+    },
+    "quarantine": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.296Z",
+      "quarantine_status": "pass",
+      "proofs": [
+        "stale runtime quarantined",
+        "replay-invalid runtime quarantined",
+        "branch-conflicted runtime quarantined",
+        "authoritative restoration requires proof"
+      ],
+      "restoration_requirements": [
+        "replay-valid",
+        "branch-valid",
+        "governance-valid"
+      ],
+      "boundaries_preserved": true
+    },
+    "merge": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.296Z",
+      "merge_readiness_status": "guarded",
+      "allowed_only_when": [
+        "h4 active",
+        "validation chain recorded",
+        "no high-risk blockers",
+        "deterministic next action"
+      ],
+      "blockers": [],
+      "next_action_deterministic": true
+    },
+    "no_memory": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.297Z",
+      "recovery_status": "pass",
+      "canonical_load_order": [
+        "handoff",
+        "replay",
+        "project-state",
+        "next-action"
+      ],
+      "chat_memory_authority": false,
+      "interrupted_work_identified": true,
+      "mobile_summary_ready": true,
+      "human_action_needed": false
+    },
+    "mobile": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.298Z",
+      "mobile_acceptance_status": "pass",
+      "compact": true,
+      "required_order": true,
+      "no_prompt_dump": true
+    },
+    "gates": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.299Z",
+      "gate_status": "not-ready",
+      "gates_passed": [
+        "fresh-tab recovery",
+        "governance audit",
+        "mobile supervision"
+      ],
+      "gates_failed": [
+        "full fixture coverage"
+      ],
+      "remaining_blockers": [
+        "replay-corruption-burn-in",
+        "lineage-chaos-expansion"
+      ],
+      "required_repairs": [
+        "repair:replay-corruption-burn-in",
+        "repair:lineage-chaos-expansion"
+      ],
+      "confidence": 0.82,
+      "estimated_remaining_h4_passes": 2,
+      "safe_to_consider_completion": false
+    },
+    "artifact": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.299Z",
+      "churn_status": "pass",
+      "churn": [
+        {
+          "dir": ".stealtheye/handoffs",
+          "count": 33
+        },
+        {
+          "dir": ".stealtheye/receipts",
+          "count": 134
+        },
+        {
+          "dir": ".stealtheye/runtime/checkpoints",
+          "count": 24
+        },
+        {
+          "dir": ".stealtheye/validation",
+          "count": 188
+        }
+      ],
+      "retention_recommendations": [
+        "keep latest pointers unique",
+        "cap generated artifacts deterministically"
+      ],
+      "canonical_ordering_recommendations": [
+        "stable key ordering",
+        "stable command ordering"
+      ],
+      "cleanup_recommendations": [
+        "prune stale generated artifacts"
+      ],
+      "serialization_recommendations": [
+        "use JSON.stringify(...,null,2)"
+      ]
+    },
+    "blockers": {
+      "phase": "H4",
+      "h4_status": "ACTIVE",
+      "timestamp": "2026-05-27T19:37:13.300Z",
+      "blockers_total": 3,
+      "true_blockers": [
+        {
+          "id": "fixture-coverage",
+          "severity": "high"
+        },
+        {
+          "id": "chaos-rehearsal-depth",
+          "severity": "medium"
+        }
+      ],
+      "advisory_risks": [
+        {
+          "id": "mobile-compaction-margin",
+          "severity": "low"
+        }
+      ],
+      "autonomous_repairs": [
+        "expand deterministic fixtures",
+        "tighten command chain assertions"
+      ],
+      "human_required_repairs": [],
+      "next_prompt_scope": "expand failed-gate fixture coverage and rerun completion simulator",
+      "estimated_remaining_passes": 2
+    },
+    "can_consider_completion_later": false,
+    "exact_next_prompt": "Expand deterministic fixture coverage for remaining H4 blockers, rerun h4 completion-readiness simulator, keep H4 ACTIVE only."
+  },
+  "governance": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:37:13.294Z",
+    "audit_status": "pass",
+    "evidence_files": [
+      ".stealtheye/state/project-state.json",
+      ".stealtheye/handoffs/latest.json",
+      ".stealtheye/receipts/latest-replay.json"
+    ],
+    "governance_findings": [
+      "approval boundaries preserved",
+      "repo state canonical",
+      "chat memory advisory only"
+    ],
+    "boundary_findings": [
+      "no unrestricted shell authority",
+      "no unrestricted destructive git"
+    ],
+    "autonomy_findings": [
+      "bounded deterministic autonomy only"
+    ],
+    "human_action_needed": false,
+    "approval_boundary_hit": false,
+    "unresolved_audit_risks": [],
+    "recommended_repair_actions": []
+  },
+  "replay": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:50:55.184Z",
+    "deterministic": true,
+    "bounded": true,
+    "executable": true,
+    "replay_safe": true,
+    "scenarios": [
+      {
+        "scenario": "replay ancestry corruption",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-ancestry-corruption",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay timestamp inversion",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-timestamp-inversion",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay receipt forgery",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-receipt-forgery",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay lineage poisoning",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-lineage-poisoning",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay chain truncation",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-chain-truncation",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay checkpoint duplication",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-checkpoint-duplication",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay branch divergence",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-branch-divergence",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay merge divergence",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-merge-divergence",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay-next-action divergence",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-next-action-divergence",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay mobile divergence",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-mobile-divergence",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay governance divergence",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-governance-divergence",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay recovery recursion",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-recovery-recursion",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay quarantine recursion",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-quarantine-recursion",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      },
+      {
+        "scenario": "replay repair recursion",
+        "deterministic": true,
+        "bounded": true,
+        "replay_safe": true,
+        "detected": true,
+        "repair_guidance": "repair-replay-repair-recursion",
+        "escalation_guidance": "escalate-governance-review-if-repeated",
+        "quarantine_guidance": "quarantine-corrupt-artifacts",
+        "recovery_guidance": "rebuild-from-canonical-precedence"
+      }
+    ],
+    "hard_fail_conditions": [
+      "adversarial replay bypass",
+      "invalid replay accepted",
+      "recursive replay instability",
+      "unsafe continuation",
+      "replay corruption not detected"
+    ],
+    "detected_failures": [
+      "hard-fail-risk:replay receipt forgery",
+      "hard-fail-risk:replay recovery recursion"
+    ],
+    "status": "FAIL"
+  },
+  "lineage": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:50:55.942Z",
+    "hard_fail_conditions": [
+      "lineage recursion instability",
+      "unresolved lineage ambiguity",
+      "conflicting canonical lineage",
+      "invalid lineage authority",
+      "lineage repair loop"
+    ],
+    "domains": [
+      {
+        "domain": "replay lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "branch lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "merge lineage",
+        "stable": false,
+        "authority": "conflicting-canonical-lineage"
+      },
+      {
+        "domain": "runtime lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "checkpoint lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "governance lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "repair lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "quarantine lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "mobile lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "simulator lineage",
+        "stable": true,
+        "authority": "canonical"
+      },
+      {
+        "domain": "proof lineage",
+        "stable": true,
+        "authority": "canonical"
+      }
+    ],
+    "true_blockers": [
+      "conflicting canonical lineage"
+    ],
+    "status": "FAIL"
+  },
+  "repair": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:39:13.974Z",
+    "bounded": true,
+    "deterministic": true,
+    "replay_safe": true,
+    "governance_safe": true,
+    "escalation_aware": true,
+    "approval_boundary_aware": true,
+    "hard_fail_conditions": [
+      "repair-without-lineage-proof",
+      "repair-without-replay-proof",
+      "unsafe-repair-escalation",
+      "unauthorized-autonomous-repair",
+      "undefined-repair-path"
+    ],
+    "mapped_actions": [
+      {
+        "blocker": "replay-corruption",
+        "repair": "run h4:replay-recovery -> h4:chaos-burnin",
+        "requires": [
+          "lineage-proof",
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "lineage-conflict",
+        "repair": "run h4:lineage-conflict-proof -> h4:merge-readiness-proof",
+        "requires": [
+          "lineage-proof"
+        ]
+      },
+      {
+        "blocker": "quarantine-failure",
+        "repair": "run h4:runtime-quarantine -> h4:quarantine-restoration-proof",
+        "requires": [
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "stale-continuity",
+        "repair": "run h4:fresh-tab-acceptance -> h4:end-to-end-proof",
+        "requires": [
+          "replay-proof"
+        ]
+      },
+      {
+        "blocker": "serialization-drift",
+        "repair": "run h4:serialization-stabilizer",
+        "requires": [
+          "lineage-proof"
+        ]
+      },
+      {
+        "blocker": "merge-readiness-failure",
+        "repair": "run h4:merge-readiness-proof -> h4:precompletion-law",
+        "requires": [
+          "lineage-proof",
+          "replay-proof"
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "phase": "H4",
+    "h4_status": "ACTIVE",
+    "timestamp": "2026-05-27T19:50:56.677Z",
+    "checks": {
+      "compactness": true,
+      "determinism": true,
+      "exact_next_action": true,
+      "exact_blocker_state": true,
+      "exact_approval_boundary_state": true,
+      "exact_branch_posture": true,
+      "exact_pr_posture": true,
+      "exact_h4_posture": true,
+      "exact_replay_posture": true,
+      "exact_freeze_readiness_posture": true
+    },
+    "hard_fail_conditions": [
+      "vague next action",
+      "vague blocker",
+      "vague governance state",
+      "oversized handoff",
+      "missing freeze posture",
+      "missing approval boundary",
+      "H4 COMPLETE"
+    ],
+    "status": "PASS"
+  }
+}

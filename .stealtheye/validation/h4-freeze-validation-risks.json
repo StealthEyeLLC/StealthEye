@@ -1,0 +1,6 @@
+{
+  "risks": [
+    "nondeterminism-risk-low",
+    "serialization-risk-medium"
+  ]
+}

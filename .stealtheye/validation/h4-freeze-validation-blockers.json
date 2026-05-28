@@ -1,0 +1,6 @@
+{
+  "blockers": [
+    "replay-hard-fail-open",
+    "lineage-conflict-open"
+  ]
+}

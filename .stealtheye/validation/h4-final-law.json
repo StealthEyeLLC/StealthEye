@@ -1,0 +1,27 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:51:00.373Z",
+  "prohibitions": [
+    "forbid premature H4 completion",
+    "forbid weakened governance",
+    "forbid replay-invalid continuation",
+    "forbid lineage-invalid continuation",
+    "forbid unrestricted autonomy",
+    "forbid approval-boundary bypass",
+    "forbid chat-memory authority",
+    "forbid Issue #1 prompt dumping",
+    "forbid reopening H0-H3"
+  ],
+  "requirements": {
+    "completion": "all hard-fail classes resolved",
+    "freeze": "all freeze blockers closed",
+    "governance": "approval boundaries explicit",
+    "replay": "invalid replay always rejected",
+    "lineage": "canonical lineage non-ambiguous",
+    "continuity": "fresh-tab deterministic",
+    "mobile": "compact exact handoff",
+    "serialization": "atomic and stable"
+  },
+  "status": "ENFORCED"
+}

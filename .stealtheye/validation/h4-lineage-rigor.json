@@ -1,0 +1,73 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:50:55.942Z",
+  "hard_fail_conditions": [
+    "lineage recursion instability",
+    "unresolved lineage ambiguity",
+    "conflicting canonical lineage",
+    "invalid lineage authority",
+    "lineage repair loop"
+  ],
+  "domains": [
+    {
+      "domain": "replay lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "branch lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "merge lineage",
+      "stable": false,
+      "authority": "conflicting-canonical-lineage"
+    },
+    {
+      "domain": "runtime lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "checkpoint lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "governance lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "repair lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "quarantine lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "mobile lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "simulator lineage",
+      "stable": true,
+      "authority": "canonical"
+    },
+    {
+      "domain": "proof lineage",
+      "stable": true,
+      "authority": "canonical"
+    }
+  ],
+  "true_blockers": [
+    "conflicting canonical lineage"
+  ],
+  "status": "FAIL"
+}

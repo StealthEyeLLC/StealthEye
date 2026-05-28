@@ -1,0 +1,17 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-27T19:50:58.858Z",
+  "h4_completion_consideration_reasonable": false,
+  "true_blockers": [
+    "replay-hard-fail-open",
+    "lineage-conflict-open"
+  ],
+  "advisory_risks": [
+    "nondeterminism-risk-low",
+    "serialization-risk-medium"
+  ],
+  "estimated_remaining_h4_prompts": 3,
+  "remaining_repair_scope": "targeted replay+lineage repair",
+  "remaining_risk_severity": "medium-high"
+}

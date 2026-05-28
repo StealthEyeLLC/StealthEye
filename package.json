@@ -91,7 +91,16 @@
     "h4:mobile-finalization": "tsx src/cli/h4-mobile-finalization.ts",
     "h4:end-to-end-proof": "tsx src/cli/h4-end-to-end-proof.ts",
     "h4:precompletion-law": "tsx src/cli/h4-precompletion-law.ts",
-    "h4:gap-reducer": "tsx src/cli/h4-gap-reducer.ts"
+    "h4:gap-reducer": "tsx src/cli/h4-gap-reducer.ts",
+    "h4:replay-adversariality": "tsx src/cli/h4-replay-adversariality.ts",
+    "h4:lineage-rigor": "tsx src/cli/h4-lineage-rigor.ts",
+    "h4:freeze-validation": "tsx src/cli/h4-freeze-validation.ts",
+    "h4:continuity-stress": "tsx src/cli/h4-continuity-stress.ts",
+    "h4:mobile-rigor": "tsx src/cli/h4-mobile-rigor.ts",
+    "h4:autonomy-containment": "tsx src/cli/h4-autonomy-containment.ts",
+    "h4:precompletion-simulator": "tsx src/cli/h4-precompletion-simulator.ts",
+    "h4:final-law": "tsx src/cli/h4-final-law.ts",
+    "h4:final-gap-classifier": "tsx src/cli/h4-final-gap-classifier.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

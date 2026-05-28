@@ -1,0 +1,26 @@
+{
+  "true_blockers": [
+    "replay-hard-fail-open",
+    "lineage-conflict-open"
+  ],
+  "advisory_blockers": [
+    "serialization-atomicity-margin"
+  ],
+  "nondeterminism_blockers": [
+    "interrupt-write-window"
+  ],
+  "replay_blockers": [
+    "receipt-forgery-detection-gap"
+  ],
+  "lineage_blockers": [
+    "merge-lineage-ambiguity"
+  ],
+  "freeze_blockers": [
+    "freeze-validation-blocker-open"
+  ],
+  "governance_blockers": [],
+  "mobile_blockers": [],
+  "serialization_blockers": [
+    "atomic-write-proof-gap"
+  ]
+}
