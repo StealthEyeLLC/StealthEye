@@ -1,28 +1,15 @@
 {
   "phase": "H4",
-  "status": "ACTIVE",
-  "timestamp": "2026-05-27T19:36:58.030Z",
-  "arbitration_precedence": [
-    "latest-handoff",
-    "latest-replay",
-    "project-state",
-    "next-action"
+  "timestamp": "2026-05-28T01:38:52.769Z",
+  "h4_status": "ACTIVE",
+  "canonical_precedence": [
+    ".stealtheye/handoffs/latest.json",
+    ".stealtheye/receipts/latest-replay.json",
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/next-action.json"
   ],
-  "conflicts_checked": [
-    "runtimes",
-    "branches",
-    "replay-chains",
-    "next-actions",
-    "pr-states",
-    "merge-states",
-    "mobile-continuity"
-  ],
-  "resolution": {
-    "canonical_runtime": "recovered",
-    "canonical_branch": "h4/autonomy-continuity-fresh-tab-runtime",
-    "canonical_replay_pointer": "2026-05-27T19:36:33.995Z",
-    "canonical_next_action": "run validate",
-    "quarantine_strategy": "none",
-    "escalation_required": false
-  }
+  "deterministic": true,
+  "bounded": true,
+  "unresolved_conflicts": [],
+  "status": "PASS"
 }

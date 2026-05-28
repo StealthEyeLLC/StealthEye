@@ -1,0 +1,7 @@
+{
+  "deterministic_recovery": true,
+  "bounded_recovery": true,
+  "replay_safe": true,
+  "recursive_recovery_prevented": true,
+  "status": "PASS"
+}

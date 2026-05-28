@@ -1,0 +1,28 @@
+{
+  "phase": "H4",
+  "h4_status": "ACTIVE",
+  "timestamp": "2026-05-28T01:38:49.643Z",
+  "precedence": [
+    ".stealtheye/handoffs/latest.json",
+    ".stealtheye/receipts/latest-replay.json",
+    ".stealtheye/state/project-state.json",
+    ".stealtheye/state/next-action.json"
+  ],
+  "deterministic": true,
+  "bounded": true,
+  "recursion_controls": {
+    "recovery_attempt_limit": 1,
+    "repair_attempt_limit": 1,
+    "quarantine_attempt_limit": 1,
+    "replay_safe": true,
+    "recursive_continuation_allowed": false
+  },
+  "hard_fail_conditions": [
+    "replay bypass",
+    "replay corruption accepted",
+    "recursive replay continuation",
+    "replay lineage ambiguity"
+  ],
+  "violations": [],
+  "status": "PASS"
+}
