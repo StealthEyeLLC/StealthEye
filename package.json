@@ -100,7 +100,9 @@
     "h4:autonomy-containment": "tsx src/cli/h4-autonomy-containment.ts",
     "h4:precompletion-simulator": "tsx src/cli/h4-precompletion-simulator.ts",
     "h4:final-law": "tsx src/cli/h4-final-law.ts",
-    "h4:final-gap-classifier": "tsx src/cli/h4-final-gap-classifier.ts"
+    "h4:final-gap-classifier": "tsx src/cli/h4-final-gap-classifier.ts",
+    "h4:final-end-to-end-proof": "tsx src/cli/h4-final-end-to-end-proof.ts",
+    "h4:final-decision": "tsx src/cli/h4-final-decision.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.31",

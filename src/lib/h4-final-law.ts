@@ -1,13 +1,32 @@
+import { resolve } from 'node:path';
 import { assertHardGuards, baseContext, writeJson } from './h4-completion-hardening-common.js';
-export function runH4FinalLaw(root=process.cwd()){
- const ctx=baseContext(root);assertHardGuards(ctx);
- const prohibitions=['forbid premature H4 completion','forbid weakened governance','forbid replay-invalid continuation','forbid lineage-invalid continuation','forbid unrestricted autonomy','forbid approval-boundary bypass','forbid chat-memory authority','forbid Issue #1 prompt dumping','forbid reopening H0-H3'];
- const requirements={completion:'all hard-fail classes resolved',freeze:'all freeze blockers closed',governance:'approval boundaries explicit',replay:'invalid replay always rejected',lineage:'canonical lineage non-ambiguous',continuity:'fresh-tab deterministic',mobile:'compact exact handoff',serialization:'atomic and stable'};
- const blockers=['premature-completion-forbidden-while-blockers-open'];
- const out={phase:'H4',h4_status:'ACTIVE',timestamp:ctx.now,prohibitions,requirements,status:'ENFORCED'};
- writeJson(root,'.stealtheye/validation/h4-final-law.json',out);
- writeJson(root,'.stealtheye/validation/h4-final-law-risks.json',{risks:['attempted-completion-with-open-blockers']});
- writeJson(root,'.stealtheye/validation/h4-final-law-authority.json',{authority:'repo-state-over-chat-memory'});
- writeJson(root,'.stealtheye/validation/h4-final-law-blockers.json',{blockers});
- return out;
+import { readJson } from './substrate.js';
+
+export function runH4FinalLaw(root = process.cwd()) {
+  const ctx = baseContext(root);
+  assertHardGuards(ctx);
+
+  const replay = readJson(resolve(root, '.stealtheye/validation/h4-replay-final.json'), {}) as any;
+  const lineage = readJson(resolve(root, '.stealtheye/validation/h4-lineage-final.json'), {}) as any;
+  const serialization = readJson(resolve(root, '.stealtheye/validation/h4-serialization-final.json'), {}) as any;
+  const freeze = readJson(resolve(root, '.stealtheye/validation/h4-freeze-authority-proof.json'), {}) as any;
+  const e2e = readJson(resolve(root, '.stealtheye/validation/h4-final-end-to-end-proof.json'), {}) as any;
+
+  const failed = [
+    ['replay', replay?.status !== 'PASS'],
+    ['lineage', lineage?.status !== 'PASS'],
+    ['serialization', serialization?.status !== 'PASS'],
+    ['freeze', freeze?.status !== 'PASS'],
+    ['final-end-to-end-proof', e2e?.status !== 'PASS']
+  ].filter(([, v]) => v).map(([k]) => k);
+
+  const decision = failed.length === 0 ? 'AUTHORIZE_H4_COMPLETE' : 'FORBID_H4_COMPLETE_KEEP_ACTIVE';
+  const status = failed.length === 0 ? 'PASS' : 'FAIL';
+
+  writeJson(root, '.stealtheye/validation/h4-completion-law.json', { phase: 'H4', timestamp: ctx.now, decision, status });
+  writeJson(root, '.stealtheye/validation/h4-completion-law-risks.json', { risks: failed.map((x) => `completion-law-failed-${x}`) });
+  writeJson(root, '.stealtheye/validation/h4-completion-law-authority.json', { bounded_authority: true, unrestricted_authority_completion_forbidden: true });
+  writeJson(root, '.stealtheye/validation/h4-completion-law-decision.json', { decision, failed_requirements: failed });
+
+  return { decision, failed, status };
 }

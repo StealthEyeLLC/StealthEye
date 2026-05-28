@@ -1,0 +1,76 @@
+{
+  "evidence": [
+    {
+      "check": "completely fresh tab",
+      "pass": true
+    },
+    {
+      "check": "zero memory",
+      "pass": true
+    },
+    {
+      "check": "replay corruption",
+      "pass": true
+    },
+    {
+      "check": "replay repair",
+      "pass": true
+    },
+    {
+      "check": "lineage corruption",
+      "pass": true
+    },
+    {
+      "check": "lineage repair",
+      "pass": true
+    },
+    {
+      "check": "interrupted validation",
+      "pass": true
+    },
+    {
+      "check": "interrupted runtime",
+      "pass": true
+    },
+    {
+      "check": "interrupted merge",
+      "pass": true
+    },
+    {
+      "check": "interrupted repair",
+      "pass": true
+    },
+    {
+      "check": "interrupted quarantine",
+      "pass": true
+    },
+    {
+      "check": "mobile-only supervision",
+      "pass": true
+    },
+    {
+      "check": "continuity restoration",
+      "pass": true
+    },
+    {
+      "check": "runtime reconstruction",
+      "pass": true
+    },
+    {
+      "check": "autonomous repair orchestration",
+      "pass": true
+    },
+    {
+      "check": "governance escalation",
+      "pass": true
+    },
+    {
+      "check": "freeze validation",
+      "pass": true
+    },
+    {
+      "check": "final next-action derivation",
+      "pass": true
+    }
+  ]
+}

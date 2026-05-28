@@ -1,0 +1,7 @@
+{
+  "staging_write_required": true,
+  "latest_pointer_replace_mode": "single-rename",
+  "deterministic_ordering": "lexicographic",
+  "deterministic_cleanup": true,
+  "bounded_retention_limit": 500
+}

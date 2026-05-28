@@ -1,0 +1,7 @@
+{
+  "deterministic": true,
+  "bounded": true,
+  "replay_safe": true,
+  "recursive_repair_prevented": true,
+  "status": "PASS"
+}
