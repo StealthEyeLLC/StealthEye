@@ -1,10 +1,10 @@
 {
   "schema_version": "1.4.0",
-  "processName": "generate",
+  "processName": "graph",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T19:20:46.291Z",
+  "timestamp": "2026-05-28T03:04:13.950Z",
   "ordered_commands": [
-    "npm run generate"
+    "npm run graph"
   ],
   "active_task": "phase0-main",
   "lifecycle_state": "phase0-autonomy-substrate",
@@ -40,9 +40,9 @@
     ".stealtheye/state/memory-index.json",
     ".stealtheye/validation/consistency-report.json"
   ],
-  "replay_confidence": 0.72,
+  "replay_confidence": 0.715,
   "replay_uncertainty": {
-    "score": 0.28,
+    "score": 0.285,
     "reasons": [
       "validation_not_fully_stable"
     ]
@@ -53,7 +53,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "7d965212d3f0e421b389a03923ed7ff6a7b037351a6de0706f677f76756d6500",
+      "digest": "2e6ad757be5b12b399d086b2cdb7438a726d601ae7f15dd7d56cd16de6ca287f",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88
@@ -61,6 +61,6 @@
   "blockers": [],
   "next_action": "run generate then validate",
   "commands": [
-    "npm run generate"
+    "npm run graph"
   ]
 }

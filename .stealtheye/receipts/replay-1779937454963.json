@@ -2,7 +2,7 @@
   "schema_version": "1.4.0",
   "processName": "graph",
   "process_version": "1.4.0",
-  "timestamp": "2026-05-27T19:20:55.085Z",
+  "timestamp": "2026-05-28T03:04:14.963Z",
   "ordered_commands": [
     "npm run graph"
   ],
@@ -53,7 +53,7 @@
     "dependency_validation": true,
     "supersession_correctness": true,
     "drift_proof": {
-      "digest": "10e682af66693b816e23538e110c5e0a664db4c3924a7bf2205e9c22bc56144f",
+      "digest": "eea0baaad92ae7ff1018fb128c2ad39f7dc93d2e19e2b594e3271e4aae59985b",
       "compared_to_latest_schema": "1.4.0"
     },
     "reproducibility_confidence": 0.88

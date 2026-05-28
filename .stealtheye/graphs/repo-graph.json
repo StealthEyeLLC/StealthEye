@@ -5,6 +5,14 @@
       "type": "state-file"
     },
     {
+      "id": "artifact-churn-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "artifact-retention-report.json",
+      "type": "state-file"
+    },
+    {
       "id": "artifact-retention.json",
       "type": "state-file"
     },
@@ -174,6 +182,18 @@
     },
     {
       "id": "fresh-tab-session.json",
+      "type": "state-file"
+    },
+    {
+      "id": "governance-audit-evidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "governance-audit-findings.json",
+      "type": "state-file"
+    },
+    {
+      "id": "governance-audit-trace.json",
       "type": "state-file"
     },
     {
@@ -873,7 +893,91 @@
       "type": "state-file"
     },
     {
+      "id": "h4-autonomy-containment-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-blocker-priority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-blocker-reducer.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-blocker-reduction-plan.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-chaos-burnin-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-completion-report.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-continuity-stress-coverage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-continuity-stress-matrix.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-decision-blockers.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-decision-next-actions.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-decision-rationale.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-decision.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-gap-classification.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-gap-priority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-final-gap-repairs.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-gap-priority.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-gap-reduction.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-gap-repairs.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-lineage-rigor-state.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-mobile-rigor-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "h4-next-action-resolution.json",
+      "type": "state-file"
+    },
+    {
+      "id": "h4-replay-adversariality-state.json",
       "type": "state-file"
     },
     {
@@ -901,6 +1005,18 @@
       "type": "state-file"
     },
     {
+      "id": "lineage-conflict-evidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "lineage-conflict-proof.json",
+      "type": "state-file"
+    },
+    {
+      "id": "lineage-conflict-repairs.json",
+      "type": "state-file"
+    },
+    {
       "id": "loop-protection.json",
       "type": "state-file"
     },
@@ -913,11 +1029,27 @@
       "type": "state-file"
     },
     {
+      "id": "merge-readiness-evidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "merge-readiness-proof.json",
+      "type": "state-file"
+    },
+    {
+      "id": "merge-readiness-risks.json",
+      "type": "state-file"
+    },
+    {
       "id": "mission-lineage-index.json",
       "type": "state-file"
     },
     {
       "id": "mobile-continuity-compaction.json",
+      "type": "state-file"
+    },
+    {
+      "id": "mobile-finalization.json",
       "type": "state-file"
     },
     {
@@ -929,7 +1061,27 @@
       "type": "state-file"
     },
     {
+      "id": "mobile-supervision-acceptance.json",
+      "type": "state-file"
+    },
+    {
+      "id": "mobile-supervision-evidence.json",
+      "type": "state-file"
+    },
+    {
       "id": "next-action.json",
+      "type": "state-file"
+    },
+    {
+      "id": "no-memory-recovery-evidence.json",
+      "type": "state-file"
+    },
+    {
+      "id": "no-memory-recovery-proof.json",
+      "type": "state-file"
+    },
+    {
+      "id": "no-memory-recovery-risks.json",
       "type": "state-file"
     },
     {
@@ -993,6 +1145,18 @@
       "type": "state-file"
     },
     {
+      "id": "quarantine-restoration-lineage.json",
+      "type": "state-file"
+    },
+    {
+      "id": "quarantine-restoration-proof.json",
+      "type": "state-file"
+    },
+    {
+      "id": "quarantine-restoration-repairs.json",
+      "type": "state-file"
+    },
+    {
       "id": "queue-transition-history.json",
       "type": "state-file"
     },
@@ -1013,7 +1177,23 @@
       "type": "state-file"
     },
     {
+      "id": "repair-orchestrator-actions.json",
+      "type": "state-file"
+    },
+    {
+      "id": "repair-orchestrator-boundaries.json",
+      "type": "state-file"
+    },
+    {
+      "id": "repair-orchestrator-state.json",
+      "type": "state-file"
+    },
+    {
       "id": "replay-compact-index.json",
+      "type": "state-file"
+    },
+    {
+      "id": "replay-corruption-rehearsal-state.json",
       "type": "state-file"
     },
     {
@@ -1246,6 +1426,18 @@
     },
     {
       "id": "runtime-validation-grid.json",
+      "type": "state-file"
+    },
+    {
+      "id": "serialization-ordering.json",
+      "type": "state-file"
+    },
+    {
+      "id": "serialization-retention.json",
+      "type": "state-file"
+    },
+    {
+      "id": "serialization-stability.json",
       "type": "state-file"
     },
     {

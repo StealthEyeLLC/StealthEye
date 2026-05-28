@@ -1,27 +1,31 @@
-StealthEye full orientation (synced post-H3, pre-H4):
+StealthEye full orientation (synced post-H4):
 - Repo posture:
   - H0 COMPLETE
   - H1 COMPLETE
   - H2 COMPLETE
   - H3 COMPLETE
-  - H4 NOT STARTED
-- Runtime guarantees:
+  - H4 COMPLETE
+- Canonical substrate summary:
   - deterministic bootstrap-first command behavior
-  - bounded retention and compaction of handoffs/replay artifacts
-  - explicit latest pointers for continuity recovery
+  - deterministic autonomy continuity with fresh-tab recovery
+  - bounded retention and compaction of handoff/replay artifacts
+  - explicit latest pointers for continuity recovery and replay authority
 - Canonical continuity surfaces:
   - `.stealtheye/state/fresh-tab-bootstrap.json` (fresh-tab bootstrap)
-  - `.stealtheye/handoffs/latest.json` (active handoff)
+  - `.stealtheye/handoffs/latest.json` (active continuity handoff)
   - `.stealtheye/receipts/latest-replay.json` (replay integrity surface)
   - `.stealtheye/state/next-action.json` (next action)
   - `.stealtheye/state/working-set.json` (working set)
-- Autonomy boundaries:
+- Governance and autonomy boundaries:
   - approvals required for secrets/credentials, billing/purchases, irreversible production data deletion
   - no unrestricted shell authority
   - no unrestricted destructive git authority
-  - no H4 runtime logic in this pre-H4 pass
-- Recovery direction for fresh tabs:
-  1) read fresh-tab-bootstrap
-  2) verify handoff/replay latest timestamps and coherence
-  3) resolve next action and blockers
-  4) continue bounded deterministic flow
+  - no autonomous deployment/merge authority
+- H4 completion guarantees:
+  - completion-gate, final-law, and final-decision authority are canonicalized
+  - replay-safe recovery, deterministic lineage handling, and serialization stabilization are frozen invariants
+  - mobile-supervised continuity is compact, bounded, and continuity-safe
+- Future-phase handoff summary:
+  1) preserve H4 invariants and governance boundaries
+  2) consume continuity surfaces via canonical precedence
+  3) extend capabilities without weakening bounded deterministic runtime guarantees
